@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "# Index" > index.md
+echo "" >> index.md
+
+for file in *.md; do
+    if [[ "$file" != "index.md" ]]; then
+        echo "- [${file%.md}]($file)" >> index.md
+    fi
+done
+
