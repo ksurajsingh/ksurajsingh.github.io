@@ -6,5 +6,6 @@ There are no rules , just to make it relate to you , I have kept the following w
 
 for file in *; do 
   Heading=$(sed -n "s:.*<title>\(.*\)</title>.*:\1:p" $file)
+  Category=$(sed -n "s:.*<sub id=\"blog-category\">\(.*\)</sub>.*:\1:p" $file)
   echo "[$Heading]($file)" >> trash.html 
 done
