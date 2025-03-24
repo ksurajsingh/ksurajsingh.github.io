@@ -13,3 +13,13 @@
 .philosophy{
     background-color: #af13af;
 }
+
+.date{
+  float: right;
+  color: grey;
+}
+
+.time{
+  font-size: 15px;
+  font-style: italic;
+}

@@ -23,8 +23,10 @@ Remember as much satisfying or true as they feel | they just ``<b>don't matter</
 for file in *.html; do 
   if [[ "$file" != "trash.html" ]]; then 
     Heading=$(sed -n "s:.*<title>\(.*\)</title>.*:\1:p" $file)
-    Category=$(sed -n "s:.*<sub id=\"blog-category\">\(.*\)</sub>.*:\1:p" $file)
+    Category=$(sed -n "s:.*<sub id=\"blog-category\">\[\(.*\)\]</sub>.*:\1:p" $file)
     Preview=$(sed -zn "s:.*<p id=\"blog\">\(.*\)</p>.*:\1:p" $file | head -n 2 | sed -n "s/<br>//gp" )
-    echo -e "<br> <a href=\"$file\">$Heading</a><br>\n<span class=\"tag philosophy\">$Category</span><br>\n$Preview<br><br>" >> trash.html 
+    time=$(python estTime.py $file)
+    date=$file
+    echo -e "<br><div class=\"blog-title\"><a href=\"$file\">$Heading</a><span class=\"date\">$date</span></div><br>\n<span class=\"tag philosophy\">$Category</span><span class=\"time\">$time</span><br>\n$Preview<br><br>" >> trash.html 
   fi
 done
