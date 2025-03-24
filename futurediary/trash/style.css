@@ -1,3 +1,52 @@
-.blog-category{
-font-size:22px;
+#blog-category{
+  display: flex;
+  margin-top: 30px;
+  font-size:18px;
+}
+
+*{
+  margin-left:10%;
+  margin-right:10%;
+}
+
+h1{
+  display:flex;
+  justify-content: center;
+  font-size: 60px;
+  margin-bottom: 0;
+}
+
+#credit{
+  margin-left: 65%;
+  font-size: 25px;
+  background-color: lightgrey;
+  display: inline;
+}
+
+/*blockquote{*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+
+
+/*#blog{*/
+/*  margin-left: 20%;*/
+/*  margin-right: 20%;*/
+/*}*/
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  blockquote {
+    background-color: #eeeeee;
+    width: 28%;
+    color: #bbbbbb;
+  }
+  #credit{
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+  }
 }
