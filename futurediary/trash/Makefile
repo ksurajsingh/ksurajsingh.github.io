@@ -1,0 +1,2 @@
+trashIndex:
+	  bash addTrash.sh 
