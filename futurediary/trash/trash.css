@@ -3,9 +3,12 @@
   margin-right: 10%;
 }
 
-.pre-content{
-  display: flex;
-  justify-content: center;
+#pre-content{
+  /*display: flex;*/
+  /*justify-content: center;*/
+  margin-left: 15%;
+  font-size: 20px;
+  width: 100%;
 }
 
 hr{
@@ -26,6 +29,10 @@ hr{
 
 .philosophy{
     background-color: #af13af;
+}
+
+b{
+  margin: 0;
 }
 
 
