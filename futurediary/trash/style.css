@@ -9,6 +9,10 @@
   margin-right:10%;
 }
 
+b,a,em{
+  margin: 0;
+}
+
 h1{
   display:flex;
   justify-content: center;
@@ -24,15 +28,22 @@ h1{
 }
 
 /*blockquote{*/
-/*  margin: 0;*/
-/*  padding: 0;*/
+/*  /*margin: 0;*/
+/*  font-weight: bolder;*/
+/*  background-color: grey;*/
+/*  width: 38%;*/
+/*  font-size: 22px;*/
+/*  color: #efabef;*/
 /*}*/
 
 
-/*#blog{*/
-/*  margin-left: 20%;*/
-/*  margin-right: 20%;*/
-/*}*/
+#blog, .blog{
+  font-size: 20px;
+}
+
+code{
+  margin: 0;
+}
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -40,13 +51,17 @@ h1{
     color: #ffffff;
   }
   blockquote {
-    background-color: #eeeeee;
-    width: 28%;
-    color: #bbbbbb;
+    background-color: grey;
+    width: 48%;
+    font-size: 22px;
+    color: #efabef;
   }
   #credit{
     background-color: grey;
     color: white;
     font-weight: bold;
+  }
+  a{
+    color:lightblue;
   }
 }

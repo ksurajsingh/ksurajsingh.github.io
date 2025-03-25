@@ -4,7 +4,7 @@ echo -e "<!DOCTYPE html>\n
 <html>\n
 <head>
   <title>Trash</title>\n
-  <link rel=\"stylesheet\" href=\"diary.css\">
+  <link rel=\"stylesheet\" href=\"trash.css\">
 </head>\n
 <body>\n
 <div id=\"pre-content\">\n
