@@ -59,7 +59,7 @@ Since, Reality is an illusion . And I am anyways 100% detached from everything ,
 
 <br>
 
-<img id="loading-gif" src="trashMedia/anime-vash.gif" alt="Loading"> 
+<img id="loading-gif" src="trashMedia/anime-vash.gif" alt="Loading" style="display: none "> 
 
 
 <script>
@@ -67,13 +67,22 @@ Since, Reality is an illusion . And I am anyways 100% detached from everything ,
     function playGifAndRedirect(uri){
 
       const gif=document.getElementById('loading-gif');
+
       gif.style.display="block"; // shows gif 
 
+
       setTimeout(()=>{
+
       window.location.href=uri // refering to our target page 
+
     },2000); // waiting for 2 seconds 
+
   }
+
 </script> 
+
 </body>
+
 </html>
+
 

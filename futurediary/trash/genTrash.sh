@@ -39,14 +39,14 @@ echo -e "
 <img id=\"loading-gif\" src=\"trashMedia/anime-vash.gif\" alt=\"Loading\" style=\"display: none \"> \n\n
 <script>\n 
     function playGifAndRedirect(uri){\n
-      const gif=document.getElementById('loading-gif');
-      gif.style.display=\"block\"; // shows gif 
+      const gif=document.getElementById('loading-gif');\n
+      gif.style.display=\"block\"; // shows gif \n
 
-      setTimeout(()=>{
-      window.location.href=uri // refering to our target page 
-    },2000); // waiting for 2 seconds 
-  }
-</script> 
-</body>
-</html>
+      setTimeout(()=>{\n
+      window.location.href=uri // refering to our target page \n
+    },2000); // waiting for 2 seconds \n
+  }\n
+</script> \n
+</body>\n
+</html>\n
 " >> trash.html
