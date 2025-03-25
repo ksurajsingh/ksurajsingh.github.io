@@ -27,6 +27,6 @@ for file in *.html; do
     Preview=$(sed -zn "s:.*<p id=\"blog\">\(.*\)</p>.*:\1:p" $file | head -n 2 | sed -n "s/<br>//gp" )
     time=$(python estTime.py $file)
     date=$file
-    echo -e "<br><div class=\"blog-card\"><hr><div class=\"blog-title\"><a href=\"$file\">$Heading</a><span class=\"date\">$date</span></div><br>\n<span class=\"tag philosophy\">$Category</span><span class=\"time\">$time</span><br>\n$Preview<br><hr></div>" >> trash.html 
+    echo -e "<br><a href=\"$file\"><div class=\"blog-card\"><hr><div class=\"blog-title\">$Heading<span class=\"date\">$date</span></div>\n<span class=\"tag philosophy\">$Category</span><span class=\"time\">$time</span><br>\n$Preview<br><hr></div></a>" >> trash.html 
   fi
 done
