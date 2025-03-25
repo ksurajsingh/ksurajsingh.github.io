@@ -1,14 +1,18 @@
 *{
-  margin-left: 10%;
-  margin-right: 10%;
+  /*margin-left: 10%;*/
+  /*margin-right: 10%;*/
+  /*The above does not satisfy for phone*/
+  max-width: 950px;
+  margin: 0 auto;
+  /*padding: 20px; */
 }
 
 #pre-content{
   /*display: flex;*/
   /*justify-content: center;*/
-  margin-left: 15%;
+  margin: 0 auto;
   font-size: 20px;
-  width: 100%;
+  max-width: 100%;
 }
 
 hr{

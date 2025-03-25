@@ -5,8 +5,11 @@
 }
 
 *{
-  margin-left:10%;
-  margin-right:10%;
+  /*margin-left:10%;*/
+  /*margin-right:10%;*/
+  /* The above won't satify for phones */ 
+  max-width: 950px;
+  margin:10 auto;
 }
 
 b,a,em{
