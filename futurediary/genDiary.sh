@@ -8,8 +8,13 @@ echo -e "<!DOCTYPE html>
 </head>
 <body>
 <div id=\"pre-content\">
-<h1>Future Diary</h1> \n 
-I named this diary as <b>"Future Diary"<b> just in the hope that some day this will turn into an actual one, as happened in the anime <br>\n
+<div id=\"title-content\">
+<span id=\"main-heading\">
+<h1>Future Diary</h1> </span>
+<span id=\"main-image\">
+<img src="futurediarymedia/yukki.gif" alt="futureDiaryGIF"></span>
+</div>
+I named this diary as <b>"Future Diary"</b> just in the hope that some day this will turn into an actual one, as happened in the anime <br>\n
 In this page/diary I will be adding my blogs that contain different categories like <br> \n 
 [ CS ] for computer science related stuff<br>
 [ Normal ] for daily life <br>
