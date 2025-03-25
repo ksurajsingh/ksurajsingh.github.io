@@ -10,7 +10,11 @@ if __name__=="__main__":
         with open(sys.argv[1],"r",encoding="UTF-8") as file:
             content=file.read()
 
-        print(f"Time req: {estReadTime(content)} mins")
+        time=estReadTime(content)
+        if isinstance(time,str): 
+            print(time) 
+        else:          
+            print(f"{estReadTime(content)} mins read")
 
     else:
         print("Usage: python estTime.py <filename>")

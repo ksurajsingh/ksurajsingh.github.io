@@ -1,0 +1,2 @@
+diaryIndex:
+	bash genDiary.sh

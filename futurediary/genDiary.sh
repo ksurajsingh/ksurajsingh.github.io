@@ -16,14 +16,18 @@ In this page/diary I will be adding my blogs that contain different categories l
 [ Normal ] for daily life <br>\n 
 [ category ] for that category [idk whatever] <br> \n 
 Hope you enjoy :) <br> \n 
-Have a good time ;) <br> \n " > futurediary1.html
+Have a good time ;) <br> \n " > futurediary.html
 
-echo -e "\n\n <ul>\n" >> futurediary1.html
-for file in *.md; do
-    if [[ "$file" !=  "futurediary.md" ]]; then
-        echo "<li> <a href="$file"> ${file%.md}</a></li>" >> futurediary1.html
+for file in *.html; do
+    if [[ "$file" !=  "futurediary.html" ]]; then
+      Heading=$(sed -n "s:.*<title>\(.*\)</title>.*:\1:p" $file)
+      Category=$(sed -n "s:.*<sub id=\"blog-category\">\[\(.*\)\]</sub>.*:\1:p" $file)
+      Preview=$(sed -zn "s:.*<p id=\"blog\">\(.*\)</p>.*:\1:p" $file | head -n 2 | sed "s/<br>//g" )
+      time=$(python estTime.py $file)
+      date=$(echo $file | cut -d"." -f1)
+
+      echo -e " " >> futurediary.html
     fi
 done
 
-echo -e "\n </ul>" >> futurediary1.html
 
