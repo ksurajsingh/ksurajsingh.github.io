@@ -1,2 +1,2 @@
 trashIndex:
-	  bash addTrash.sh 
+	  bash genTrash.sh 

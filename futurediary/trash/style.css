@@ -9,8 +9,14 @@
   /*margin-right:10%;*/
   /* The above won't satify for phones */ 
   max-width: 950px;
-  margin:10 auto;
+  margin:0 auto;
 }
+
+.gifs{
+  max-width: 100px;
+  height: 100px;
+}
+
 
 b,a,em{
   margin: 0;

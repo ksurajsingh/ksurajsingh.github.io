@@ -13,7 +13,7 @@ echo -e "<!DOCTYPE html>\n
 
 But no. This DOES NOT work , philosophies . . rules . . just <b>DOESN'T MATTER</b>. <br>\n
 
-<blockquote>There are no rules</blockquote><br>\n 
+<blockquote><b>There are no rules</b></blockquote><br>\n 
 Even I once thought that these philosophies and rules / ``way of life`` existed.<br>\n 
 So the following are a few ideologies that I came up with back then.<br> \n 
 Before you read : <br>\n
