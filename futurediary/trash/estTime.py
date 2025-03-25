@@ -14,7 +14,7 @@ if __name__=="__main__":
         if isinstance(time,str):
             print(time)
         else:
-            print(f"{time:.2f} mins read")
+            print(f"{time:.0f} mins read")
 
     else:
         print("Usage: python estTime.py <filename>")

@@ -22,4 +22,15 @@
 .time{
   font-size: 15px;
   font-style: italic;
+  margin-left: 20px;
+}
+
+.blog-card{
+  background-color: peachpuff;
+}
+
+.blog-card:hover{
+  transform: translatey(-20px);
+  filter: brightness(1.2);
+  cursor: zoom-in;
 }
