@@ -8,7 +8,7 @@ echo -e "<!DOCTYPE html>\n
 </head>\n
 <body>\n
 <div id=\"pre-content\">\n
-<h1>TRASH</h1>
+<h1>TRASH</h1><div class=\"center\"><img src=\"trashMedia\/178524.gif\" class=\"gifs\"></div>\n
 <br>These are philosophies/rules that I once thought were good/helpful. <br>\n
 
 But no. This DOES NOT work , philosophies . . rules . . just <b>DOESN'T MATTER</b>. <br>\n
@@ -29,6 +29,24 @@ for file in *.html; do
     Preview=$(sed -zn "s:.*<p id=\"blog\">\(.*\)</p>.*:\1:p" $file | head -n 2 | sed -n "s/<br>//gp" )
     time=$(python estTime.py $file)
     date=$(echo $file | cut -d"." -f1) 
-    echo -e "<br><a href=\"$file\"><div class=\"blog-card\"><hr><div class=\"blog-title\">$Heading<span class=\"date\">$date</span></div>\n<span class=\"tag philosophy\">$Category</span><span class=\"time\">$time</span><br><span class=\"blog-preview\">\n$Preview<br></span><hr></div></a>" >> trash.html 
+    echo -e "<br><a href=\"#\" onclick=\"playGifAndRedirect('$file'); return false;\"><div class=\"blog-card\"><hr><div class=\"blog-title\">$Heading<span class=\"date\">$date</span></div>\n<span class=\"tag philosophy\">$Category</span><span class=\"time\">$time</span><br><span class=\"blog-preview\">\n$Preview<br></span><hr></div></a>" >> trash.html 
   fi
 done
+
+
+echo -e "
+\n\n<br>\n
+<img id=\"loading-gif\" src=\"trashMedia/anime-vash.gif\" alt=\"Loading\" style=\"display: none \"> \n\n
+<script>\n 
+    function playGifAndRedirect(uri){\n
+      const gif=document.getElementById('loading-gif');
+      gif.style.display=\"block\"; // shows gif 
+
+      setTimeout(()=>{
+      window.location.href=uri // refering to our target page 
+    },2000); // waiting for 2 seconds 
+  }
+</script> 
+</body>
+</html>
+" >> trash.html
