@@ -1,6 +1,6 @@
 *{
   margin: 0 auto;
-  max-width: 55vw;
+  max-width: 950px;
 }
 
 #title-content{
@@ -22,7 +22,7 @@
 
 #pre-content{
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 22px;
   max-width: 100%;
 }
 
@@ -84,6 +84,16 @@ b{
   margin-bottom: 9px;
   border-radius: 2px;
   font-style: 15px;
+}
+
+.CS{
+  background-color: lightblue;
+  padding: 3px;
+}
+
+.Normal{
+  background-color: lightgreen;
+  padding: 3px;
 }
 
 hr{

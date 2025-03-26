@@ -32,10 +32,10 @@ for file in *.html; do
       date=$(echo $file | cut -d"." -f1)
 
       echo -e "<br>
-      <a href=\"#\" onclick=\"loadImgAndRedirect('$file')\";return false; \">
+      <a href=\"#\" onclick=\"loadImgAndRedirect('$file');return false;\">
       <div class=\"blog-card\"><hr>
       <div class=\"blog-title\">
-      $Heading
+      <b>$Heading</b>
       <span class=\"date\">$date</span>
       </div>\n<span class=\"tag $Category\">$Category</span>
       <span class=\"time\">$time</span>
@@ -51,14 +51,14 @@ done
 echo -e "
 <a href="trash/trash.html">trash</a>
 \n\n<br>\n 
-<img id=\"loading-img\" src=\"futurediarymedia/loading.jpg\" alt=\"loading image\" style=\"display: none\"> \n\n 
+<img id=\"loading-img\" src=\"futurediarymedia/death-note.gif\" alt=\"loading image\" style=\"display: none\"> \n\n 
 <script>\n 
 function loadImgAndRedirect(uri){
   const img=document.getElementById('loading-img');
   img.style.display=\"block\"; //shows image \n
 
   set Timeout (()=>{
-  window.location.href=uri // refering to our target image 
+  window.location.href=uri // refering to our target page 
 },2000); // waiting for 2 seconds 
 }\n
 </script>

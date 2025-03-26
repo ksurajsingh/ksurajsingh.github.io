@@ -1,0 +1,40 @@
+*{
+  margin: 10px auto;
+  max-width: 950px;
+}
+a{
+  color: red;
+}
+
+#blog,ul,li,ol{
+  font-size: 20px;
+  font-family: monospace;
+  white-space:normal;
+}
+code{
+  font-size: 28px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#tmp{
+  font-size: 20px;
+}
+
+blockquote{
+  background-color: hotpink;
+  color: black;
+  font-size: 22px;
+  font-weight: 551;
+  /*font-family:;*/
+}
+
+img{
+  border-radius: 20px;
+}
+
+video{
+  border-radius: 10px;
+}
+
+.red{
+  color: red;
+}

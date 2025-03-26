@@ -12,9 +12,9 @@
         <hr><hr> 
 
 <p id="blog">
-Highly recommend - silicon valley to CS students and `gintama` <br><br>
+      Highly recommend - silicon valley to CS students and <code>gintama</code> <br><br>
 
-<br><br>other recommendations<br><br><br>
+      <img src="futurediarymedia/gilfoyle.gif"><br>
 
 
 I just came across this thing called as <code>a manga guide to</code> it has so many topics and they are acutally a manga scene guide like a pov of manga and they explain very engineered topics like calculus , logistic regression, statistics , databases, universe . <br><br> Just try downloading it at <a href="https://pdfroom.com/books/the-manga-guide-to-the-universe/jGk208rl2pm" alt="link-to-pdfRoom">universe</a><br><br>
@@ -27,24 +27,27 @@ Oh yeah bugswriter just commented on my video 5 days ago - I had internals - so 
 
 <code id="important"> some [CS stuff below] </code>
 
-about that systemd - I created 3 - for zram , for cpuGovernor , and for enableCpuBoost. <br> <br>
+about that systemd - I created 3 - for zram , for cpuGovernor , and for enableCpuBoost. <br>
 <ul>
-<li><b>zram</b> get the swap to how much ever you want , will talk about this some day later. <br>
-<li> <b>cpuGovernor</b> This is the most interesting thing <br>
-I actually had heating issues with my new laptop [acer a325-42 octa core ]. And so I booted to windows , and it was pretty silent <br><br>
-I went on a lil deep and discovered <code>cpupower</code>  there I got to know about governors <br><br>
+        <li><b>zram</b><br> get the swap to how much ever you want , will talk about this some day later.</li>
+        <li><b>cpuGovernor</b><br> This is the most interesting thing <br> 
+          I actually had heating issues with my new laptop [acer a325-42 octa core ]. And so I booted to windows , and it was pretty silent <br><br>
+          I went on a lil deep and discovered <code>cpupower</code>  there I got to know about governors <br><br>
 
-
-    <pre> <li> <code>powersave</code> most power efficient <br> 
-<li> <code>conservative</code> can increase the performance when necessary slowly <br>
-<li> <code>ondemand</code> can increase the performance aggresively on demand <br>
-<li> <code>userspace</code> only uses the specified cpu frequency set by the user <br>
-<li> <code>schedutil</code> works in batch as the resources are demanded the cpu power just keeps increasing without any conern for power and only for performance [ the older ones main concern was power ].<br>
-<li> <code>perofrmance</code> gives peak performance using the cpu's core to its highest available frequency . <br><br>
-
-<li> <u><b>enableCpuBoost</b></u> This is used to enable the cpu limit to as much as speciifed by the hardware vendor. you can even surpass the limit [overclocking] . That is exactly opposite is what I do - cuz I need my pc to come in a long run . Overclocking has exactly the issues I don't wanna face at their best possible harm rate - heating issue. <br><br><br>
-
-
+    <ol>
+            <pre> <li> <code>powersave</code> most power efficient </li>
+                <li> <code>conservative</code> can increase the performance when necessary slowly </li>
+                <li> <code>ondemand</code> can increase the performance aggresively on demand </li>
+                <li> <code>userspace</code> only uses the specified cpu frequency set by the user </li>
+                <li> <code>schedutil</code> works in batch as the resources are demanded the cpu power just keeps increasing without any conern for power and only for performance [ the older ones main concern was power ].</li>
+                <li> <code>perofrmance</code> gives peak performance using the cpu's core to its highest available frequency . </li><br>
+            </pre>
+    </ol>
+  </li>
+  <li> <b><u>enableCpuBoost</u></b> This is used to enable the cpu limit to as much as speciifed by the hardware vendor. you can even surpass the limit [overclocking] . That is exactly opposite is what I do - cuz I need my pc to come in a long run . Overclocking has exactly the issues I don't wanna face at their best possible harm rate - heating issue. <br></li>
+      </ul>
+      <br><br>
+    <p id="blog">
 This cpupower is acutally <code>very powerfull</code>. Use it with high caution. <br><br>
 Don't play with it ! <br>
         </p>

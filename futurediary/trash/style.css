@@ -54,6 +54,10 @@ code{
   margin: 0;
 }
 
+img{
+  border-radius: 20px;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
