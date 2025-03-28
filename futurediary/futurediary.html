@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>FutureDiary</title>
-  <link rel="stylesheet" href=diary.css>
+  <link rel="stylesheet" href="diary.css">
 </head>
 <body>
 <div id="pre-content">
@@ -10,7 +10,7 @@
 <span id="main-heading">
 <h1>Future Diary</h1> </span>
 <span id="main-image">
-<img src=futurediarymedia/yukki.gif alt=futureDiaryGIF></span>
+<img src="futurediarymedia/yukki.gif" alt="futureDiaryGIF"></span>
 </div>
 I named this diary as <b>Future Diary</b> just in the hope that some day this will turn into an actual one, as happened in the anime <br>
 
@@ -22,7 +22,7 @@ In this page/diary I will be adding my blogs that contain different categories l
 Hope you enjoy :) <br>
 Have a good time ;) <br>
 <label for="category-select">Select Category</label>
-<select id="category-select" onclick="filterblogs()">
+<select id="category-select" onchange="filterblogs()">
 <option value="all">All</option>
 <option value="CS">CS</option>
 <option value="Normal">Normal</option>
@@ -299,9 +299,11 @@ function filterblogs(){
   
   blogcard.forEach((blog)=>{
     const tag=blog.querySelector(".tag");
-    //console.log(tag) 
-    if(category ==="all" | tag.classList.contains(category)){
-      console.log(tag);
+    if(category ==="all" || tag.classList.contains(category)){
+      blog.style.display="block";
+    }
+    else{
+      blog.style.display="none";
     }
   })
 }
