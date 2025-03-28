@@ -71,6 +71,18 @@ function loadImgAndRedirect(uri){
 function filterblogs(){
   const category=document.getElementById(\"category-select\").value; 
   console.log(category);
+  const blogcard=document.querySelectorAll(".blog-card");
+  console.log("done");
+  console.log(blogcard);
+
+  blogcard.forEarch((blog)=>{
+  const tag=blog.querySelectorAll(\".tag\");
+  if(category===\"all\" || tag.classList.contains(category)){
+    blog.style.display=\"block\";
+  } else {
+    blog.style.display=\"none\";
+}
+})
 }
 </script>
 </body>
