@@ -16,6 +16,7 @@ echo -e "<!DOCTYPE html>
 <img src="futurediarymedia/yukki.gif" alt="futureDiaryGIF" style=\"cursor: pointer\" onclick=\"playProfileAudio()\"></span>
 </div>
 I named this diary as <b>"Future Diary"</b> just in the hope that some day this will turn into an actual one, as happened in the anime <br>\n
+Click image to know more [for fun] <br>\n
 In this page/diary I will be adding my blogs that contain different categories like <br> \n 
 [ CS ] for computer science related stuff<br>
 [ Normal ] for daily life <br>
