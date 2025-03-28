@@ -12,7 +12,8 @@ echo -e "<!DOCTYPE html>
 <span id=\"main-heading\">
 <h1>Future Diary</h1> </span>
 <span id=\"main-image\">
-<img src="futurediarymedia/yukki.gif" alt="futureDiaryGIF"></span>
+<audio src=\"futurediarymedia/futurediary.mp3\" id=\"imageAudio\"></audio>
+<img src="futurediarymedia/yukki.gif" alt="futureDiaryGIF" style=\"cursor: pointer\" onclick=\"playProfileAudio()\"></span>
 </div>
 I named this diary as <b>"Future Diary"</b> just in the hope that some day this will turn into an actual one, as happened in the anime <br>\n
 In this page/diary I will be adding my blogs that contain different categories like <br> \n 
@@ -66,16 +67,16 @@ function loadImgAndRedirect(uri){
 
   setTimeout (()=>{
   window.location.href=uri // refering to our target page 
-},1000); // waiting for 2 seconds 
+},200); // waiting for 2 seconds 
 }\n
 function filterblogs(){
   const category=document.getElementById(\"category-select\").value; 
   console.log(category);
-  const blogcard=document.querySelectorAll(".blog-card");
+  const blogcard=document.querySelectorAll(\".blog-card\");
   console.log("done");
   console.log(blogcard);
 
-  blogcard.forEarch((blog)=>{
+  blogcard.forEach((blog)=>{
   const tag=blog.querySelectorAll(\".tag\");
   if(category===\"all\" || tag.classList.contains(category)){
     blog.style.display=\"block\";
@@ -84,6 +85,12 @@ function filterblogs(){
 }
 })
 }
+
+function playProfileAudio(){
+  const audio=document.getElementById(\"imageAudio\");
+  audio.paused? audio.play() : audio.paudse ; 
+}
+
 </script>
 </body>
 </html>

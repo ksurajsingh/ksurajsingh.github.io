@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>FutureDiary</title>
-  <link rel="stylesheet" href="diary.css">
+  <link rel="stylesheet" href=diary.css>
 </head>
 <body>
 <div id="pre-content">
@@ -10,7 +10,8 @@
 <span id="main-heading">
 <h1>Future Diary</h1> </span>
 <span id="main-image">
-<img src="futurediarymedia/yukki.gif" alt="futureDiaryGIF"></span>
+<audio src="futurediarymedia/futurediary.mp3" id="imageAudio"></audio>
+<img src=futurediarymedia/yukki.gif alt=futureDiaryGIF style="cursor: pointer" onclick="playProfileAudio()"></span>
 </div>
 I named this diary as <b>Future Diary</b> just in the hope that some day this will turn into an actual one, as happened in the anime <br>
 
@@ -22,7 +23,7 @@ In this page/diary I will be adding my blogs that contain different categories l
 Hope you enjoy :) <br>
 Have a good time ;) <br>
 <label for="category-select">Select Category</label>
-<select id="category-select" onchange="filterblogs()">
+<select id="category-select" onclick="filterblogs()">
 <option value="all">All</option>
 <option value="CS">CS</option>
 <option value="Normal">Normal</option>
@@ -287,26 +288,31 @@ function loadImgAndRedirect(uri){
 
   setTimeout (()=>{
   window.location.href=uri // refering to our target page 
-},1000); // waiting for 2 seconds 
+},200); // waiting for 2 seconds 
 }
 
 function filterblogs(){
   const category=document.getElementById("category-select").value; 
   console.log(category);
   const blogcard=document.querySelectorAll(".blog-card");
-  console.log("done");
+  console.log(done);
   console.log(blogcard);
-  
+
   blogcard.forEach((blog)=>{
-    const tag=blog.querySelector(".tag");
-    if(category ==="all" || tag.classList.contains(category)){
-      blog.style.display="block";
-    }
-    else{
-      blog.style.display="none";
-    }
-  })
+  const tag=blog.querySelectorAll(".tag");
+  if(category==="all" || tag.classList.contains(category)){
+    blog.style.display="block";
+  } else {
+    blog.style.display="none";
 }
+})
+}
+
+function playProfileAudio(){
+  const audio=document.getElementById("imageAudio");
+  audio.paused? audio.play() : audio.paudse ; 
+}
+
 </script>
 </body>
 </html>
