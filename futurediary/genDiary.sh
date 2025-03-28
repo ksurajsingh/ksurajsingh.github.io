@@ -21,9 +21,16 @@ In this page/diary I will be adding my blogs that contain different categories l
 [ category ] for that category [idk whatever] <br> 
 Hope you enjoy :) <br>
 Have a good time ;) <br>
+<label for=\"category-select\">Select Category</label>
+<select id=\"category-select\" onclick=\"filterblogs()\">
+<option value=\"all\">All</option>
+<option value=\"CS\">CS</option>
+<option value=\"Normal\">Normal</option>
+</select>
 </div> \n " > futurediary.html
 
-for file in *.html; do
+as=$(ls *.html | grep -v "futurediary.html" | sort -rt"-" -k4,4rn -k2,2rM -k3,3rn) # -rn reverse number order , M - months 
+for file in $as; do
     if [[ "$file" !=  "futurediary.html" ]]; then
       Heading=$(sed -n "s:.*<title>\(.*\)</title>.*:\1:p" $file)
       Category=$(sed -n "s:.*<sub id=\"blog-category\">\[\(.*\)\]</sub>.*:\1:p" $file)
@@ -51,16 +58,20 @@ done
 echo -e "
 <a href="trash/trash.html">trash</a>
 \n\n<br>\n 
-<img id=\"loading-img\" src=\"futurediarymedia/death-note.gif\" alt=\"loading image\" style=\"display: none\"> \n\n 
+<img id=\"loading-img\" src=\"futurediarymedia/death-note.gif\" alt=\"loading image\" style=\"display: none; width:100vw;height:100vh;position:fixed;  top:0vh;\"> \n\n 
 <script>\n 
 function loadImgAndRedirect(uri){
   const img=document.getElementById('loading-img');
   img.style.display=\"block\"; //shows image \n
 
-  set Timeout (()=>{
+  setTimeout (()=>{
   window.location.href=uri // refering to our target page 
-},2000); // waiting for 2 seconds 
+},1000); // waiting for 2 seconds 
 }\n
+function filterblogs(){
+  const category=document.getElementById(\"category-select\").value; 
+  console.log(category);
+}
 </script>
 </body>
 </html>
