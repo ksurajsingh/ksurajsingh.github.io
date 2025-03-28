@@ -58,7 +58,8 @@ for file in $as; do
 done
 
 echo -e "
-<a href="trash/trash.html">trash</a>
+<a href="trash/trash.html"><h2>trash<h2> \n 
+<img src="futurediarymedia/sakura.jpeg"></a>
 \n\n<br>\n 
 <img id=\"loading-img\" src=\"futurediarymedia/death-note.gif\" alt=\"loading image\" style=\"display: none; width:100vw;height:100vh;position:fixed;  top:0vh;\"> \n\n 
 <script>\n 
