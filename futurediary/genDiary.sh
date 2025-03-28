@@ -67,7 +67,7 @@ function loadImgAndRedirect(uri){
 
   setTimeout (()=>{
   window.location.href=uri // refering to our target page 
-},200); // waiting for 2 seconds 
+},300); // waiting for 2 seconds 
 }\n
 function filterblogs(){
   const category=document.getElementById(\"category-select\").value; 
