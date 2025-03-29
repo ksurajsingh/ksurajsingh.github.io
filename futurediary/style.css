@@ -11,9 +11,27 @@ a{
   font-family: monospace;
   white-space:normal;
 }
+table,td {
+  border: solid black;
+  text-align: center;
+}
+th{
+  border-left: 20px solid black;
+  border-right: 20px solid black;
+}
+td:first-child{
+  border-right: 5px solid black;
+}
+td:nth-child(2){
+  border-left: 5px solid black;
+}
+
 code{
-  font-size: 28px;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Consolas, "Courier New", Courier, monospace;
+  background-color: #f5f5f5; /* Light gray background like Markdown */
+  margin : 20px 2px;
+  border-radius: 5px;
+  overflow-x: auto; /* Enable horizontal scroll */
 }
 #tmp{
   font-size: 20px;

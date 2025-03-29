@@ -94,6 +94,8 @@ function playProfileAudio(){
 }
 
 </script>
+<br><br>
+<hr>
 </body>
 </html>
 " >> futurediary.html
