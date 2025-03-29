@@ -122,7 +122,8 @@
 
     If you have <code> Basic math </code> understanding , following is a self explainatory code : 
 
-
+      <button onclick="copytext()">copy code</button>
+<pre id="text-to-copy" style="background-color: lightgray; border-radius: 10px; padding:20px; ">
 #!/bin/sh 
 
 netif=$(ip route show default | cut -d" " -f5) # your current network interface
@@ -147,9 +148,22 @@ trans_total=$( echo "scale=2; $((trans_fin-trans_init)) / 1024 / 1024" | bc )
 
 echo " Received data: $rec_total MegaBytes"
 echo " Transmitted data: $trans_total MegaBytes"
-
+    </pre>
 
     <br><br><hr>
+    call 1930 for National Cyber helpline in India 
+    <br><br><hr>
+<script>
+  function copytext(){
+    const text=document.getElementById("text-to-copy").innerText;
+
+    navigator.clipboard.writeText(text).then(()=>{
+      alert('Text copied to clipboard');
+    }).catch(err=>{
+      alert("unable to copy text, ",err);
+    }); 
+}
+    </script>
     </body>
   </html>
 	
