@@ -13,6 +13,7 @@
     	  <sub id="blog-category">[ CS linux bash network ]</sub> 
     	</div>
   	  <hr><hr>
+    <p id="blog">
       <h2>Failglob NullGlob</h2>
       <table>
         <th>Failglob</th>
@@ -34,8 +35,10 @@
         <td><em>ex:</em> <code>echo *.txt</code> > No error but <em> empty </em> output [ a line might be printed ]</td>
       </tr>
       </table>
+      <p class="blog">
       To enable use <code> shopt -s {fail/null} glob</code> <br>
       To disable use <code> shopt -u {fail/null} glob</code> <br> 
+    </p>
     <br><br><h4> By default : </h4>
     <table>
       <th>zsh</th>
@@ -62,6 +65,7 @@
     <hr>
     <h2> Grep </h2> 
     <hr>
+    <p class="blog">
     The main cause of the failglob and nullglob errors for me was using <code> grep </code> <br>
     grep actually has its own way of identifying the regex and wildcards like [ '*', '?', '[]' ] <br> 
     <br>
@@ -76,15 +80,20 @@
     <code> -w </code> is to check for the expression using regex rules the is specified by <code> -e </code> 
     <br><br><br>
     <hr>
+    </p>
     <h2>ldd</h2>
     <hr>
+    <p class="blog">
     stands for <b><em>List Dynamic Dependencies</em></b> which gives us the Dependencies of a binary / executable <br>
+    </p>
     <br><br><br>
     <hr>
     <h2>Inode</h2>
     <hr>
+    <p class="blog">
     This is how the files are stored in Linux fs , <br>
     Inode is basically a data structure that stores <br>
+    </p>
     <ol>
       <li> file type </li>
       <li> permission </li>
@@ -94,6 +103,7 @@
       <li> number of lines </li>
       <li><b> Pointer to data blocks </b></li>
       </ol>
+    <p class="blog">
     A fs has a Inode table , that is where it stores the inode entries of all files . <br>
     The <code> name </code> of a file and the <code> inode number </code> is not stores in the inode table , it is stored directory entry: <code> dirents </code>, for directories to link to them 
 
@@ -103,10 +113,12 @@
     <b>P.S</b> if a file is deleted but is in use by any process , the inode will contain its information | until the file is in use . <br>
     Hard links are the same as inode, <br>
     Symbolic links <code> ln -s </code> have different inodes . <br> 
+    </p>
     <br><br>
     <hr> 
     <h2> Subshell </h2> 
-    <hr> 
+    <hr>
+    <p class="blog">
     Anything in a bashscript actually executes inside a subshell [ maybe even other language programs ]<br>
     Try writing a bash for ls command it will list the output in the shell from where you executed it <br>
     Now in the same script try writing a cd command , <br>
@@ -114,13 +126,16 @@
     try <code> cd <some directory> </code> <code> and mkdir <some directory> </code> <br>
     it will be created in there but you will still be in your directory <br> 
     Since the script <b>[ONLY]</b> was the one which travelled throught the course of the commands given to it <br> 
+    </p>
 
     <br><br>
     <hr>
     <h2> Transmission Bandwidth </h2>
     <hr>
 
+    <p class="blog">
     If you have <code> Basic math </code> understanding , following is a self explainatory code : 
+    </p>
 
       <button onclick="copytext()">copy code</button>
 <pre id="text-to-copy" style="background-color: lightgray; border-radius: 10px; padding:20px; ">
@@ -153,6 +168,7 @@ echo " Transmitted data: $trans_total MegaBytes"
     <br><br><hr>
     call 1930 for National Cyber helpline in India 
     <br><br><hr>
+    </p>
 <script>
   function copytext(){
     const text=document.getElementById("text-to-copy").innerText;

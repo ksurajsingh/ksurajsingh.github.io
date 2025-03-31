@@ -6,7 +6,7 @@ a{
   color: red;
 }
 
-#blog,ul,li,ol{
+#blog,.blog,ul,li,ol{
   font-size: 20px;
   font-family: monospace;
   white-space:normal;

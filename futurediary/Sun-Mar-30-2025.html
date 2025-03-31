@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+	<html>
+	  <head>
+
+	    <title>ADB</title>
+    	<link rel="stylesheet" href="style.css"> 
+
+	  </head>
+	  <body>
+
+    	<div id="heading">
+      	<h1>ADB</h1>
+    	  <sub id="blog-category">[ CS Android Linux ] </sub> 
+    	</div>
+  	  <hr><hr>
+    <p id="blog">
+    Android Debug Bridge is a very useful tool to debug android - in both wired and wireless ways . <br> 
+    use <code>adbd</code> daemon to start the daemon - the client [ android ] should have <code>USB Debugging</code> turned on.<br>
+    Which would act like a client. <br>
+    For the server part - <br><br>
+    </p>
+    <hr>
+    <h3>Genin</h3>
+    <hr>
+    <ul>
+      <li>Connect to the device physically using a USB cable or so. . .</li>
+      <li>Ensure its seriel number is listed in the <code>adb devices</code> command.</li>
+      <li>Enter <code>adb tcpip 5555</code>[or any port for that matter] to listen on your android.</li>
+      This sets up a tcp/ip connection to your device , so now your can disconnect the physical connection to your device<br>
+      <li>run <code>adb devices</code> You will still see a seriel number for your devices - if not :</li>
+      <li>Enter <code>adb connect &lt;android_ipaddr&gt;:&lt;port_number&gt;</code></li>
+      You are now connected to your devices wirelessly. <br>
+      <li>Enter <code>adb shell</code> to access the shell of your device</li>
+    </ul>
+
+    <br><br>
+    <p class="blog">
+    Adb generally takes up port from 5554-5584. <br>
+    Around 15 of them are emulators [ odd numbered ].<br>
+    even numbered port for the consoles<br>
+    </p>
+    
+    <hr>
+    <h3>Seriel Connection</h3>
+    <hr>
+
+    <ul>
+      <li>You can also use the <code>-s</code>option to specify the seriel number.</li>
+      <br><br>
+      <li> To install a package that is present in your server : </li>
+      <code>adb -s &lt;seriel_number&gt; install &lt;your_apk_name&gt;.apk</code>
+      <li>If you are already in a shell just use <code> adb install &lt;your_apk_name&gt;</li>
+      <li>Use <code>-t</code> for apks that your want to test <a href="https://developer.android.com/tools/adb#:~:text=You%20must%20use%20the%20%2Dt%20option%20with%20the%20install%20command%20when%20you%20install%20a%20test%20APK.%20For%20more%20information%2C%20see%20%2Dt." alt="link to official ADB doc">More information</a></li>
+      <li>You can also have port fowarding <code> adb forward &lt;source_port&gr; &lt;destination port&gt;</li>
+    </ul>
+  
+    <hr>
+    <h3>Stuff</h3>
+    <hr>
+    <ul>
+      <li>you can push and pull files using <br> 
+        <code> adb push &lt;local&gt;&lt;remote&gt;</code><br>
+        <code> adb push &lt;remote&gt;&lt;local&gt;</code><br>
+        <a href="https://developer.android.com/tools/adb#copyfiles" alt="offical adb doc - copy files">more info</a>
+      </li>
+      <li> <code>exit</code> or <code>Ctrl + D </code> to exit a adb shell session</li>
+      <li> <code>-s</code> is for a specific devices using its seriel number <br>
+        <code>-d</code> targets a single connected device using USB <br>
+        <code>-e</code> target an emulator running on your system<br>
+      </li>
+    </ul>
+    <p class="blog">
+    <br>Next we'll be looking at the <b>Real Deal</b>
+    </p>
+
+    <hr>
+    <h2>Activity Manager <em>am</em></h2>
+    <hr>
+    <p class="blog">
+
+    </p>
+
+    </body>
+  </html>
+	
+	
