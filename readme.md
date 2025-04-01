@@ -67,6 +67,7 @@ Contains Frequent updates
 
 - [ ] `blog` or `study` material on `htop` and `ps aux`.
 - [ ] check the `til` from `home` page.
+- [ ] add dates in every blogs
 - [ ] check what is `change socials in tue-july` in future diary
 
 ## Bug                              [merge v0.1.0]
