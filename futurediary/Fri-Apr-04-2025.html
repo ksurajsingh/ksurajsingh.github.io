@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>💣</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div id="heading">
+    <h1>Fork bombed myself💣</h1>
+    <sub id="blog-category"> </sub>
+  </div>
+  <hr>
+  <hr>
+  <p id="blog">
+
+    hey guys n grils , how is it going . Today I was just not feeling upto it <br>
+    BTW just like last time we have a chinese speggati with lasanga going on for this semester's projects with a minor
+    one to top it <br>
+    Showing clear intents of 2FA by enemy of our mortality<br>
+    <b>P.S:</b> Coming to the main point since I wasn't feeling upto it I fork bombed myself today <br>
+    Lemme explain : <br>
+    <img src="futurediarymedia/cat-linux.gif">
+    <br>
+
+    A fork bomb is one of the many child tricks [ script kiddies ] thing that people could fall for [ skill issue ].
+    <br>
+    It acutally is a very good command / function / routine that makes your computer eat resources for an invisible
+    parasite <br><br>
+    So what actually happens is not just an infinite loop but an infinite function innovation call <br>
+  </p>
+  <img src="futurediarymedia/cutereplica.webp"><br><br>
+  <br>
+  <h1>Pros</h1>
+  <ul>
+    <li>
+      Since it is a fork process the tree grows exponentially and hence it eats the resources at an exponential rate
+    </li>
+    <li>The <code>ctrl + c</code> or <em>Sigint</em> formally [ signal interrupt ] won't work since it only applies to
+      the parent process and the child <b>Could be run in instances that are different than the parent's shell / out of
+        the parent's shell </b> esentially turning into an <u> orphan </u> . This would render <em>Sigint</em> as null [
+      but does quit the parent process ]</li>
+  </ul>
+
+
+  <img src="futurediarymedia/fb-meme.webp"><br><br>
+  <h1>Explaination</h1>
+
+  <p class="blog">
+    The fork bomb is just a <em>function defination + invocation </em> infinitely <br>
+  <ol>
+    <li>the <code>:</code> is the name of the function</li>
+    <li>the <code>()</code> thingy is to hold the parameters / call it as function declaration </li>
+    <li>in the function <code>{</code> we have : <br>
+      <ol>
+        <li>the main defination <code>:|:</code> that calls the function with name <code> : </code> and pipes the output
+          <code> | </code> to the same function <code> : </code> <br>
+          This forms <code> :|: </code>
+        </li>
+        <li> Now is a key component of the function <code> &amp; </code> is the one which send / pushes the command that
+          was specified before it to the background and continues with the processes further </li>
+        <li> further we have <code> } </code> function close </li>
+        <li>and the end of the line symbol <code>;</code></li>
+        Till here is what is actually sufficient to run the fork bomb for modern shells [ ran in my zsh ] and if formal
+        procedures and to ensure completeness : <br>
+        <li> we have the initialiation of the bomb detonation <code> : </code> which is the function call which actually
+          runs the function here . If in case the bomb doesn't start / run , you might be missing this call </li>
+      </ol>
+    </li>
+    <li> This makes the <code> :(){:|:};: </code> </li>
+  </ol>
+  <img src="futurediarymedia/bash-fork-bomb.png">
+  <p class="blog">
+
+    Now let's see how to stop this ?
+  </p>
+  <h1> How to Stop this? </h1>
+  <p class="blog">
+    we can use <code>SIGTERM</code> functions like :<br>
+  </p>
+  <li>pkill</li>
+  or<br>
+  <li>killall</li>
+  <p class="blog">
+    with the pid or name of the process in respective commands <br>
+    The SIGTERM acutall terminates the whole process <em>including<b> Backgruond</b></em> processes <br>
+
+    <br>
+    The above are ways to handle if medium emergency levels to exercise some amount of restriction <br><br>
+    As sometimes it might even stop / not work <br>
+    If you want surity [ what ever the spelling of sureity is ] then do a <code>SIGKILL</code> using <br>
+    <em><code>kill -9 </code> </em> to ensure its complete termination
+    BTW: <code> kil -2 </code> : SIGINT <br>
+    <code> kill -15 </code> : SIGTERM <br>
+    <code> kill -9 </code> : I am not writting everything again just use eyes . <br>
+    <br><br><br>
+    Another way if you have the system in hand prior to exection would be :
+    <br><br>
+  </p>
+  <li> To limit the particular user to execute only a certain amount of processes at a particular time by <code> &lt;
+      username &gt; hard nproc &lt;limitOf-numberOfProcesses&gt;</code></li>
+  or <br><br>
+  <li>Limit the amount of processes of the current shell using <code> ulimit -u &lt;limit&gt;</code>
+    <br>
+    <p class="blog">
+      <br>
+      That's it for today guys , DYE 👋 !<br><br>
+
+      <br><br><br>The following are a few SS from my experience <br>
+      <img src="futurediarymedia/IMG_20250404_180339.jpg"><br>
+      <img src="futurediarymedia/IMG_20250404_180701.jpg"><br>
+      <img src="futurediarymedia/IMG_20250404_181814.jpg"><br>
+
+    </p>
+</body>
+
+</html>
