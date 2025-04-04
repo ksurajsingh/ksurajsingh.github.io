@@ -44,6 +44,17 @@
       the parent process and the child <b>Could be run in instances that are different than the parent's shell / out of
         the parent's shell </b> esentially turning into an <u> orphan </u> . This would render <em>Sigint</em> as null [
       but does quit the parent process ]</li>
+    <li>Not only the <code>CPU</code> nor the <code>RAM</code> is eaten but processes like these <em>forks</em>eat up
+      both CPU and RAM
+      <ul>
+        <li>up to my understanding : </li>
+        <li>It eats up CPU as it keeps on calling many functions so there are the process that run to assign those
+          functions memroy in stack and in the virtal address like GOT [ global offset table ] and PLT [ procedural
+          linkage tables ] </li>
+        <li> It eats up the RAM as it keeps storing the processes in the stack , there for the stack keeps expanding at
+          an <u><b>EXPONENTIAL</b></u> rate </li>
+      </ul>
+    </li>
   </ul>
 
 
