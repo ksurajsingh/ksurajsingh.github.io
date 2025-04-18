@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+	<html>
+	  <head>
+
+	    <title>DAMN!</title>
+    	<link rel="stylesheet" href="style.css"> 
+
+	  </head>
+	  <body>
+
+    	<div id="heading">
+      	<h1>How Random is your Random?</h1>
+    	  <sub id="blog-category">[ normal CS Math ]</sub> 
+    	</div>
+  	  <hr><hr>
+      <p id="blog">
+      ohayo minna ! <br>
+      so I was using the random function from python , and thought even C could do this and was coding random functions in C. <br>
+      Realised C doesn't have built-ins like <code>random.choice</code> or <code>random.randint</code> etc. <br> <br>
+
+      Anyways at the low lever its all about randomness, which can be produced just by a random event [ we can just take that event to be numbers ]. <br>
+      The <code>rand()</code> in c provides a <em>pseudo-random</em> <b>number</b> everytime it is run . <br>
+      so you can essentially mod that randomness to some length and make that <em>random <sup>th</sup> </em> number as the index of an array that has . . <br><br>
+      <ol>
+        <li>Images</li>
+        <li>Strigns</li>
+        <li>characters</li>
+        <li>binaries</li>
+      </ol>
+      <br>
+      And there you have it - you achieved the same pseudo <em>Funcationality</em> <br>
+      <br>
+      Cool ? But I was just looking at why we need to seed a random generator at the start of each <code>c</code> program . like <br>
+      <pre>
+      <code>
+      #include<time.h>
+      srand(time(NULL))
+      </code>
+      </pre>
+      <br>
+      Now read carefully
+      This is done so that it doesn't follow  a random <em><b><u><code>SEQUENCE</code></u></b></em>
+      <br><br>Yeah no - totally not understanding , GPT knew the exact values as well so see the output . . . <br><br>
+      <h2>WITHOUT SEEDING</h2>
+      <img src="futurediarymedia/without_seeding_code.png" alt="code for without seeding"><br>
+      <h4>Without mod</h4> 
+      <img src="futurediarymedia/without_seeding_output_without-mod.png" alt="output without seeding without mod"><br>
+      <h4>With mod</h4>
+      <img src="futurediarymedia/without_seeding_output_with-mod.png" alt="output without seeding with mod"><br>
+      <br><br>
+      <h2>WITH SEEDING</h2>
+      <img src="futurediarymedia/with_seeding_code.png" alt="code for with seeding"><br>
+      <h4>Without mod</h4> 
+      <img src="futurediarymedia/with_seeding_output_without-mod.png" alt="output with seeding without mod"><br>
+      <h4>With mod</h4>
+      <img src="futurediarymedia/with_seeding_output_with-mod.png" alt="output with seeding with mod"><br>
+ 
+
+
+      </p>
+    </body>
+  </html>
+	
+	
