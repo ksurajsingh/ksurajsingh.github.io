@@ -71,8 +71,34 @@
 
 
   <p id="blog">
-    pipes are similar to sockets which form a way for process to communicate with each other , without using network
+  <dl>
+    <dt><b>sockets</b></dt>
+    <dd>are used for inter-process communication [IPCs] typically over network typically over network. Can communicate locally (unix domain) or over TCP/IP <br>
+  <em>example</em> <pre><code> 
+srwxr-xr-x 1 root root 0 Apr 20 10:00 /run/systemd/journal/socket
+  </code></pre>
+</dd>
+<dt><b>Pipes</b></dt>
+<dd>are similar to sockets which form a way for process to communicate with each other , without using network and only a file <br> 
+    To create one <pre>
+    <code>
+mkfifo mypipe
+    </code>
+    </pre>
     socket semantics <br>
+    <img src="futurediarymedia/pipes-vs-sockets.png" alt="info on pipes">
+    <br>
+    <img src="futurediarymedia/sockets-vs-pipes.png" alt="info on sockets">
+    <br>
+    <img src="futurediarymedia/pipes-v-socket-tldr.png" alt="tldr on pipes v sockets">
+</dd>
+<dt><b>Block devices</b> </dt>
+<dd>
+           represent devices that transfer data in blocks
+</dd>
+<dt><b>Character devices</b></dt>
+<dd>Transfer data character-by-character.</dd>
+  </dl>
     <br>
     <b>Partitions</b><br>
     Are very important part of the linux fs since it uses more than one partition from a single disk simulataneously.
