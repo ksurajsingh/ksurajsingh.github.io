@@ -311,8 +311,9 @@ nav {
   font-weight: 400;
 }
 
-.reason-txt img {
-  margin-top: 50px;
+.reason-txt svg {
+  width:50px;
+  margin-top: 40px;
   margin-left: 300px;
   /* border:5px solid rgba(55,55,55,0.8); */
 }
