@@ -11,3 +11,12 @@ body{
 #kakhel{
   margin-top: 100px;
 }
+
+.socials{
+  display: flex;
+  gap: 20px;
+}
+
+.socials img{
+  width: 32px;
+}
