@@ -7,7 +7,14 @@ Contains timely updates
 ---
 
 
-Features 
+# Features 
+ 1. Blogs [ can sort ]
+ 2. Resume 
+ 3. Number of visits
+
+
+
+# TODO [ Deliverables ]
 
 ## Bugs                                      [ v0.1.1 ]
 - [ ] fix commit : a55648ae825d18fd116ab1c05ffa1579bc5b17de
