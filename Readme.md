@@ -29,8 +29,15 @@ Contains timely updates
 - [ ] add tags to website blogs
 - [ ] sat-feb-01-2025 - add your todown file to this - I mean just link it
 - [ ] add images to blogs
+- [ ] invalidate stresstest
+- [ ] 23-jun-screenshot-blog
 - [ ] manga DB blog + EL presentation blog
 - [ ] transport all sauce from bottom to top
+- [ ] unnamed scopes exits in c 
+in js you need single quotes for variables prototyping [ palceholder ] | in bash double quotes - doing other vice will ignore the placeholder and just read it as a string in both languages 
+you cannot have a same name for a function and a variable in common languages.
+- [ ] add image in the cards 
+- [ ] when you have a backend - add upvotes / votes [ think about it ]
 
 ## Socials                         [merge v0.1.3]
 - [ ] social media pfp design + hover effect
