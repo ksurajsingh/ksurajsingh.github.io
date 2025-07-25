@@ -12,11 +12,11 @@ body{
   margin-top: 100px;
 }
 
-.socials{
+.socials, .socials-pfp{
   display: flex;
   gap: 20px;
 }
 
-.socials img{
+.socials img , .socials-pfp img{
   width: 32px;
 }

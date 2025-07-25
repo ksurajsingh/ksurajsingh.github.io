@@ -7,7 +7,12 @@ Contains timely updates
 
 # TODO [ Support Features ]
 
+- [ ] `blog` or `study` material on `htop` and `ps aux`.
+- [ ] check the `til` from `home` page.
+- [ ] check what is `change socials in tue-july` in future diary
+
 ## Bug                              [merge v0.1.0]
+- [ ] Directory organisation [ especially media ]
 - [ ] check the history before a55648ae825d [ record functionality ]
 - [ ] find the buggy thing
 - [ ] predict what could be possible expectations 
@@ -31,6 +36,7 @@ Contains timely updates
 - [ ] add images to blogs
 - [ ] invalidate stresstest
 - [ ] 23-jun-screenshot-blog
+- [ ] blog on upscyal on how good it is and how it used 100% of my gpu [ upscalying my github pfp - save..png from backups ] refer screenshot from 24th july 2025.
 - [ ] manga DB blog + EL presentation blog
 - [ ] transport all sauce from bottom to top
 - [ ] unnamed scopes exits in c 
@@ -40,12 +46,16 @@ you cannot have a same name for a function and a variable in common languages.
 - [ ] when you have a backend - add upvotes / votes [ think about it ]
 
 ## Socials                         [merge v0.1.3]
+- [ ] add telegram and whatsapp
+- [ ] organise it properly [ I was thinking of using a arrow button which when clicked could pull down a drawer from the og icons and that drawer would contain my profile pics]
 - [ ] social media pfp design + hover effect
 - [ ] socials - wasap, telegram , instagram , x, github, linkedin , webstie
 - [ ] social media logos on my logo -- as my profile
+- [ ] style those icons
 - [ ] also add the same thing somewhere else in the page
 - [ ] most elegant linktree
 - [ ] add hover features like sounds on these socials
+- [ ] attribute the icon authors
 
 
 
