@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>The Linux FS</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <div id="heading">
+    <h1>The Linux FileSystem</h1>
+    <sub id="blog-category">[ CS Linux ]</sub>
+  </div>
+  <hr>
+  <hr>
+  <p id="blog">
+
+  <blockquote>On UNIX filesystem , everything is a file; <br>
+    If something is not a file, it is a process </blockquote>
+
+  <ul>
+    <li>This is no difference between file and directory, A directory is just a file containing the names of other
+      files. </li>
+    <li>Generally all devices are considered to be files, according to the system </li>
+  </ul>
+
+  </p>
+
+  <b>Table 3-1. File types in a long list</b>
+  <table border="1" class="CALSTABLE">
+    <thead>
+      <tr>
+        <th align="LEFT" valign="MIDDLE">Symbol</th>
+        <th align="LEFT" valign="MIDDLE">Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="LEFT" valign="MIDDLE">-</td>
+        <td align="LEFT" valign="MIDDLE">Regular file</td>
+      </tr>
+      <tr>
+        <td align="LEFT" valign="MIDDLE">d</td>
+        <td align="LEFT" valign="MIDDLE">Directory</td>
+      </tr>
+      <tr>
+        <td align="LEFT" valign="MIDDLE">l</td>
+        <td align="LEFT" valign="MIDDLE">Link</td>
+      </tr>
+      <tr>
+        <td align="LEFT" valign="MIDDLE">c</td>
+        <td align="LEFT" valign="MIDDLE">Special file</td>
+      </tr>
+      <tr>
+        <td align="LEFT" valign="MIDDLE">s</td>
+        <td align="LEFT" valign="MIDDLE">Socket</td>
+      </tr>
+      <tr>
+        <td align="LEFT" valign="MIDDLE">p</td>
+        <td align="LEFT" valign="MIDDLE">Named pipe</td>
+      </tr>
+      <tr>
+        <td align="LEFT" valign="MIDDLE">b</td>
+        <td align="LEFT" valign="MIDDLE">Block device</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <p id="blog">
+  <dl>
+    <dt><b>sockets</b></dt>
+    <dd>are used for inter-process communication [IPCs] typically over network typically over network. Can communicate locally (unix domain) or over TCP/IP <br>
+  <em>example</em> <pre><code> 
+srwxr-xr-x 1 root root 0 Apr 20 10:00 /run/systemd/journal/socket
+  </code></pre>
+</dd>
+<dt><b>Pipes</b></dt>
+<dd>are similar to sockets which form a way for process to communicate with each other , without using network and only a file <br> 
+    To create one <pre>
+    <code>
+mkfifo mypipe
+    </code>
+    </pre>
+    socket semantics <br>
+    <img src="futurediarymedia/pipes-vs-sockets.png" alt="info on pipes">
+    <br>
+    <img src="futurediarymedia/sockets-vs-pipes.png" alt="info on sockets">
+    <br>
+    <img src="futurediarymedia/pipes-v-socket-tldr.png" alt="tldr on pipes v sockets">
+</dd>
+<dt><b>Block devices</b> </dt>
+<dd>
+           represent devices that transfer data in blocks
+</dd>
+<dt><b>Character devices</b></dt>
+<dd>Transfer data character-by-character.</dd>
+  </dl>
+    <br>
+    <b>Partitions</b><br>
+    Are very important part of the linux fs since it uses more than one partition from a single disk simulataneously.
+    <br><br>
+    This helps prevent memory breach , example: if a user writes a script to eat memory - it will only do so for the
+    paritition it runs on. <br> <br>
+    System resources could be considered safe <br><br>
+    Remember: paritions only provides formal protection against power failure and sudden disconnection of storage
+    devices. <br> <br>
+    <br>
+    for the logical errors and bad blocks - use RAID [ Redundant Array of Inexpensive Disk ] as an recovery method. <br>
+
+    <br><br>
+    Linux mainly uses 2 type of paritions - <br>
+  <ul>
+    <li><code>Data</code> - the system data, along with the root parition </li>
+    <ul>
+      <li><code>/boot</code> - the image of the kernel <em>vmlinuz / bzimage , Initramfs , Bootloader , EFI files </em>
+      </li>
+    </ul>
+    <li><code>Swap</code> - expansion of computer's physical memory, in order to swap pages with the cache - typically
+      slowed than RAM </li>
+    </p>
+    <br><br>
+    Non system critical data is stored in a set pattern : <br><br>
+    <code>/usr</code>: a directory for user's programs <br>
+    <code>/home</code>:a directory for user's personal data<br>
+    <code>/var</code>:a directory for temporary data <br>
+    <code>/opt</code>:a directory for third party - extra software<br>
+    <br>This is a Redhat fs tree visual representation </br>
+    <img src="futurediarymedia/linuxfs.png" alt="redhat fs tree">
+
+    <div class="rootFs">
+      <p><b>Table 3-2. Subdirectories of the root directory</b></p>
+      <table border="1" class="CALSTABLE">
+        <thead>
+          <tr>
+            <th align="LEFT" valign="MIDDLE">Directory</th>
+            <th align="LEFT" valign="MIDDLE">Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/bin</td>
+            <td align="LEFT" valign="MIDDLE">Common programs, shared by the system, the system administrator and the
+              users.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/boot</td>
+            <td align="LEFT" valign="MIDDLE">The startup files and the kernel, <tt class="filename">vmlinuz</tt>. In
+              some recent distributions also <tt class="filename">grub</tt> data. Grub is the <span
+                class="application"><b>GRand Unified Boot</b></span> loader and is an attempt to get rid of the many
+              different boot-loaders we know today.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/dev</td>
+            <td align="LEFT" valign="MIDDLE">Contains references to all the CPU peripheral hardware, which are
+              represented as files with special properties.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/etc</td>
+            <td align="LEFT" valign="MIDDLE">Most important system configuration files are in <tt
+                class="filename">/etc</tt>, this directory contains data similar to those in the Control Panel in
+              Windows: <code> locale.gen, hostnames, fstab, cron config, defaults, powersystem, firewall, profiles,
+                bluetooth protocols configm Display compositor session management config </code> </td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/home</td>
+            <td align="LEFT" valign="MIDDLE">Home directories of the common users.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/initrd</td>
+            <td align="LEFT" valign="MIDDLE">(on some distributions) Information for booting. Do not remove!</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/lib</td>
+            <td align="LEFT" valign="MIDDLE">Library files, includes files for all kinds of programs needed by the
+              system and the users.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/lost+found</td>
+            <td align="LEFT" valign="MIDDLE">Every partition has a <tt class="filename">lost+found</tt> in its upper
+              directory. Files that were saved during failures are here.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/misc</td>
+            <td align="LEFT" valign="MIDDLE">For miscellaneous purposes.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/mnt</td>
+            <td align="LEFT" valign="MIDDLE">Standard mount point for external file systems, e.g. a CD-ROM or a
+              digital camera.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/net</td>
+            <td align="LEFT" valign="MIDDLE">Standard mount point for entire remote file systems</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/opt</td>
+            <td align="LEFT" valign="MIDDLE">Typically contains extra and third party software.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/proc</td>
+            <td align="LEFT" valign="MIDDLE">A virtual file system containing information about system resources. More
+              information about the meaning of the files in <tt class="filename">proc</tt> is obtained by entering the
+              command <b class="command">man <tt class="parameter"><i>proc</i></tt></b> in a terminal window. The file
+              <tt class="filename">proc.txt</tt> discusses the virtual file system in detail.<br>
+              <code>/proc/$pid/maps</code> format <br>
+              <img src="futurediarymedia/procVirtualMapping.png" alt="maps in the /proc directory"><br>
+              <b>Actual process in practise</b>
+              <img src="futurediarymedia/actualProcess.png" alt="maps in the /proc directory"><br>
+            </td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/root</td>
+            <td align="LEFT" valign="MIDDLE">The administrative user's home directory. Mind the difference between /,
+              the root directory and /root, the home directory of the <em>root</em> user.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/sbin</td>
+            <td align="LEFT" valign="MIDDLE">Programs for use by the system and the system administrator.</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/tmp</td>
+            <td align="LEFT" valign="MIDDLE">Temporary space for use by the system, cleaned upon reboot, so don't use
+              this for saving any work!</td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/usr</td>
+            <td align="LEFT" valign="MIDDLE">Programs, libraries, documentation etc. for all user-related programs.
+            </td>
+          </tr>
+          <tr>
+            <td align="LEFT" valign="MIDDLE">/var</td>
+            <td align="LEFT" valign="MIDDLE">Storage for all variable files and temporary files created by users, such
+              as log files, the mail queue, the print spooler area, space for temporary storage of files downloaded
+              from the Internet, or to keep an image of a CD before burning it.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Inodes | The filesystem in reality</h3>
+    <ol>
+      <li> A special data structure in the linux/harddisk to maintain the files. </li>
+      <li>A file is represented by its inode.</li>
+      <li>Contains seriel number about the actual data - to whom it belongs to , where it is located in the hard disk.
+      </li>
+      <li>System with multiple parition , files with same inodes can exists</li>
+      <li>When a disk is initialized to accept data stores, A fixed number of inodes per parition is created, including
+        all kinds of files that the system can contain at the same time in the parition </li>
+      <li>Typically 1 inode / 2-8 KB </li>
+      <li>A new file is allocated a free inode , which would contain the following information
+        <ol>
+          <li>Owner and group owner of the file</li>
+          <li>File Type <code> - / d / c / l / s / p / b </code></li>
+          <li>Permissions</li>
+          <li>Date and time of creation | last read , last change</li>
+          <li>Date and time <code>this</code> information has been edited in the inode entry </li>
+          <li>Number of links to this file</li>
+          <li>File size</li>
+          <li>An address defininig the actual address of the file</li>
+        </ol>
+      </li>
+      <li>Inodes have their own separate space on the disk</li>
+      <li>File names are stored in directory entries called as dirents, <code>filename</code> and <code>dirents</code>
+        are used to make up the tree-like structure that the user understands</li>
+    </ol>
+
+
+
+
+    <a href="https://linux.die.net/Intro-Linux/chap_03.html" alt="link to filesection in linux.die.net">sauce</a>
+</body>
+
+</html>

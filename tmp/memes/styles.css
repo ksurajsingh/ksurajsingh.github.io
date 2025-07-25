@@ -1,0 +1,40 @@
+img {
+  border-radius: 8px;
+  /* width: 35vw; */
+  /* height: 50vh; */
+}
+
+/**/
+/* a { */
+/*   color: red; */
+/*   text-decoration: none; */
+/*   font-weight: 500; */
+/*   transition: color 0.3s, border-bottom 0.3s; */
+/*   border-bottom: 2px solid transparent; */
+/* } */
+/**/
+/* a:hover { */
+/*   color: #0d6efd; */
+/*   border-bottom: 2px solid #0d6efd; */
+/* } */
+/**/
+
+/*catpucchin theme */
+
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #8aadf4;
+  /* Sapphire */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  color: #b7bdf8;
+  /* Lavender */
+  border-bottom: 2px solid #b7bdf8;
+}

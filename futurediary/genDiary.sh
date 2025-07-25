@@ -16,6 +16,7 @@ echo -e "<!DOCTYPE html>
 <img src="futurediarymedia/yukki.gif" alt="futureDiaryGIF" style=\"cursor: pointer\" onclick=\"playProfileAudio()\"></span>
 </div>
 I named this diary as <b>"Future Diary"</b> just in the hope that some day this will turn into an actual one, as happened in the anime <br>\n
+Click image to know more [for fun] <br>\n
 In this page/diary I will be adding my blogs that contain different categories like <br> \n 
 [ CS ] for computer science related stuff<br>
 [ Normal ] for daily life <br>
@@ -57,7 +58,8 @@ for file in $as; do
 done
 
 echo -e "
-<a href="trash/trash.html">trash</a>
+<a href="trash/trash.html"><h2>trash<h2> \n 
+<img src="futurediarymedia/sakura.jpeg"></a>
 \n\n<br>\n 
 <img id=\"loading-img\" src=\"futurediarymedia/death-note.gif\" alt=\"loading image\" style=\"display: none; width:100vw;height:100vh;position:fixed;  top:0vh;\"> \n\n 
 <script>\n 
@@ -92,6 +94,8 @@ function playProfileAudio(){
 }
 
 </script>
+<br><br>
+<hr>
 </body>
 </html>
 " >> futurediary.html

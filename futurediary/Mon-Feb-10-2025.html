@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cried</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-<div id="heading">
+
+<head>
+  <title>Cried</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="heading">
     <h1>Cried </h1>
     <sub id="blog-category">[ CS ]</sub>
-</div>
-        <hr><hr>
-<p id="blog">
-so my laptop had auto-cpufreq running , which I wasn't aware of and I was trying to change back the cpu governors and boost state - but it always reverted back .<br>
-After trying to debug for a long time , I figured to check the pacman logs and yay logs to remember what I downloaded regarding my cpu , cuz I got heating issues in my lappy. <br>
+  </div>
+  <hr>
+  <hr>
+  <p id="blog">
+    so my laptop had <code>auto-cpufreq</code> running , which I wasn't aware of and I was trying to change back the cpu
+    governors and boost state - but it always reverted back .<br>
+    After trying to debug for a long time , I figured to check the <code>pacman</code> logs and <code>yay</code> logs to
+    remember what I downloaded related to my cpu , cuz I got heating issues in my lappy. <br>
 
-<br><br><br>
-I just remembered about auto-cpufreq and it did the work just as the name suggested - as soon as I disabled it I was able to change the governors and boost state <br><br>
+    <br><br><br>
+    I just remembered about auto-cpufreq and it did the work just as the name suggested - as soon as I disabled it I was
+    able to change the governors and boost state <br><br>
+    <b>TL;DR: </b> When I change the cpu cycles to less than 2 Ghz . It implements it , but just for a fraction of
+    second and then reverts back to 4.3 Ghz . <br>
+    Due to which my lappy got heated and fan was always running . <br>
+    This revert was caused by <code>auto-cpufreq</code> which handles the cpu frequency <b>by default</b> <em>at all
+      times</em>. <br>
+    So me changing the cpu frequency was rendered <b>NULL</b> at that very instance.
+    <br><br>
+    fix: just disable <code>auto-cpufreq</code>
 
-      <img src="futurediarymedia/gori-sanCry.gif" alt="gori-sanCry.gif">
-      <br><br><br><br>
-Both my laptop and desktop only support full clock speed when the driver is the manufacturer of the cpu . <br>
-      At the same time that driver <b>does not</b> support other drivers such as "conservative" "ondemand" "shedutil" etc <br>
+    <img src="futurediarymedia/gori-sanCry.gif" alt="gori-sanCry.gif">
+    <br><br><br><br>
+    Both my laptop and desktop only support full clock speed when the driver is the manufacturer of the cpu . <br>
+    At the same time that driver <b>does not</b> support other drivers such as "conservative" "ondemand" "shedutil" etc
+    <br>
 
-        </p> 
-    </body>
+  </p>
+  <br><br>
+  <hr>
+</body>
+
 </html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+	<html>
+	  <head>
+
+      <title>glob | grep | bandwidth | subshell</title>
+    	<link rel="stylesheet" href="style.css"> 
+
+	  </head>
+	  <body>
+
+    	<div id="heading">
+      	<h1>Glob | grep | bandwidth | subshell</h1>
+    	  <sub id="blog-category">[ CS linux bash network ]</sub> 
+    	</div>
+  	  <hr><hr>
+    <p id="blog">
+      <h2>Failglob NullGlob</h2>
+      <table>
+        <th>Failglob</th>
+        <th>Nullglob</th>
+      <tr>
+        <td>Errors out if no match is found , <br> while finding a match [usually in grep]</td>
+        <td>Expands to nothing is no match is found</td> 
+      </tr>
+      <tr>
+        <td>Good for strict checks where missing files should be notices </td>
+        <td>Useful when missing files are expected</td>
+      </tr>
+      <tr>
+        <td>Stops the execution flow ,<br><b>Returns the control</b></td>
+        <td>Doesn't stop the execution</td>
+      </tr>
+      <tr>
+        <td><em>ex:</em> <code>echo *.txt</code> > Returns an error if no such file is found </td>
+        <td><em>ex:</em> <code>echo *.txt</code> > No error but <em> empty </em> output [ a line might be printed ]</td>
+      </tr>
+      </table>
+      <p class="blog">
+      To enable use <code> shopt -s {fail/null} glob</code> <br>
+      To disable use <code> shopt -u {fail/null} glob</code> <br> 
+    </p>
+    <br><br><h4> By default : </h4>
+    <table>
+      <th>zsh</th>
+      <th>bash</th>
+    <tr>
+        <td><code>nullblod</code>: on</td>
+        <td><code>nullblob</code>: disabled</td>
+    </tr>
+    <tr>
+        <td><code>failblob</code>: disabled</td>
+        <td><code>failblob</code>: disabled</td>
+    </tr>
+    </table>
+    <br>
+    <table>
+      <tr> <td> <code> shopt </code> stands for <b>shell options</b> </td> </tr>
+      <tr> <td> <code> setopt </code> is the alternate in <code> zsh </code> </td> </tr> 
+      <tr> <td> <code> -u </code> unset </td> </tr>
+      <tr> <td> <code> -s </code> set </td> </tr>
+      <tr> <td> <code> -p </code> print </td> </tr>
+    </table>
+    <br>
+    <br><br>
+    <hr>
+    <h2> Grep </h2> 
+    <hr>
+    <p class="blog">
+    The main cause of the failglob and nullglob errors for me was using <code> grep </code> <br>
+    grep actually has its own way of identifying the regex and wildcards like [ '*', '?', '[]' ] <br> 
+    <br>
+    I wanted to find the alias <code> gl='git pull'</code> so I used <code> grep -rnw ~/ -e "alias gl" --include=\*.{sh,zsh,zshrc,bashrc}</code><br>
+    If I would have used only <code> --include = *.{shzsh,zshrc,bashrc}</code> then I would have just got all output for each file as the shell first would expand the wildcard '*' so it would be like --include = text.sh , --include = pp.zshrc . <br> 
+    <br>
+    This is not an efficient way so <br>
+    we give it an escape sequence <code> \* </code>
+    <br><br>
+    <code> -r </code> is for recursive 
+    <code> -n </code> is to display the line number
+    <code> -w </code> is to check for the expression using regex rules the is specified by <code> -e </code> 
+    <br><br><br>
+    <hr>
+    </p>
+    <h2>ldd</h2>
+    <hr>
+    <p class="blog">
+    stands for <b><em>List Dynamic Dependencies</em></b> which gives us the Dependencies of a binary / executable <br>
+    </p>
+    <br><br><br>
+    <hr>
+    <h2>Inode</h2>
+    <hr>
+    <p class="blog">
+    This is how the files are stored in Linux fs , <br>
+    Inode is basically a data structure that stores <br>
+    </p>
+    <ol>
+      <li> file type </li>
+      <li> permission </li>
+      <li> timestamps </li>
+      <li> owner and group </li>
+      <li> file size </li> 
+      <li> number of lines </li>
+      <li><b> Pointer to data blocks </b></li>
+      </ol>
+    <p class="blog">
+    A fs has a Inode table , that is where it stores the inode entries of all files . <br>
+    The <code> name </code> of a file and the <code> inode number </code> is not stores in the inode table , it is stored directory entry: <code> dirents </code>, for directories to link to them 
+
+    <br><br>
+    you can use <code> ls -i </code> or <code> stat </code> commands to find the inode of a file <br>
+    <br> 
+    <b>P.S</b> if a file is deleted but is in use by any process , the inode will contain its information | until the file is in use . <br>
+    Hard links are the same as inode, <br>
+    Symbolic links <code> ln -s </code> have different inodes . <br> 
+    </p>
+    <br><br>
+    <hr> 
+    <h2> Subshell </h2> 
+    <hr>
+    <p class="blog">
+    Anything in a bashscript actually executes inside a subshell [ maybe even other language programs ]<br>
+    Try writing a bash for ls command it will list the output in the shell from where you executed it <br>
+    Now in the same script try writing a cd command , <br>
+    You will see no change in the execution - that is cuz you actually went in the directory specified but didn't stay there long, only till the scope of the program as the scope if the child that the main shell uses to extend itself to the features of the script . <br> 
+    try <code> cd <some directory> </code> <code> and mkdir <some directory> </code> <br>
+    it will be created in there but you will still be in your directory <br> 
+    Since the script <b>[ONLY]</b> was the one which travelled throught the course of the commands given to it <br> 
+    </p>
+
+    <br><br>
+    <hr>
+    <h2> Transmission Bandwidth </h2>
+    <hr>
+
+    <p class="blog">
+    If you have <code> Basic math </code> understanding , following is a self explainatory code : 
+    </p>
+
+      <button onclick="copytext()">copy code</button>
+<pre id="text-to-copy" style="background-color: lightgray; border-radius: 10px; padding:20px; ">
+#!/bin/sh 
+
+netif=$(ip route show default | cut -d" " -f5) # your current network interface
+echo -e "on network interface: $netif"
+
+rec_init=$(cat /sys/class/net/$netif/statistics/rx_bytes );
+trans_init=$(cat /sys/class/net/$netif/statistics/tx_bytes );
+
+echo -e "Total bytes receieved via $netif since boot: $(echo "scale=2; $rec_init /1024/1024" | bc )   MBs \n"
+echo -e "Total bytes transmitted via $netif since boot: $(echo "scale=2; $trans_init / 1024 / 1024" | bc) MBs\n"
+
+echo -e "Monitoring now\nPress any key to stop . . . "
+read -n 1
+
+rec_fin=$(cat /sys/class/net/$netif/statistics/rx_bytes );
+trans_fin=$(cat /sys/class/net/$netif/statistics/tx_bytes );
+
+
+rec_total=$( echo "scale=2; $((rec_fin-rec_init)) / 1024 / 1024" | bc ) 
+trans_total=$( echo "scale=2; $((trans_fin-trans_init)) / 1024 / 1024" | bc ) 
+
+
+echo " Received data: $rec_total MegaBytes"
+echo " Transmitted data: $trans_total MegaBytes"
+    </pre>
+
+    <br><br><hr>
+    call 1930 for National Cyber helpline in India 
+    <br><br><hr>
+    </p>
+<script>
+  function copytext(){
+    const text=document.getElementById("text-to-copy").innerText;
+
+    navigator.clipboard.writeText(text).then(()=>{
+      alert('Text copied to clipboard');
+    }).catch(err=>{
+      alert("unable to copy text, ",err);
+    }); 
+}
+    </script>
+    </body>
+  </html>
+	
+	
