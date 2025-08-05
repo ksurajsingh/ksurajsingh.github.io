@@ -1,0 +1,2 @@
+echo $a # since the variable has no value it doesn't print anything
+# use the 'unset' command to unset a varible in bash - equivalent of null
