@@ -1,0 +1,23 @@
+.dis-f{
+ display: flex;
+}
+
+.bg-b{
+  background-color: black;
+}
+
+.bg-gy{
+  background-color: #121212;
+}
+
+.bg-gyl{
+  background-color: #1f1f1f ;
+}
+
+.border{
+  border: 1px solid gold;
+}
+
+ul{
+  list-style: none;
+}

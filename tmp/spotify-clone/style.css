@@ -1,0 +1,115 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+header{
+  margin: 14px 20px;
+  box-sizing: border-box;
+}
+
+.logo{
+  margin-right: 32vw;
+}
+
+.home-btn{
+  height: 44px;
+  width: 44px;
+  border: 0.1px solid black;
+  border-radius: 24px;
+  margin-right: 20px;
+}
+
+.search{
+  width: 22vw;
+  background-color: grey;
+  margin-right: 8vw ;
+}
+
+.nav-content{
+  margin: 10px 0px;
+  gap: 2vw;
+}
+
+.nav-left .dis-f{
+  gap: 1vw;
+  font-weight: bolder;
+}
+
+.pipe{
+  height: 28px;
+  width:1px;
+  margin: -4px 0px 0px 0px;
+  background-color: white;
+}
+
+.nav-right .dis-f{
+  gap: 1vw;
+}
+
+.nav-right .dis-f button{
+ position: absolute;
+ width: 6vw;
+ height: 3vw;
+ color: black; 
+ padding: 12px;
+ top:4px;
+ right: 12px;
+ font-weight: bolder;
+ border-radius: 80px;
+}
+
+main{
+  gap: 8px;
+  height: calc(100%-70px);
+}
+
+.left{
+ background-color: grey;
+ box-sizing: border-box;
+ padding: 25px 20px;
+ width: 20vw;
+ border-radius: 4px;
+ margin-left: 8px;
+}
+
+.left-title{
+  margin-bottom: 60px;
+}
+
+.create-playlist ,.podcast{
+  margin: 20px 10px ;
+  padding:15px;
+  background-color: #aaaaaa;
+}
+
+.left-bottom{
+  margin-top:400px
+}
+
+.extra-pages ul{
+  list-style: none;
+  gap:10px;
+  flex-wrap: wrap;
+}
+
+.extra-pages ul li{
+  font-size: 12px;
+  margin: 10px;
+}
+
+.select-language{
+  margin-top: 80px;
+}
+
+.right{
+  box-sizing: border-box;
+  padding: 25px 40px;
+  width: 80vw;
+  border-radius: 4px;
+}
+
+.Trending, .Popular-artists, .Popular-albums{
+  margin: 100px 20px 20px;
+}
