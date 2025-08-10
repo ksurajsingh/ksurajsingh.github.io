@@ -101,7 +101,8 @@ Modify the following to the dev phases / stages
 ## Blogs                                     [ v0.1.2 ]
 - [ ] when coming back from blog to index page- remove load both in diary and trash
 - [ ] reduce load speed of blog in trash
-- [ ] add sakura voice in skaura.jpeg [trash]
+- [ ] add sakura voice in skaura.jpeg [trash] 
+- [ ] stylise trash button
 - [ ] add proper spacing for blogs when filtered [futurediaryBLogs]
 - [ ] set the diary image properly in index
 - [ ] diclaimer in sites and blogs [ check where else could this be added]
