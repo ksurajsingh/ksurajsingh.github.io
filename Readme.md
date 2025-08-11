@@ -11,7 +11,11 @@ Contains Frequent updates
 
 ## Bug 
 - [ ] Find reason for Duplicate Ninja harroti blog
+- [ ] fix bomb blog
 - [ ] Fix  a55648ae825d18fd116ab1c05ffa1579bc5b17de
+  -[ ] filter function 
+  -[ ] fix - *format breaks after filtering*
+  -[ ] check presence of all categories
 
 ## code style [merge v0.1.1]
 - [ ] style code 
@@ -42,6 +46,7 @@ Contains Frequent updates
 - [ ] when coming back from blog to index page- remove load both in diary and trash 
 - [ ] reduce load speed of blog in trash
 - [ ] check TODOs from blogs
+- [ ] manually verify tags of all blogs 
 
 - [ ] add blog from attendance group in whatsapp   
 - [ ] blog-- make the heading look title the date in subscript [ verify this ]
