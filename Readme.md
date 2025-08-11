@@ -1,15 +1,16 @@
-# Prod 
+# Dev 
 
 --- subject to change  
-This is the Production branch <br> 
-No changes here only merge <br>
-Contains timely updates  
+This is the Development branch <br> 
+All changes and support features are commited here<br>
+Contains Frequent updates  
 ---
 
 # TODO [ Core Features ]
 
 
 ## Bug 
+- [ ] Find reason for Duplicate Ninja harroti blog
 - [ ] Fix  a55648ae825d18fd116ab1c05ffa1579bc5b17de
 
 ## code style [merge v0.1.1]
