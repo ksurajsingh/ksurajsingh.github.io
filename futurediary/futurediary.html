@@ -111,21 +111,6 @@ Have a good time ;) <br>
       </a>
       
 <br>
-      <a href="#" onclick="loadImgAndRedirect('Tue-Apr-08-2025.sync-conflict-20250520-191906-M3EBF46.html');return false;">
-      <div class="blog-card"><hr>
-      <div class="blog-title">
-      <b>Ninja Hattori</b>
-      <span class="date">Tue-Apr-08-2025</span>
-      </div>
-<span class="tag  Normal "> Normal </span>
-      <span class="time">less than 1 min</span>
-      <br>
-      <span class="blog-preview"><br></span>
-      <hr>
-      </div>
-      </a>
-      
-<br>
       <a href="#" onclick="loadImgAndRedirect('Tue-Apr-08-2025.html');return false;">
       <div class="blog-card"><hr>
       <div class="blog-title">
@@ -452,11 +437,14 @@ function loadImgAndRedirect(uri){
 
 function filterblogs(){
   const category=document.getElementById("category-select").value; 
+  console.log(category);
   const blogcard=document.querySelectorAll(".blog-card");
+  console.log(done);
+  console.log(blogcard);
 
   blogcard.forEach((blog)=>{
   const tag=blog.querySelectorAll(".tag");
-  if(category==="all" || tag[0].classList.contains(category)){
+  if(category==="all" || tag.classList.contains(category)){
     blog.style.display="block";
   } else {
     blog.style.display="none";
