@@ -13,7 +13,7 @@ Contains Frequent updates
 - [ ] Find reason for Duplicate Ninja harroti blog
 - [ ] fix bomb blog
 - [ ] Fix  a55648ae825d18fd116ab1c05ffa1579bc5b17de
-  -[ ] filter function 
+  -[x] filter function 
   -[ ] fix - *format breaks after filtering*
   -[ ] check presence of all categories
 
