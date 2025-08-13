@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+	<html>
+	  <head>
+
+	    <title>The monty Hall Problem</title>
+    	<link rel="stylesheet" href="style.css"> 
+
+      <style>
+        .win{
+          color: green;
+        }
+        .lose{
+          color: red;
+        }
+        .change{
+          background-color: grey;
+        }
+      </style>
+	  </head>
+	  <body>
+
+    	<div id="heading">
+      	<h1>The Monty Hall Problem</h1>
+    	  <sub id="blog-category">[ Math Probability ]</sub> 
+    	</div>
+  	  <hr><hr>
+
+      first look at this : <br>
+      <pre>
+      You are asked to pick -    [could pick goat[a] <em>or</em> goat[b] <em>or</em> car]
+          The host reveals *a goat* - [the goat[a or b] is kicked out of the equation now]
+               asked to change mind.    [could <code>change mind</code> <em>or</em> <code>not change mind</code>]
+
+      All possibilities : 
+      (You chose goat[a]🐐):
+            goat[b] is kicked
+            you(<span class="change">change</span> mind):
+                <span class="win">win</span> 
+            else:
+                <span class="lose">lose</span>
+      (you chose goat[b]🐐):
+            goat[a] is kicked
+            you(<span class="change">change</span> mind):
+                <span class="win">win</span> 
+            else:
+                <span class="lose">lose</span>:
+      (you chose car 🚗):
+            goat[a or b] is kicked 
+            you(<span class="change">change</span> mind):
+                <span class="lose">lose</span> 
+            else:
+                <span class="win">win</span>
+      This is only one iteration of the game.
+      But if you observe - There are 2 wins when you *changed* your mind. And this is regardless of any pick.
+      What does that say? 
+      when you picked a car.A goat is revealed.
+      switching loses - so you shouldn't switch.
+      But, 
+      If you'd pick a goat. *ANOTHER* goat is revealed.
+      switching wins, so you should switch.
+
+      Now, we have learnt that . . .
+      if picked car - don't switch 
+      if picked goat - do switch
+
+      But, how do you know if you had picked a goat or car - you can't. That is exactly why it doesn't have a 100% win probability. 
+      chances of you picking a car - 1/3 = 33%  [ should *NOT* switch ]
+      chacnes of you picking a goat - 2/3 = 66% [ should switch ]
+
+      And that is how 
+      You SHOULD switch - 66% of time 
+      you should NOT switch - 33% of time. 
+
+      Since we don't know what are those 33% of time are - we just go with the one that give more probability of winning.
+      And chose to SWITCH every single time.
+
+      [ BTW - if you'd know what are those 33% of times are - you'd
+      WIN 
+      EVERY 
+      SINGLE 
+      TIME 💀 .
+      which is undeterministic 🤥. ]
+
+
+      Explaination for geeks who say: well , you are not thinking from the POV of the other door after the revealation. 
+      Your first pick got 33% car and so the other 2 doors got 66% - since there were 2 doors 
+      you had to divide the probability for each door i.e 66% divided for 2 doors .
+      1/2 for door no.2 and 1/2 for door no.3 . 33% each.
+      Since door no.2 got revealed and it wasn't a car. Therefore the entire 66% is now divided by only one door. i.e door no.3 
+      and that is how door no.1 is 33% and no.3 is 66%. 
+
+
+      Explaination for nerds who say: What if we had chosen the door no.3 to begin with 
+      In that case door no.1 would now be @ 66% probability of having a car.
+      Yes, you choice does matter in the final reveal.
+      As it also does in the door that is picked by the host AFTER your pick.
+      </pre>
+
+      Credits: <br>
+      <a href="https://www.reddit.com/r/statistics/comments/xpqyon/why_i_dont_agree_with_the_monty_hall_problem_d/">Reddyt</a> <br>
+      <a href="https://youtu.be/4Lb-6rxZxx0?si=1HZHsRDmwgeLtEAR">YT</a> <br>
+      <a href="https://www.mathwarehouse.com/monty-hall-simulation-online/">whoever genius made this</a>
+
+    </body>
+  </html>
+	
+	

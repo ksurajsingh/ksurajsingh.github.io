@@ -47,6 +47,7 @@ Contains Frequent updates
 - [ ] reduce load speed of blog in trash
 - [ ] check TODOs from blogs
 - [ ] manually verify tags of all blogs 
+  - [ ] A lot of content could actually be transfered to Benkyo [studies]
 
 - [ ] add blog from attendance group in whatsapp   
 - [ ] blog-- make the heading look title the date in subscript [ verify this ]
