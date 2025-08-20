@@ -158,3 +158,14 @@ Modify the following to the dev phases / stages
 
 # Gamified Intro 
 - [ ] 3D model of myself with stats
+
+# Portfolio 
+- [ ] About   
+- [ ] Specialization  
+- [ ] contacts  
+- [ ] Mature / Stable projects  
+- [ ] Skills  
+- [ ] Blogs  
+- [ ] Achievements  
+- [ ] Resume  
+- [ ] Design 😎  
