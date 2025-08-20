@@ -1,10 +1,10 @@
 # Dev 
 
---- subject to change  
+--- This part   
 This is the Development branch <br> 
 All changes and support features are commited here<br>
 Contains Frequent updates  
----
+--- is subjected to change
 
 # TODO [ Core Features ]
 
