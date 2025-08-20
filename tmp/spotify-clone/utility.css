@@ -2,14 +2,17 @@
  display: flex;
 }
 
-.bg-b{
+/* black */
+.bg-b{ 
   background-color: black;
 }
 
+/* gray */
 .bg-gy{
   background-color: #121212;
 }
 
+/* gray-light */
 .bg-gyl{
   background-color: #1f1f1f ;
 }
@@ -20,4 +23,21 @@
 
 ul{
   list-style: none;
+}
+
+.centerme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-content: center;
+}
+
+/* grey svgs on black background */
+.svg-gy{
+  filter:invert(0.6);
+}
+
+/* white svgs on black background */
+.svg-white{
+  filter:invert(1);
 }
