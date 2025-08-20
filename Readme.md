@@ -8,6 +8,7 @@ Contains Frequent updates
 
 # TODO [ Core Features ]
 
+- [ ] add studies - Benkyo  
 
 ## Bug 
 - [ ] Find reason for Duplicate Ninja harroti blog
@@ -128,7 +129,8 @@ Modify the following to the dev phases / stages
 - [ ] make personal file private 
 - [ ] add docs from resume to blog 
 - [ ] [ using encryption ] for private files
-- [ ] Check if there is any kind of private media
+- [ ] Check if there is any kind of pirated media
+- [ ] check if there is any kind of copyrighted media
 - [ ] security [ passwords + encryptions ]
 
 ## Stylise 
