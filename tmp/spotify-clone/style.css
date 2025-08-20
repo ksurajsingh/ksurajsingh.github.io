@@ -22,9 +22,25 @@ header{
 }
 
 .search{
+  display: flex;
+  text-align: center;
   width: 22vw;
   background-color: grey;
   margin-right: 8vw ;
+  border-radius: 16px;
+}
+
+.search-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
 }
 
 .nav-content{
@@ -72,6 +88,12 @@ main{
  width: 20vw;
  border-radius: 4px;
  margin-left: 8px;
+}
+
+.left-header{
+  display: flex;
+  flex-direction: row;
+  gap: 220px;
 }
 
 .left-title{
