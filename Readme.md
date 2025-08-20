@@ -121,6 +121,8 @@ Modify the following to the dev phases / stages
 - [ ] few features to update the site where you could see my socials
 - [ ] Dark mode [ship this ASAP in study material section]
 - [ ] resume [ as page and functioning[dynamic] ]
+- [ ] bg - mrrobot.jpg 
+ - [ ] time to time  - there are on rules 
 
 ## Security                               [ v0.1.2-8 ] !IMPORTANT Rigorous Testing Requied
 - [ ] make personal file private 

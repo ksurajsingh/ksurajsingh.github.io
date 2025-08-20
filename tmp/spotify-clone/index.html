@@ -4,7 +4,7 @@
   <title>Clone-Spotify</title>
   <link rel=stylesheet href=style.css>
   <link rel=stylesheet href=utility.css>
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-b">
@@ -17,7 +17,7 @@
     </div>
 
     <button class="home-btn bg-gyl">
-      <img src="./media/svgs/home.svg" alt="home button" class="svg-white" width=26px; >
+      <img src="./media/svgs/home.svg" alt="home button" class="svg-white " width=26px; >
     </button>
 
     <nav class="dis-f">
@@ -28,16 +28,17 @@
         <img src="./media/svgs/search.svg" alt="search button" class="svg-gy"  width=20px;>
         </div>
 
-        <div class="search-text ">
-          Search bar with svg comes here  
-        </div>
+        <div class="search-text svg-gy">
+          What do you want to play?
+          </div>
 
       </div>
+ 
+      <!-- everything in this div is applied a filter of "invert(0.6)" -->
+      <div class="nav-content dis-f svg-gy centerme">
 
-      <div class="nav-content dis-f">
-
-       <div class="nav-left">
-         <ul class="dis-f">
+       <div class="nav-left ">
+         <ul class="dis-f ">
           <li>Premium</li>
           <li>Support</li>
           <li>Download</li>
@@ -48,15 +49,20 @@
         
        </div>
 
-       <div class="nav-right">
+       <div class="nav-right centerme">
          <ul class="dis-f">
-          <li class="centerme"><img src="./media/svgs/download.svg" alt="download symbol" class="svg-gy" width=16px>InstallApp</li>
+           <div class="two-btns centerme">
+          <li>
+            <img src="./media/svgs/download.svg" alt="download symbol" class="svg-gy " width=16px>
+            InstallApp
+          </li>
           <li>Sign up</li>
-          <li><button type="button">Log in</button></li>
+           </div>
          </ul>
        </div> 
 
       </div>
+           <button type="button" class="login-btn" >Log in</button>
 
     </nav>
 

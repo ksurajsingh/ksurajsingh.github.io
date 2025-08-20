@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   color: white;
-  /* font-family: "poppins", sans-serif; */
+  font-family: "poppins", sans-serif;
 }
 
 header{
-  margin: 14px 20px;
+  margin: 8px 20px;
   box-sizing: border-box;
 }
 
@@ -17,8 +17,8 @@ header{
 .home-btn{
   height: 44px;
   width: 44px;
-  border: 0.1px solid black;
-  border-radius: 24px;
+  border: 1.1px solid black;
+  border-radius: 28px;
   margin-right: 20px;
 }
 
@@ -27,8 +27,9 @@ header{
   text-align: center;
   width: 22vw;
   background-color: grey;
-  margin-right: 8vw ;
+  margin-right: 4vw ;
   border-radius: 16px;
+  font-size: 16px;
 }
 
 .search-text{
@@ -45,8 +46,8 @@ header{
 }
 
 .nav-content{
-  margin: 10px 0px;
-  gap: 2vw;
+  margin: 0px 0px;
+  gap: 1vw;
 }
 
 .nav-left .dis-f{
@@ -65,10 +66,8 @@ header{
   gap: 1vw;
 }
 
-.nav-right .dis-f button{
- position: absolute;
+.login-btn{
  width: 6vw;
- height: 3vw;
  color: black; 
  padding: 12px;
  top:4px;
@@ -77,8 +76,12 @@ header{
  border-radius: 80px;
 }
 
-.centerme img{
-  margin-right: 4px;
+.two-btns img{
+  margin: -2px 0px;
+}
+
+.two-btns li{
+  margin-right: 20px;
 }
 
 main{
@@ -102,13 +105,14 @@ main{
 }
 
 .left-title{
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .left-card{
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  font-size: 16px;
+  gap: 12px;
   border-radius: 20px;
 }
 
@@ -121,6 +125,7 @@ main{
   width: 140px;
   background-color: white;
   color: black;
+  font-weight: bold;
   border-radius: 8px;
 }
 
@@ -131,7 +136,7 @@ main{
 }
 
 .left-bottom{
-  margin-top:180px
+  margin-top:140px
 }
 
 .extra-pages ul{
