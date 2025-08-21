@@ -44,6 +44,20 @@ function selectSong(songsList){
 
 }
 
+
+// function to play the song
+function playSong(song){
+  const actualSong=`"http://localhost:8055/${song}"`
+  console.log(actualSong);
+  const curSong = new Audio(actualSong);
+  console.log(curSong);
+  setTimeout(()=>{
+    curSong.play();
+  },5000);
+
+}
+
+
 // initialise processes for the client
 async function init(){
 
@@ -60,7 +74,7 @@ async function init(){
   // test(songsList);
 
 
-  console.log(selectedSong);
+  playSong(selectedSong);
 
 }
 

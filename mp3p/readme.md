@@ -3,9 +3,10 @@
 - [ ] add data attribute to media [ if you know what it is that you are importing ] 
 
 - [ ] Play songs   
- - [ ] be able to parse songs  [ when songs are hosted ]
+    - [x] be able to parse songs  [ when songs are hosted ]
      - [ ] give option to pick port number [ on whic the songs are to be hosted ]
      - [ ] [fix] CORS become a articulation point [ maybe use hardlinks to the target location ( i.e songs_directory) to use the python script to host files ]
+     - [ ] be able to play song  [backend]
      - [ ] be able to play song  
      - [ ] add a current player  
      - [ ] one song at a time   
