@@ -1,0 +1,12 @@
+.cnt{
+  justify-content: center;
+  align-items: center;
+}
+
+.dis-f{
+  display: flex;
+}
+
+.fd-col{
+  flex-direction: column;
+}
