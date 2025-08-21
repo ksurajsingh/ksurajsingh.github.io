@@ -171,5 +171,6 @@ Modify the following to the dev phases / stages
 - [ ] Skills  
 - [ ] Blogs  
 - [ ] Achievements  
+ - [ ] My pics throughtout the ages
 - [ ] Resume  
 - [ ] Design 😎  
