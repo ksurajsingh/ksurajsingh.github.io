@@ -3,15 +3,18 @@
 - [ ] add data attribute to media [ if you know what it is that you are importing ] 
 
 - [ ] Play songs   
- - [ ] be able to parse songs   
- - [ ] be able to play song  
- - [ ] add a current player  
- - [ ] one song at a time   
- - [ ] make it play show in the footer    
- - [ ] change in icons   
- - [ ] play pause functionality    
- - [ ] seek functionality    
- - [ ] update song time   
+ - [ ] be able to parse songs  [ when songs are hosted ]
+     - [ ] give option to pick port number [ on whic the songs are to be hosted ]
+     - [ ] be able to play song  
+     - [ ] add a current player  
+     - [ ] one song at a time   
+     - [ ] make it play show in the footer    
+     - [ ] change in icons   
+     - [ ] play pause functionality    
+     - [ ] seek functionality    
+     - [ ] update song time   
+     - [ ] take input dir from user
+ - [ ] be able to parse songs   [ when songs are not hosted]
 
 - [ ] seek bar  
  - [ ] time spent playing   
