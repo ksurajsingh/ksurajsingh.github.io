@@ -9,6 +9,7 @@ Contains Frequent updates
 # TODO [ Core Features ]
 
 - [ ] add studies - Benkyo  
+- [ ] [EXPERIMENTAL] add a jp switch to switch to japanese any time someone wants - to add benkyo to learnings  
 
 ## Bug 
 - [ ] Find reason for Duplicate Ninja harroti blog

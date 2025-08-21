@@ -1,7 +1,7 @@
 ## TODO   
 
-- [ ] add data attribute to docs  
-- [ ] think of naming studies vs learnings  
+- [ ] add data attribute to media [ if you know what it is that you are importing ] 
+- [x] think of naming studies vs learnings  
 
 - [ ] Play songs   
  - [ ] one song at a time   
