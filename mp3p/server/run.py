@@ -15,7 +15,7 @@ def list_raw_songs():
     raw_song_list=os.listdir(".")
     song_list_arr=[s for s in raw_song_list if s.endswith("mp3")]
     return jsonify({
-        "song":song_list_arr,"message":"songs sent"
+        "songs":song_list_arr,"message":"songs sent"
         })
 
 
