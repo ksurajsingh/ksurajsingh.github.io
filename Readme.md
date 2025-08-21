@@ -8,6 +8,8 @@ Contains Frequent updates
 
 # TODO [ Core Features ]
 
+- [ ] [URGENT] remove the clones and other material that could be flagged for copyright infringement. [ clones + blog-home page gif's inhibited audio + the videos in few of my blogs ]. Mostly zip it. [ CHECK FOR MEMES AS WELL 😭 ]
+- [ ] Think what to do with the the copyrighted content that is been zipped. 
 - [ ] add studies - Benkyo  
 - [ ] [EXPERIMENTAL] add a jp switch to switch to japanese any time someone wants - to add benkyo to learnings  
 
