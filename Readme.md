@@ -8,12 +8,19 @@ Contains Frequent updates
 
 # TODO [ Core Features ]
 
+- [ ] [IMMEDIATE] a design idea for notes - black background with colorised font - a distinct color for heading , content, subtopics etc.
+  - [ ] add dsa
+   - [ ] responsive
+  - [ ] add fsd 
+   - [ ] responsive
+  - [ ] Try to add more images [ topics / subtopics , maybe examples as well [ for more detailing ]]
 - [ ] [URGENT] remove the clones and other material that could be flagged for copyright infringement. [ clones + blog-home page gif's inhibited audio + the videos in few of my blogs ]. Mostly zip it. [ CHECK FOR MEMES AS WELL 😭 ]
 - [ ] Think what to do with the the copyrighted content that is been zipped. 
 - [ ] add studies - Benkyo  
 - [ ] [EXPERIMENTAL] add a jp switch to switch to japanese any time someone wants - to add benkyo to learnings  
 
 ## Bug 
+- [ ] complete the blog from wed-aug-20 [ in dandadan eps thats downloaded , one ep has the cat - turbo granny quetioning okarun weather what he wants to learn is "how to punch" or "to get stronger" ]
 - [ ] Find reason for Duplicate Ninja harroti blog
 - [ ] fix bomb blog
 - [ ] Fix  a55648ae825d18fd116ab1c05ffa1579bc5b17de
@@ -123,6 +130,7 @@ Modify the following to the dev phases / stages
 ## UX/UI                                    [ v0.1.3 ]
 - [ ] most beautiful and elegant linktree[s]
 - [ ] few features to update the site where you could see my socials
+- [ ] check for icons and stuff that are taken and mention their names in credits [ I think socials did that as well ]
 - [ ] Dark mode [ship this ASAP in study material section]
 - [ ] resume [ as page and functioning[dynamic] ]
 - [ ] bg - mrrobot.jpg 
