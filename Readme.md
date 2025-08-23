@@ -26,6 +26,10 @@ Contains Frequent updates
  - [ ] Detailed [ full pages ]
  - [ ] Fast [ a drop down in hamburger maybe ]
  - [ ] quick revision [ last moment revision ]
+- [ ] Add cosmetics to JS-backend 
+  - [ ] rn its only in js files so I would have to read in it as a js file in browser [ check if everything is laid out in js ]
+  - [ ] think of making js beautiful itself 
+  - [ ] This is super time consuming so positiong this task to some other timeline.
 
 - [ ] check if all files of DSA are added
  - [ ] I think there is some problem in `patternMatching.html` in `DSA` in `chap3`
