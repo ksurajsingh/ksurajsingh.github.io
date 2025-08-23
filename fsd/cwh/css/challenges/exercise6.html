@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- never use different units like vh and em together - it might break websites , cuz one scales and other wont -->
+  <title>exercise 6</title>
+  <link rel=stylesheet href=style.css>
+  <style>
+  *{
+    margin:0px;
+    padding:0px;
+  }
+  body{
+    background-color: grey;
+  }
+  nav{
+    display: flex;
+    margin: 0vh auto auto auto;
+    height: 10vh;
+    padding: 0 20vw; 
+    background-color: white;
+  } 
+  .left-part{
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: yellow;
+    display: flex;
+    flex: 2;
+    width: 20vh;
+    align-items: center;
+    gap: 10px;
+  }
+  .left-logo img{
+    /* object-fit: contain; */
+    max-width: 4em;
+    border-radius: 10px;
+    height: 150px;
+    max-height: 4em; /* optionally as it automatically applies */ 
+  }
+  .Heading{
+    font-weight: 10px;
+  }
+  .left-title{
+    white-space: nowrap;
+    font-weight: 900;
+    font-size: 40px;
+    overflow: visible;
+  }
+  .left-caption{
+    max-height: 100%;
+    font-style: italic;
+    font-weight: 900;
+  }
+
+
+  .right-part{
+    background-color: green;
+    display: flex;
+    flex: 8;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .right-list ul{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+  }
+  .right-list img{
+    width: 0.7em;
+  }
+  .right-icon{
+    display: flex;
+    max-width: 20%; 
+  }
+  .right-icon img{
+    max-width: 3.5em;
+  }
+  .right-part .right-icon{
+    margin-left: 10px;
+    padding: 0px;
+  }
+
+  h1{
+    margin-top: 25vh;
+    display: flex;
+    justify-content: center;
+  }
+  </style>
+  </head>
+<body>
+
+  <nav>
+
+    <div class="left-part">
+
+     <div class="left-logo">
+      <img src="narulogo.jpeg" alt="logo"> 
+     </div>
+
+     <div class="Heading">
+      <div class="left-title">
+      Ultra Edit 
+      </div>
+      <div class="left-caption">
+       An Indea inc. company 
+      </div>
+     </div>
+
+    </div>
+
+
+    <div class="right-part">
+
+      <div class="right-list">
+       <ul>
+        <li>Products <img src="dropdown.png" alt="drop-down icon"> </li>
+        <li>Pricing <img src="dropdown.png" alt="drop-down icon"> </li>
+        <li>Resources <img src="dropdown.png" alt="drop-down icon"> </li>
+        <li>About Us <img src="dropdown.png" alt="drop-down icon"> </li>
+        <li>Academic Licensing <img src="dropdown.png" alt="drop-down icon"> </li>
+        <li>Our Company<img src="dropdown.png" alt="drop-down icon"> </li>
+       </ul>
+      </div>
+
+      <div class="right-icon">
+       <img src="ginicon.webp" alt="icon">
+      </div>
+
+    </div>
+    
+  </nav>
+  <h1>Exercise 6</h1>
+</body>
+</html>
+

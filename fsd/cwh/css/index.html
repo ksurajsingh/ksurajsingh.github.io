@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>CSS</title>
+  <link rel=stylesheet href=style.css>
+  <style>
+    input::placeholder {
+      background-color: lightgray;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cascading Style Sheets</h1>
+  <hr>
+  <hr>
+  <ol>
+    <li><b>Internal: </b>Having the style specified in the html file itself</li>
+    <li><b>External: </b>Having the style specified in a separate file with .css extension</li>
+    <li><b>Inline: </b>Specifying the style for that particular element using the <code>style</code> tag </li>
+  </ol>
+  <li>"<code>#</code>" is the ID of the selector</li>
+  <li>"<code>.</code>" is the class of the selector</li>
+  <li>It is not necessary to specify the <em>type</em> of the selector</li>
+  <br><br>
+  <h2>Selector Types</h2>
+  <ol>
+    <li><code>Child selector: </code> A direct descendant of an element , use <code> &gt; </code><br>
+      for example: <code>div &gt; p</code>
+    </li>
+    <li><code>Descendant selector: </code> Any descendant in the element is triggered, use <code> </code><br>
+      for example: <code>div p</code>
+    </li>
+    <li><code>Universal Selector: </code> Triggers all the elements of the html document , use <code>*</code><br>
+      for example: <code>*{color:red;}</code>
+    </li>
+    <li>
+      <code>Pseudo Selectors: </code> Triggers when a moment / action is done on the document , use <code>:</code><br>
+      for example: <pre><code>
+          a:visited{color:green;}
+          a:link{color:red;}
+          a:active{color:brown;}
+          div:hover{color:yellow;}
+          p:firstchild{color:blue;}
+        </code>
+      </pre>
+    </li>
+    <li><a href="web.dev/learn/css/pseudo-classes">Other Pesudo classes [ Great Sauce ]</a></li>
+  </ol>
+  <br>
+  In practise an element can have multiple classes. <br>
+  it can have multiple IDs where modern browsers support it since it is not an convention / supported feature in theory.
+  <br>
+  <br><br><br>
+  <h2>Attributes</h2>
+  <br>
+  you can use <code>&lt;div data-color="primary" class="tags"&gt;</code> and then in CSS , <br>
+  we can specify the selector as <code>[data-color="primary"]{}
+  </code> then specify the rules
+  <br><br>
+  We can also use <code>even | odd</code> for specifying parity like - <code>child:nth-child(even)</code>
+
+  <br><br>
+  We can insert elements dynamically through css like <code>body::before{content:"this is a before content"}</code>
+  <br>
+  Similarly we can use <code>body::after </code> aswell
+  <br>These are called as pesudo elements <br>
+  <em>example:</em> <code>::selection</code> will style as the styled elements + <code>body::first-line</code> and
+  <code>body::first-letter</code>
+  <br>
+  <em>example2:</em> for <code>input::placeholder{}</code>.. <input type="text" placeholder="this is a test">
+  <br>
+  <br>
+  <img src="./media/pseudoclassesvselements.png" alt=" ':' vs '::' ">
+  <br>
+  <br><br>
+  <h2>
+    Box-Model
+  </h2>
+  <ol>
+    <li>
+      Generally without border box , everything that is applied to an element is for the content only. <br>
+
+    </li>
+    <li>
+      For example: if height is given as 200, then the element's content is 200 units of height + border + margin +
+      padding. <br>
+
+    </li>
+    <li>
+
+      But with border-box, The entire element is of height 200 <b>Including border and padding</b> not margin since
+      margin is <b>External</b> part of an element. <br>
+      <img src="./media/margin-external.pngjpg" alt="how margin is the external part of an element to which border-box is not applied">
+
+    </li>
+    <li>
+      <b><u>Margin Collapse: </u></b> is the concept where the margin doesn't see other margin as an element that takes
+      space in the pages, and instead just overlaps itself on it. <br>
+      for example: if there are two margin on the same side of the elements , like <code>down</code> for the upper
+      element and <code>up</code> for the lower element, the margin that has the largest number will be applied [ normal
+      physics ] .[ DAmn physics in COmputer sceince ] <br>
+
+    </li>
+  </ol>
+
+
+  <h2>CSS Properties</h2>
+  <ol>
+    <li><code>Font-family: </code>When you want to specify the types of fonts that should be used. When the first fonts
+      is not available the second and the oncoming is used.</li>
+    <li><code>font-style: </code> When you want to italize a font or change the style in someway.</li>
+    <li><code>font-weight: </code> This is used to specify the weight of the font's boldness</li>
+    <li><code>text-decoration: </code>This can be used to specify <em>underline</em> <em>Overline</em> etc. </li>
+    <li><code>Line-height: </code> spacing between the lines</li>
+    <li><code>letter-spacing: </code>spacing between the letters</li>
+    <li><code>text-transform: Capitalize</code> To capitalize the first alphabet of the word.</li>
+    <li><code>text-transform: upper/lower case</code> As name says for the entire element</li>
+    <li><code>text-decoration-color: </code></li>
+    <li><code>text-decoration-style: </code></li>
+    <li><code>text-decoration-thickness: </code></li>
+    <li><code>text-indext: </code>To add a spacing before the content of the element</li>
+    <li><code>text-overflow: </code>To control the action on overflow</li>
+    <li><code>overflow: </code>If somehow the content overflows , then the action that has to be implemented</li>
+    <li><code>word-break: </code>Inorder to use the full width given, the words break at the end of the line</li>
+    <li><code>text-align:
+      </code>Alignment of text</li>
+  </ol>
+  <br><br>
+  <h2>Colors</h2>
+  Colors can be represented in many types :
+  <ol>
+    <li>Using keywords</li>
+    <li>Using Hex codes</li>
+    <li>Using RGB</li>
+    <li>Using RGBa: Reg Green Blue Alpha [ opacity ]</li>
+    <li>Using HSL : Hue , Saturation ,Lightness . We can also use HSLa </li>
+    <li>The same implemention types can be used for <code>background-color:</code></li>
+  </ol>
+  <br>
+
+  <h1>Imp sauce</h1>
+  <p>the <code>&lt;p&gt; can only store inline elements in it , while &lt;div&gt; can store almost all kinds of html
+      tags</code></p>
+  <img src="./media/pvsdivtag.png" alt="<p> vs <div>">
+  <br>
+  <br>
+  <a href="cascadeAlgorithm.html" alt="Next page"><u><big>Next</big></u></a>
+  <br><br><br>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transitions</title>
+  <link rel=stylesheet href=style.css>
+  <head name="viewport" content="width=device-width, initial-scale=1.0">;
+    <style>
+*{
+  marging:0px;
+  padding:0px;
+}
+
+
+.box{
+  height:15vh;
+  width:5vw;
+  background-color: blue;
+  transition: all 3s ease-in-out 1s;
+}
+
+.translate{
+  transform: translateX(20vw) translateY(20vh) scale(1.5,2) rotate(45deg);
+  background-color: red;
+}
+    </style>
+</head>
+<body>
+  <h1>Transitions</h1>
+
+  4 main properties - - 
+  <dl>
+    <dt>Transition-property</dt>
+    <dd>specifies which property to apply transition for</dd>
+    <dt>transition-duration</dt>
+    <dd>Duration of transition</dd>
+    <dt>Transition-timing-function</dt>
+    <dd>the function of transition with respect of speed and time</dd>
+    <dt>Transitoin-delay</dt>
+    <dd>Delay of <b>start</b> of the transition</dd>
+  </dl>
+  short hand for all of these <br>
+  <code>
+    transition: &lt;propert&gt; &lt;duration&gt; &lt;function&gt; &lt;delay&gt;
+  </code>
+  I will transit the follow box in <b>color size</b> and <b>position </b> wrt Doc.
+  <br>
+  <div class="box translate">
+    
+  </div>
+
+</body>
+</html>
+
