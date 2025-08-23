@@ -33,6 +33,81 @@ Have a good time ;) <br>
 </div> 
  
 <br>
+      <a href="#" onclick="loadImgAndRedirect('Wed-Aug-20-2025.html');return false;">
+      <div class="blog-card"><hr>
+      <div class="blog-title">
+      <b>DanDaDan</b>
+      <span class="date">Wed-Aug-20-2025</span>
+      </div>
+<span class="tag  normal "> normal </span>
+      <span class="time">less than 1 min</span>
+      <br>
+      <span class="blog-preview"><br></span>
+      <hr>
+      </div>
+      </a>
+      
+<br>
+      <a href="#" onclick="loadImgAndRedirect('Tue-Aug-19-2025.html');return false;">
+      <div class="blog-card"><hr>
+      <div class="blog-title">
+      <b>Arch BTW</b>
+      <span class="date">Tue-Aug-19-2025</span>
+      </div>
+<span class="tag  normal linux "> normal linux </span>
+      <span class="time">less than 1 min</span>
+      <br>
+      <span class="blog-preview"><br></span>
+      <hr>
+      </div>
+      </a>
+      
+<br>
+      <a href="#" onclick="loadImgAndRedirect('Thu-Aug-14-2025.html');return false;">
+      <div class="blog-card"><hr>
+      <div class="blog-title">
+      <b>Paranoid</b>
+      <span class="date">Thu-Aug-14-2025</span>
+      </div>
+<span class="tag  normal security CS "> normal security CS </span>
+      <span class="time">less than 1 min</span>
+      <br>
+      <span class="blog-preview"><br></span>
+      <hr>
+      </div>
+      </a>
+      
+<br>
+      <a href="#" onclick="loadImgAndRedirect('Wed-Aug-13-2025.html');return false;">
+      <div class="blog-card"><hr>
+      <div class="blog-title">
+      <b>The monty Hall Problem</b>
+      <span class="date">Wed-Aug-13-2025</span>
+      </div>
+<span class="tag  Math Probability "> Math Probability </span>
+      <span class="time">3 min read</span>
+      <br>
+      <span class="blog-preview"><br></span>
+      <hr>
+      </div>
+      </a>
+      
+<br>
+      <a href="#" onclick="loadImgAndRedirect('Tue-Aug-12-2025.html');return false;">
+      <div class="blog-card"><hr>
+      <div class="blog-title">
+      <b>Try This</b>
+      <span class="date">Tue-Aug-12-2025</span>
+      </div>
+<span class="tag  Linux "> Linux </span>
+      <span class="time">less than 1 min</span>
+      <br>
+      <span class="blog-preview"><br></span>
+      <hr>
+      </div>
+      </a>
+      
+<br>
       <a href="#" onclick="loadImgAndRedirect('Wed-Aug-06-2025.html');return false;">
       <div class="blog-card"><hr>
       <div class="blog-title">
@@ -437,11 +512,14 @@ function loadImgAndRedirect(uri){
 
 function filterblogs(){
   const category=document.getElementById("category-select").value; 
+  console.log(category);
   const blogcard=document.querySelectorAll(".blog-card");
+  console.log(done);
+  console.log(blogcard);
 
   blogcard.forEach((blog)=>{
   const tag=blog.querySelectorAll(".tag");
-  if(category==="all" || tag[0].classList.contains(category)){
+  if(category==="all" || tag.classList.contains(category)){
     blog.style.display="block";
   } else {
     blog.style.display="none";
