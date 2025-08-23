@@ -183,18 +183,22 @@ String buffer is a non primitive data type  so its a pass by reference +  takes 
 
 ### Declaring 
 
+{% raw %}
 ```java
 int[][] arr = {{1,2},{3,4,5}};
 ```
+{% endraw %}
 
 This short hand declaration is allowed only at the time of declaring the array and not later i.e.  
 
+{% raw %}
 ```java
 int[][] arr= new int[10][10];
 arr[][] = {{1,2},{3,4,5}} // not possible 
 arr[0][] = new int[]{1,2}; // instead use this
 arr[1][] = new int[]3,4,5; // This is called as jagged arrray 
 ```
+{% endraw %}
 
 - Where as 
 
