@@ -33,6 +33,10 @@ Contains Frequent updates
 - [ ] check if all files of fsd are added
  - [ ] check if all files are add 
  - [ ] check the linking [ why does corewebvitals.html have a link to CSS ]
+- [ ] reorganise everything 
+- [ ] rename everything 
+- [ ] add credits to everyone 
+- [ ] think of ways to reduce load time [ and image load/size ]
 
 ## Bug 
 - [ ] complete the blog from wed-aug-20 [ in dandadan eps thats downloaded , one ep has the cat - turbo granny quetioning okarun weather what he wants to learn is "how to punch" or "to get stronger" ]
