@@ -107,7 +107,7 @@ System.out.println(str4+" "+str4.length);
 
 \# write code for the following as a practise
 
-1. where i is and you store the value of i in a new string and decrement i   
+1. where i is n and you store the value of i in a new string and decrement i   
 
 2. where i is 0 and keeps incrementing till less than str.length. and prepends every character it find ,
 ```java
@@ -119,6 +119,7 @@ recstr=str.charAt(i) + revstr
 ### Pallindrome
 
 1. reverse the entire string and match it with the original. You can use a compare to operator - if the returned value is 0 , its same.  
+Here you reverse the first half of the string so its time complexity is n/4.
 2. Check the last characters corresponding to the first characters , <br> *if they match* <br> &nbsp;&nbsp;&nbsp;&nbsp; - decrement last character and increment first character while first character's index is less than last character's index <br> *else* <br>&nbsp;&nbsp;&nbsp;&nbsp; the string is not a pallindrome , <br> once the loop has executed - check the first and last indices , <br> if they are equal to or first is less than last index then they match !
 
 ##### revise : strings are immutable but can be concatenated 
@@ -135,6 +136,13 @@ char str2 = new char[10] ; // object :value string
 ```
 
 - Using a string pool , the length function is ```str.length()``` ,  as it is a primitive type , generally non primitive types like array have ```arr.length```   <br>
+
+Difference between length() and length 
+and 
+String and char 
+[class]   [data type]
+
+![Method of String vs finalField of array](./finalField_array.png)
 
 - str1 here is the reference in the stack and "abc" stored is the value stored in the heap which is being referred to by the stack value [i.e. address of ] str1.  <br> 
 
@@ -183,22 +191,18 @@ String buffer is a non primitive data type  so its a pass by reference +  takes 
 
 ### Declaring 
 
-{% raw %}
 ```java
 int[][] arr = {{1,2},{3,4,5}};
 ```
-{% endraw %}
 
 This short hand declaration is allowed only at the time of declaring the array and not later i.e.  
 
-{% raw %}
 ```java
 int[][] arr= new int[10][10];
 arr[][] = {{1,2},{3,4,5}} // not possible 
 arr[0][] = new int[]{1,2}; // instead use this
 arr[1][] = new int[]3,4,5; // This is called as jagged arrray 
 ```
-{% endraw %}
 
 - Where as 
 

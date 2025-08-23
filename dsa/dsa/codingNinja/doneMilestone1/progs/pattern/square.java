@@ -19,6 +19,7 @@ public class square{
         System.out.print(n-j);
     System.out.println();  
     }  
+    System.out.println();
   }
 
 
@@ -28,6 +29,7 @@ public class square{
         System.out.print(j);
     System.out.println();  
     }  
+    System.out.println();
   }
 
   public static void squareRowNum(int n) {
@@ -36,6 +38,7 @@ public class square{
         System.out.print(i);
     System.out.println();  
     }  
+    System.out.println();
   }
   public static void squareStar(int n){
     for(int i=0;i<n;i++){ // rows
@@ -44,5 +47,6 @@ public class square{
       System.out.println();// new line
     }
 
+    System.out.println();
   }
 }

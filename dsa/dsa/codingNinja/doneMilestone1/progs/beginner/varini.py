@@ -1,4 +1,4 @@
-print(a) # in python you need to initilize while defining the varibale
+# print(a) # in python you need to initilize while defining the varibale
 
 
 

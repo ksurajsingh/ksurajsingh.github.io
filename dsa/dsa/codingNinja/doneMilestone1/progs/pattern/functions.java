@@ -16,9 +16,11 @@ public class functions {
   public static void main(String[] args) {
     
     System.out.println(sum(5,6));
-    //System.out.println(sum(5.5,6.6));
+    // System.out.println(sum(5.5,6.6));
+    System.out.println(sum((int)5.5,(int)6.6));
     System.out.println(sum(5));
     System.out.println(sum(5));
+    calcNCR();
 
 
 

@@ -12,7 +12,7 @@ public class pyramid {
   }
   public static void pyramidDec(int n) {
     for(int i=0;i<n;i++){ // rows
-      for(int j=0;j<n-1-i;j++){ // columns with spaces
+      for(int j=1;j<n-i;j++){ // columns with spaces
         System.out.print(" ");
       }
       for(int k=0;k<=i;k++){// before midpoint where you increment
