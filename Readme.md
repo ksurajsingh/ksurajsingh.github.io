@@ -27,6 +27,9 @@ Contains Frequent updates
  - [ ] Fast [ a drop down in hamburger maybe ]
  - [ ] quick revision [ last moment revision ]
 
+- [ ] check if all files of DSA are added
+- [ ] check if all files of fsd are added
+
 ## Bug 
 - [ ] complete the blog from wed-aug-20 [ in dandadan eps thats downloaded , one ep has the cat - turbo granny quetioning okarun weather what he wants to learn is "how to punch" or "to get stronger" ]
 - [ ] Find reason for Duplicate Ninja harroti blog
