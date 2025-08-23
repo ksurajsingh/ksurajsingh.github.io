@@ -51,6 +51,10 @@ Contains Frequent updates
   -[ ] fix - *format breaks after filtering*
   -[ ] check presence of all categories
 
+## Structure 
+
+- [ ] try express routers [ or a better one possibly ]
+
 ## code style [merge v0.1.1]
 - [ ] style code 
 - [ ] use that code-style globally
