@@ -28,6 +28,7 @@ Contains Frequent updates
  - [ ] quick revision [ last moment revision ]
 
 - [ ] check if all files of DSA are added
+ - [ ] I think there is some problem in `patternMatching.html` in `DSA` in `chap3`
 - [ ] check if all files of fsd are added
 
 ## Bug 
