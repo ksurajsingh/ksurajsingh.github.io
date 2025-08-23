@@ -19,6 +19,14 @@ Contains Frequent updates
 - [ ] add studies - Benkyo  
 - [ ] [EXPERIMENTAL] add a jp switch to switch to japanese any time someone wants - to add benkyo to learnings  
 
+## Learnings
+
+- [ ] Directory organisation 
+- [ ] structure in such a way that you could have 3 modes or reading 
+ - [ ] Detailed [ full pages ]
+ - [ ] Fast [ a drop down in hamburger maybe ]
+ - [ ] quick revision [ last moment revision ]
+
 ## Bug 
 - [ ] complete the blog from wed-aug-20 [ in dandadan eps thats downloaded , one ep has the cat - turbo granny quetioning okarun weather what he wants to learn is "how to punch" or "to get stronger" ]
 - [ ] Find reason for Duplicate Ninja harroti blog
