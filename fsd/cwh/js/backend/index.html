@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backend</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>Basics</h1>
+  We can use multiple backends for a Full Stack app.<br>
+  <li>Python</li>
+  <li>Go</li>
+  <b>Closest Modern Replacements</b>
+  <li>Node</li>
+  <li>Deno</li>
+  <li>Bun</li>
+  <li>Rust</li>
+  <li>Java</li>
+  <b>Event Driven Non Blocking Alternatives</b>
+  <li>Elixir</li>
+  <li>Erlang</li>
+
+  <h1>Basic-components of Backend</h1>
+ <code>nodemon</code>watched the current dir for changes to restart server automatically. <br>
+ <code>npm</code> node package manager  [ use -g to install globally on the system like <code>pip install --user -g &lt;package-name&gt;</code> ]<br>
+ <code>npx</code> Temporary usage of a packges by just installing it into the cache like <code>pipx &lt;package-name&gt;</code><br>
+  Stays untill you clean cache by yourself using <code>npm cacche clean --force</code>
+ <code>nvm</code> node version manager <br>
+ <code>ES</code> ECMA script <br>
+
+ <pre>
+ <h1>Modules</h1>
+ We have modules in JS . And there are two ways to import them.
+ one is by <code>common JS</code> which makes use of <code>require</code> method . It loads the modules <code>Synchronously</code>.
+ ex: <code>const fs = require("fs")</code>
+ The other is by <code>Module</code> by ES js [ set <code>"type":"module"</code> in package.json ] , which loads the modules <code>asynchronously</code>.
+ ex: <code>import {fs} from "fs"</code>
+ </pre>
+ <pre>
+ <h2>Export/Import from common JS</h2>
+
+ You can give it any name you want .
+ Since its a variables declaration on the LHS.
+ for ex: <code>const superman = require ("fs")</code>
+
+ 
+ <h3>Default export</h3>
+
+ in <b>./module.js</b>
+ <code>
+ const name = "warlord"
+ module.exports =  name  
+ </code>
+
+ in <b>./main.js</b>
+ <code>const bananas = require("./module.js")
+ console.log(bananas) // "warlord"</code>
+
+ <h3>Named export</h3>
+
+ in <b>./module.js</b>
+ <code>const name="warlord";
+ module.exports = {name}</code>
+
+ in <b>./main.js</b>
+ <code>const {name} = require("./module.js")
+ console.log(name)</code>
+
+ You cannot do this in <b>./main.js</b> 
+ <code>const {bananas} = require("./module.js")
+ console.log(bananas) // won't work since there is no property/key called "bananas"</code>
+
+ While destructuring <code>[ {...} ]</code> use the exact propert name only
+
+ <h2>Export/Import from ESM</h2>
+  ESM- ES-module [ saved as .mjs]
+  <code>fs</code> is a built-in node module which is in <code>CJS</code>
+  so you cannot <code>import superman from "fs";</code>
+  You need to <code>import { readFile } from "fs"</code>
+  then use alias <code>import { readFile as superman } from "fs" </code>
+  or as namespace <code>import * as superman from "fs"</code>
+
+ <h3>Named Export</h3>
+ in <b>./module.mjs</b> <em>.mjs is not "required" but good practise [ mostly used when node "type":"module" in <code>package.json</code>]</em>
+ <code>export name="warlord"</code>
+ in <b>./main.js</b>
+ <code>import { name } from "./module.mjs"
+ console.log(name) // warlord </code>
+
+ since you only did <code>export name</code>
+ and not <code>export default name</code>
+ you cannot <code>import name</code>
+ that way you cannot import by any name that you want like 
+ <code>import banana</code>
+
+ you need to <code>import { name } from "./module.js"</code>
+ or alias it like <code> 
+ import { name as banana } from "./module.js"
+ </code>
+
+ <h3>For default variables</h3>
+ in <b>./module.js</b>
+ <code>export default name="suraj"</code>
+ in <b>./main.js</b>
+ <code>import bananas from "./module.js"</code>
+ 
+ if you mix both <b>named</b> and <b>default</b> export - 
+ in <b>./module.js</b>
+ <code>
+ export const hero = "superman"
+ export default villian = "clark kent"
+ </code>
+ in <b>./main.js</b>
+ <code>
+ import badguy,{hero} from "./module.js"
+ console.log(badguy,hero);
+ </code>
+ you cannot <code>import badguy,goodguy from "./module.js"</code>
+ but you can <code>import badguy,{ hero as goodguy } from "./module.js"</code>
+ and the order doesn't matter
+ so you can always <code>import { hero as goodguy }, badguy from "./module.js"</code>
+ </pre>
+
+
+<br><br><br>
+  <h2>Import/Export from Combination of ESM and CJS</h2>
+  <h3>CJS-&gt;MJS</h3>
+  <h4>Both named and default</h4>
+  <pre> if module in CJS in <b>./module.js</b>
+  <code>const hero="superman"
+  const villian="clark kent" 
+  module.exports = { hero } 
+  module.exports = villian // since this is a default export this overrides the previous one 
+  </code>
+  so do <code> module.export = { hero, villian } </code>
+  in which case in <b>./main.js</b> or <em>./main.mjs</em>
+  <code> 
+  import { hero, villian } from "./module.js" // won't work tho it could work as a named import
+  // you don't have the luxury to destructure while importing CJS into MJS
+  </code>
+  Either
+  <code>
+  import guys from "./module.js"
+  console.log(guys.hero,guys.villian); 
+  </code>
+  or
+  <code>
+  import guys from "./module.js"
+  goodguy={guys.hero} badguy={guys.villian}
+  </code>
+  <b>RULE OF THUMB:</b> <h4>CJS-&gt;MJS: Always imports whole package</h4>
+
+  <h3>MJS-&lt;CJS</h3>
+  <b>if module in MJS</b> in <b>./module.mjs</b>
+  <code>
+  export const hero="superman"
+  const villian="clark kent" 
+  export default villian
+  </code> 
+  in <b>main.js</b> <em>which is CJS now</em>
+  Must use dynamic import i.e <code>import()</code> which is availble in <b>NODE14+</b> 
+  <code> const module=import("./module.mjs") 
+  hero=module.hero 
+  villian=module.villian // or 
+  // villian = module.default
+  </code>
+
+
+
+
+</body>
+</html>
+

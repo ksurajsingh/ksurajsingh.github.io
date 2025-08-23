@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Var Rules, Loops,Strings</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Var Rules, Loops,String</h1>
+  <script>
+    var a=10;
+    var b=5;
+    console.log(a+b+5);
+  </script>
+  <h4>Variable Rules</h4>
+  <ol>
+    <li>Can start with underscore or letters or a <code>$</code> symbol only</li>
+    <li>Can contain symbols,letts,and number</li>
+    <li>Reserved words cannot be used as variables</li>
+    <li>Javascript is case sensitive</li>
+  </ol>
+
+<h4>REPL</h4>
+<dl>
+  <dt>R</dt>
+<dd>Read</dd>
+<dt>E</dt>
+<dd>Evaluate</dd>
+<dt>P</dt>
+<dd>Print</dd>
+<dt>L</dt>
+<dd>Loop</dd>
+</dl>
+
+  <h3>Loops</h3>
+  <code>for in:</code> iterators in objects  <br>
+  <pre>
+  <code>
+  const obj={
+    name:"warlord",
+    age:"99"
+  };
+  for(const i in obj){ // "for in" is used for objects that show values in form of dictionaries
+  const val=obj[i]
+  console.log(i,val)
+  }
+  for(const i of obj.name){// "for of" is usually used for strings - arrays / iterables
+  console.log(i)
+  }
+  </code>
+  </pre>
+  <code>For each:</code> loop is very similar to the other languages - for each loops 
+  <br>
+  syntax:
+  <pre>
+  <code>
+  object.forEach((value,index,object)=&gt;
+  console.log(value,index,object);
+  })
+  </code>
+  </pre>
+  <img src="./media/forEach.png" alt="for each syntax explainations">
+
+  <h3>Sample Function</h3>
+  <dl>
+    <dt>Function Statement [declaration]</dt>
+    <dd>Can be hoisted</dd>
+    <dt>Function Expression [assigning the return value to a variable]</dt>
+    <dd><ul>
+      <li>Assigned to a variable</li>
+      <li>Can be anonymous</li>
+    </ul></dd>
+    <dt>Arrow Function</dt>
+    <dd><ul>
+      <li>Shorter syntax</li>
+      <li>cannot use <ol>
+        <li><code>this</code></li>
+        <li><code>super</code></li>
+        <li><code>new.target </code>[ to check wether a target was called using new]</li>
+      </ol></li>
+    </ul></dd>
+  </dl>
+
+
+  <h4>IIFE</h4>
+  Immediately Invoked Function Expression
+  <ul>
+    <li>Creates a private scope</li>
+    <li>Avoids polluting the global scope</li>
+  </ul>
+
+  <h4>ES</h4>
+  ES is JS 
+  <br>
+  JS is the implementation and ES is the rulebook. <br>
+  ES 6 = const, let , arrow functions , classes , modules [ 2015 ] <br>
+  ES 7 -13 = async/await , optional chaining. [ 2016+ ]
+
+  <h4>Parameters</h4>
+  <br>
+  <b>Positional Parameters</b>
+  <code>  function makeLunch(main,side,drinks){}
+</code>
+  <br><br>
+  <b>Named Parameters</b>
+  <pre>
+  <code>
+  function makeLunch(opts){
+  const {main,side,drinks}=opts // naming those parameters
+  }
+  makeLunch({main:"🍞",side:"🥭",drinks:"🍷"}) // passing those arguments
+  </code>
+  </pre>
+  Always remember that while defining the function they are called as <code>parameters</code>
+  and while calling the function they are called as <code>Arguments</code> <br>
+  <b>Rest Parameters</b> 
+  <pre>
+  <code>
+  function makeLunch(...args){
+
+  }
+  makeLunch('🍇','🍈','🍉','🍊','🍌','🍍')
+  </code>
+  </pre>
+  <b>Arrow functions</b>
+  <pre>
+  <code>
+  const makeWine=(qty)=&gt;{
+   return '🍷'.repeat(qty);
+  }
+  </code>
+  </pre>
+  if its only one line - there is no need of the <code>return</code> keyword
+  <pre>
+  <code>
+  const makeWine=(qty)=&gt; '🍷'.repeat(qty)
+  </code>
+  </pre>  
+
+  <b>Pure Functions</b>
+  <pre>
+  <code>
+  let x=2;
+  const impure =() =&gt;{
+   x++;
+   return x**2;
+  }
+  const pure =(x) =&gt;{
+   x++;
+   return x**2;
+  }
+  </code>
+  </pre>
+  <b>First-Class function</b>
+  Where a function uses another function as its parameter
+  for ex: call-back function.
+  <pre><code>
+  let haveFun=()=&gt;console.log("Having Fun");
+  setTimeout(haveFun,500);
+  </code></pre>
+  <br><br><hr><hr>
+  <pre>
+  <code>
+
+function tell(name,time){
+  console.log(`hello ${name}`)
+  console.log(`hope master [${name}] is doing well!`)
+  console.log(`its ${time} right now`)
+}
+
+const now=new Date();
+
+const curtime=`${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
+
+tell("warlord",curtime)
+  </code>
+  </pre>
+  </code>
+  </pre>
+  <code>for of:</code> iterators in arrays
+
+  <br><br>
+  <hr>
+  <hr>
+  <h2>Strings</h2>
+  <pre>
+  <code>
+  let a="warlord"
+  console.log(a);
+  console.log(a[0]);
+  console.log(a[1]);
+  console.log(a[2]);
+  console.log(a[3]);
+  console.log(a[4]);
+  console.log(a[5]);
+  console.log(a[6]);
+
+  console.log(a.length); // 7
+  console.log(a.toUpperCase()); // WARLORD
+  console.log(a.toLowerCase()); // warlord
+  console.log(a.slice(1,5)); // prints from 1 to 5 - arlor
+  console.log(a.slice(3)); // prints from 3 to end - lord
+  console.log(a.replace("war","speed")); // speedlord
+  console.log(a.concat("088")); //warlord088
+  console.log(a.charAt(3)); // l
+  console.log(a.indexOf("war")) // 0
+  console.log(a); // warlord
+
+  // refer 'primitives' under 'basics' to know about `shift` and `unshift` string method - shift - pop from start , unshift - push in the start
+
+
+
+
+  let number=[1,2,3,4,5]
+  console.log(number.splice(1,3));  // 2,3,4 are REMOVED - now number=[1,5]
+  console.log(number.splice(1,3,222,333)); // 2,3,4 are removed and specified number [222,333] are ADDED
+
+  // SLICE doesn't modify the original array - just works on the shallow copy . 
+  // used for copying without changes
+
+  // SPLICE modified the original array - can remove replace and add elements .
+  // used for editing in place
+
+
+  console.log(number)// [ 1 , 2 , 3 , 4 , 5 ]
+  console.log(number.toString()) // 1,2,3,4,5 -- again prints a shallow copy
+  // if you want to convert back to array in order to perform function like - MAP FILTER REDUCE 
+  // do number =  number.split(",")
+  console.log(Array.from(number))
+  console.log(number.join(" and ")) // 1 and 2 and 3 and 4 and 5
+
+  let b="flashbang";
+  console.log(a+" uses "+b);
+  //or 
+  console.log(`${a} used ${b}`);
+  // we can also have stuff like double quotes in side the backticks like -- 
+
+  console.log(`"${a}" uses "${b}"`);
+
+  console.log("\""+a+"\" uses \""+b+"\"");
+  </code>
+  </pre>
+
+
+  <h3>Map-Filter-Reduce</h3>
+  <h5>Code for Map</h5>
+  <pre><code>
+  let arr=[1,2,3,4,5]
+  let newarr=arr.map((e,value,array)=&gt;{ // value and array are not necessary here 
+  return e**2 
+  })
+  console.log(newarr)
+  // could also be written in short hand like - 
+  let newArr=arr.map(e=&gt;{
+  return e**2;
+  })
+  </code></pre>
+
+  <h4>Code for Filter</h4>
+  <pre><code>
+  let arr=[1,2,3,4,5]
+  let newarr=arr.map(e=&gt;{
+  return e**2
+  })
+  console.log(newarr)
+  const greaterThanSeven = (e)=&gt;{
+  if(e&gt;7){
+  return true
+  }
+  return false
+  }
+  newarr.filter(greaterThanSeven)
+  </code></pre> 
+  This is different from map since for map it performs a custom function.
+  But for filter - it looks only for a boolean output - on truthy it keeps that particular value , upon falsy it removes that value. <br>
+  <b>It does not change the array values, Map have the power to do so</b>
+  <h4>Code for reduce</h4>
+  This acts on the first two elements - performs the function and stores the returned value as the first element <br>
+  Then considers that element and the element after that to perform the same function and stores it as 2nd / 1st element [ I will confirm this ] <br>
+  Keeps repeating till the end of the array .
+  <pre>
+  <code>
+  let arr=[1,2,3,4,5,6]
+  const red=(a,b)=&gt;{
+  return a*b;
+  }
+  console.log(arr.reduce(red))
+
+  </code>
+  </pre>
+<br>
+  <a href="dom.html" alt="next page"><u><big>DOM & BOM</big></u></a>
+</body>
+</html>
+

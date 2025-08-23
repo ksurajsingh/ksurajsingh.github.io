@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM | BOM</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>DOM | BOM</h1>
+  DOM represents the page content as HTML 
+  <pre>
+  <code>
+  console.log(document.title);
+  console.log(document.body);
+  document.body.style.backgroundColor="green";
+  </code>
+  </pre>
+  <em>document.body</em> show null if script is placed in the head tag before the DOM is loaded . <br>
+   So always place the script at the end, letting the DOM load completely.  <br>
+   Placing in the end is similar to having the defer keyboard
+
+   <h1>BOM</h1>
+   <b>Browser Object Model</b> is the one that takes care of the objects in the browser. <br> 
+   For instance check <code>window</code> then <code>window.document</code>. <br>
+   Therefore the page is the windows space. <br> 
+   and other operations like - opening a new tab <code>href</code> etc are BOM.
+   <br> <code>window</code> is the global object.
+
+   <h2>Tree-like</h2>
+   It does follow a tree like structure 
+<br> 
+where every space inside is considered as <code>text node</code>
+<br>
+call it using <code>body.childNode</code>
+<br>
+if you only want elements to be displayed then console <code>ElementChild</code> <em>camel case is what is always used</em>
+<br>
+call it using <code>body.firstElementChild</code>
+<ol>
+  <h4>DOM Tree</h4>
+  <li>body.childNodes</li>
+  <li>body.childNodes[2]</li>
+  <li>body.children // only elements</li>
+  <li>body.firstChild</li>
+  <li>body.lastChild</li>
+  <li>body.firstElementChild</li>
+  <li>body.parentElement</li>
+  <li>body.firstElementchild.children.previousElementSibling // gives error since children is a collection and hence you cannot call `previousElementSibling` to a collection , 
+  either use `children[0].previousElementSibling`</li>
+  <li>body.firstElementchild.children.nextElementSibling</li>
+  <li>body.firstElementchild.children.nextSibling</li>
+  <li>table.rows</li>
+  <li>table.thead</li>
+  <li>table.caption</li>
+  <li>table.tfoot</li>
+  <li>table.rows</li>
+  <li>table.cells</li>
+</ol>
+
+<br>
+<br>
+<h2>DOM methods</h2>
+<ol>
+  <li>document.getElementById()</li>
+  <li>document.getElementsByClassName()</li>
+  <li>document.getElementsByTagName()</li>
+  <li>document.getElementsByName() // selects the elements that are named - for example using the <code>name</code> property for an input form</li>
+  <li>document.querySelector() // selects the first element of that query [ css selector ]</li>
+  <li>document.querySelectorAll() // selects all elements of that query </li>
+  <li>element.matches() // used to return boolean for matching the element with the specified CSS selector , for ex: <code>element.matches(".box1")</code> or <code>element.matches("#redbox")</code> // note that element needs to be defined</li>
+  <li>element.closest() // looks for the closest parent that has the specified CSS selector [ including the element itself - <br> <em>if</em> the element itself has that selector , <br>
+    <em>else</em> looks for the parent <br> <em>else</em> looks for the grandparent]</li>
+  <li>element.contains() // return boolean on searching the descedants on the specified element. For ex: <code>boxes.contains(div)</code> <br><em>if</em>The boxes element contains an element <code>div</code> </li>
+  <li>element.innerHTMl</li>
+  <li>element.outerHTML</li>
+  <li>element.innerText</li>
+  <li>element.outerText</li>
+  <li>element.tagName // for all HTML tags</li>
+  <li>element.nodeName // for all nodes - i.e including comments text etc</li>
+  <li>element.textContent
+  <br>
+  <img src="./media/textContent.png" alt="textContent">
+  <img src="./media/innerText.png" alt="innerText">
+  </li>
+  <li>element.hidden // returns a boolean value on checking if the div is given <code>hidden</code> property</li>
+  <li>element.hasAttribute() // returns a boolean value on checking if the specified attribute is present</li>
+  <li>element.getAttribute() // returns the specified attribute for that element</li>
+  <li>element.setAttribute() // sets a particular attribute to the specified value</li>
+  <li>element.removeAttribute() // removes that attribute for that element</li>
+  <li>element.attributes // shows all the attributes that are used for that element</li>
+  <li>node.append() // append to the ending of the node - a speicifed HTML element like DIV</li>
+  <li>node.prepend() // at the begining of the node</li>
+  <li>node.before() // BEFORE the node</li>
+  <li>node.after() // AFTER the node</li>
+  <li>node.replaceWith(e) // replace the node with the element specified</li>
+  <li>element.insertAdjacentHTML() // "beforebegin" "afterend" "afterbegin" "beforeend"</li>
+  <li>element.insertAdjacentText()</li>
+  <li>element.insertAdjacentElement()</li>
+  <li>element.remove()</li>
+  <li>element.classList // provides the name and the length separately as a DOMTokenList</li>
+  <li>element.className // only provides the name</li>
+  <li>element.classList().add() // adds the specified class in the class list</li>
+  <li>element.classList().remove() // removes the specified class from the class list</li>
+  <li>element.classList().toggle() // removes if existing , adds if not existing</li>
+  <li><b>document.createElement("div") // creates an element</b></li>
+</ol>
+  <script src="dom.js"> </script>
+  <a href="./events.html" alt="next page"><big><b>Events</b></big></a>
+</body>
+</html>
+
