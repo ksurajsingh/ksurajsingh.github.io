@@ -1,0 +1,7 @@
+LENGTHS OF DIAMONDS
+When you are making a Diamonds which has equal number of rows in the upper and the lower triangle of the middle rows-
+The total number of rows is always odd -- the length is always odd
+
+BREADTH OF DIAMONDS
+depends on the increments starting from 1- if one increment per row -- every row will be having both odd and even number of occurences consecutively
+if 2 increments per row -- every row will have odd number of occurences consecutively

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Priority Queue</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Priority Queue</h1>
+  <hr>
+  A typical example of a priority queue in the computers is CPU, where the CPU process the porcesses which are <br>
+  of <b>higher importance/priority</b> <br>
+  The order in which the elements are processed (deletion and insertion) comes from the following rules:
+  <ol>
+    <li>An element of higher priority is processed before any element of lower priority.</li>
+    <li>If 2 elements have same priority, then the element which comes first will be processed first.</li>
+  </ol>
+  <h3>Types</h3>
+  <dl>
+    <dt>Ascending priority queue</dt>
+    <dd>Collection of elements , where elements can be inserted arbitrarily but deletion can only happens for the
+      smallest element.</dd>
+    <dt>Descending priority queue</dt>
+    <dd>deletion is only for the largest element.</dd>
+  </dl>
+  types of implementation
+  <ul>
+    <li>arrays</li>
+    <li>structs</li>
+    <li>multiple-queues</li>
+  </ul>
+  <b>code for priority queue using simple linear arrays:</b>
+  <br>
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+      #define MAX 5
+      int q[MAX],front=0,rear=-1;
+
+      // ascending queue
+      // for descending queue - just change the logic to find the largest element
+      // performing array implementation for the priority queue
+
+      void qdisplay(){
+      printf("\nUpdated list: ");
+      for(int i=front;i&lt;=rear;i++){
+      printf("%d ",q[i]);
+      }
+      }
+
+      void qinsert()
+      {
+      char ch;
+      do{
+      if(rear==MAX-1){
+      printf("\nOverflow condition! ");
+      return;
+      }
+      int item;
+      printf("\nEnter the element to be inserted: ");
+      scanf("%d",&item);
+      q[++rear]=item;
+      printf("\nElement was successfully inserted! ");
+      printf("\nDo you want to insert more?[y/n]");
+      scanf(" %c",&ch);
+      }while(ch=='y');
+      qdisplay();
+      }
+      void qdelete(){
+
+      char ch;
+      do{
+      if(rear==front-1){
+      printf("\nUnderflow condition! ");
+      return;
+      }else if(rear==front){
+      printf("\nThis is the last element in the queue");
+      printf("\nThe element deleted is: %d",q[front]);
+      front=0;
+      rear=-1;
+      }else {
+
+      int min=q[0],index=0;
+      for(int i=0;i&lt;rear;i++){
+      if(min&gt;q[i+1]){
+      min=q[i+1];
+      index=i+1;
+      }
+      }
+      printf("\nThe element deleted is: %d",q[index]);
+      for(int i=index;i&lt;rear;i++){
+      q[i]=q[i+1];
+      }
+      rear--;
+      }
+      printf("\nElement deleted! ");
+      printf("\n Do you want to delete more?[y/n]");
+      scanf(" %c",&ch);
+      }while(ch=='y');
+      qdisplay();
+
+      }
+
+      void process_del(){
+
+      qinsert();
+      qdelete();
+      qdisplay();
+      }
+
+      // here on this if for processing the insertion of the elements so that deletion can happen only at he front
+
+      void delete(){
+      char ch;
+      do{
+      if(rear==front-1){
+      printf("\nUnderflow condition!");
+      return;
+      }
+      printf("\nElement deleted is: %d",q[front]);
+      front++;
+      printf("\nDo you want to delete another element?[y/n]");
+      scanf(" %c",&ch);
+      }while(ch=='y');
+      qdisplay();
+      }
+
+      void insert(){
+      char ch;
+      do{
+      int temp=rear;
+      if(rear==MAX-1){
+      printf("\nOverflow condition!");
+      return;
+      }
+      int item;
+      printf("\nEnter the item: ");
+      scanf("%d",&item);
+      while((temp&gt;=0)&&(item&lt;q[temp])){
+      q[temp+1]=q[temp];
+      temp--;
+      }
+      q[temp+1]=item;
+      rear++;
+      qdisplay();
+      printf("\nElement inserted!\nDo you want to insert more?[y/n]");
+      scanf(" %c",&ch);
+      }while(ch=='y');
+      }
+
+      void process_ins(){
+      insert();
+      delete();
+      qdisplay();
+      }
+
+      int main(){
+      printf("\n****Using Simple Linear Array****");
+      printf("\nSorting while deletion: ");
+      process_del();
+      printf("\nSorting while insertion: ");
+      process_ins();
+      }
+    </code>
+  </pre>
+
+  <br><br><br>
+  <h2>Priority Queue using Multiple Queues</h2>
+  We can use 2d arrays. <br>
+  Where row number acts as the priority values. <br>
+  The front and rear of each priority is maintained by arrays. <br>
+  Therefore the length of the arrays named <code>front</code> and <code>rear</code> are equal to the 1st dimension of
+  the array named <code>queue</code>.
+  <br>
+  <img width="650" src="../media/pq-mq.jpg" alt="priority queue using multiple-queues">
+
+  <h3>Code for PQ w Multiple Q</h3>
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+      #include&lt;stdlib.h&gt;
+
+      #define N 5
+
+      int queue[3][N];
+
+      int front[3]={0,0,0};
+      int rear[3]={-1,-1,-1};
+      int item,pr;
+
+
+      void display(){
+      printf("\nDisplaying!!\n");
+      int i,j;
+      for(i=0;i&lt;3;i++){
+      if(rear[i]==front[i]-1){
+      printf("\nNo elements in Queue %d",i+1);
+      }
+      else{
+      printf("\nQueue %d",i+1);
+      for(j=front[i];j&lt;=rear[i];j++){
+      printf("\n\t%d",queue[i][j]);
+      }
+      printf("\nFront of the queue is %d",queue[i][front[i]]);
+      printf("\nRear of the queue os %d",queue[i][rear[i]]);
+      }
+      }
+      return;
+      }
+
+
+      void insert(int pr){
+      printf("\nInserting!!\n");
+      if(rear[pr]==N-1){
+      printf("\nQueue Overflow");
+      return;
+      }
+      else{
+      printf("\nEnter the item: ");
+      scanf("%d",&item);
+      rear[pr]++;
+      queue[pr][rear[pr]]=item;
+      display();
+      return;
+      }
+      }
+
+      void delete(){
+      printf("\nDeleting!!\n");
+      int i;
+      for(i=0;i&lt;3;i++){
+      if(rear[i]==front[i]-1){
+      printf("\nQueue %d has a underflow condition! ",i+1);
+      }
+      else{
+      printf("\nFrom queue %d \n Delete item %d",i+1,queue[i][front[i]]);
+      front[i]++;
+      display();
+      return;
+      }
+      }
+      }
+
+
+
+      void main(){
+      int ch;
+      while(1){
+      printf("\n\t Priority Queue Implementation using Multi-Queue! [2dArrays] ");
+      printf("\n*****************************************************************\n");
+      printf("\n1.Insert\t2.Delete\t3.Display\t4.Exit\nEnter your choice: ");
+      scanf("%d",&ch);
+      switch(ch){
+      case 1:printf("Enter the priority number: ");
+      scanf("%d",&pr);
+      if(pr&gt;0&&pr&lt;4)
+      insert(pr-1);
+      else
+      printf("Only 3 Priority exists - 1,2,3");
+      break;
+      case 2:delete();
+      break;
+      case 3:display();
+      break;
+      case 4:exit(0);
+      }
+
+      }
+      }
+    </code>
+  </pre>
+
+
+  <br>
+  <hr>
+  <br>
+  <h2>Double-Ended Queue</h2>
+  Deque - pronounced as <code>deck</code>
+  This is useful for insert or deletion from two ends. <br>
+  <dl>
+    <dt>Input restricted Deque</dt>
+    <dd>
+      <ul>
+        <li>Data is taken as input only from the rear end</li>
+        <li><code>Deletion </code>can be from both front and rear</li>
+      </ul>
+    </dd>
+    <dt>Output restricted Deque</dt>
+    <dd>
+      <ul>
+        <li>Data is deleted only from the front.</li>
+        <li><code>Insertion </code> can happend from both front and read</li>
+      </ul>
+    </dd>
+  </dl>
+
+  This is the only kind of queue that is allows decrementing the front and rear pointers.
+
+  <h3>Code</h3>
+
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+      #include&lt;stdlib.h&gt;
+
+      #define N 5
+      int queue[N],front=-1,rear=-1,choice,item;
+
+      void insert_front(){
+      printf("\nInserting at front");
+      int item;
+      if(front==(rear+1)%N){
+      printf("\nQueue overflow");
+      return;
+      }
+      printf("\nEnter the data: ");
+      scanf("%d",&item);
+      if(front==-1){
+      front=rear=0;
+      }
+      else if(front==0){
+      front=N-1;
+      }
+      else{
+      front=(front-1+N)%N;
+      }
+      queue[front]=item;
+      return;
+      }
+
+      void insert_rear(){
+      printf("\nInserting at rear");
+      int item;
+      if(front==(rear+1)%N){
+      printf("\nQueue overflow");
+      return;
+      }
+      printf("\nEnter the data: ");
+      scanf("%d",&item);
+      if(front==-1)
+      front=rear=0;
+      else
+      rear=(rear+1)%N;
+      queue[rear]=item;
+      }
+
+      void delete_front(){
+      if(front==-1){
+      printf("\nQueue Underflow!");
+      return;
+      }
+      item=queue[front];
+      printf("\nThe deleted item is: %d",queue[front]);
+      queue[front]=0;
+      if(front==rear)
+      front=rear=-1;
+      else
+      front=(front+1)%N;
+      return;
+      }
+
+      void delete_rear(){
+      if(front==-1){
+      printf("\nQueue Underflow");
+      return;
+      }
+      item=queue[rear];
+      printf("\nDeleted element is: %d",queue[rear]);
+      queue[rear]=0;
+      if(front==rear)
+      front=rear=-1;
+      if(rear==0)
+      rear=N-1;
+      else
+      rear=(rear-1)%N;
+      return;
+      }
+
+      void display(){
+      int i;
+      if(front==-1){
+      printf("\nQueue is empty!");
+      return;
+      }
+      if(front&lt;=rear){
+      for(i=front;i&lt;=rear;i++){
+      printf("\t%d",queue[i]);
+      }
+      }
+      if(front&gt;rear){
+      for(i=front;i&lt;N;i++){
+      printf("\t%d",queue[i]);
+      }
+      for(i=0;i&lt;=rear;i++){
+      printf("\n%d",queue[i]);
+      }
+      }
+      printf("\n\tFront of the queue is %d",queue[front]);
+      printf("\n\tRear of the queue is %d",queue[rear]);
+      return;
+      }
+
+
+      void input_res(){
+      int ch;
+      while(1){
+      printf("\n\tUsing Input Restricted Deque");
+      printf("\n\t******************************");
+      printf("\n\t1.Insert\t2.Delete from Front\t3.Delete from Rear\t4.Display\t5.Exit\nEnter your choice: ");
+      scanf("%d",&ch);
+      switch(ch){
+      case 1:insert_rear();
+      break;
+      case 2:delete_front();
+      break;
+      case 3:delete_rear();
+      break;
+      case 4:display();
+      break;
+      default:exit(0);
+      }
+      }
+      return;
+      }
+
+      void output_res(){
+      int ch;
+      while(1){
+      printf("\n\tUsing Output Restricted Deque");
+      printf("\n\t*******************************");
+      printf("\n\t1.Insert from front\t2.Insert from rear\t3.Delete\t4.Display\tExit\nEnter your choice: ");
+      scanf("%d",&ch);
+      switch(ch){
+      case 1:insert_front();
+      break;
+      case 2:insert_rear();
+      break;
+      case 3:delete_front();
+      break;
+      case 4:display();
+      break;
+      default:exit(0);
+      }
+      }
+      return;
+      }
+
+
+
+      void main(){
+      int ch;
+      while(1){
+      printf("\n\tImplementing Deque using Array\n");
+      printf("\n*****************************************************************\n");
+      printf("\n1.Input restricted Deque \t2.Output restricted Deque \nEnter your choice: ");
+      scanf("%d",&ch);
+      switch(ch){
+      case 1:input_res();
+      break;
+      case 2:output_res();
+      break;
+      case 3:
+      default:exit(0);
+      }
+      return;
+      }
+      }
+
+    </code>
+  </pre>
+  <br>
+  <hr>
+  <h2>Applications</h2>
+  <ol>
+    <li>Time-Sharing Operating Systems</li>
+    <li>Information read and write from the disk to a console</li>
+    <li>Circular queue are used in <code>Real-Time OS</code></li>
+    <li>Network-communications</li>
+</body>
+
+</html>
