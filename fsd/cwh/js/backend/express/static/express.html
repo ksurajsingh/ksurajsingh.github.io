@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EXPRESS</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <pre>
+ <code>nodmeon</code>  is used to restart the server
+ <code>npm i express</code> for the latest stable version.
+ Express is a better alternative of http since http 
+ <ol>
+  <li>Cannot serve static files</li>
+  <li>Minimal security</li>
+  <li>Cutsom <code>get</code> <code>post</code> <b>req</b> <em>handlers</em></li>
+ </ol>
+
+  There are http requests that show the way things are <code>requested for</code> or 
+  <code>requested of</code>. 
+  <img src="./media/httpreqs.png" alt="different types of http requests">
+  
+  We init an <code>express</code> app by 
+  <code>const app = express()</code>
+  We can then use the app as 
+  <code>app.get("/",(req,res)=%gt;{})</code>
+  inside which you could actually use 
+  <code>
+   req.params 
+   req.query
+  </code>
+  To get those params and query that are given at the end point.
+  for ex:
+  <code>app.get("/futurediary/blogs/:monday?mode=dark",(req,res)=&gt;{
+   
+   console.log("Requested for",req.params);
+   consoel.log("Requested with",req.query)
+   
+   })</code>
+
+   you can serve static files in <code>express</code> using 
+   <code>app.use(express.static('static-dir'))</code>
+
+
+   You can also club various end points like - 
+
+  <code>app.get("/futurediary/blogs/:monday?mode=dark",(req,res)=&gt;{
+   
+   console.log("Requested for",req.params);
+   consoel.log("Requested with",req.query)
+   
+   }).post("/futurediary/blogs/:monday?mode=dark",(req,res)=&gt;{
+   
+   console.log("Requested for",req.params);
+   consoel.log("Requested with",req.query)
+   
+   })
+
+   </code>
+
+   <a href="./EMethods.html"><big>EMethods</big></a>
+
+
+- [ ] try installing and actaully using express
+- [ ] test GET POST
+- [ ] hoppscotch
+- [x] router
+- [ ] express() , express.Static , express.Router()
+
+
+
+  </pre>
+</body>
+</html>
+
