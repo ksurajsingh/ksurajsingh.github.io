@@ -29,6 +29,7 @@ Contains Frequent updates
 
 - [ ] check if all files of DSA are added
  - [ ] I think there is some problem in `patternMatching.html` in `DSA` in `chap3`
+ - [ ] refactor chap7 [ renaming index mostly ]
 - [ ] check if all files of fsd are added
 
 ## Bug 
