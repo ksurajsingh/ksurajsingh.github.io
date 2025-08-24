@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sorting</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Sorting Techniques</h1>
+  All the sorting technique effeciencies lie between O(n log n) to O(n<sup>2</sup>)
+
+  <hr>
+  <hr>
+  <h2>Bubble Sort</h2>
+  <hr>
+  Bubbble sort is the most popular sorting algorithm because it is very simple to understand and implement. <br>
+  The algorithm achieves its name from the fact that : <br>
+  <em>With every iteration the largest element moves like a bubble to the top of the array.</em>
+  <br>The bubble sort method is <b>not</b> efficient for larger arrays.
+
+  <br><br>
+  <pre>
+    <code>
+      #include&lt;stdio.h&gt;
+
+      void printArray(int arr[], int*n){
+      for(int i=0;i&lt;*n;i++){
+      printf("Element at %d : %d \n",i+1,arr[i]);
+      }
+      }
+
+      void bubSort(int arr[],int *n){
+      int temp;
+      for(int i=0;i&lt;*n;i++){
+      for(int j=0;j&lt;*n-i;j++){
+      if(arr[j]&gt;arr[j+1]){
+      temp=arr[j];
+      arr[j]=arr[j+1];
+      arr[j+1]=temp;
+      }
+      }
+      }
+      }
+
+      void main(){
+      int n;
+      printf("Enter the size of the array: \n");
+      scanf("%d",&n);
+      int arr[n];
+
+      for(int i=0;i&lt;n;i++){
+      printf("Enter array elements: \n");
+      scanf("%d",&arr[i]);
+      }
+      printf("Before sorting: \n");
+      printArray(arr,&n);
+      bubSort(arr,&n);
+      printf("after sorting: \n");
+      printArray(arr,&n);
+
+      }
+    </code>
+  </pre>
+
+  <br>
+  The <em>Time complexity</em> of bubble sort algorithm is <code>n times summation of n</code> i.e nothign but
+  O(n<sup>2</sup>)<br><br><br>
+
+  <hr>
+  <h2>Selection Sort</h2>
+  <hr>
+  <ol>
+    <li>As the name suggest this algorithm selects the smaller element in the first iteration traversing the array</li>
+    <li>Places it in the first position</li>
+    <li>Selection sort heavily realies on the <em>comparision method</em> for its functionality while bubble sort relied
+      on <em>finding middle elements</em></li>
+    <li>Doesn't work optimally on large arrays</li>
+  </ol>
+
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+
+      int min(int arr[],int k ,int n){
+      int loc=k,min=arr[k];
+      for(int i=k+1;i&lt;n;i++){
+      if(arr[i]&lt;min){
+      min=arr[i];
+      loc=i;
+      }
+      }
+      return loc;
+      }
+
+      void printArray(int arr[],int n){
+      for(int i=0;i&lt;n;i++){
+      printf("Element at %d: %d\n",i+1,arr[i]);
+      }
+      }
+
+      void main(){
+      int n;
+      printf("Enter the size of the array: \n");
+      scanf("%d",&n);
+      int arr[n];
+      for(int i=0;i&lt;n;i++){
+      printf("Enter element no %d: \n",i+1);
+      scanf("%d",&arr[i]);
+      }
+      printf("Before sorting: \n");
+      printArray(arr,n);
+      int temp,loc;
+      for(int i=0;i&lt;n;i++){
+      loc=min(arr,i,n);
+      temp=arr[i];
+      arr[i]=arr[loc];
+      arr[loc]=temp;
+      }
+      printf("After Sorting: \n");
+      printArray(arr,n);
+      }
+    </code>
+  </pre>
+
+
+  The <em>Time complexity</em> of selection sort algorithm is <code>n times summation of n</code> i.e nothign but
+  O(n<sup>2</sup>)<br><br><br>
+
+
+  <hr>
+  <h2>Insertion Sort</h2>
+  <hr>
+
+  <ol>
+    <li>Again doesn't work on very big arrays</li>
+    <li>As the name suggest it picks one element on every iteration and inserts it in the a position that is going to be
+      its final position after sorting of the element</li>
+    <li>At every iteration the element is compared with all the elements before it</li>
+    <li>If any element is greater than the current element , that element is placed in the current location and the
+      element before it is compared</li>
+    <li>Lastly when the arrays is exhausted in the reverse manner or if an element is found that is equal to or smaller
+      than the current element we place our current element in the position after it</li>
+    <li>More complex than selection or bubble sort</li>
+  </ol>
+
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+
+      void insertionSort(int arr[],int n){
+      printf("\t\t********** Implementing Insertion sort******** \n\n ")
+      int k,j;
+      for(int i=1;i&lt;n;i++){
+      k=arr[i];
+      for(j=i-1;j&gt;=0 && arr[j]&gt;k ; j--){
+      arr[j+1]=arr[j];
+      }
+      arr[j+1]=k;
+      }
+      }
+
+      void printArray(int arr[],int n){
+      for(int i=0;i&lt;n;i++){
+      printf("The element at %d : %d \n",i+1,arr[i]);
+      }
+      }
+
+      void main(){
+      int n;
+      printf("Enter the size of the array: \n");
+      scanf("%d",&n);
+      int arr[n];
+      for(int i=0;i&lt;n;i++){
+      printf("Enter the element at %d: ",i+1);
+      scanf("%d",&arr[i]);
+
+      }
+      printf("\n\nBefore sorting: \n");
+      printArray(arr,n);
+      insertionSort(arr,n);
+      printf("\n\n After sorting: \n");
+      printArray(arr,n);
+      }
+    </code>
+  </pre>
+
+
+  The <em>Time complexity</em> of insertion sort algorithm is <code>n times summation of n</code> i.e nothign but
+  O(n<sup>2</sup>)<br><br><br>
+
+  <br><br><br>
+  <h1>Bonus</h1>
+  <img src="../media/internalVSexternalSort.png" alt="internal vs external sort [BASIC]">
+
+
+  <a href="../2darrays/2darrays.html"><big>Chap6</big></a>
+</body>
+
+</html>

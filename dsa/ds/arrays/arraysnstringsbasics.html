@@ -1,0 +1,198 @@
+<h1>Chunin [Shikamaru]</h1>
+<ul>
+<li>arrays are initialised as zeros by default.  </li>
+<li>when you print array without referencing any index , its prints the reference address of the array.  </li>
+<li>arrays store reference and length , that is why we call length by <code>&lt;Arraryname&gt;/length</code></li>
+<li>A boolean is stored as either &quot;true&quot; or &quot;false&quot; and not 0 or 1</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>1stBlock</th>
+<th>2ndBlock</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>array</td>
+<td>reference</td>
+<td>length</td>
+</tr>
+</tbody></table>
+<h2>Primitive and Non- Primitive data types</h2>
+<h3>Primitive</h3>
+<ul>
+<li>predefined by the language</li>
+<li>fixed size and behavior</li>
+<li>directly stores the values</li>
+</ul>
+<p>ex:</p>
+<ul>
+<li>int  </li>
+<li>float/ double  </li>
+<li>character  </li>
+<li>boolean </li>
+<li>string [strings in java are immutable | but can be concatenated]</li>
+</ul>
+<p>primitive data typed str passed by values.  </p>
+<h3>Non primitive</h3>
+<p>that are derived or constructed using primitve data types  </p>
+<ul>
+<li>user-defined or built on top of primitve data types  </li>
+<li>can store multiple values or more complex data  </li>
+<li>flexible and often dynamic</li>
+</ul>
+<p>ex: </p>
+<ul>
+<li>arrays  </li>
+<li>lists  </li>
+<li>tuples  </li>
+<li>sets  </li>
+<li>dictionaries  </li>
+<li>classes/objects  </li>
+<li>pointers</li>
+</ul>
+<p>Non primitive data types are stores and manipulated as call by reference so you can pass references to functions and no need to specify a particular value</p>
+<h2>Easy problems</h2>
+<h3>find largest element</h3>
+<h3>merge arrays</h3>
+<h2>Searching</h2>
+<h3>Linear Search</h3>
+<h3>Binary Search</h3>
+<blockquote>
+<p>! [WARNING] The array needs to be sorted for binary search to work.  </p>
+</blockquote>
+<blockquote>
+<p>[NOTE] when performing a function , make sure to make a return type , void is problematic -- [see searchingInArrays.problematic]<br>  also note the power of <code>return</code> statement.    </p>
+</blockquote>
+<h2>Sorting</h2>
+<h3>Selection sort</h3>
+<p>you select the first index at every indices and find the minimum value in the array for that place </p>
+<ul>
+<li>the values from start till the index are sorted</li>
+</ul>
+<h3>bubble sort</h3>
+<p>you are selecting consecutive indices and swapping if the smaller index holds a greater value</p>
+<ul>
+<li>after each iteration proportionally the last elements are sorted</li>
+</ul>
+<h3>Insertion sort</h3>
+<p>assume that the first index is sort and from the second index take the first value and compare with the indices before it and place it , keep increasing the index of the assumption of sorted part </p>
+<h2>Strings</h2>
+<p>can be stores in two way - </p>
+<pre><code class="language-java">char arr[]={&#39;H&#39;,&#39;E&#39;,&#39;L&#39;,&#39;L&#39;,&#39;O&#39;}; 
+String str=&quot;Hello&quot;; // string pool [will learn about it further]
+String str1=&quot;&quot;;
+System.out.println(str1.length()+&quot; &quot;+str.charAt(0))
+System.out.println(str1 + str2)
+System.out.println(str1.equalts(str2) );
+str1=str1.concat(str2);
+System.out.println(str1.comapreTo(str2));
+// return ascii difference between those values 
+System.out.println(str.contains(str2));
+System.out.println*(str.substrin(3));
+// give the starting index from where you want the substring
+System.out.println*(str.substrin(3,4));
+// start , end (end is exclusive)
+str3=s.next(); // delimiter is space here , the remaining part after the delimiter is kept in the console waiting for the next function to take it as input.
+System.out.println(str3+&quot; &quot;+str3.length);
+str4=s.nextLine(); // delimiter is \n here , now only takes what ever is remaining in the console
+System.out.println(str4+&quot; &quot;+str4.length);
+</code></pre>
+<h3>reversing strings</h3>
+<p># write code for the following as a practise</p>
+<ol>
+<li><p>where i is n and you store the value of i in a new string and decrement i   </p>
+</li>
+<li><p>where i is 0 and keeps incrementing till less than str.length. and prepends every character it find ,</p>
+</li>
+</ol>
+<pre><code class="language-java">recstr=str.charAt(i) + revstr
+</code></pre>
+<ol start="3">
+<li>where i is 0 and keeps incrementing while its less than str.length , while copying its (n-i) contents to a new string</li>
+</ol>
+<h3>Pallindrome</h3>
+<ol>
+<li>reverse the entire string and match it with the original. You can use a compare to operator - if the returned value is 0 , its same.<br>Here you reverse the first half of the string so its time complexity is n/4.</li>
+<li>Check the last characters corresponding to the first characters , <br> <em>if they match</em> <br> &nbsp;&nbsp;&nbsp;&nbsp; - decrement last character and increment first character while first character&#39;s index is less than last character&#39;s index <br> <em>else</em> <br>&nbsp;&nbsp;&nbsp;&nbsp; the string is not a pallindrome , <br> once the loop has executed - check the first and last indices , <br> if they are equal to or first is less than last index then they match !</li>
+</ol>
+<h5>revise : strings are immutable but can be concatenated</h5>
+<h4>Functions/Function calls , non primitive objects and local variables are stored in stack</h4>
+<h4>Actual content or values are stored in heap</h4>
+<h3>Declaring a string</h3>
+<pre><code class="language-java">string str=&quot;abc&quot;; //  string pool 
+String str1 = new String(&quot;abc&quot;) // object : value string 
+char str2 = new char[10] ; // object :value string
+</code></pre>
+<ul>
+<li>Using a string pool , the length function is <code>str.length()</code> ,  as it is a primitive type , generally non primitive types like array have <code>arr.length</code>   <br></li>
+</ul>
+<p>Difference between length() and length 
+and 
+String and char 
+[class]   [data type]</p>
+<p><img src="./finalField_array.png" alt="Method of String vs finalField of array"></p>
+<ul>
+<li><p>str1 here is the reference in the stack and &quot;abc&quot; stored is the value stored in the heap which is being referred to by the stack value [i.e. address of ] str1.  <br> </p>
+</li>
+<li><p>while str is creating a new value in the heap [creating - because no value was present before that matched that value required by str] which is called as string pool.  <br></p>
+</li>
+<li><p>The concept of string pool is in java cuz - when another string called for the same value - it will just refer to the heap location.</p>
+</li>
+</ul>
+<p># So yes, basically string pool is in heap.  </p>
+<h3>Substring</h3>
+<p>A substring is a subset of a string whose order / sequence is maintained.  </p>
+<p><em>formula for</em> total number of sub strings = sum of n natural numbers = <code>n(n+1)/2</code></p>
+<h3>String compare</h3>
+<p>use <code>str.equals(str2)</code></p>
+<p>instead of <code>str == str2</code> as this way it doesn&#39;t no compare and the string but the address these variables refers to , This condition only occurs when one of them is a non primitive type as primites are called by values - non primitve way of declaring a string is by creating a new instance of the String class .</p>
+<h3>String buffer</h3>
+<p>String buffer class is a special string class which makes string mutable , most commonly used operation - <code>str.setCharAt(index,character)</code><br>String buffer is a non primitive data type  so its a pass by reference +  takes more space as it has data manipulation support<br><code>str.append(&quot;character[s]&quot;)</code> is what is available instead of <code>str.concat(str2)</code> </p>
+<h3>String builder</h3>
+<h3>String buffer vs String builder</h3>
+<h3>String programs</h3>
+<h4>reverseEarchWord</h4>
+<h4>Find number of substring - 2 approaches</h4>
+<h2>2D-Arrays</h2>
+<ul>
+<li>Arrays in java are generally initialized to 0;   </li>
+<li>Here the <code>arr</code> stores the length and reference to other sub-1D arrays ,</li>
+<li>To find total elements you need to sum <code>sum+=arr[i].length</code></li>
+<li>by this time you will also know it by default that this is also a non-primitive take , if not you should just go back to the [academy][../pics/academy.jpg]</li>
+</ul>
+<h3>Declaring</h3>
+<p>{% raw %}</p>
+<pre><code class="language-java">int[][] arr = {{1,2},{3,4,5}};
+</code></pre>
+<p>{% endraw %}</p>
+<p>This short hand declaration is allowed only at the time of declaring the array and not later i.e.  </p>
+<p>{% raw %}</p>
+<pre><code class="language-java">int[][] arr= new int[10][10];
+arr[][] = {{1,2},{3,4,5}} // not possible 
+arr[0][] = new int[]{1,2}; // instead use this
+arr[1][] = new int[]3,4,5; // This is called as jagged arrray 
+</code></pre>
+<p>{% endraw %}</p>
+<ul>
+<li>Where as</li>
+</ul>
+<pre><code class="language-java">int [][] arr = new int[5][];
+System.out.println(arr); // returns a value since the array is referenced somewhere in the memory that references 5 more arrays 
+System.out.println(arr[0]);// return null as no address is referenced for the 1st sub-1Darray of main 2D-array
+System.out.println(arr[0][1]);//  since there is no reference to the 1st array , the second element of the first array is NULL and hence could return a null pointer exception
+</code></pre>
+<h3>Jagged Arrays</h3>
+<pre><code class="language-java">int arr[][] = new int[5];
+System.out.println(&quot;5 arrays declared whose reference is : &quot;+arr);
+for(int i=0;i&lt;5;i++){
+    arr[i] = new int[3]; // or any value desired    
+    // i th array of j elements have been decalred
+}
+for(int i=0;i&lt;5;i++){
+    for(int j=0;j&lt;arr[i].length;j++){
+        System.out.println(arr[i][j]);
+    }
+}
+</code></pre>

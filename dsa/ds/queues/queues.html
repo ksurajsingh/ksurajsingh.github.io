@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>chap 9</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Queues</h1>
+  <br><br>
+  Queue is defined as an ordered collection of items from which, the items mat be deleted at one end called FRONT end
+  and into which the items may be inserted at the other end called REAR end <br>
+  Follows LILO or FIFO <br>
+  <br>
+  <b>Queues</b> as broadly classified into four types:
+  <ol>
+
+    <li>Linear</li>
+    <li>Circular </li>
+    <li>Priority
+      <ol>
+        <li>Ascending</li>
+        <li>Descending</li>
+      </ol>
+    </li>
+    <li>Double ended
+      <ol>
+        <li>Input-restricted</li>
+        <li>Output-restricted</li>
+      </ol>
+    </li>
+  </ol>
+  It can be implemented with abstract functions like :
+  <ol>
+    <li>Insertion</li>
+    <li>Deletion</li>
+    <li>Isempty</li>
+    <li>Isfull</li>
+    <li>Display</li>
+  </ol>
+  <br>It also has conditions such as <code>overflow</code> for when the queue is full and <br>
+  <code>underflow</code> for when the queue is empty <br><br>
+  Below is an implementation of queues using arrays
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+
+      #define MAX 3
+
+      // this code is not upto the mark , but does a little work [doesn't handle all edge cases]
+      int q[MAX],front=0,rear=-1;
+
+      void display(){
+      printf("\nUpdated list: ");
+      for(int i=front;i&lt;= rear;i++){
+      printf("%d ",q[i]);
+      }
+      }
+
+      void insert(){
+      char ch;
+      do{
+      if(rear==MAX-1){
+      printf("\nOverflow condition!");
+      return;
+      }
+      printf("\nEnter the element to be inserted: ");
+      int item;
+      scanf("%d",&item);
+      q[++rear]=item;// array bounds aren't checked at runtime!
+      // therefore you can keep inserting more than MAX elements
+      // but it might crash later on
+      printf("\nElement is successfully inserted!");
+      printf("\nDo you want to insert more?[y/n]: ");
+      scanf(" %c",&ch);
+      }while(ch=='y');
+      display();
+      }
+
+
+      void delete(){
+      char ch;
+      do{
+      if(rear==front-1){
+      printf("\nUnderflow condition!");
+      return;
+      }
+      front++;
+      printf("\nElement deleted!");
+      printf("\nDo you want to delete another element?[y/n]");
+      scanf(" %c",&ch);
+      }while(ch=='y');
+      display();
+      }
+
+      int main(){
+      insert();
+      delete();
+      display();
+      }
+    </code>
+  </pre>
+
+  <br><br>
+  Now coming for the circular Queue. <br>
+  It is where you can keep inserting elements even after reaching the end - <b>If there is space available in the
+    list</b>
+  <br>
+  That is when there is atleast some space available [even a single element of space] within the range of size of queue,
+  insert method can function
+  <br>
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+
+      #define MAX 3
+
+      int q[MAX],front=-1,rear=1;
+
+      void display(){
+      if(front=-1){
+      printf("Empty");
+      }else if(front&lt;=rear){
+      for(int i=front;i&lt;=rear;i++){
+      printf("%d ",q[i]);
+      }
+      }
+      else{
+      for(int i=front;i&lt;MAX;i++){
+      printf("%d ",q[i]);
+      }
+      for(int i=0;i&lt;=rear;i++){
+      printf("%d ",q[i]);
+      }
+      }
+      }
+
+      void insert(){
+      int item;
+      if((front==0 && rear==MAX-1) || rear == front-1){
+      printf("\nOverflow Condition!");
+      return;
+      }
+      rear=((rear+1)%MAX);
+      printf("\nEnter the element to insert");
+      q[rear]=item;
+      display();
+      }
+
+      void delete(){
+      if(front=-1){
+      printf("\nUnderflow Condition!");
+      }
+      printf("\nDeleted element is: %d",q[front]);
+      if(front==rear){
+      front=rear=-1;
+      }else{
+      front=((front+1)%MAX);
+      }
+      display();
+      }
+
+      int main(){
+      char ch;
+      printf("\nImplemting Circular Queue!");
+      while(1){
+      printf("\nEnter choice\n1.Insert\t2.Delete\t3.Display\t4.Exit");
+      scanf(" %c",&ch);
+      switch(ch){
+      case'1':insert();break;
+      case'2':delete();break;
+      case'3':display();break;
+      case'4':return 0;
+      default:printf("\nInvalid Option!");
+      }
+      }
+      }
+    </code>
+  </pre>
+
+  <h2>Applications</h2>
+   <ol>
+     <li>Simulation of real life problems</li>
+     <li>Time-sharing systems </li>
+     <li>OS [circular]</li>
+     <li>Read/Write to disk [circular]</li>
+     <li>Real-time apps for buffering I/O requests [circular]</li>
+     <li>nw comm systems</li>
+   </ol>
+  <a href="priorityqueue.html" alt="next page"><u><big>Next</big></u></a>
+</body>
+
+</html>

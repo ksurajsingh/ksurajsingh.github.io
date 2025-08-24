@@ -1,0 +1,185 @@
+#include<stdio.h>
+  #include<string.h>
+#include<stdlib.h> //  for exit using in the switch's default case
+
+int len(char str[]){
+  int i=0;
+    while(str[i]!='\0'){
+      i++;
+    }
+  return i ;
+}
+void insert(char string[50]){
+  int pos;
+  printf("Enter the position: \n");
+  scanf("%d",&pos);
+    getchar();// flushes newline from buffer since we are using fgets after a scanf
+
+    char ins[25];
+    printf("Enter the string to be inserted: \n");
+    fgets(ins,25,stdin);
+    ins[strcspn(ins,"\n")]='\0';
+
+    char firstString[50];
+    int j=0;
+    for(j=0;string[j]!=string[pos-1];j++){
+      firstString[j]=string[j];
+    }
+    firstString[j]='\0';
+    printf("\n first string: %s\n",firstString);
+
+    strcat(firstString,ins);
+
+    char secondString[50];
+    int k=0;
+    for(int i=pos-1;string[i]!='\0';i++){
+      printf("%c \n",string[i]);
+      secondString[k]=string[i];
+      k++;
+    }
+    secondString[k]='\0';// terminating the string so no garbage is given place
+
+    strcat(firstString,secondString);
+    
+    printf("Final string: %s",firstString);
+
+  }
+
+void delete(char string[]){
+  int pos,n;
+  printf("Enter the position to delete from: \n");
+  scanf("%d",&pos);
+
+  printf("Enter the length to delete: \n");
+  scanf("%d",&n);
+  char firstString[50];
+  int j=0;
+  for(j=0;j!=pos-1;j++){
+    firstString[j]=string[j];
+  }
+  firstString[j]='\0';
+
+  char secondString[50];
+  int k=0;
+  for(int i=pos+n-1;string[i]!='\0';i++){
+    secondString[k]=string[i];
+    k++;
+  }
+  secondString[k]='\0';// temrination
+  strcat(firstString,secondString);
+  printf("\n Final string: %s",firstString);
+}
+
+
+int getpos(char dpat[],char string[]){
+  int j,k,i=0;
+  while(string[i]!='\0'){
+    if(string[i]==dpat[0]){
+      j=1;
+      while(dpat[j]!='\0' && string[j+i]!='\0' && string[j+i]==dpat[j]){
+        j++;
+        k=1;
+      }
+      if(dpat[j]=='\0'){
+        printf("\n Pattern string %s found at position %d : ",dpat,i+1);
+        return i+1;
+      }
+    }
+    i++;
+  }
+  if(k==0){
+    printf("\n Given pattern not found! \n");
+    return -1;
+  }
+
+}
+
+
+
+void replace(char string[]){
+  char dpat[50],ipat[50];
+  // take pattern to delete 
+  printf("Enter the string part you want to delete: \n");
+  getchar();
+  fgets(dpat,50,stdin);
+  dpat[strcspn(dpat,"\n")]='\0';
+
+    // take pattern to insert 
+  printf("Enter the string that you want to insert in its place: \n");
+  fgets(ipat,50,stdin);
+  ipat[strcspn(ipat,"\n")]='\0';
+
+  int pos=getpos(dpat,string);
+  int l;
+  if(pos!=-1){
+    l=len(dpat);
+    // Impleting deletion operation 
+        char firstString[50];
+        int j=0;
+        for(j=0;j!=pos-1;j++){
+          firstString[j]=string[j];
+        }
+          firstString[j]='\0';
+
+        char secondString[50];
+        int k=0;
+        for(int i=pos+l-1;string[i]!='\0';i++){
+          secondString[k]=string[i];
+          k++;
+        }
+        secondString[k]='\0';// temrination
+        strcat(firstString,secondString); 
+        strcpy(string,firstString);
+    // implementing the insertion operationg
+         char ifirstString[50];
+    int ij=0;
+    for(ij=0;string[ij]!=string[pos-1];ij++){
+      ifirstString[ij]=string[ij];
+    }
+    ifirstString[ij]='\0';
+    printf("\n first string: %s\n",ifirstString);
+
+    strcat(ifirstString,ipat);
+
+    char isecondString[50];
+    int ik=0;
+    for(int i=pos-1;string[i]!='\0';i++){
+      printf("%c \n",string[i]);
+      isecondString[ik]=string[i];
+      ik++;
+    }
+    isecondString[ik]='\0';// terminating the string so no garbage is given place
+
+    strcat(ifirstString,isecondString);
+    strcpy(string,ifirstString);
+
+    printf("\n\n**Final string: %s \n\n",string);
+
+
+  }
+
+
+}
+  int main(){
+
+    char string[50];
+    printf("Enter the string: \n");
+    fgets(string,50,stdin);
+    string[strcspn(string,"\n")]='\0';
+
+    int ch;
+    while(1){
+    printf("\n1.Insert\t 2.Delete\t 3.Replace\n");
+    scanf("%d",&ch);
+    switch(ch){
+      case 1:insert(string);
+             break;
+      case 2:delete(string);//deleted a length from specified position
+              break;
+      case 3:replace(string);
+             break;
+      default:exit(0);
+    }
+    }
+    return 0;
+  }

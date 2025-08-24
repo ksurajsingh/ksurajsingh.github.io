@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trees</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>Trees</h1>
+  <hr>
+  <h2>Trees vs Graphs</h2>
+  <ol>
+    <li>Trees are special type of graphs</li>
+    <li>Must be connected</li>
+    <li>Must be acyclic</li>
+    <li>Must have exactly n-1 edges, where n is number of nodes.</li>
+    <li>Follows a heirarchial structure with a special root [ source ] node. </li>
+  </ol>
+  <ul>
+    <li>Is a abstract DS</li>
+    <li>datas are in structures called nodes</li>
+    <li>Has a <em>primary node</em> called the <code>root</code>.</li>
+    <li>Branch nodes are called <code>sub-trees</code></li>
+    <li>Nodes that have no descendents are called <code>leaf</code> or <code>terminal</code> nodes <br>
+      The other nodes are called non terminal / internal nodes
+    </li>
+    <li>Each node is the <code>parent</code> or <code>predecessor</code> of its sub-tree</li>
+    <li>Every node in a tree has "zero" or more <code>children </code> or <code>sucessors</code></li>
+    <li>One or more of the sub-trees may have no element and are called <code>empty sub-trees</code></li>
+    <li>Siblings are all the nodes that have the same parent</li>
+    <li><code>Level</code> is the rank of heirarchy and root node is at <code>level 0</code>. <br>
+      <b>BUT</b> the height does count all levels.
+    </li>
+    <li><b>Sequence</b> of consequetive edges is called a path.</li>
+    <li>If a tree has n nodes - there are also n <code>subtrees</code></li>
+    <li>The <code>Depth</code> or <code>Height</code> of the tree is the number of nodes in the longest path from the root node. OR <br>
+      maximum number of nodes possible in a path starting from the root node.</li>
+    <li>A set of <code>Disjoint</code> trees is called a forest.  <br>
+      Two trees are said to be <b>disjoint</b> if they do not share a common vertex.
+     <br>
+     So even if there are multiple trees, if they share any of the nodes, it won't be considered as a forest.
+    </li>
+    <li><code>Tree Representation</code> ex: <img src="./media/treerepresentation.jpg" alt="tree representation diagramatically"></li>
+    <li><code>Tree Notation</code> ex: <img src="./media/treenotation.jpg" alt="tree notation"></li>
+    <li><b>Also</b> Trees here are named after botanical notations so names like <code>Ancestor</code>, <code>Descedant</code> do apply.</li>
+    <li><b>Extras:</b> Going from leaf to root is called climbing, going from root to leaf is called descending.</li>
+  </ul>
+  <h3>Binary Tree</h3>
+  <ol>
+    <li>Could either be an <code>empty binary tree</code> with no nodes <br>
+      <code>NULL Tree</code> without a node. <br>
+      <b>WHEREAS</b> a tree always has atleast one node.
+    </li>
+    <li>A tree with a special designated node called the <code>root</code> and </li>
+    <li>Remaining nodes forming upto only two disjoint binary tress called <code>left-subtree</code> and <code>right-subtree</code> <br>
+      <b>WHEREAS</b> a tree can have n (n>0) disjoin subtrees.
+    </li>
+    <li>A binary tree can have <b>atmost</b> <code>two childrens</code> <br>
+      <b>WHEREAS</b> a tree can have more than two
+    </li>
+    <li>ex: <img src="./media/binarytreeex.jpg" alt="Example of a B-tree"></li>
+  </ol>
+  <h3>Binary Tree formule</h3>
+  <ol>
+    <li>no. nodes at level <code>l</code> = 2<sup>l</sup> [ ONLY HOLDS GOOD FOR COMPELETE/FULL BINARY TREE]</li>
+    <li>Total no. nodes = <code>2<sup>h+1</sup>-1</code> . where 'h' is the <b>height</b> of the tree <br>
+      <em>Remember the difference between a level[0] and a height[1]. </em>
+      <b>But in most cases That I saw they take height to start at 0 as well i.e 0 @ root</b>
+    </li>
+    <li>Minimum no. posisble nodes for a binary tree of height <code>h</code> is <code>h</code></li>
+    <li>If all internal nodes have exactly two childrens then - <br>
+      <code>number of leaf nodes</code> = <code>number of internal nodes</code> + 1
+    </li>
+    <li>Total number of binary trees possible with n nodes is <code>[1/(n+1)]*[2NCn]</code>.<br>
+      <code>NCr = N!/r!(n-r)!</code>.
+    </li>
+  </ol>
+  <h3>Definations</h3>
+  <dl>
+    <dt>Link</dt>
+    <dd>This is a pointer to the node of a tree.</dd>
+    <dt>Degree</dt>
+    <dd>The number of childrens a particular node has <br>
+      <dt>Indegree</dt>
+      <dd>The number of edges coming into a node from top</dd>
+      <dt>Outdegree</dt>
+      <dd>The number of edges going out of a node to bottom</dd>
+    </dd>
+    <dt>Left-skewed Binary Tree</dt>
+    <dd>If there is only a left-subtree</dd>
+    <dt>Right-skewed Binary Tree</dt>
+    <dd> if there is only a right sub-tree </dd>
+  </dl>
+  <h3>Further Types [under binary tree]</h3>
+  <dl>
+    <dt>Full[Strict] Binary Tree</dt>
+    <dd>Follows the degree-rule , i.e All the nodes , except the last must have a degree of <code>0</code> or <code>2</code></dd>
+    <dt>Complete Binary Tree</dt>
+    <dd><ol><li>That contains <code>maximum</code> number of possible nodes at each level , except the last level. <b>AND</b></li>
+        <li>The last level must be left composed</li></ol>
+    </dd>
+    <dd>Full[Strict] vs Complete : <img src="./media/fullvscompletebinarytree.jpg" alt="full[strict] vs complete binarytree"></dd>
+    <dt>Almost complete binary tree</dt>
+    <dd><ol>
+      <li>All the levels of the nodes should be completely filler , but possible for the last level</li>
+      <li>The last level should be filled from left to right</li>
+      <li>The last level may not be completely full, but there should be no gaps before the missing node.</li>
+    </ol></dd>
+    <dt>Perfect Binary Tree</dt>
+    <dd>Completed filled nodes at all levels</dd>
+  </dl>
+  <h2>Representation of Binary Trees</h2>
+  <ul>
+    <li>Sequential Representaion [array]</li>
+    <li>Linked List Representation</li>
+    <li>Parent Pointer</li>
+  </ul>
+  <h3>Sequential Representation [Arrays]</h3>
+  <ol>
+    <li>Uses a 1-D array</li>
+    <li>Requires numbering of the nodes. Starting from <code>node level 0</code>, <code>1</code> and so on.</li>
+    <li>The nodes are numbered from left to right.</li>
+    <li>We trace in the above way creating a <code>Complete</code> binary tree and leaving the ones that don't exist empty</li>
+    <li>Since this is a Complete binary tree [ we know that evey node has exactly 2 nodes ]. <br>
+      The following properties hold good . And that is how we determine the relations between them.
+      <ol>
+        <li>The father of <code>k<sup>th</sup></code> index is at index <code>(n-1)/2</code>. <br>
+          Where <code>n</code> is the index in the array. And <code>K</code> is the numbering in the graph.
+        </li>
+        <li>The left child of <code>k<sup>th</sup></code> index is at index <code>2*K</code>.</li>
+        <li>The right child of <code>k<sup>th</sup></code> index is at index <code>2*k+1</code>.</li>
+      </ol>
+    </li>
+  </ol>
+  <h4>Advantages</h4>
+  <ol>
+    <li>It is suitable for <code>Perfect Binary Tree</code> or [negotiable] compelete binary Tree or nearly Complete binary tree</li>
+    <li>It is efficient and convenient representation provided that the tree does not go for changes such as <code>insertion,deletion</code> etc.</li>
+  </ol>
+  <h4>Disadvantages</h4>
+  <ol>
+    <li>It is not ideal for other than complete binary tree. That is, it is not so suitable for normal binary tree.</li> 
+    <li>The size of the tree structure is predictable, this representation uses static allocation and leads to <code>wastage</code> of memory space.</li>
+    <li><code>Insertion and Deletion</code> of nodes cannot be performed easily. It requires the movement of many nodes to reflect the change in the level numbers of the remaining nodes.</li>
+  </ol>
+  <br><br><br>
+  The code to <code>display</code> and <code>search</code> a key in <b>Complete Binary Tree</b> and <b>Binary Tree</b> are written. [ in sequential representation ]
+
+  <h3>Linked List Representation</h3>
+  <ol>
+    <li>Solves the problem of <code>unnecessary memory consumption</code> by sequential representation</li>
+    <li>has 3 fields <ol>
+      <li>Info</li>
+      <li>Left link</li>
+      <li>Right Link</li>
+    </ol></li>
+  </ol>
+  <h4>Advantages</h4>
+  <ol>
+    <li>Efficient use of computer memory and computer time.</li>
+    <li>This is suitable as a tree is unpredictable and Linked list uses <code>DMA</code></li>
+    <li>Insertion and Deletion is much <code>easier</code>. <br> 
+      The insertion is straight forward , while the deletion is done by a pointer change.
+    </li>
+    <li></li>
+  </ol>
+  <h3>Parent Pointer</h3>
+  <ol>
+    <li>Same as the Linked List representation , but also stores the parent address in each node</li>
+    <li>Useful when an algorithm needs upward traversal</li>
+    <li>Since it stores extra pointer - that is not a commonly efficient usage.</li>
+  </ol>
+  <h2>Traversal</h2>
+  Visiting each node exactly once in a systematic manner.
+  <ol>
+    <li>Preorder</li>
+    <li>Inorder</li>
+    <li>Postorder</li>
+  </ol>
+  <h2>Binary Search Tree</h2>
+  <ol>
+    <li>Each node is is <code>greater than or equal to</code> every node of its <code>left</code> subtree</li>
+    <li>Each node is is <code>lesser than or equal to</code> every node of its <code>right</code> subtree</li>
+    <li>While insertion - we only insert in the terminal levels.</li>
+  </ol>
+  
+      But in most cases That I saw they take height to start at 0 as well i.e 0 @ root
+
+    <h3>Summary</h3>
+    <ul>
+      <li>represents relationship between elements as records or nodes</li>
+      <li>Balanced Binary Tree is one where the difference in no. nodes in the left-subtree and right-subtree is &lt;=1</li>
+      <li>only left-subtree <b>left skewed binary tree</b> . . . </li>
+    </ul>
+
+    <a href="../final.html"><h1>Final[test]</h1></a>
+</body>
+</html>
+
