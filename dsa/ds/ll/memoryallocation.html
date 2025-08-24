@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mem Alloc</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Memory Allocation | getnode | freenode</h1>
+  <hr>
+  <hr>
+  The <code>getnode()</code> makes use of malloc operation to get a new node from the fornt of <em>availability
+    list</em>, if full it says - overful [ i.e when the malloc return NULL ]<br>
+  The <code>freenode()</code> makes use of the free operation to add the specified node to the front of <em>availability
+    list</em><br>
+  <br><br><br>
+
+  <h2>Garbage Collection</h2>
+
+  Garbage is a block of heap memory that cannot be accessed by the program <br>
+  <li>An allocated block of heap as garbage does not have a reference to it</li>
+  <li>Another kind of memeory error: A reference exists to a block of memeory that is no longer allocated</li>
+  <br><br>
+  <b><big>GC</big> Garbage Collection</b> is automatic memory management of dynamically allocated storage. It reclaims
+  unused heap blocks for later use by program. <br>
+  GC attempts to reclaim garbage , or memory occupied by objects or pointers that are no longer in use by the program.
+  <br>
+  <br><br>
+  GC are opposite of manual memory management, which requires the programmer to specify which objects to deallocate and
+  return to the memory system. <br>
+  <b>Like other memory management techniques, GC may take a significant proportion of total processing time in a program
+    and can thus have significant influence to performance</b><br>
+  <br><br>
+  <h4>Neglects</h4>
+  <br>
+  Resources other than memeory, such as Network sockets , database handles , user integration, windows and file and
+  device descriptors, are not typically handled by garbage collection.<br>
+  Methods used to manage such resources , particularly destructors, may suffice to manage memory as well, leaving no
+  need for a GC system. <br><br>
+  <b>Some GC systems allow such other resources to be associated witha aregion of memory that ,when collected , causes
+    the other resources to be reclaimed , <i>this is called finalization</i></b><br>
+
+  <br><br><br>
+  <h3>Basic Principle</h3>
+  <ol>
+    <li>Find data oobjects in a program that cannot be accessed in the future</li>
+    <li>Reclaim the resources used by those objects</li>
+  </ol>
+  <br><br>
+  C,Cpp have garbage collection implementations available by their compilers [ Manually <b>Only </b>]<br>
+
+  <br><br><br>
+  <h2>Lists</h2>
+  <blockquote cite="">
+    The items in the list must be of <b>SAME</b> same data type.
+  </blockquote>
+  <br>
+  <h4>Operations</h4>
+  <ol>
+    <li>createList()</li>
+    <li>add(index,item)</li>
+    <li>isEmpty()</li>
+    <li>size()</li>
+    <li>remove(index)</li>
+    <li>traverse()</li>
+    <li>reverse()</li>
+    <li>merge()</li>
+    <li>sort()</li>
+    <li>search()</li>
+  </ol>
+
+  <br><br><br>
+  <h2>Demonstrating for Singly Linked List</h2>
+  <ol>
+    <li>create()</li>
+    <li>display()</li>
+    <li>length()</li>
+    <li>search()</li>
+    <li>insBegin()</li>
+    <li>insEnd()</li>
+    <li>insPos()</li>
+    <li>insSorted()</li><!-- Chekc with this -->
+    <li>delBegin()</li>
+    <li>delEnd()</li>
+    <li>delPos()</li>
+    <li>delItem()</li>
+  </ol>
+
+  <h2>Code</h2>
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+      #include&lt;stdlib.h&gt;
+
+      typedef struct Node{
+      int data;
+      struct Node *link;
+      } NODE ;
+
+      NODE *head=NULL;
+
+      void create(){
+      // creates a linked list with sinlge node
+      // without knowing its length
+      head=(NODE*)malloc(sizeof(NODE));
+      char ch;
+      NODE *curptr,*newnode;
+      curptr=head;
+      while(1){
+      printf("Enter the node data: ");
+      scanf("%d",&curptr-&gt;data);
+      printf("\nThe given data is: %d",curptr-&gt;data);
+      printf("\nDo you want to add one more node?[y/n]: ");
+      scanf(" %c",&ch);
+      if(ch=='y'){
+      newnode=(NODE*)malloc(sizeof(NODE));
+      curptr-&gt;link=newnode;
+      curptr=newnode;
+      }
+      else{
+      printf("Linked list has been successfully created! ");
+      curptr-&gt;link=NULL;
+      break;
+      }
+      }
+      }
+      void display(){
+      // displays the entire linked list
+      printf("\nThe elements in the linked list are: ");
+      NODE *curptr=head;
+      while(curptr!=NULL){
+      printf("%d ",curptr-&gt;data);
+      curptr=curptr-&gt;link;
+      }
+      }
+      void length(){
+      // prints the length of the current list
+      printf("\nThe length of the liked list is: ");
+      int count=0;
+      NODE *curptr=head;
+      while(curptr!=NULL){
+      curptr=curptr-&gt;link;
+      count++;
+      }
+      printf("%d",count);
+
+      }
+      void search(){
+      // searches a particular item to return its position
+      printf("\nEnter the element to search: ");
+      int item;
+      scanf("%d",&item);
+      int pos=0;
+      NODE *curptr=head;
+      while(curptr-&gt;data!=item){
+      curptr=curptr-&gt;link;
+      pos++;
+      }
+      if(curptr-&gt;data==item){
+      printf("\nElement %d found at position %d",item,pos+1);
+      return;
+      }
+      else{
+      printf("\n Element not found!");
+      }
+      }
+      void insBegin(){
+      // inserts the given item to the begining of the linked list
+      NODE *curptr=head;
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      printf("\nEnter the element you want to insert at the begining: ");
+      int item;
+      scanf("%d",&item);
+      newnode-&gt;data=item;
+      newnode-&gt;link=curptr;
+      head=newnode;
+      printf("\n updated list: \n");
+      display();
+      }
+      void insEnd(){
+      // inserts the given element at the end of the linked list
+      NODE *curptr=head;
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      printf("\nEnter the element you want to insert at the end: ");
+      int item;
+      scanf("%d",&item);
+      newnode-&gt;data=item;
+      while(curptr-&gt;link!=NULL){
+      curptr=curptr-&gt;link;
+      }
+      curptr-&gt;link=newnode;
+      newnode-&gt;link=NULL;
+      printf("\n Updated list: ");
+      display();
+
+      }
+      void insPos(){
+      // inserts the given element at the given position
+      printf("\n Enter the position to insert the element at: ");
+      int pos;
+      scanf("%d",&pos);
+      if(pos==1){
+      insBegin();
+      return;
+      }
+      NODE *curptr=head;
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      for(int i=0;i&lt;pos-2;i++){
+      curptr=curptr-&gt;link;
+      }
+      printf("\nEnter the element you want to insert at the end: ");
+      int item;
+      scanf("%d",&item);
+      newnode-&gt;data=item;
+      newnode-&gt;link=curptr-&gt;link;
+      curptr-&gt;link=newnode;
+      printf("\nUpdates list is: ");
+      display();
+      return;
+      }
+      void insSorted(){
+      // check this at the end , once everything else works
+      }
+      void delBegin(){
+      // delete an element from the begining of the linked list
+      NODE *curptr;
+      curptr=head;// I explicitly did this just to bring it to your notice that a pointer when declared as
+      // &lt;Datatype&gt; *ptr=var; is same as
+      // &lt;datatype&gt; *ptr;
+      // ptr=var;
+      // since in both places a address vfalue that id of the type &lt;datatype&gt; * in passed and is stored in the
+      // ptr which is of the type &lt;datatype&gt; *
+      curptr=curptr-&gt;link;
+      head=curptr;
+      printf("\nAfter deleting an element from begining \nThe updates list: ");
+      display();
+
+      }
+      void delEnd(){
+      // delete an element from the end of the linked list
+      NODE *curptr=head;
+      while(curptr-&gt;link-&gt;link!=NULL){
+      curptr=curptr-&gt;link;
+      }
+      curptr-&gt;link=NULL;
+      printf("\nAfter deleting an element from end\nThe updates list: ");
+      display();
+      }
+      void delItem(){
+      // delete an element from the given position
+      printf("\nEnter the element to delete: ");
+      int item;
+      scanf("%d",&item);
+      int pos=0;
+      NODE *curptr=head;
+      if(curptr-&gt;data==item){
+      delBegin();
+      return;
+      }
+      while(curptr-&gt;link-&gt;data!=item){
+      curptr=curptr-&gt;link;
+      pos++;
+      }
+      if(curptr-&gt;link-&gt;data==item){
+      printf("\nElement %d found at position %d",item,pos+2);
+      }
+      else{
+      printf("\n Element not found!");
+      return;
+      }
+      curptr-&gt;link=curptr-&gt;link-&gt;link;
+      printf("\nAfter deleting an element from %d\nThe updates list: ",pos+2);
+      display();
+
+      }
+      void delPos(){
+      // delete the given item from linked list
+      printf("\nEnter to position to delete the element from: ");
+      int pos;
+      scanf("%d",&pos);
+      NODE *curptr=head;
+      if(pos==1){
+      delBegin();
+      return;
+      }
+      for(int i=0;i&lt;pos-2;i++){
+      curptr=curptr-&gt;link;
+      }
+      printf("\nElement at pos %d is: %d\nDeleting it! ",pos,curptr-&gt;link-&gt;data);
+      curptr=curptr-&gt;link-&gt;link;
+
+      printf("\nAfter deleting an element from pos %d\nThe updates list: ",pos);
+      display();
+
+      }
+
+
+      int main(){
+      create();
+      display();
+      length();
+      search();
+      insBegin();
+      insEnd();
+      insPos();
+      // insSorted();
+      delBegin();
+      delEnd();
+      delPos();
+      delItem();
+
+      return 0;
+      }
+    </code>
+  </pre>
+  <br><br><br>
+  <h2>Code for Circular Linked List</h2>
+  <pre><code>
+
+      #include&lt;stdio.h&gt;
+      #include&lt;stdlib.h&gt;
+
+      typedef struct node{
+      int data;
+      struct node *link;
+      } NODE;
+
+      NODE *last=NULL;
+
+
+      void display(){
+      NODE *curptr=last-&gt;link;
+      printf("\nUpdated list: ");
+      while(curptr!=last){
+      printf("%d ",curptr-&gt;data);
+      curptr=curptr-&gt;link;
+      }
+      printf("%d",curptr-&gt;data);
+      return;
+      }
+
+      void create(){
+      char ch;
+      int item;
+      do{
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      printf("\nEnter the data: ");
+      scanf("%d",&newnode-&gt;data);
+      if(last==NULL){
+      last=newnode;
+      last-&gt;link=newnode;
+      }else{
+      newnode-&gt;link=last-&gt;link;
+      last-&gt;link=newnode;
+      last=newnode;
+      }
+      printf("\nDo you want to continue?[y/n]: ");
+      scanf(" %c",&ch);
+      }while(ch=='y');
+      printf("\nCircular list successfully created: ");
+      display();
+      return;
+      }
+
+      int length(){
+      NODE *curptr=last-&gt;link;
+      int len=1;
+      while(curptr!=last){
+      len++;
+      curptr=curptr-&gt;link;
+      }
+      return len;
+      }
+
+      void insert(){
+
+      void ins_beg(){
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      NODE *curptr=last;
+      printf("\nEnter the element to insert in the begining: ");
+      // int item;
+      scanf("%d",&newnode-&gt;data);
+      newnode-&gt;link=curptr-&gt;link;
+      curptr-&gt;link=newnode;
+      display();
+      return;
+      }
+
+
+      void ins_end(){
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      NODE *curptr=last;
+      printf("\nEnter the element to insert in the end: ");
+      // int item;
+      scanf("%d",&newnode-&gt;data);
+      newnode-&gt;link=curptr-&gt;link;
+      curptr-&gt;link=newnode;
+      last=newnode;
+      display();
+      return;
+      }
+      void ins_pos(){
+      printf("\nEnter the position to insert the element at: ");
+      int pos;
+      scanf("%d",&pos);
+      if(pos==1){
+      ins_beg();
+      return;
+      }
+      if(pos==length()+1){
+      ins_end();
+      return;
+      }
+      NODE *curptr=last-&gt;link;
+      for(int i=0;i&lt;pos-2;i++){
+      curptr=curptr-&gt;link;
+      }
+      printf("\nEnter the data to insert at %d: ",pos);
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      scanf("%d",&newnode-&gt;data);
+      newnode-&gt;link=curptr-&gt;link;
+      curptr-&gt;link=newnode;
+      display();
+
+      }
+      ins_beg();
+      ins_end();
+      ins_pos();
+      }
+
+      void delete(){
+
+      // NODE *curptr=last-&gt;link;
+      void del_beg(){
+      printf("\nDeleting an element from the begining . . .");
+      last-&gt;link=last-&gt;link-&gt;link;
+      display();
+      }
+      void del_end(){
+      printf("\nDeleting an element from the end . . . ");
+      NODE *curptr=last-&gt;link;
+      while(curptr-&gt;link!=last){
+      curptr=curptr-&gt;link;
+      }
+      curptr-&gt;link=last-&gt;link;
+      last=curptr;
+      display();
+      }
+      void del_pos(){
+      printf("\nEnter the position to delete an element from: ");
+      NODE *curptr=last-&gt;link;
+      int pos;
+      scanf("%d",&pos);
+      if(pos==1){
+      del_beg();
+      return;
+      }
+      if(pos==(length())){
+      del_end();
+      return;
+      }
+      for(int i=0;i&lt;pos-2;i++){
+      curptr=curptr-&gt;link;
+      }
+      curptr-&gt;link=curptr-&gt;link-&gt;link;
+      display();
+      }
+      void del_item(){
+      printf("\nEnter the data to delete: ");
+      int item;
+      scanf("%d",&item);
+      NODE *curptr=last-&gt;link;
+      while(curptr-&gt;link-&gt;data!=item){
+      curptr=curptr-&gt;link;
+      }
+      if(curptr-&gt;link==last){
+      curptr-&gt;link=curptr-&gt;link-&gt;link;
+      last=curptr;
+      }
+      else{
+      curptr-&gt;link=curptr-&gt;link-&gt;link;
+      }
+      display();
+      return;
+      }
+      del_beg();
+      del_end();
+      del_pos();
+      del_item();
+      return;
+
+      }
+
+
+
+      int main(){
+      create();
+      printf("\nThe length is %d",length());
+      // display();
+      insert();
+      delete();
+      }
+    </code></pre>
+  <h3>Advantages of Circular Linked list</h3>
+  <br>
+  <ol>
+    <li>The circular linked list allows to traver to any node from any node</li>
+    <li>All the node's address will have valid addresses, instead of NULL pointers</li>
+    <li>A node can be inserted at or deleted from any position of the linked list</li>
+    <li>One can start at any node in the list and traverse the whole list</li>
+  </ol>
+
+  <br><br><br>
+  <h2>Double Linked List</h2>
+  <h4>Advantages</h4>
+  <ol>
+    <li>The doubly linked list can be traversed in forward or backward directions</li>
+    <li>if any particular node address is known,one can have both successor node address and predecessor node address
+      that makes insertion and deletion much easier</li>
+    <li>The doubly linked list is used to represent the trees effectively</li>
+    <li>This simplified list management.</li>
+  </ol>
+  <h4>Disadvantages</h4>
+  <ol>
+    <li>Extra memory is required to store the back pointer</li>
+    <li>Consider an example shown below</li>
+  </ol>
+
+  <h3>Code for singly Doubly Linked List</h3>
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+      #include&lt;stdlib.h&gt;
+
+      typedef struct node{
+      int data;
+      struct node *prev;
+      struct node *next;
+      } NODE;
+
+      // linked lists are linear ds, linear ds are the ones that follow a **SEQUENCE** , where as
+      // non linear ds do no need a *SEQUENCE* predefined, they can have their own Sequence defined.
+
+      NODE *head=NULL;
+
+      void display(){
+      NODE *curptr=head;
+      printf("\nUpdated list: ");
+      while(curptr!=NULL){
+      printf("%d ",curptr-&gt;data);
+      curptr=curptr-&gt;next;
+      }
+      return;
+      }
+
+      int length(){
+      NODE *curptr=head;
+      int count=0;
+      while(curptr!=NULL){
+      curptr=curptr-&gt;next;
+      count++;
+      }
+      return count;
+      }
+
+
+
+      void insert(){
+      void ins_beg(){
+      NODE *curptr=head;
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      printf("\nEnter the element you want to insert at the begining: ");
+      scanf("%d",&newnode-&gt;data);
+      newnode-&gt;prev=NULL;
+      newnode-&gt;next=curptr;
+      curptr-&gt;prev=newnode;
+      curptr=newnode;
+      head=curptr;
+      display();
+      }
+      void ins_end(){
+      NODE *curptr=head;
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      printf("\nEnter the element you want to insert at the end: ");
+      scanf("%d",&newnode-&gt;data);
+      while(curptr-&gt;next!=NULL){
+      curptr=curptr-&gt;next;
+      }
+      curptr-&gt;next=newnode;
+      newnode-&gt;prev=curptr;
+      newnode-&gt;next=NULL;
+      display();
+      }
+      void ins_pos(){
+      NODE *curptr=head;
+      printf("\nEnter the position you want to insert element at: ");
+      int pos;
+      scanf("%d",&pos);
+      if(pos==1){
+      ins_beg();
+      return;
+      }
+      if(pos==length()+1){
+      ins_end();
+      return;
+      }
+      for(int i=0;i&lt;pos-1;i++){
+      curptr=curptr-&gt;next;
+      }
+      printf("\nEnter the element you want to insert: ");
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      scanf("%d",&newnode-&gt;data);
+      newnode-&gt;next=curptr;
+      newnode-&gt;prev=curptr-&gt;prev;
+      curptr-&gt;prev-&gt;next=newnode;
+      curptr-&gt;prev=newnode;
+      display();
+      }
+      ins_beg();
+      ins_end();
+      ins_pos();
+      return ;
+      }
+
+      void delete(){
+      void del_beg(){
+      NODE *curptr=head;
+      printf("\nDeleting an element from the begining . . .");
+      head=curptr-&gt;next;
+      display();
+      return;
+      }
+      void del_end(){
+      NODE *curptr=head;
+      printf("\nDeleting an element from the ending. . .");
+      while(curptr-&gt;next!=NULL){
+      curptr=curptr-&gt;next;
+      }
+      curptr-&gt;prev-&gt;next=NULL;
+      display();
+      return;
+      }
+      void del_pos(){
+      NODE *curptr=head;
+      printf("\nEnter the position to delete the element from : ");
+      int pos;
+      scanf("%d",&pos);
+      if(pos==1){
+      del_beg();
+      return;
+      }
+      if(pos==length()){
+      printf("test");
+      del_end();
+      return;
+      }
+      for(int i=0;i&lt;pos-1;i++){
+      curptr=curptr-&gt;next;
+      }
+      curptr-&gt;prev-&gt;next=curptr-&gt;next;
+      display();
+      }
+      del_beg();
+      del_end();
+      del_pos();
+      return;
+      }
+
+      void create(){
+      NODE *curptr=head;
+      char ch;
+
+      do {
+      NODE *newnode=(NODE*)malloc(sizeof(NODE));
+      printf("\nEnter the data you want to add: ");
+      scanf("%d",&newnode-&gt;data);
+      if(head==NULL){
+      newnode-&gt;prev=NULL;
+      newnode-&gt;next=NULL;
+      curptr=newnode;
+      head=curptr;
+      }
+      else{
+      curptr-&gt;next=newnode;
+      newnode-&gt;prev=curptr;
+      newnode-&gt;next=NULL;
+      curptr=newnode;
+      }
+      printf("\nDo you want to add more?[y/n]: ");
+      scanf(" %c",&ch);
+      } while (ch=='y');
+      printf("\nDoubly linked list successfully created! ");
+      display();
+      }
+
+      int main(){
+      create();
+      insert();
+      delete();
+      }
+    </code>
+  </pre>
+
+  <hr>
+  <h2>Summary</h2>
+  <hr>
+  <ol>
+    <li>In stacks and queues, the alloation of items is done by means of sequential allocation technique using arrays
+      where as in linked lists it is done by dynamic memory allocation technique.</li>
+    <li>
+      <h4>Advantages of Linked Lists <u>OVER</u> arrays </h4>
+      <ol>
+        <li>Efficient memory utilisation</li>
+        <li>Insertion and deletion are easier and efficient</li>
+        <li>Extensive manipulations</li>
+        <li>Arbitrary memory locations</li>
+      </ol>
+    </li>
+    <li>
+      <dl>
+        <dt>External Pointer</dt>
+        <dd>The very first node in the linked list</dd>
+        <dt>Availability List</dt>
+        <dd>AKA free list is the term used by the memory manager like <code>malloc</code> and <code>calloc</code> to use
+          the space that is un-allocated at the moment. This space in the the chunks of blocks</dd>
+      </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>Header Linked List</dt>
+        <dd>is a linked list which always has info contains a special node called as the header node at the begining of
+          the list. <br>
+          The info field of such a header node generally contains the global informatoin of the entire list.
+          <h2>Types of header Linked Lists</h2>
+          <ol>
+            <li>
+              <dl>
+                <dt>
+                  Grounded Header Linked Lists
+                </dt>
+                <dd>
+                  The grounded header linked list is also referred as singly header linked list. In this the last node's
+                  <code>link</code> field contains the NULL pointer.
+                </dd>
+              </dl>
+            </li>
+            <li>
+              <dl>
+                <dt>Circular Header Linked Lists</dt>
+                <dd>like other circular linked lists, the last node's <code>link</code> field points back the header
+                  node</dd>
+              </dl>
+            </li>
+          </ol>
+        </dd>
+      </dl>
+    </li>
+    <li>
+      <h2>Applications of Linked Lists</h2>
+      <ol>
+        <li>Addition of two polynomials</li>
+        <li>Addition of two long positive integers</li>
+      </ol>
+    </li>
+    <li>
+      <h2>Types of Linked Lists [bonus]</h2>
+      <ol>
+        <li>Single</li>
+        <li>Double</li>
+        <li>Circular Singly</li>
+        <li>Circular Doubly</li>
+        <li>Header
+          <ol>
+            <li>Grounded</li>
+            <li>Circular</li>
+          </ol>
+        </li>
+        <li>Multilevel / Nested [ a linked list in a linked list]</li>
+      </ol>
+    </li>
+  </ol>
+
+  <pre>
+    <code>
+
+      struct Node {
+      int data;
+      struct Node *next;
+      struct Node *child; // pointer to another list
+      };
+    </code>
+  </pre>
+
+  <a href="../stacks/stacks.html"><big>Chap8</big></a>
+</body>
+
+</html>

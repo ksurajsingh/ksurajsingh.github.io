@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chap 8</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+
+  <h1>Stacks</h1>
+  <hr><hr>
+
+  <ol>
+    <li>The collection of homogeneous data items where deletion or insertion of item takes place only in the last position, i.e called the <code>TOP</code> of the stack :LIFO approach [Last in First Out]</li>
+    <li>These are also homogeneous along with
+      <ul>
+        <li>Arrays</li>
+        <li>Standard Linked lists</li>
+        <li>Stacks</li>
+        <li>Queues</li>
+      </ul>
+      <ul>
+        <h3>Non-homogeneous</h3>
+        <li>Generic Linked lists[using void* or templates/polymorphism] different data types are stored in different nodes</li>
+        <li>Struct</li>
+        <li>Union</li>
+        <li>Union</li>
+        <li>JSON/XML</li>
+        <li>Objects in python/java</li>
+      </ul>
+    </li>
+  </ol>
+  <b>NOTE: </b>if you are implementing using arrays , you would need to set a size and have <code>overflow</code> and <code>underflow</code> conditions.
+  <br>
+  Where top is set to '-1' by default indicating an empty stack
+  <br><br><br>
+  <h2>Code for Implementing Stack as ADT</h2>
+  <pre>
+  <code>
+
+#include&lt;stdio.h&gt;
+
+int n,top=-1;
+int s[];
+
+void  display(){
+  printf("\nUpdated Stack:\n");
+  for(int i=top;i&gt;=0;i--){
+    if(i==top){
+      printf("%d -- top\n",s[i]);
+    }else{
+    printf("%d\n",s[i]);
+    }
+  }
+
+}
+
+void push(){
+  if(top&gt;=n-1){
+    printf("\nOverflow condition!");
+    return;
+  }else{
+    int item;
+    printf("\nEnter the item to be inserted: ");
+    scanf("%d",&item);
+    s[++top]=item;
+  }
+  display();
+}
+
+
+void create(){
+  printf("\nEnter the size of the stack: ");
+  scanf("%d",&n);
+  char ch='y';
+  while(1){
+  if(ch=='y'){
+     if(top&gt;=n-1){
+      printf("\n Overflow Condition! ");
+      display();
+      return;
+    }
+    push();
+    printf("\nDo you want to enter the data?[y/n]: ");
+    scanf(" %c",&ch);
+  }else{
+    display();
+    return;
+  }
+  }
+
+}
+
+
+
+void  pop(){
+  printf("\n\nPerforming pop operation!\n");
+  printf("\nPopped element is: %d",s[top--]);
+}
+
+void  length(){
+  printf("\n The length of the stack right now is :%d",top+1);
+}
+
+int main(){
+  create();
+  printf("\n\nPerforming push operation!\n");
+  push();
+  pop();
+  display();
+  length();
+
+}
+  </code>
+  </pre>
+  
+  <br><br><br>
+  <h2>Recursion</h2>
+  When a function calls itself!
+  <h4>Types</h4>
+  <ol>
+    <li>
+    <dl>
+      <dt>Direct</dt>
+      <dd>A function that calls itself</dd>
+    </dl>
+    </li>
+    <li>
+      <dl>
+        <dt>Indirect</dt>
+        <dd>The function the calls other which which calls the the earlier function itself.</dd>
+      </dl>
+      </li>
+  </ol>
+  <br><br>
+  A recursive function has the following components: 
+  <dl>
+    <dt>Introduction</dt>
+    <dd>Save the formal parameters, local variables and return address</dd>
+    <dt>Body of the function</dt>
+    <dd><ol>
+      <li>Stopping condition</li>
+      <li>condition to enter certain step to perform execution</li>
+      <li>else condition on recursive calls with function parameter defination</li>
+    </ol></dd>
+
+    <br><br>
+    <h2>Recursion code</h2>
+     <br><br>
+     <h3>Fibonacci Series</h3>
+    <pre>
+    <code>
+
+#include&lt;stdio.h&gt;
+
+void fibi(){
+  int n;
+  printf("\nEnter the range: ");
+  scanf("%d",&n);
+  int arr[n];
+  arr[0]=0;
+  arr[1]=1;
+  for(int i=2;i&lt;=n;i++){
+    arr[i]=arr[i-1]+arr[i-2];
+  }
+  for(int i=0;i&lt;n;i++){
+    printf("%d ",arr[i]);
+  }
+  return;
+}
+
+int fibr(int n){
+  if (n==0)
+    return 0;
+  if (n==1)
+    return 1;
+  return (fibr(n-2)+fibr(n-1));
+}
+
+int main(){
+  printf("\n\n Calling fibonacci iterative! \n");
+  fibi();
+  int n;
+  printf("\n\n Calling fibonacci recursive! \n");
+  printf("\nEnter the range: ");
+  scanf("%d",&n);
+  int i=1;
+  while(i&lt;=n){ 
+    printf("%d ",fibr(i-1));
+    i++;
+  }
+}
+    </code>
+    </pre>  
+
+    <br><br>
+    <h3>Factorial Code</h3>
+    <br><br>
+    <pre><code>
+
+#include&lt;stdio.h&gt;
+
+void faci(){
+  printf("\nEnter the range: ");
+  int n;
+  scanf("%d",&n);
+  int arr[n];
+  arr[0]=1;
+  for(int i=1;i&lt;n;i++){
+    arr[i]=(i+1)*arr[i-1];
+  }
+  for(int i=0;i&lt;n;i++){
+    printf("%d ",arr[i]);
+  }
+}
+
+int facr(int n){
+  if(n==0){
+    return 1;
+  }
+  return (n*facr(n-1));
+}
+
+int main(){
+  printf("\nImpleting factorial using iterations! \n");
+  faci();
+  printf("\nImpleting factorial using recursion! \n");
+  int res;
+  printf("\nEnter the range: ");
+  int n;
+  scanf("%d",&n);
+  int i=1;
+  while(i&lt;=n){
+    printf("%d ",facr(i));
+    i++;
+  }
+}
+    </code></pre>
+    <br><br>
+    <h3>Tower of Hanoi</h3>
+    <br><br><pre>
+    <code>
+
+#include&lt;stdio.h&gt;
+
+// only one disk can move at a time, from one pillar to another. 
+// A larger disk cannot be placed on a smaller disk
+// Only the top disc on any pillar may be moved to any other pillar.
+
+int count=0;
+
+void toh(int n,char s,char t,char d){
+  if (n&gt;0){
+    toh(n-1,s,d,t);
+    printf("\n Move disk %d %c-&gt;%c \n",n,s,d);
+    toh(n-1,t,s,d);
+  }
+}
+
+int main(){
+  printf("\nEnter the number of discs: ");
+  int n;
+  char source='S',temp='T',destination='D';
+  scanf("%d",&n);
+  printf("\n Sequence is: ");
+  toh(n,source,temp,destination);
+}
+    </code>
+    </pre>
+    <br><br>
+    <h2>GCD</h2>
+    <br><br>
+    <pre>
+    <code>
+
+#include&lt;stdio.h&gt;
+
+
+int gcd(int n,int m){
+  if(m==0){
+    return n;
+  }else if(n&lt;m){
+    return gcd(m,n);
+  }
+  else{
+    return gcd(m,n%m);
+  }
+}
+
+int main(){
+  printf("\n Enter the number whose GCD you want to find: ");
+  int n,m;
+  scanf("%d%d",&n,&m);
+  int result=gcd(n,m);
+  printf("%d",result);
+}
+    </code>
+    </pre>
+    <br><br><br>
+    <h2>Advantages of Recursion</h2>
+    <ol>
+      <li>Recursino reduces the complexity of problems</li>
+      <li>Recursion allows the user to write much simpler and more legant programs</li>
+      <li>Program implemented by recusino will be smaller in length.</li>
+      <li>recusion programs can have any numbre of nesting levels.</li>
+      <li>The recusion technique is more natural and compact.</li>
+      <li>Recusion is a top-down programming tool,where the given problem is diviled into smaller modules,each module are then individually attached.</li>
+    </ol>
+  </dl>
+  <br><br><br>
+  <h2>Applications of Stack</h2>
+  <ol>
+    <li>Recusion</li>
+    <li>Recersal of a string</li>
+    <li>Checking the parenthesis matching</li>
+    <li>Postfix expression evaluation</li>
+    <li>infix to postfix conversion</li>
+    <li>infix to prefix conversion</li>
+  </ol>
+  <br><br><br>
+  <a href="polish-notation.html" target="_blank"><u>
+      <big>NEXT</big>
+    </u></a>
+</body>
+</html>

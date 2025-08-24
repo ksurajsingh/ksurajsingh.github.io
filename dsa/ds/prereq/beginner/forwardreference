@@ -1,0 +1,12 @@
+one(){
+  num=$((num-1)) 
+  two # two ins't declared while this part is being compiled This is forward reference
+}
+
+two(){
+  num=$((num+1)); # how the varible is declared by incrementing itself in a single line 
+  echo $num ;
+}
+
+num=1 # in bash there shouldn't be any spaces around '='  
+one 

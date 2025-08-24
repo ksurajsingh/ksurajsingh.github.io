@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Algo Complexity</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Complexity of Algorithms </h1>
+  aka: performance analysis or efficiency of a program
+  <h4> To analyse an algorithm </h4>
+  <ol>
+    <li>First determine the operations the are included like additions,subtractions,multiplication and divisoin to find
+      their relative cost.</li>
+    <li>Comparisions generally take longer
+      <ul>
+        <li> The total time taken to compute the comparision of 2 strings generally depends on the length of the string
+        </li>
+        <li> If the comparision is done among just characters , it is bounded by a constant time </li>
+      </ul>
+    </li>
+  </ol>
+  An algorithm can be analysed in two ways : <br>
+  <li>The correctness of an algorithm </li>
+  <li> By measureing time and space complexity of an algorithm </li>
+  Two phases are generally required : <br>
+  <li> Priori analysis </li>
+  <li> Posteriori Analysis </li>
+  <br><br>
+  <hr>
+  <h1>Priori Analysis</h1>
+  <hr>
+  Give an initial state input data <br>
+  We need to determine the total time some statements in the middle of the program will spend for the execution<br>
+  <b>Requirements: </b>
+  <ol>
+    <li>The statemtns frequency count [ The number of times a statement will execute ]</li>
+    <li>The time taken for one execution</li>
+  </ol>
+
+
+
+
+  The product of these two numbers is the total time<br>
+  <br>
+  It <em>ignores</em> the following factors<br>
+  <ol>
+    <li>The machine's cpu process capacity and speed </li>
+    <li>The programming language and compiler that is been used</li>
+  </ol>
+  The <b>notation</b> used in priori analysis are : 
+  <ol>
+    <li><b>Big-oh [O]</b></li>
+    <li><b>Omega [&Omega;]</b></li>
+    <li><b>Theta [&Theta;]</b></li>
+    <li><b>Small-oh [o]</b></li>
+  </ol>
+  <hr>
+  <h1>Posteriori Analysis</h1>
+  <hr>
+  We will collect the actual statistics about the algortihm , conjunction of the time and space while executing<br>
+  Once the algorithm is written it has to be tested, which consists of two phases : <br>
+  <ol>
+    <li><b>Debugging</b>: It is the process of correcting the algorithm if a fault result occurs . Independent of the machine, programming langauge, compiler used</li>
+    <li><b>Profiling</b>:The process of executing the program and measuring the actual time taken by the algorithm to process the data is called profiling [ could include measuring the space as well ] . Dependent of the machine, programming language and the compiler used </li>
+  </ol>
+  In order to perform these we need to consider :
+  <ol>
+    <li> Time complexity </li>
+    <li> Space complexity </li>
+  </ol>
+
+  <hr>
+  <h1>Space complexity</h1>
+  The amount of memory required by the algorithm to run to completion <br>
+  Ignoring the space required for input and output , since we use this information to compare different algorithm<br>
+  There are two compoenents for the space required by an algorithm <br>
+  <dl>
+    <dt><h5>The Fixed static part</h5></dt>
+    <dd><ol>
+        <li>Independent of the characterisitcs of the input and output </li>
+        <li>Instructions space for variables , constants, fixed size component variables </li>
+        </ol>
+    </dd>
+    <dt><h5>The Variable dynamic part</h5></dt>
+    <dd><ol>
+        <li>The space required by the a component variable who size depends on the particular problem instance at runtime being solved, </li>
+        <li>The space needed by the reference variable </li>
+        <li> The recurrence stack </li>
+        </ol>
+    </dd>
+  </dl>
+  The overall space required for an algorithm is the sum of both the fixed and variable [ i.e static and dynamic ] part of the storage . <br>
+  <br><br><br><hr><hr>
+  <h1>Time Complexity</h1>
+  <hr>
+  The amount of time needed to run the program is termed as <em>time efficiency </em> or <em>time complexity </em>
+  <li> The total time taken by the program is the sum of compile time and the runtime </li>
+  <li> The compile time does not depend on the instance characterisitcs and it can be assumed as a constant factor , so we ignore it </li>
+  <br<br><br>
+  <hr>
+  <h1>Bubble sort</h1>
+  The most simplest form of sorting algorithm<br>
+  Works optimal only on small arrays <br>
+  With each iterations the value moves on top of the array just like a bubble <br>
+  <img src="../media/bubbleSort.jpg">
+  <img src="../media/bubbleintro.jpeg"><br>
+  <img src="../media/bubblesquirtle.png">
+  <img src="../media/heirarchy.jpg"><br>
+  <h3>Code</h3>
+  <pre>
+  <code>
+  void bubble sort(int a[],int n){
+
+      int pass,i;
+
+      for (pass=0;pass &lt; n-1;pass++){
+      for (i=0;i&lt;n-pass-1;i++){
+
+      if (a[i]&gt;a[i+1])
+        swap(a[i],a[i+1]);
+
+        }
+      }
+
+  }
+  </code>
+  </pre>
+  The time complexity for bubble sort is :
+  <li>its compares every adjacent elements - all n elements , but since it compares 2 elements in the first go itself : <code>n-1</code></li>
+  <li>Once the above step reaches the end of the array - one elements [largest,smallest]  is sorted , so the next iterations with ignore that [first/ last] element making the second iteration : <code>n-2</code></li>
+  So the final time complexity is (n-1)+(n-2)+(n-3)+(n-4)=(n(n-1))/2<br>
+
+  that is <code> (n&sup2; - n )/ 2 </code> , <br>
+  Since n&sup2; is larger than n and neglecting the constant "2"<br>
+  <b><u>Bubble Sort's Time Complexity : <code>n&sup2;</code></u></b>
+
+  <hr>
+   <li>No merge sort is not for begineer - every person who takes birth can sort using merge sort  - its not even an algorithm <em>at this points</em></li>
+   <li>A step count is the steps per execution i.e the number of times that particular line has been executed in one instance of "program execution" , summation of all the number of executions of these lines in the program would be the step count of that program . The count that we use to determine the time complexity is the <code>operation count</code></li>
+</body>
+
+<a href="order-of-Growth.html.html"><big>Order of Growth</big></a>
+
+</html>

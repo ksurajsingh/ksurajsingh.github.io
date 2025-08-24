@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pattern Matching</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Pattern Matching Algorithms</h1>
+  <hr>
+  <hr>
+
+  <h2>Naive-Pattern Matching</h2>
+  At first the pattern is set to the left end of the text, and matching process starts. After a mismatch is found,
+  pattern is shifted one place right and a new matching process starts again , and so on.<br>
+
+  <h4>Best Case</h4>
+  The best case can be found where the time complexity would be : <br>
+  O(n): where n is the length of the string . <br>
+  This happens when the first character of the pattern does not exist in the <code>String</code><br>
+  <Br>
+  <br>
+  <h4>Worst Case</h4>
+  This happens when all the characters of the string match the pattern <code>or</code><br>
+  if the last character of the string is different [ different infers - could be anything ]<br>
+  <em>Time complexity: </em>O(mn).<br><br>
+  <em>Explaination:</em>At every iteration of n we do m comparision of the <code>Pattern's</code> characters with the
+  <code>String's</code> characters <br>
+  <br><br>
+  <h2>Knuth-Morris-Pratt Algorithm</h2>
+  The KMP matching algorithm uses degenerating property ( pattern having same sub-patterns appearing more than once in
+  the pattern are ignored )<br>
+  KMP uses lps array that stands for <em>Longest proper prefix</em> that can hold the array elements that actually have
+  matched to skip those and find the next matching pattern <br>
+  A.K.A : also called as the <em>longest prefix suffix</em> pattern since the prefix in the pattern is going to be a
+  suffix for the current match , and hence on a mismatch the part that is already matched becomes the prefix and . .
+  .<br>
+  that much portion is already considered as match with the pattern's prefix and further portion of string is compared
+  <br>
+  Which essentially stores the <em>Length</em> of the longest proper prefix that was found repeating in the string <br>
+  <a href="https://youtu.be/ynv7bbcSLKE?si=JE_YGAQudVFSADO4" alt="amazing source for KMP from youtube">amazing_sauce</a>
+  <br>
+  <br>
+  <b>Code</b>
+  <br>
+  <pre>
+    <code>
+
+      #include&lt;stdio.h&gt;
+      #include&lt;stdlib.h&gt;
+      #include&lt;string.h&gt;
+
+      void computeLPSArray(char *pat, int M,int *lps){
+      int len=0;
+      lps[0]=0;
+      int i=1;
+
+      while(i&lt;M){
+      if(pat[i]==pat[len]){// pattern's CHARACTER MATCH
+      lps[i++]=++len;
+      }
+      else{ // MISMATCH
+      if(len!=0){ // in any position of the pattern
+      len=lps[len-1];
+      }
+      else{ // in FIRST position of the pattern
+      lps[i++]=0;
+      }
+      }
+      }
+      }
+
+
+      void KMPsearch(char *pat,char *txt){
+      int M=strlen(pat);
+      int N=strlen(txt);
+
+      int *lps=(int*)malloc(sizeof(int)*M);
+      int j=0,i=0; // iterators for pat amd txt
+      computeLPSArray(pat,M,lps);
+
+      while(i&lt;N){
+      if(pat[j]==txt[i]){ // Match
+      i++;
+      j++;
+      }
+      if(j==M){ // end of pattern
+      printf("Found patten at index: %d",i-j+1);
+      j=lps[j-1];
+      }
+      else if(i&lt;N && pat[j]!=txt[i] ){ // Pure MISMATCH
+      if(j!=0)
+      j=lps[j-1];
+      else
+      i=i+1;
+      }
+      }
+      free(lps);
+      }
+
+      int main(){
+
+      char txt[50],pat[50];
+
+      printf("Enter the text: \n");
+      fgets(txt,50,stdin);
+      txt[strcspn(txt,"\n")]='\0';
+
+      printf("Enter the pattern: \n");
+      fgets(pat,50,stdin);
+      pat[strcspn(pat,"\n")]='\0';
+
+      KMPsearch(pat,txt);
+      // getc();
+      return 0;
+
+
+      }
+    </code>
+  </pre>
+
+  <a href="../arrays/arrays.html"><big>Chap4</big></a>
+
+</body>
+
+</html>
