@@ -5,12 +5,290 @@
   <link rel=stylesheet href=style.css>
 </head>
 <body>
+  <h1>Index</h1>
+
   <h1>Scanner</h1>
+  <pre>
   Scanner is used to take input
   <img src="./media/scanner.png" alt="scanner methods in java">
+  creat it using
+  <code>Scanner sc = new Scannner(System.in)</code>
+  then use the instance of the object by <code>sc.next()</code>
+  For taking characters as input use <code>sc.next().chatAt(0)</code>
+
+
   <h2>Operator Precedence</h2>
   Operator precedece in java
   <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html">operator precedence</a>
+
+
+  <h1>Why java</h1>
+  <pre>
+  Java has JDK which is what is used to <code>Compile</code> and <code>Run</code> a java program
+  The code is compiled using <code>JRE</code> which has <code>JVM</code> also.
+  A <code>JDK</code> has <ul>
+    <li>JRE</li>
+    <li>JVM <em>is a part of JRE</em></li>
+    <li>JDK tools <ul>
+      <li><code>javac</code> java compiler</li>
+      <li>docs</li>
+    </ul></li>
+    <li>Class binaries [libraries [APIs]]</li>
+    <li>Other tools</li>
+  </ul> 
+  </pre>
+
+  <h1>Structure</h1>
+  <ol>
+    <li>Package</li>
+    <li>Class</li>
+    <li>Methods <br>
+      The main is mostly <code>public static which takes args (String args[])</code>
+      The String args[] is mandatory since <code>JVM</code> keeps searching for signatures while running
+    </li>
+  </ol>
+
+  <h1>Syntax</h1>
+  <ul>
+    <li><code>System.out.print</code> - same line</li>
+    <li><code>System.out.println</code> - new line</li>
+  </ul>
+
+  <h1>[Primitive] Data Types</h1>
+  <table>
+    <th>Type</th>
+    <th>Bytes</th>
+    <tr>
+      <td>int</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>short</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>long</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>byte</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>float</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>double <br>[higher precision than float]</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>char</td>
+      <td>2[unicode] | 1[generally]</td>
+    </tr>
+    <tr>
+      <td>boolean</td>
+      <td>1</td>
+    </tr>
+  </table>
+
+   <b>JAVA WON'T ALLOW YOU TO USE A VARIABLE BEFORE <big>INITIALISATION</big></b>
+   <em>While C initialised uninitialised variables to <code>0</code></em>
+
+   <pre>
+   <b>Int:</b> You can use <code>Interger</code> class to use methods like 
+   <code>MIN_VALUE</code>
+   <code>MAX_VALUE</code>
+
+   <b>Char:</b> Java stores character in the form of <code>ASCII</code>
+
+   <b>Double:</b> All decimal values are generally double until you use <code>f</code> after a number making a 
+
+   <b>Float: </b> <code>float f = 0.5f;</code>
+
+   <b>Type Casting: </b> You can only implicitly cast from a smaller to bigger allocated memory 
+   short-&ht;long 
+   but if you want long as short 
+   use need <code>explicit</code> conversion 
+   by 
+   <code>short s=(short) l</code>
+   where l is long
+
+   <b>Operation: </b> Whenever an opertaion is performed the number which has the largest memeory is allocated / used / printed.
+   for ex: <code>System.out.print(2.5+5)</code> = 7.5
+   </pre>
+
+   <h1>Non-Primitive Data Types</h1>
+   <ul>
+    <li>Strings</li>
+    <li>Arrays</li>
+    <li>Classes</li>
+    <li>Interfaces</li>
+    <li>Enumns</li>
+    <li>Wrapper classes
+      <ul>
+        <li>Integer</li>
+        <li>Character</li>
+        <li>Boolean</li>
+        <li>Double</li>
+      </ul>
+    </li>
+    <li>Collections</li>
+   </ul>
+
+   <h1>Declaration</h1>
+
+   <b>JAVA WON'T ALLOW YOU TO USE A VARIABLE BEFORE <big>INITIALISATION</big></b>
+   <em>While C initialised uninitialised variables to <code>0</code></em>
+
+   <h3>INT</h3>
+   <code>int i = new int</code>
+   <code>int i = 5;</code>
+
+   <h3>Array</h3>
+   <pre>
+   <code>int i[] = new int[]</code>
+   you can use <code>i.length</code>
+   2d array - <code>int i[] = new int[][]</code> this is good but won't work
+   You need atleast the last refernce type initialised so 
+   <code>int i[] = new int[10][]</code>
+   </pre>
+
+   <h3>Strings</h3>
+   <pre>
+   since <code>Strings</code> is a non-primitive type you need <code>new.length()</code>
+   now you cannot do <code>str[i]</code> even if you do <code>String str = new String</code>
+   Since its non-primitve you need to use <code>str.charAt(i)</code>
+   
+   String are non mutable but you can concatenate since it creates a new space in the memoery .
+   While if you just do <code>String str = "abc"</code> the javac checks the string bool for the previous declarations of "abc" in the string bool in the heap and refer to the same 
+
+   This is not the case when you create a new instance explicitly like <code>String new = new String()</code>
+   </pre>
+
+
+   <ul>
+     <li>equals</li>
+     <li>comapreTo <br>
+       returns the ASCII difference
+     </li>
+     <li>contains</li>
+     <li>subString(startindex)</li>
+     <li>subString(startindex,endindex) <br>endindex is exclusive</li>
+   </ul>
+
+   Java also has <code>StringBuffer</code> which is mutable
+   which has 
+   <ol>
+     <li>setCharAt()</li>
+     <li>replace</li>
+     <li>append</li>
+     <li>and almost everything a <code>String </code> has</li>
+   </ol>
+
+   <b>Lexicographically: </b> alphabetically
+   
+
+   <h1>Methods [Functions]</h1>
+
+   <h2>Polymorphism</h2>
+   <table>
+    <tr>
+      <th>Compile-Time Polymorphism <br>
+        <code>OverLoading</code>
+      </th>
+      <td><ol>
+        <li>At compile time the <code>javac</code> decided on which method [function] to use</li>
+        <li>The name can be same</li>
+        <li>The parameters should be different</li>
+        <li>you cannot distinguish method by return type alone in which case the javac returns an error</li>
+        <li>Can happens in the same or different class</li>
+      </ol></td>
+    </tr>
+    <tr>
+      <th>Run-Time Polymorphism <br>
+        <code>OverRiding</code>
+      </th>
+      <td><ol>
+        <li>The method to use is decided by the <code>java</code> binary at the runtime</li>
+        <li>Identiacal signature from <code>parent</code> class</li>
+        <li>Always happens between a Parent and a child class</li>
+      </ol></td>
+    </tr>
+   </table>
+
+
+   <h1>Objects</h1>
+   <pre>
+   Lets say you have a <code>parent</code> class and a <code>child</code> class 
+   and you declare 
+   <code>parent brock = new child()</code>
+   <code>child bruce = new parent // This is not allowed since the child could access methods which are not present in parent </code>
+   in this case the <code>brock</code> is an instance of <code>child</code> but with only the abilities of <code>parent</code> since 
+   it is referred to as a parent.
+   <b>IF</b> parent extends some other class like , or if child overrides a parent method, then it can use their abilities as well.
+
+   The object type is the address the instance points to - and uses its methods ON OVERRIDING. 
+   and can generally use the reference object's methods.
+
+   <code>
+
+// Parent class
+class Animal {
+    void sound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+// Child classes
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Bark");
+    }
+
+    void fetch() {
+        System.out.println("Dog fetches the ball");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Meow");
+    }
+
+    void scratch() {
+        System.out.println("Cat scratches");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Parent reference, child object
+        Animal a1 = new Dog();
+        Animal a2 = new Cat();
+
+        a1.sound(); // Bark  (Child's overridden method)
+        a2.sound(); // Meow  (Child's overridden method)
+
+        // a1.fetch(); // ❌ Cannot call: fetch() not in Animal
+
+        // Using an array of Animals (polymorphism)
+        Animal[] animals = { new Dog(), new Cat(), new Animal() };
+        for (Animal a : animals) {
+            a.sound(); // Calls correct overridden method at runtime
+        }
+
+        // Casting to access child-specific methods
+        if (a1 instanceof Dog) {
+            ((Dog)a1).fetch(); // Dog fetches the ball
+        }
+    }
+}
+
+   </code>
+
 
 </body>
 </html>
