@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Click me</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+
+  <button onclick="generateCalled()" type="button">Generate</button>
+
+  <script>
+    async function generateCalled(){
+      console.log("clicked")
+      try{
+        const resp = await fetch("http://localhost:8056/generate")
+        console.log("fetched")
+        const test = await resp.text();
+        console.log(test)
+      }catch(e){
+        if(e) return console.error(e)
+        console.log("fetched")
+      }
+      }
+  </script>
+</body>
+</html>
+

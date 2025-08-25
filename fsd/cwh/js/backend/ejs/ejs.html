@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EJS</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>EJS</h1>
+
+  <pre>
+  <ul>
+    <li>
+  <%= var %>
+        This is the syntax to use ejs variables in <code>.ejs</code> files while rendering 
+    </li>
+
+    <li>
+      on the server file you need to 
+      <code>app.set("view engine","ejs")</code>
+    </li>
+
+    <li>
+      The file that has to be served needs to be in directory named <code>view</code> and 
+      you can include components like how we do import svgs using 
+      <& include('componentname.ejs') &>
+    </li>
+
+    <li>
+      the <code>componentname.ejs</code> which is in the <code>view</code> directory will be use in the part of ejs 
+
+      <code>ejs</code>  is the replacement for <code>html</code> in html file extensions
+    </li>
+
+    <li>
+      you can also do 
+
+      <& include('componentname.ejs' , {component.component : "value" }) &>
+      to change a particular varible inside that compoent
+
+    </li>
+  </ul>
+  
+  </pre>
+
+  <a href="../tailwind/tailwind.html"><big>Tailwind</big></a>
+
+</body>
+</html>
+
