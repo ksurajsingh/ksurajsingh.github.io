@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OOPS</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>OOPS</h1>
+  <hr><hr>
+  <pre>
+
+   <h1>Encapsulation</h1>
+   <ul>
+    <li>Making few methods stay inside a object</li>
+    <li>Making a few objects stay inside a class</li>
+   </ul>
+
+   <h1>Inheritance</h1>
+   <ul>
+    <li>If there is a class that can have properties that could be a part of a superset. <br>
+      Then a superset class can be created which would be its parent.And the original class can now take its properties <br>
+      by inheritance using the keyword <code>extends</code>
+    </li>
+   </ul>
+
+   <h1>Polymorphism</h1>
+   <ul>
+    <li>If there are same classes then you can call that class specific to one class by </li>
+    <li>Referring to that class while declaring that object.</li>
+    <li>You can refer to the point and point to the child <br>
+    <code>vehicle v = new car()</code>
+    later you can make v point to the other class like 
+    <code>v = new bicycle()</code>
+    </li>
+   </ul>
+
+   <h1>Abstraction</h1>
+   <ul>
+    <li>You won't know what is actually written inside a function</li>
+    <li>But you will have access to maybe read but definitely use it</li>
+    <li>Only if you change one function - everyone will be able to use it , the updated version</li>
+   </ul>
+
+
+   in java declarating , instancing , and initialisatoin works differently 
+
+   <code>int maxSpeed</code>
+   if you only write this much it will be initialised to 0
+   but 
+   if its a non-primitive type and you are access the value using a reference [ which all non-primitive types do ]
+   then 
+   say 
+   <code>String color</code>
+   this case since String is reference to some chunk in memory and not particular piece - it will just be initilised as NULL 
+
+   same goes for instancing - created a new objects 
+   <code>int maxSpeed =  new int</code>
+   <code>String color = new String</code>
+
+   initialisation - 
+   <code>int maxSpeed = new int[5]</code> not allowed since int is just a primitve type
+   you could make it an array like <code>int[] maxSpeed = new int[6]</code>
+   or use the non-primitive [ interger only ] type 
+   <code>Integer maxSpeed = new Integer(120)</code> now this is a wrapper class for Int
+   <code>String color = new String("blue")</code>
+
+   also if you were to do 
+   <code>Integer maxSpeed</code>
+   this wouldn't initialise to 0 but <code>NULL</code>
+
+   Wrapper classes in java are object oriented classes for primitive types. 
+   Following
+   <img src="./media/wrapper.png" alt="wrapper classes">
+
+
+   If there is a parent and a child and both have constructor. 
+   if you declare an object of the child - you need to define the <code>super(_param_)</code> for the constructor of the super class .
+   by default it happens without any params . If you super constructor reqs params you need to explicity mention <code>super(_param_)</code> before anything else 
+   in the child constructor.
+
+
+   <b>Class casting</b> converting a class object to some other object - 
+   upcasting - parent reference points to child.
+
+   downloading - child reference points to parent. [ needs to be explicit and on the instance of parent ]
+   check by 
+   if( v instanceof car ){
+      car c = (car)v
+   }
+
+   don't do <code>child c = new parent()</code>
+   instead 
+   <code>parent p = new child()</code>
+    <code>child c = (c)parent</code>
+
+
+   Every class that you create in java is a subclass of the <code>Object</code> class.
+
+   <h2>Exception</h2>
+   use <code>throw new _exception_name_</code> to throw exceptions
+
+   if a method is throwing an exception use <code>throws</code> in the function signature to throw is to the function that called it.
+
+   To handle that exception any any point in the stack trace use 
+   <code>try{}catch{}</code>
+   Why use this - this won't hinder the flow of the program and helps to continue the further execution.
+
+   There is a main class called as <code>Exception</code>
+   like how every object is a subclass of <code>Object</code>
+   every exception [ user defined ] or [system defined] is a subclass of <code>Exception</code>
+
+
+   The <b>Finally</b> keyword is used to execute a block definitely after a <code>try{}catch{}</code>
+   like closing a scanner using <code>sc.close()</code>
+
+   
+
+</pre>
+
+</body>
+</html>
+
