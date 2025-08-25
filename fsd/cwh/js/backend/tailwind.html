@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tailwind</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+
+  <h1>Tailwind</h1>
+
+  <pre>
+
+<ul>
+  <li>
+  can be imported by using thier <code>cdn</code>
+  <code>&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;</code>
+  </li>
+
+ <li>or using <code>npm</code></li>
+
+  <li>
+  this created a <code>input.css</code>
+  and you watch the files and the watched files components are written in <code>output.css</code>
+  </li>
+
+  <li><code>npx tailwind -i ./src/input.css -o ./src/output.css --watch</code> <br>
+  This watched the files and finds them from input.css and compiles it down to output.css 
+  Which can be linked in your html and styles are applied
+  </li>
+
+  <li>Default tailwind directives in input.css <ul>
+    <li>@tailwind base </li>
+    <li>@tailwind components </li>
+    <li>@tailwind utilites</li>
+  </ul></li>
+
+  <li><b>Breakpoints</b> these are the ones which are other directives like <code>md,sm</code> which for a fixed set of view length in browsers
+  the <code>@media</code> query alternative
+  </li>
+
+  <li><code>Tailblocks</code> are ones with chunk of tailwind codes that you can run and check in the <code>tailwind playground</code></li>
+
+
+  <li><code>Layers</code> or <code>directives</code> to replace chunks of those codes by a commong name like 
+
+<code>
+@layer components {
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: --spacing(6);
+    box-shadow: var(--shadow-xl);
+  }
+}
+</code>
+
+  </li>
+
+</ul>
+
+
+<a href="./bootstrap.html"><big>Bootstrap</big></a>
+
+
+
+</body>
+</html>
+
