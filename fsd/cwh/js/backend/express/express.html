@@ -12,7 +12,7 @@
  <ol>
   <li>Cannot serve static files</li>
   <li>Minimal security</li>
-  <li>Cutsom <code>get</code> <code>post</code> <b>req</b> <em>handlers</em></li>
+  <li><b>[API]</b> Cutsom <code>get</code> <code>post</code> <b>req</b> <em>handlers</em></li>
  </ol>
 
   There are http requests that show the way things are <code>requested for</code> or 
@@ -60,13 +60,14 @@
    <a href="./EMethods.html"><big>EMethods</big></a>
 
 
-- [ ] hoppscotch
-- [ ] app-levle middleware 
-- [ ] router-level middleware 
-- [ ] error-handling middleware 
-- [ ] built-in middlewares 
-- [ ] third-party middleware
-
+  <h3>Middleware</h3>
+  <ol>
+    <li>app-levle middleware <code>app.use</code> </li>
+    <li>router-level middleware <code>express.Router()</code> </li>
+    <li>error-handling middleware <code>app.use("route",(err,req,res,next))</code></li>
+    <li>built-in middlewares are like <code>express.json()</code> , <code>express.statis()</code></li>
+    <li>third-party middleware are like <code>morgan</code></li>
+  </ol>
 
 
   </pre>
