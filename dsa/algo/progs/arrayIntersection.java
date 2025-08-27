@@ -1,7 +1,7 @@
 public class arrayIntersection{
 
 
-  public static int arrayIntersect(int[] a,int[] b){
+  public static int arrayIntersect(int[] a,int[] b){ 
     for(int i=0;i<a.length;i++){
       for(int j=i+1;j<b.length;j++){
         if(a[i]==b[j]) return a[i];
