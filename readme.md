@@ -43,6 +43,7 @@ Contains Frequent updates
 - [ ] think of ways to reduce load time [ and image load/size ]
 
 ## Bug 
+- [ ] add audio to thu-aug-28
 - [ ] complete the blog from wed-aug-20 [ in dandadan eps thats downloaded , one ep has the cat - turbo granny quetioning okarun weather what he wants to learn is "how to punch" or "to get stronger" ]
 - [ ] Find reason for Duplicate Ninja harroti blog
 - [ ] fix bomb blog
