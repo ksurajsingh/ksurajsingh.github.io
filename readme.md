@@ -21,7 +21,8 @@ Contains Frequent updates
 
 ## Learnings [ HIGHLY COSMETICS ]
 
-- [ ] Directory organisation 
+- [ ] all memes in one page for final revision.
+- [ ] Directory organisation [paritally complete]
 - [ ] structure in such a way that you could have 3 modes or reading 
  - [ ] Detailed [ full pages ]
  - [ ] Fast [ a drop down in hamburger maybe ]
