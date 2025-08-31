@@ -1,0 +1,38 @@
+*{
+  margin:0;
+  padding:0;
+  background-color: #87CEEB ;
+}
+
+.subjects{
+  position: absolute;
+  margin: 10px;
+  top: 35%;
+  left: 35%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 45px;
+  background-color: white;
+  border: 20px solid lightgreen;
+  border-radius: 8px;
+  align-items: center;
+  /* z-index: 3; */
+}
+
+.water{
+  position: absolute;
+  height: 20vh;
+  width: 100%;
+  bottom: 0;
+  background-color: #1CA3EC;
+}
+
+
+
+.subjects button{
+  padding: 10px;
+  border: 10px solid blue;
+  border-radius: 10px;
+}
