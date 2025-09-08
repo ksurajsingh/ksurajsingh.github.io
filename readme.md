@@ -83,6 +83,7 @@ Contains Frequent updates
 
 ## blog                             [merge v0.1.2]
 !BEFORE MERG 
+- [ ] Think of adding favicon to blogs
 - [ ] when coming back from blog to index page- remove load both in diary and trash 
 - [ ] reduce load speed of blog in trash
 - [ ] check TODOs from blogs

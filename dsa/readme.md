@@ -19,3 +19,30 @@ for ex: [8,1,7,2,4,5,6,3]
 - [ ] That barbell question
 https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - [ ] Check the previous codes and codes from 3-4sems
+- [ ] invert binary tree
+- [ ] subarray  
+  - [ ] all combinations   
+  - [ ] sum  
+  - [ ] max sum 
+  - [ ] min sum  
+- [ ] subsequence  
+  - [ ] all combinations  
+  - [ ] sum  
+  - [ ] max sum  
+  - [ ] min sum  
+- [ ] Longest Increasing Subsequence 
+- [ ] Maximum sum increasing subsequence 
+
+
+
+## Check these out 
+
+- [ ] https://www.youtube.com/watch?v=1xNbjMdbjug&ab_channel=takeUforward
+- [ ] https://www.youtube.com/watch?v=KEs5UyBJ39g&ab_channel=takeUforward
+- [ ] https://www.youtube.com/watch?v=HGk_ypEuS24&ab_channel=takeUforward 
+- [ ] https://www.youtube.com/watch?v=tyB0ztf0DNY&ab_channel=takeUforward
+- [ ] https://www.youtube.com/watch?v=37E9ckMDdTk&ab_channel=takeUforward
+- [ ] https://www.youtube.com/watch?v=tNm_NNSB3_w&ab_channel=takeUforward
+- [ ] https://www.youtube.com/watch?v=ogjf7ORKfd8&ab_channel=takeUforward
+- [ ] https://www.youtube.com/watch?v=frf7qxiN2qU&ab_channel=takeUforward
+- [ ] https://youtu.be/tNm_NNSB3_w?si=ucauiAZThqnt6dtw
