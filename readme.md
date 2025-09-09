@@ -97,6 +97,10 @@ Contains Frequent updates
 - [ ] add images to blogs
 - [ ] manga DB blog + EL presentation blog
 - [ ] transport all sauce from bottom to top
+- [ ] Educational 
+  - [ ] Loop optimization
+    - [ ] Types 
+    - [ ] https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/High_Performance_Computing_%28Severance%29/03%3A_Programming_and_Tuning_Software/3.04%3A_Loop_Optimizations?utm_source=chatgpt.com
 
 ## Socials [merge v0.1.3]
 - [ ] social media pfp design + hover effect  
