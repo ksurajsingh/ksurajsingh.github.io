@@ -32,6 +32,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
   - [ ] min sum  
 - [ ] Longest Increasing Subsequence 
 - [ ] Maximum sum increasing subsequence 
+- [ ] check the 2 hard solved 
 
 
 

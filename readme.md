@@ -98,6 +98,7 @@ Contains Frequent updates
 - [ ] manga DB blog + EL presentation blog
 - [ ] transport all sauce from bottom to top
 - [ ] Educational 
+  - [ ] How not to break a bootloader.
   - [ ] Loop optimization
     - [ ] Types 
     - [ ] https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/High_Performance_Computing_%28Severance%29/03%3A_Programming_and_Tuning_Software/3.04%3A_Loop_Optimizations?utm_source=chatgpt.com
