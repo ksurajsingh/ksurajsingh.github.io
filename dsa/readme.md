@@ -33,6 +33,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - [ ] Longest Increasing Subsequence 
 - [ ] Maximum sum increasing subsequence 
 - [ ] check the 2 hard solved 
+- [ ] solve this in O(1) https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i/ [ check constraints - automate by replacing for loops]
 
 
 
