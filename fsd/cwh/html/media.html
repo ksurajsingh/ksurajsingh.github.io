@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Media</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>Media elements</h1>
+  <hr><hr>
+
+  <h3>Video</h3>
+  <dl >
+    <dt>tag</dt>
+    <dd><a href="./index.html#video">videoTag</a></dd>
+    <dd>Allows attributes like <code>height</code>,<code>width</code> etc </dd>
+    <dd>The source can be from anywhere like a <code>URL</code> as well . </dd>
+    <dt><code>autoplay</code></dt>
+    <dd>play on page load </dd>
+    <dt><code>loop</code></dt>
+    <dd>loops the video</dd>
+    <dt><code>poster</code></dt>
+    <dd>acts as a thumbnail , need to specify the <em>src</em></dd>
+    <dt><code>mute</code></dt>
+    <dd>the video stays muted on <em>defaultM</em></dd>
+  </dl>
+  <em>Check the <code>Lazy load</code>  tag / attribute , a friend of mine said it loads the elements not when the pages is loaded but when the viewer views it !</em>
+  <hr>
+  <h3>Audio</h3>
+  <dl>
+    <dt>tag</dt>
+    <dd>Allows almost all attributes as <code>video</code> tag </dd>
+    <dt>preload</dt>
+    <dd>Specifies how the element needs to be loaded on page load <br> <b>Could</b> reduce buffer </dd>
+    <dd><code>none</code> only downloads when the elements is loaded manually </dd>
+    <dd><code>Metadata</code> Only loads the <em>metadata</em></dd>
+    <dd><code>Auto</code> tries to load as much as possible without delaying other important document content </dd>
+  </dl>
+  <hr>
+  <h3>SVG</h3>
+  <dl>
+    <dt>tag</dt>
+    <dd>Can be used as an individual element with height and width for vector graphic images </dd>
+    <dd>Its a paired tag and can have <em> inner tags </em> for shapes like circle , square etc </dd>
+    <dd>if you have an SVG file and show it using the <code>img</code> tag <br>
+      Use the name space declaration <code> &lt;img xmlns="http://www.w3.org/2000/svg"&gt; </code></dd>
+    <dd>You might want to use this above specified namespace declaration for <code>svg</code> tag as well sometimes </dd>
+    <dd>This is because the <em>html</em> file needs to specify to the browser the <b>Type</b> of media that is to be displayed as an <code>XML convention</code></dd>
+  </dl>
+  <hr>
+  The above 3 are all <em>inline</em> tags
+  <h3>iFrame</h3>
+  <dl>
+    <dt>tag</dt>
+    <dd>is used to embed an entire page in a particular space </dd>
+    <dd>it is a paired tag </dd>
+  </dl>
+  <hr><hr><br>
+  <h1>Semantics</h1>
+  This is very self-explainatory , so I will just <a href="https://www.codewithharry.com/tutorial/html-semantic-tags/" target="_blank">link </a> to it.
+  <br><br>
+  <a href="./corewebvitals.html" alt="next page"><u><big>Next</big></u></a>
+  <br><br><br>
+
+</body>
+</html>
+

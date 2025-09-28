@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>forms</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Forms</h1>
+  <hr><hr>
+  <ol>
+    <li> <b><code>form</code></b> tag is used to create a form that could have a set of fields/ inputs that the user enters
+      which can be stored in the server <br> 
+      <ul>
+        <li> It has <code>action</code> attribute to specify the <code>API</code></li>
+        <li> It has a <code>method</code> attribute to specify a http method like <code>get</code>, <code>post</code> etc
+<br> <br>
+        </li>
+        <li> <img src="media/get_method_form.png"> <br></li>
+        <li> <img src="media/post_method_form.png"> <br><br> </li>
+        <li> is a paired tag</li>
+      </ul>
+    </li>
+
+    <li><b><code>input</code></b> tag is used to take input from the user<br>
+      <ul>
+        <li> <code>type</code> attribute specifies the type of input - like <em>text,date,number,password,radio,checkbox</em><br></li>
+        <li> <code>name</code> attribute for the name of that particular input tag<br>This is needed for the purpose of
+          submission , if a field doesn't have a name its submission won't be possible.<br>
+          As the submission of the data is done with a name .
+        <li> <code>placeholder</code> attribute to fill the field of input with some data that is shown when the field is
+          empty<br></li>
+        <li> <code>required</code> is used to make that particular input field mandatory to hold a value / if it has to be submitted </li>
+        <li> <code>id</code> To uniquely identify .</li>
+        <li><code>value</code> sets the default text in the input box when the page is loaded - different than placeholder - cuz this will act as actual value entered by user that means you could essentailly submit the form without interacting with the input div</li>
+        <li><code>min/max</code> sets the sepcific limit</li>
+        <li><code>step</code> used to set a stepper through the numbers</li>
+      </ul>
+    </li>
+    <li><b><code>label</code></b> is used to label the placeholder / element for that matter for the input field in a HTML document in the browser
+      <ul>
+        <li><code>for</code> is the attribute in order to link to the input field using its <code>id</code></li>
+
+      </ul>
+    </li>
+    <li><b><code>textarea</code></b> is used for the client to enter a bunch of text like a comment . 
+      <ul>
+        <li><code>name</code> same functinality as in input</li>
+        <li><code>row</code> To specify rows</li>
+        <li><code>column</code> To specify columns</li>
+        <li>It is a paired tag so it has a closing tag . The content within these tags is filled in the text-area when empty .</li>
+      </ul>
+    </li>
+    <li>
+      <b><code>Select</code></b> is to give options to the client and hold the value of the selected one
+    <ul>
+      <li><code>options</code> is the tag that the select tag holds . 'Options' is a paired tag and holds the value in between what is to be shown to the user </li>
+      <li><code>value</code> is the attribute that is to be the data that has to be hold by the <code>select tag</code> when the corresponding option is selected by the client </li>
+    </ul>
+    The <code>select</code> tag is a paired tag and will have the above values in it </li>
+  </ol>
+  <br>
+  <a href="./inlineBlock.html" alt="next page"><u>Next</u></a>
+  <br><br><br>
+
+</body>
+
+</html>
