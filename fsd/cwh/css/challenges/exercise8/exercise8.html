@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Exercise 8</title>
+  <link rel=stylesheet href=style.css>
+
+  <head name=viewport content=width=device-width, initial-scale=1.0>;
+  </head>
+  <style>
+    h1 {
+      font-size: 5vh;
+    }
+
+    .mega-container {
+      display: flex;
+    }
+
+    .legend {
+      position: absolute;
+      padding: 5px;
+      white-space: nowrap;
+      margin: 1vh 0.5vw;
+      width: 9vw;
+      height: 18vh;
+      overflow: scroll;
+      border: 5px solid white;
+      scrollbar-width: none;
+      top: 0%;
+    }
+
+    .ground {
+      position: relative;
+      background-color: lightgreen;
+      width: 95rem;
+      height: 45rem;
+      margin: 5vh auto;
+      border: 2px solid black;
+      border-radius: 15px;
+    }
+
+    code {
+      padding: 4px;
+      border-radius: 5px;
+      background-color: grey;
+      margin-bottom: 1vh;
+    }
+
+    #red {
+      color: red;
+    }
+
+    #green {
+      color: darkgreen;
+    }
+
+    #gold {
+      color: gold;
+    }
+
+    #silver {
+      color: silver;
+    }
+
+    #white {
+      color: darkgrey;
+    }
+
+    .ball {
+      position: absolute;
+      object-fit: contain;
+      bottom: 0%;
+      object-position: bottom left;
+      background-color: white;
+      border-radius: 70%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      /* animation: bounceforwards 3s linear alternate infinite; */
+      animation: bounceforwards 2s linear infinite, boundeupwards 2s ease-out infinite;
+    }
+
+    .ball1 {
+      position: absolute;
+      object-fit: contain;
+      bottom: 0%;
+      object-position: bottom left;
+      background-color: gold;
+      border-radius: 70%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      /* animation: bounceforwards 3s linear alternate infinite; */
+      animation: longbounceforwards 2s linear alternate infinite, longboundeupwards 1s ease-out alternate infinite;
+    }
+
+    .ball2 {
+      position: absolute;
+      object-fit: contain;
+      bottom: 0%;
+      object-position: bottom left;
+      background-color: silver;
+      border-radius: 70%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      /* animation: bounceforwards 3s linear alternate infinite; */
+      animation: mulbounceforwards 20s linear alternate infinite, mulboundeupwards 1.2s ease-out alternate infinite;
+    }
+
+    .ball3 {
+      position: absolute;
+      object-fit: contain;
+      bottom: 0%;
+      object-position: bottom left;
+      background-color: red;
+      border-radius: 70%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      /* animation: bounceforwards 3s linear alternate infinite; */
+      animation: fastbounceforwards 2s linear alternate infinite, fastboundeupwards 0.25s ease-out alternate infinite;
+    }
+
+    .ball4 {
+      position: absolute;
+      object-fit: contain;
+      bottom: 0%;
+      object-position: bottom left;
+      background-color: green;
+      border-radius: 70%;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      /* animation: bounceforwards 3s linear alternate infinite; */
+      animation: slowbounceforwards 10s linear alternate infinite, slowboundeupwards 1.6666s ease-out alternate infinite;
+    }
+
+    @keyframes bounceforwards {
+      from {
+        left: 0%;
+      }
+
+      to {
+        left: 157%
+      }
+    }
+
+    @keyframes boundeupwards {
+      from {
+        bottom: 0%;
+      }
+
+      to {
+        bottom: 117%;
+      }
+    }
+
+    @keyframes mulbounceforwards {
+      from {
+        left: 0%;
+      }
+
+      to {
+        left: 97%
+      }
+    }
+
+    @keyframes mulboundeupwards {
+      from {
+        bottom: 0%;
+      }
+
+      to {
+        bottom: 40%;
+      }
+    }
+
+    @keyframes longbounceforwards {
+      from {
+        left: 0%;
+      }
+
+      to {
+        left: 97%
+      }
+    }
+
+    @keyframes longboundeupwards {
+      from {
+        bottom: 0%;
+      }
+
+      to {
+        bottom: 40%;
+      }
+    }
+
+    @keyframes slowbounceforwards {
+      from {
+        left: 0%;
+      }
+
+      to {
+        left: 97%
+      }
+    }
+
+    @keyframes slowboundeupwards {
+      from {
+        bottom: 0%;
+      }
+
+      to {
+        bottom: 40%;
+      }
+    }
+
+    @keyframes fastbounceforwards {
+      from {
+        left: 0%;
+      }
+
+      to {
+        left: 97%
+      }
+    }
+
+    @keyframes fastboundeupwards {
+      from {
+        bottom: 0%;
+      }
+
+      to {
+        bottom: 40%;
+      }
+    }
+  </style>
+
+<body>
+  <h1>Does the ball bounce?</h1>
+  <div class="mega-container">
+
+    <div class="ground">
+      <div class="legend">
+        <code id="red">red</code> fast paced <br><br>
+        <code id="green">green</code> slow paced <br><br>
+        <code id="gold">gold</code> long boundary <br><br>
+        <code id="silver">silver</code> multiple pitches [ slow [change time [with the same ratio between x and y
+        animations] to make it fast ] ] <br><br>
+        <code id="white">white</code> out of the stadium <br><br>
+      </div>
+
+      <div class="ball">
+      </div>
+      <div class="ball ball1">
+      </div>
+      <div class="ball ball2">
+      </div>
+      <div class="ball ball3">
+      </div>
+      <div class="ball ball4">
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

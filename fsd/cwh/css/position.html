@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Position</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  The are different types of positions like x,y,z to set the position of the element wrt to DOM.
+
+  <br><br>
+  By default position is set to <code>static</code>
+  <dl>
+    <dt>relative</dt>
+    <dd>doesn't consider other element only its immediate ancestor, it can overlap other elements <br>
+      Use z index to set the z<sup>th</sup> dimension
+    </dd>
+    <dt>Absolute</dt>
+    <dd>Checks relevance to its immediate ancestor</dd>
+    <dt>Fixed</dt>
+    <dd>Fixes the element on the screen, regardless of the DOM</dd>
+    <dt>Sticky</dt>
+    <dd>Sticks to the webpage when it has to disapper in the page. It is sticked to the page until it has no diappering property like no "scrolling" and the screen is at default view. <br>
+      You do have to specify the directional position when you make it sticky , ex: default for <b>nav</b> bar is <code>top:0px;</code>, it uses the static property</dd>
+  </dl>
+  <code>NOTE:</code> transform , filter or perspective propteries are also considered as positioning an element so their child might use them as relevance while using absolute properties.
+  <a href="cssvars.html" alt="Next page"><u><big>Next</big></u></a>
+
+</body>
+</html>
+

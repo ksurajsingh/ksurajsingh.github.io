@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Object-fit</title>
+  <link rel=stylesheet href=style.css>
+  <head name=viewport content=width=device-width, initial-scale=1.0>;
+    <style>
+      .image-size{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 900;
+        font-size: 35px;
+      }
+      .small, .large{
+        margin: auto;
+      }
+      .small{
+        margin-right: 60vw;
+      }
+
+      h1{
+        text-align: center;
+      }
+
+      h2{
+        flex: 1 1 100%;
+        display: block;
+      }
+      .description{
+        display: flex;
+        flex: 100%;
+        justify-content: space-between;
+      }
+      .left,.right{
+        margin: auto;
+        margin-bottom: 3vh;
+      }
+      .left{
+        margin-right: 60vw;
+      }
+
+      .mega-container {
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        overflow: auto;
+        scrollbar-width: none;
+      }
+
+      .base{
+        background-color: grey;
+        width: 30vw;
+        height: 50vh;
+        border: 2px black;
+      } 
+
+      hr{
+        border: none;
+        height: 22px;
+        margin: 20px;
+        background-color: black;
+      }
+
+      .fill .base img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+      img{
+        opacity: 0.6;
+        border: 2px solid black;
+      }
+      .cover .base img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      .cover2 .base img{
+        object-fit: cover;
+        width: 75%;
+        height: 75%;
+      }
+
+      .cover3 .base:nth-child(3) img{
+        object-fit: cover;
+        width: 175%;
+        height: 175%;
+      }
+
+      .cover3 .base img{
+        object-fit: cover;
+        width: 75%;
+        height: 75%;
+      }
+
+    
+      .cover4 .base:nth-child(3) img{
+        object-fit: cover;
+        width: 75%;
+        height: 75%;
+        object-position: bottom right;
+      }
+
+      .cover4 .base img{
+        object-fit: cover;
+        width: 75%;
+        height: 75%;
+        object-position:right;
+      }
+
+      .cover5 .base:nth-child(3) img{
+        object-fit: cover;
+        width: 75%;
+        height: 75%;
+        object-position: top left;
+      }
+
+      .cover5 .base img{
+        object-fit: cover;
+        width: 75%;
+        height: 75%;
+        object-position:left;
+      }
+
+      .fill2 .base:nth-child(3) img{
+        object-fit: fill;
+        width: 75%;
+        height: 75%;
+        object-position: top left;
+      }
+
+      .fill2 .base img{
+        object-fit: fill;
+        width: 75%;
+        height: 75%;
+        object-position:left;
+      }
+
+      .contain .base:nth-child(3) img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        object-position: top ;
+      }
+
+      .contain .base img{
+        object-fit:contain;
+        width: 100%;
+        height: 100%;
+        object-position:bottom;
+      }
+
+
+      .contain2 .base:nth-child(3) img{
+        object-fit: contain;
+        width: 100%;
+        height: 50%;
+        object-position: right;
+      }
+
+      .contain2 .base img{
+        object-fit:contain;
+        width: 100%;
+        height: 50%;
+        object-position:left;
+      }
+
+      .proof{
+        display: flex;
+        gap: 10vw;
+      }
+      .proof .base:first-of-type img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+      .proof img{
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+      }
+    </style>
+  </head>
+
+<body>
+  <h1>Object-fit</h1>
+
+
+  <div class="image-size">
+   <div class="small">
+   smaller image 
+   </div> 
+   <div class="large">
+   larger image 
+   </div>
+  </div>
+
+
+  <div class="mega-container">
+
+
+    
+    <div class="container">
+      
+
+    <h2>Default</h2>
+
+      <div class="description">
+        <div class="left">
+        This just shows the image in the <b>original</b> length        
+        </div>
+        <div class="right">
+       s c r o l l  
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+    <hr>
+
+
+    <div class="container fill">
+      
+
+    <h2>Fill</h2>
+
+      <div class="description">
+        <div class="left">
+          image is <b>not</b> <em>cropped</em>
+          <br>
+          but distorted.
+          <br>
+          Change in <b>aspect ratio</b>
+        </div>
+        <div class="right">
+          image is <b>not</b> <em>cropped</em>
+          <br>
+          but distorted.
+          <br>
+          Change in <b>aspect ratio</b>
+        </div>
+      </div>
+
+      <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+    <hr>
+
+
+    <div class="container cover">
+
+
+      
+
+    <h2>Cover w/h[100%/100%]</h2>
+
+      <div class="description">
+        <div class="left">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b> <br>
+          <b>No Distortion</b>
+        </div>
+        <div class="right">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b>
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+    <hr>
+
+    <div class="container cover2">
+
+
+      
+
+    <h2>Cover w/h[75%/75%]</h2>
+
+      <div class="description">
+        <div class="left">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b> <br>
+          <b>No Distortion</b>
+        </div>
+        <div class="right">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b>
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+    <hr>
+
+    <div class="container cover3">
+
+
+      
+
+    <h2>Cover w/h[175%/75%]</h2>
+
+      <div class="description">
+        <div class="left">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b><br>
+          showing only a <b>specific</b> portion of the image
+        </div>
+        <div class="right">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b><br>
+          showing only a <b>specific</b> portion of the image
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+    <hr>
+
+
+     <div class="container cover4">
+
+
+      
+
+    <h2>Cover w/h[75%/75%] [bottom right/right]</h2>
+
+      <div class="description">
+        <div class="left">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b><br>
+          showing only the <b>specifiED</b> portion of the image 
+        </div>
+        <div class="right">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b><br>
+          showing only the <b>specifiED</b> portion of the image
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+
+<hr>
+
+
+     <div class="container cover5">
+
+
+      
+
+    <h2>Cover w/h[75%/75%] [top left/left]</h2>
+
+      <div class="description">
+        <div class="left">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b><br>
+          showing only the <b>specifiED</b> portion of the image 
+        </div>
+        <div class="right">
+          Covers the dimensions specified <b>for the image</b>
+          <br>
+          <b>Does Crop</b><br>
+          <b>No Distortion</b><br>
+          showing only the <b>specifiED</b> portion of the image
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+    <hr>
+
+
+     <div class="container fill2">
+
+
+      
+
+    <h2>Fill w/h[175%/175%] [top left/left]</h2>
+
+      <div class="description">
+        <div class="left">
+          Fill always shows the entire image
+          <br>
+          <b>No Crop</b><br>
+          <b>Does Distorts image</b> <em>[ may change aspect ratio ]</em><br>
+          Since it displays the entire image , the object-position is rendered null
+        </div>
+        <div class="right">
+          Fill always shows the entire image
+          <br>
+          <b>No Crop</b><br>
+          <b>Does Distorts image</b> <em>[ may change aspect ratio ]</em><br>
+          Since it displays the entire image , the object-position is rendered null
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+
+    <hr>
+
+
+     <div class="container contain">
+
+
+      
+
+    <h2>Contain w/h[175%/175%] [top / bottom]</h2>
+
+      <div class="description">
+        <div class="left">
+          Similar to cover [maintains aspect ratio] but -
+          <br>
+          <b>Resizes </b>the image<br>
+          <b>No Cropping</b><br>
+         Since nothing is cropped - object-position is used to align the image with the container
+        </div>
+        <div class="right">
+          Similar to cover [maintains aspect ratio] but -
+          <br>
+          <b>Resizes </b>the image<br>
+          <b>No Cropping</b><br>
+         Since nothing is cropped - object-position is used to align the image with the container
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+    <hr>
+
+
+     <div class="container contain2">
+
+
+      
+
+    <h2>Contain w/h[175%/175%] [right/ left] <small>adjust size accordingly or just give a constant like pixels</small></h2>
+
+      <div class="description">
+        <div class="left">
+          Similar to cover [maintains aspect ratio] but -
+          <br>
+          <b>Resizes </b>the image<br>
+          <b>No Cropping</b><br>
+         Since nothing is cropped - object-position is used to align the image with the container
+        </div>
+        <div class="right">
+          Similar to cover [maintains aspect ratio] but -
+          <br>
+          <b>Resizes </b>the image<br>
+          <b>No Cropping</b><br>
+         Since nothing is cropped - object-position is used to align the image with the container
+        </div>
+      </div>
+
+    <div class="base">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpSWqOlqAh4xa6h5fRTO8M3nOtizwlV4KwOw&s" alt="small-image">
+    </div>
+    <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+    </div>
+
+
+    </div>
+
+
+
+
+    <ul>
+      <li>    You can also set <code>pixels</code> as unit for the <code>object-position</code> which will shift the object in the container with that amount of pixels.
+</li>
+<li>You can also use <code>scale-down</code> as the value for <code>object-fit</code> so that the object scales down with respect to the container and fit in the container if it is too big 
+<br><br><br>
+<div class="proof">
+  
+<div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+</div>
+     <div class="base">
+     <img src="https://images.unsplash.com/photo-1565945985125-a59c660a9932?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3" alt="large-image" style="opacity: 0.5;">
+     </div>
+
+</div>
+</li>
+<li>There is another property known as <code>background</code> so that spcific class if given a background image
+  <ul>
+    <li>You can also specify the location of the image using the url if the location is on the internet</li>
+    <li>And use <code>background-position</code> as well give values like <code>center</code></li>
+    <li>And if the image is small, it repeats the image. You can avoid this using <code>background-repeat</code> and specify value as <code>no-repeat</code> or <code>repeat-x</code> to stop repating on y and vice versa</li>
+    <dl>
+      <dt>Border-box</dt>
+      <dd>Shows the bg-image in the content,padding and border of the image</dd>
+      <dt>Padding-box</dt>
+      <dd>Shows the bg-image in the content,padding of the image</dd>
+      <dt>Content-box</dt>
+      <dd>Shows the bg-image in the content of the image</dd>
+      <dt>Text</dt>
+      <dd>Shows the bg-image in the text of the image <br>
+        Make sure to make the text <code>transparent</code> to view the image 
+        and remove its <code>text-shadow</code>
+      </dd>
+    </dl>
+    </li>
+  </ul>
+
+  <img src="./media/outline.png" alt="what does outline:none do in css">
+  <img src="./media/outline2.png" alt="how to use it in css">
+
+    </div>
+
+    <br><br><br><br><br>
+
+
+</body>
+
+</html>

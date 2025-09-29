@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Grid</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>Grid</h1>
+  <hr>
+  <br>
+  <code>display:grid</code>
+  <br>
+  Make the container follow a grid layout <br>
+  now you can use : <br>
+  <code>grid-tempalte-column: 100px 120px</code> and <code>grid-template-row: 100px 120px</code> <br>
+  the values are the size of the columns and rows in width and height <em>respectively</em> if there are <em>n</em> values then <em>n</em> columns/rows
+  <br>
+  You can write <code>1fr 1fr 1fr</code> to write that fraction part for the 3 columns specified [ 1 fraction of the original width ]. 
+  <br>
+  shorthand for this is <code>grid-temple-area: repeat(5,1fr)</code> which repeats 1fr <em>five times</em>. 
+  we also have <code>grid-temple-area: repeat(5,minmax(100px,1fr))</code> which describes values if the items would be resized . 
+  <br><br>
+  <b><code>grid-row</code> property is used specify the <code>start/end</code> of the number of the grid line
+  </b>
+  same for <code>grid-column</code>
+  <br>
+  The above are short-hand for <code>grid-row-start</code> <code>grid-row-end</code> , same for column <br>
+  <code>grid-template-row: [naurto] 100px [sasuke] 2100px </code> - this is how you name the grid lines <br>
+  <pre><code>grid-temple-area:{ "nav nav nav nav"
+                           "left-side article right-side"
+                           "footer footer footer"
+                            };
+  </code></pre>
+  <br>
+  This set the areas i.e the cells with the names specified which can later be called within the items using <code>grid-area</code>
+  <br>
+  That is when you are writing the rules for a particular element add <code>grid-area:&kt;name&gt;</code> to it , the name here would be the name you give in while defining the grid-template-area - which essentially links those both.
+  <br><br>
+  Instead of <code>padding</code> or <code>margin</code> use <code>gap</code>
+  <br><br>
+  <b>You can use <code>justify-items: center</code> inside the <code>display:grid</code> as well so that the items are aligned center <br>
+    This happens with the default <code>flow-direction</code> , and the <code>align-item/content</code> use the cross axis here as well, while <br>
+    <code>justify-item</code> uses the main axis
+  </b>
+  <br>
+  Grid is highly customizable so you can use <code>justify-self</code> and <code>align-self</code> as well <br>
+  <br>
+  <b><u>Obvious:</u></b> <code>items: </code> used for items , <code>content: </code> used for containers .<br>
+  we can have a shorthand for <code>align-content + justify-content</code> , that is <b><code>place-content</code></b> <br>
+  and <code>place-items</code> is shorthand for [ zenbu wa iwanai bakayaro ]
+
+  <br><br><br>
+  <a href="./transforms.html" alt="Next page"><u><big>Next</big></u></a>
+</body>
+</html>
+

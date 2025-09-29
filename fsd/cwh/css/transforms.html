@@ -1,0 +1,360 @@
+<1!DOCTYPE html>
+<html>
+<head>
+  <title>Transforms</title>
+  <link rel=stylesheet href=style.css>
+  <style>
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+/* rotate  */
+
+.boxes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+height: 100px;
+width: 80px;
+background-color: blueviolet;
+border: 2px solid black;
+margin: 10px;
+font-weight: 900;
+text-transform: capitalize;
+}
+
+/* rotate with axis */
+
+.boxess{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+height: 100px;
+width: 100px;
+background-color: orchid;
+border: 2px solid black;
+margin: 10px;
+font-weight: 900;
+text-transform: capitalize;
+}
+
+/* scale  */
+
+.boxesss{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+height: 100px;
+width: 100px;
+background-color: gold;
+border: 2px solid black;
+margin: 10px;
+font-weight: 900;
+text-transform: capitalize;
+}
+
+/* skew */
+
+.boxesskew{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+height: 100px;
+width: 100px;
+background-color: darkred;
+border: 2px solid black;
+margin: 10px;
+font-weight: 900;
+text-transform: capitalize;
+}
+
+/* translate*/
+
+.boxestranslate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+height: 100px;
+width: 100px;
+background-color: azure;
+border: 2px solid black;
+margin: 10px;
+font-weight: 900;
+text-transform: capitalize;
+}
+
+/* basic rotation */
+  
+.box1:hover{
+transform: rotate(40deg);
+}
+.box2:hover{
+  transform: rotate(0.25turn);
+}
+.box3:hover{
+  transform: rotate(0.5turn);
+}
+.box4:hover{
+transform: rotate(0.75turn);
+}
+
+/* rotation with respect to axis */
+
+.box5:hover{
+  transform: rotateX(35deg);
+}
+.box6:hover{
+  transform: rotateY(35deg);
+}
+.box7:hover{
+  transform: rotatez(35deg);
+}
+
+/* scale  */
+
+.box8:hover{
+  transform: scale(1.5);
+}
+.box9:hover{
+  transform: scaleX(1.5);
+}
+.box10:hover{
+  transform: scaleY(1.5);
+}
+.box11:hover{
+  transform: scaleZ(1.5);
+}
+
+/* skew */
+
+.box12:hover{
+  transform: skew(35deg);
+}
+.box13:hover{
+  transform: skewX(35deg);
+}
+.box14:hover{
+  transform: skewY(35deg);
+}
+.box15:hover{
+  transform: skewZ(35deg);
+}
+
+/* translate*/
+
+.box16:hover{
+  transform: translate(35px);
+}
+.box17:hover{
+  transform: translateX(205px);
+}
+.box18:hover{
+  transform: translateY(35px);
+}
+.box19:hover{
+  transform: translateZ(35px);
+}
+
+  </style>
+</head>
+<body>
+  <h1>Transforms</h1>
+  Transforms are mainly of two types- 2d and 3d . <br>
+  Types of transforms -
+  <ol>
+    <li>rotations</li>
+    <li>scale</li>
+    <li>translate</li>
+    <li>skew</li>
+    <li>perspective</li>
+    <li>matrix</li>
+  </ol>
+  Let me rotate the following box.<blockquote cite="">
+    Hover over it!
+  </blockquote> <br>
+  using <code> transform: rotate(40deg);
+</code> 
+<h1>Rotations</h1>
+  <div class="boxes box1">
+  rotate 40deg 
+  </div>
+  <br><br>
+  now using 
+  <code>
+  transform: rotate(0.25turn);
+  </code>
+  <div class="boxes box2">
+  rotate 0.25turn
+    
+  </div>
+
+  <br><br>
+  now using 
+  <code>
+  transform: rotate(0.5turn);
+  </code>
+  <div class="boxes box3">
+  rotate 0.5turn
+    
+  </div>
+  <br><br>
+  now using 
+  <code>
+  transform: rotate(0.75turn);
+  </code>
+  <div class="boxes box4">
+  rotate 0.75turn
+    
+  </div>
+  <h2>Rotation along axises</h2>
+  <br><br>
+  now using 
+  <code>
+  transform: rotatex(35deg);
+  </code> <br>
+  imagine a human falling front / back with respect to the gruond
+  <div class="boxess box5">
+  rotateX 35deg
+    
+  </div>
+  <br><br>
+  now using 
+  <code>
+  transform: rotateY(35deg);
+  </code> <br>
+  imagine a door opening with respect to its hinge
+  <div class="boxess box6">
+  rotateY 35deg
+    
+  </div>
+  <br><br>
+  now using 
+  <code>
+  transform: rotateZ(35deg);
+  </code> <br>
+  imagine a clock's hand [ the z axis is going deep from the center of the clock] 
+  <div class="boxess box7">
+  rotateZ 35deg
+    
+  </div>
+  <br><br>
+  <h1>Scaling</h1>
+   
+  The following is scaled to 1.5em [ 1.5x original size]<br>
+  <br>
+  <code>
+  transform: scale(1.5);
+  </code>
+  <div class="boxesss box8">
+  scale 1.5 
+  </div>
+  <br><br>
+  With respect to x axis
+  <br>
+  <code>
+  transform: scaleX(1.5);
+  </code>
+  <div class="boxesss box9">
+  scaleX 1.5 
+  </div>
+  <br><br>
+  With respect to y axis
+  <br>
+  <code>
+  transform: scaleY(1.5);
+  </code>
+  <div class="boxesss box10">
+  scaleY 1.5 
+  </div>
+  <br><br>
+  With respect to z axis
+  <br>
+  <code>
+  transform: scaleZ(1.5);
+  </code>
+  <div class="boxesss box11">
+  scaleZ 1.5 
+  </div>
+  <h1>Skewing</h1>
+   
+  The following is skewd to 35deg <br>
+  <br>
+  <code>
+  transform: skew(35deg);
+  </code>
+  <div class="boxesskew box12">
+  skew 35deg 
+  </div>
+  <br><br>
+  With respect to x axis
+  <br>
+  <code>
+  transform: skewX(35deg);
+  </code>
+  <div class="boxesskew box13">
+  skewX 35deg 
+  </div>
+  <br><br>
+  With respect to y axis
+  <br>
+  <code>
+  transform: skewY(35deg);
+  </code>
+  <div class="boxesskew box14">
+  skewY 35deg 
+  </div>
+  <br><br>
+  With respect to z axis
+  <br>
+  <code>
+  transform: skewZ(35deg);
+  </code>
+  <div class="boxesskew box15">
+  skewZ 35deg 
+  </div>
+<h1>Translating</h1>
+   
+  The following is translated to 35px <br> 
+  <br>
+  <code>
+  transform: translate(35px);
+  </code>
+  <div class="boxestranslate box16">
+  translate 35px 
+  </div>
+  <br><br>
+  With respect to x axis
+  <br>
+  <code>
+  transform: translateX(205px);
+  </code>
+  <div class="boxestranslate box17">
+  translateX 205px 
+  </div>
+  <br><br>
+  With respect to y axis
+  <br>
+  <code>
+  transform: translateY(35px);
+  </code>
+  <div class="boxestranslate box18">
+  translateY 35px 
+  </div>
+  <br><br>
+  With respect to z axis
+  <br>
+  <code>
+  transform: translateZ(35px);
+  </code>
+  <div class="boxestranslate box19">
+  translateZ 35px 
+  </div>
+  We can add multiple values in a single property <br>
+  <a href="demo/Demo.html" alt="a demo intermediate colletions"><u>few collections</u></a> <br>
+  <a href="https://youtu.be/GGlzzLTLzxs?si=T0elMBU7ur1DNquK" alt="sauce for this"><u><big>Great Sauce</big></u></a>
+  <br><br><br>
+  <a href="transforms.html" alt="next page"><u><big>Next Page</big></u></a>
+</body>
+</html>
+

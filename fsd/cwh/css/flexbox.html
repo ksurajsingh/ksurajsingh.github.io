@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FlexBox</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>FlexBox</h1>
+  <hr>
+  <br>
+  used to move the element is a much better way <br>
+  <code>flex</code> and <code>grid</code> are mostly used to create responsive websites <br>
+  use <code>display : flex</code><br>
+
+  when you enable flex , you can <br>
+  <code>justify-content: center</code>
+  <br>
+  <code>align-content: center</code>
+  <dl>
+    <dt>Justify</dt>
+    <dd>considers the main axis</dd>
+    <dt>Align</dt>
+    <dd>considers the cross axis</dd>
+    <dt>Place</dt>
+    <dd>consider both the axes</dd>
+    <hr>
+    <dt>Content</dt>
+    <dd>When you want to align the item and the spacing between other items</dd>
+    <dt>Items</dt>
+    <dd>When you only want to align the item within its own boundaries irrespective of other elements</dd>
+    <dt>Self</dt>
+    <dd>For that individual element</dd>
+
+  </dl>
+  <h2>justify-content</h2>
+  <ol>
+    <li>space-around</li>
+    <li>space-between</li>
+    <li>space-evenly</li>
+    <li>center</li>
+    <li>end</li>
+    <li>flex-end</li>
+    <li>flex-start</li>
+    <li>left</li>
+    <li>normal</li>
+    <li>right</li>
+    <li>stretch</li>
+    <li>start</li>
+    <li>inherit</li>
+    <li>initial</li>
+    <li>revert</li>
+    <li>rever-layel</li>
+    <li>unset</li>
+  </ol>
+  <b>!IMPORTANT:</b> when you specify to flex at some direction - be sure to have mentioned the amount of space it has to take <code>flex:1</code> <br>
+
+  <br>
+  <b>Align content</b>: this is very similar properties and a few additions like <code>baseline</code> etc
+  <br><br>
+  flex also has <code>flex-direction</code> that has values like : 
+  <br>
+  <ol>
+    <li>column</li>
+    <li>column-revers</li>
+    <li>row</li>
+    <li>row-reverse</li>
+  </ol>
+  in general - <em>flex direction</em> is the main axis and the perpendicular axis is called the cross-axis <br>
+  The <code>justify-content</code> work with respect to the main axis <br>
+  The <code>align-items</code> work with respect to the cross axis <br>
+  The <code>align-content</code> work with respect to the cross axis <br>
+  <br>
+  align items - aligns the individual element in a single row/column <br>
+  align-content - aligns multiple rows/columns <br>
+  <br><br>
+  <b><code>wrap</code></b> wraps the content within the size <br>
+  <code>wrap-reverse</code> wraps the content from the bottom as <em>default</em> one wraps from the top <br>
+  <code>flex-flow</code> used as a short-hand to specify both the flex direction and wrap value<br>
+  <code>gap</code> used to add gap between inner elements <br>
+  can also define <code>row-gap</code> and <code>column-gap</code> <br>
+  you can use short-hand <code>gap: &lt;row-gap&gt; &lt;column-gap&gt;</code>
+  
+  <br><br><br>
+
+  all of these are almost <b>container</b> properties that cannot be used for element that has no inner elements
+  <br>
+  One famous use of <code>display:flex</code> is using order so that it comes in that order [ displayed in that order ] <br>
+  Generally you can just display <em>flex</em> the container and then the inner elements doesn't have to be specified with <code>display:flex</code> <br>
+  if <code>order</code> of two elements is same then its rendered null for both and the one specified first in the html is displayed first  <br>
+  <br>
+  <code>flex-grow</code> is the one where we can grow the item specified if there is any remaining space : <br>
+  <pre><code>
+  .item{
+   flex-grow: 1;
+  }
+  .item1{
+   flex-grow: 5; /*doesn't matter if its 5 or 3 or 2 -that is the just the priority */ 
+   flex-shrink: 4; /*shrinks 4x of the above elements [ NOT BY DEFAULT ] only when necessary */
+  }
+  </code></pre>
+  <code>flex-shrink</code> is explained above , one thing to remember is it shrink only when necessary <br>
+  its the same for flex-grow = but in most cases- there is alwasy a remaining space to occupy <br>
+  <img src="media/flex-grow.png" alt="flex-grow-gpt-explains"> <br>
+  <code>align-self</code> a very easy way to align a single element inside any container <br>
+  this overrides <code>align-items</code> , assume for when you have aligned items for the whole container and now want to change only a single special case element in it. <br>
+
+  <a href="grid.html" alt="next page"><u><big>Next</big></u></a>
+
+  
+</body>
+</html>
+

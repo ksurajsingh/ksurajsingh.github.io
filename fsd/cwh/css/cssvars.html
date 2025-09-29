@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Variables</title>
+  <link rel=stylesheet href=style.css>
+</head>
+<body>
+  <h1>CSS Variables</h1>
+  <hr><hr>
+  You can make global variables using <code>:root</code>
+  Here you can declare inside <em>:root</em> <code>--color: rgb(values)</code> formatted syntax <br>
+  And make use of it in anywhere inside the document with the <code>var("variable name")</code>  format.
+  <br><br>
+  These are the global variables, <br>
+  For local variables define it inside a class defination or id defination <br>
+  <br><br>
+  These variables can hold anything ranging from colors to display values etc. <br>
+  <br><br><br>
+  <h1>Media Query</h1>
+  <br>
+  Long ago we used to have media rule in <code>CSS2</code> <br>
+  Where the rule was laid for style to be selected based on the device <br>
+  From <code>CSS3</code> we began calling it media query
+  <br><br>
+  <pre>
+  <code>
+  <!-- @media only|not screen and (orientation:landscape){ -->
+  <!--   body{ -->
+  <!--     border:purple; -->
+  <!--   } -->
+  <!-- } -->
+  @media only screen and (max-width:455px) {
+    body{
+      background-color: blue;
+    }
+    .boxes{
+      flex-direction:column;
+    }
+}
+  </code>
+  </pre>  
+  This is only applicable when the media query / rule is written after the default one <br>
+  and 
+  <pre>
+  <code>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  </code>
+  is applied so that the browser render understands that the viewport's content width would be equal to device-width [ relevance ] and its scaled would be default <br>
+  i.e 1.0 [no scaling].
+  </pre>
+  <br><br><br>
+  <h1>Float</h1>
+  Makes the element float to the specified side when some other element wants to takes its place. <br>
+  <h1>Clear</h1>
+  Clears all the elements from the specified side of the element. <br>
+  You can also use <code>both</code> as a keyword to clear from both sides [ laterally ]. 
+  <a href="flexbox.html" alt="next page"><u><big>Next</big></u></a>
+
+</body>
+</html>
+

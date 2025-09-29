@@ -1,0 +1,287 @@
+*{
+margin:0px;
+padding:0px;
+}
+/* body{ */
+/* background-color: grey; */
+/* } */
+nav{
+display: flex;
+margin: 0vh auto auto auto;
+height: 10vh;
+padding: 0 20vw; 
+/* background-color: grey; */
+} 
+.left-part{
+box-sizing: border-box;
+padding: 5px;
+/* background-color: yellow; */
+display: flex;
+flex: 0.2;
+width: 20vh;
+align-items: center;
+gap: 10px;
+}
+.left-logo img{
+/* object-fit: contain; */
+max-width: 4em;
+border-radius: 10px;
+height: 150px;
+max-height: 4em; /* optionally as it automatically applies */ 
+border: 3px solid lightgrey;
+}
+.Heading{
+font-weight: 10px;
+}
+.left-title{
+white-space: nowrap;
+font-weight: 900;
+font-size: 30px;
+/* overflow: visible; */
+}
+.left-caption{
+max-height: 100%;
+font-style: italic;
+font-weight: 900;
+}
+
+
+.right-part{
+/* background-color: green; */
+display: flex;
+flex: 0.8;
+justify-content: flex-end;
+gap: 10px;
+align-items: center;
+}
+
+.right-list ul{
+display: flex;
+list-style: none;
+gap: 25px;
+}
+.right-list img{
+width: 0.7em;
+}
+.right-icon{
+display: flex;
+max-width: 20%; 
+}
+.right-icon img{
+max-width: 3.5em;
+}
+.right-part .right-icon{
+margin-left: 10px;
+padding: 0px;
+}
+
+h1{
+margin-top: 25vh;
+display: flex;
+justify-content: center;
+}
+
+/* TIL : The follow is the css to cover temp -- which is used to cover nav bar -- never do this  */
+
+/* .temp{ */
+/*   position: absolute; */
+/*   height: 10vh; */
+/*   background-color: grey; */
+/*   top: 0%; */
+/*   width: 100%; */
+/*   z-index: 1; */
+/* } */
+
+.middle-part{
+  margin-top: 16vh;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  font-size: 45px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.middle-part-caption{
+  margin-top: 10px;
+  font-size: 23px;
+  padding: 0px 25vw ;
+  text-align: center;
+  font-weight: 100;
+  line-height: 1.35;
+}
+
+.main-download-button{
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  background-color: #00A9B5;
+  color: white;
+  padding: 20px 30px;
+  width: 13vw;
+  font-size: 14.5px;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: white;
+  cursor: pointer;
+}
+
+.main-part-footer{
+  align-self: flex-start;
+  display: flex;
+  margin: 0px;
+  padding:0px;
+  align-items: center;
+}
+.main-part-logo{
+  border: 3px solid lightgrey;
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+  align-self: flex-start;
+  margin-left: 470px;
+  margin-right: 20px;
+}
+
+/* .spacer-div1{ */
+/* height: 10vh; */
+/* } */
+
+.main-part-logo img{
+  /* margin-top: 60px; */
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+}
+
+.main-part-logo-caption{
+  font-size: 22px;
+}
+
+.language-grid{
+  margin: 12vh auto;
+  place-content: center;
+  display: grid;
+  grid-template-columns: 17vw 17vw 17vw;
+  gap: 20px;
+}
+
+.cell{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5F5F5;
+  gap: 20px;
+  height: 23vh;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 17vw;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 20px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.caption{
+  align-self: center;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.cell-btn{
+  font-weight: bold;
+  color: white;
+  background-color: #5cb85c;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: center;
+  /* height: 2vh; */
+  width: 9vw;
+  padding: 5px;
+  color: white;
+}
+.sha256-val{
+  margin-top: -10px;
+  font-size: 8px;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  padding-bottom: 5px;
+  font-weight: 100;
+  padding: 2px 45px;
+  text-align: center;
+}
+.sha{
+  font-size: 12px;
+}
+
+@media only screen and (max-width:837px){
+
+  .language-grid{
+  margin: 22vh auto;
+  place-content: center;
+  background-color: red;
+  display: grid;
+  grid-template-columns: 17vw ;
+  gap: 20px;
+  }
+
+.cell{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F5F5F5;
+  gap: 20px;
+  height: 25vh;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 29vw;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 20px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.caption{
+  align-self: center;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+
+.cell-btn {
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #5cb85c;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: center;
+  /* height: 2vh; */
+  width: 19vw;
+  padding: 5px;
+  color: white;
+}
+.sha256-val{
+  margin-top: -10px;
+  font-size: 8px;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  padding-bottom: 5px;
+  font-weight: 100;
+  padding: 2px 45px;
+  text-align: center;
+}
+.sha{
+  font-size: 12px;
+}
+
+
+}

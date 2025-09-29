@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animations</title>
+  <link rel=stylesheet href=style.css>
+  <head name=viewport content=width=device-width, initial-scale=1.0>;
+    <style>
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.mega-container{
+
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  gap: 10vh;
+
+}
+
+.container1{
+position: relative;
+width: 50vw;
+height: 50vh;
+border: 2px solid black;
+display: flex;
+margin: auto;
+color: white;
+background-color: green;
+overflow: auto;
+scrollbar-width: none;
+}
+
+.description{
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+
+.mega-container h3{
+  margin: auto;
+  margin-bottom: -9vh;
+}
+
+.box1{
+  font-weight: 900;
+  font-size: 20px;
+  width: 10vw;
+  text-align: center;
+  height: 5vh;
+  border: 2px solid black;
+  color: white;
+  background-color: orange;
+}
+
+.box1:hover{
+  animation: container1 2s ease 5 alternate forwards;
+}
+
+.box2:hover{
+  animation: container1 10s;
+}
+
+.box3:hover{
+  animation: container1 6s ease-in;
+}
+
+.box4:hover{
+  animation: container1 3s ease-out;
+}
+
+.box5:hover{
+  animation: container1 3s linear;
+}
+
+.box6:hover{
+  animation: container1 3s linear 3s ;
+}
+
+
+.box7:hover{
+  animation: container1 3s linear 3;
+}
+
+
+.box8:hover{
+  animation: container1 3s linear 3 reverse;
+}
+
+
+.box9:hover{
+  animation: container1 3s linear 3 alternate;
+}
+
+
+.box10:hover{
+  animation: container1 3s linear 3 alternate-reverse;
+}
+
+  .box11:hover{
+    animation: container2 3s linear 1 none;
+  }
+
+
+.box12:hover{
+  animation: container1 3s linear 1 forwards;
+}
+
+.box13:hover{
+  animation: container1 3s linear 1 backwards;
+}
+
+.box14:hover{
+  animation: container3 5s steps(1) 3 alternate forwards ;
+  z-index: 1;
+}
+
+
+.box15:hover{
+  animation: container3 5s steps(5) 3 alternate forwards;
+  z-index: 1;
+}
+
+@keyframes container1{
+  from{
+    transform: translateX(0);
+  } 
+  to{
+    transform: translateX(10vw);
+  }
+}
+
+@keyframes container2{
+  from{
+    transform: translateX(0);
+  } 
+  to{
+    transform: translateX(10vw);
+  }
+}
+
+@keyframes container3{
+  0%{
+    transform: translateX(0);
+  }
+  20%{
+    transform: translateX(10vw);
+  }
+  40%{
+    transform: translateX(20vw);
+  }
+  60%{
+    transform: translateX(30vw);
+  }
+  80%{ /*when I end with hundred it will essentially overlap with the next interation's starting point*/
+    transform: translateX(40vw);
+  }
+}
+
+    </style>
+</head>
+<body>
+  <h1>Animations</h1>
+  Very similar to transitions, but can give you modular options.
+  <br>
+  tailoring specific needs to specific properties
+  <br>
+  use it with <code>@keyframes &lt;name&gt;</code> for your speicifcation. <br>
+  you can specify stuff like : 
+  <ul>
+    <li>from - to</li>
+    <li>percentage like - 10% 20%</li>
+  </ul>
+  animation has the following properties
+  <dl>
+    <dt>Name</dt>
+    <dd>the name of the keyframe</dd>
+    <dt>Duration</dt>
+    <dd>duration of the animation</dd>
+    <dt>Timing-function</dt>
+    <dd>a function for time speed relevance</dd>
+    <dt>Delay</dt>
+    <dd>delay in time to start the animation</dd>
+    <dt>Iteration-count</dt>
+    <dd>The number of times to <b>repeat</b> an animation</dd>
+    <dt>direction</dt>
+    <dd>Direction of the animation ,<br>
+      If you make a the animation linearly from left to right <br>
+      <code>default</code> left-to-right <br>
+      <code>reverse</code> right-to-left <br>
+      <code>alternate-reverse</code> right-to-left then in the next iteration left-to-right. [ just alternate - does the same thing starting from the start [ initial point ]]
+    </dd>
+    <dt>fillmode</dt>
+    <dd>controlling the state before the animation starts and after the animation ends</dd>
+  </dl>
+
+  <br>
+  Hover over the following to animate them - 
+  <hr>
+  <div class="mega-container">
+  <h3>1.Name</h3>
+  <div class="description">
+  using keyframe <code>container1</code> <br>
+  will transform the box from left to right 10vw
+  using alternate directions and 2 seconds in durations for 5 times
+  </div>
+    
+  <div class="container1">
+   <div class="box1">
+     box1
+   </div> 
+  </div>
+  <hr>
+  <h3>2.Duration</h3>
+    
+  <div class="description">
+  Duration of 10 seconds
+  </div>
+  <div class="container1">
+   <div class="box1 box2">
+    box2 
+   </div> 
+  </div>
+
+  <hr>
+
+  <h3>3.Timing Function</h3>
+  <div class="description">
+  <h4>1) ease-in</h4>
+  slow in the start , and remains constant later
+  </div>
+  <div class="container1">
+   <div class="box1 box3">
+    box3 
+   </div> 
+  </div>
+
+  <div class="description">
+  <h4>2)ease-out</h4>
+  constant till the semi-end,from semi-end slows down
+  </div>
+
+<div class="container1">
+   <div class="box1 box4">
+    box4 
+   </div> 
+  </div>
+
+  <div class="description">
+  <h4>3) Linear speed</h4>
+  linear speed throughtout the animation
+  </div>
+<div class="container1">
+   <div class="box1 box5">
+    box5 
+   </div> 
+  </div>
+
+
+<hr>
+<h3>4.Delay</h3>
+<div class="description">
+  has a delay of 3s, [ hover over it for 3 seconds]  
+</div>
+
+
+  <div class="container1">
+   <div class="box1 box6">
+   box6 
+   </div> 
+  </div>
+
+<hr>
+<h3>5.Iteration-count</h3>
+<div class="description">
+  the following has a iteration count of 3
+</div>
+  <div class="container1">
+   <div class="box1 box7">
+    box7    
+   </div> 
+  </div>
+
+  <hr>
+  <h3>6.Direction</h3>
+  <div class="description">
+    <h4>1)Reverse</h4>
+  </div>
+  <div class="container1">
+   <div class="box1 box8">
+   box8 
+   </div> 
+  </div>
+<div class="description">
+    <h4>1)Alternate</h4>
+  </div>
+  <div class="container1">
+   <div class="box1 box9">
+   box9 
+   </div> 
+  </div>
+
+<div class="description">
+    <h4>1)Alternate-Reverse</h4>
+  </div>
+  <div class="container1">
+   <div class="box1 box10">
+   box10 
+   </div> 
+  </div>
+
+
+  <hr>
+  <h3>7.FillMode</h3>
+  <div class="description">
+    how a transition starts and ends 
+    the following returns to its normal position
+    <h4>none</h4>
+  </div>
+
+  <div class="container1">
+   <div class="box1 box11">
+   box11 
+   </div> 
+  </div>
+<div class="description">
+    the following returns to its last position
+    <br> that is what is defined in its <code>to</code> tag
+    <h4>forwards</h4>
+  </div>
+
+  <div class="container1">
+   <div class="box1 box12">
+   box12 
+   </div> 
+  </div>
+
+<div class="description">
+    the following returns to its initial position
+    <br> that is what is defined in its <code>from</code> tag
+    <h4>backwards</h4>
+  </div>
+
+  <div class="container1">
+   <div class="box1 box13">
+   box13 
+   </div> 
+  </div>
+
+  <hr>
+  <h3>8.Keyframes</h3>
+  <div class="description">
+    This is not an animation property but yeah,
+    so we can actually make the animation go from <br>
+    <code>from</code> to <code>to</code>
+    or even make breakpoints to controls then at breaks using <br>
+    <code>percentages</code> with relevance to time <br>
+    <br>
+    For example if there are 5 percentages with 20% intervals per state 
+   <br>
+   and the duration is <code>5 seconds</code> we will get to see each transition in <code>1 second</code>
+    
+  </div>
+
+
+  <div class="container1">
+   <div class="box1 box14">
+  box14  
+   </div> 
+   <div>
+    <pre>
+    <code style="position: absolute; font-weight: 600;text-align: left;margin: -2vh 8vw; ">
+@keyframes container3{
+  0%{
+    transform: translateX(0);
+  }
+  20%{
+    transform: translateX(10vw);
+  }
+  40%{
+    transform: translateX(20vw);
+  }
+  60%{
+    transform: translateX(30vw);
+  }
+  80%{
+    transform: translateX(40vw);
+  }
+  100%{
+    transform: translateX(50vw);
+  }
+}
+    </code>
+    </pre>
+   </div>
+  </div>
+
+  <div class="description">
+   with steps for each state<br>
+   They key frames will define states using <code>%</code> <br>
+   and the <code>step()</code> will define the state for each of those keyframes
+   <br>The following has 5 steps per each keyframe's state
+  </div>
+
+
+  <div class="container1">
+   <div class="box1 box15">
+  box15  
+   </div> 
+  </div>
+
+  </div>
+</body>
+</html>
+

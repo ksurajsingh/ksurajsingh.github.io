@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exrecise 4</title>
+  <link rel=stylesheet href=style.css>
+  <style>
+  :root{
+    --color:yellow;
+    --seccolor:red;
+    --bcolor:blue;
+    --gcolor:green;
+    --lgcolor:lightgreen;
+    --curve:5px;
+    --lesscurve:5px;
+    --width:100px;
+    --height:450px;
+  }
+  ul{
+    display: flex;
+    max-width: 900px;
+    list-style: none;
+    background-color: var(--seccolor);
+    color:var(--color);
+    padding: 10px;
+    border-radius: var(--lesscurve);
+  }
+  ul li{
+    font-size: var(--width);
+    background-color: var(--lgcolor);
+    margin-left: 20px;
+    color:var(--color);
+    border:2px solid var(--bcolor);
+    border-radius: var(--curve);
+  }
+  ul li:hover{
+    background-color: var(--gcolor);
+    cursor: pointer;
+
+  }
+  </style>
+</head>
+<body>
+  <h1>Multi-Color Nav bar</h1>
+  <nav>
+  <ul>
+    <li>Lion</li>
+    <li>Dog</li>
+    <li>Cat</li>
+    <li>Tiger</li>
+  </ul>
+  </nav>
+  
+
+</body>
+</html>
+

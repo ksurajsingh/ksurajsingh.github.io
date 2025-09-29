@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cascade ALgorithm</title>
+  <link rel=stylesheet href=style.css>
+</head>
+
+<body>
+  <h1>Cascade ALgorithm</h1>
+  <hr>
+  <hr>
+  <ol>
+    <li>Position and Appearence</li>
+    <li>Specificity </li>
+    <li>Origin</li>
+    <li>Important</li>
+  </ol>
+  <b>Origin</b>: Inline > ID selectors > class or attribute selectors > Element selector > Universal Selector <br>
+  <b>Important</b>: use <code>!IMPORTANT</code> to override everything else <br>
+  <b>Position</b>: Mostly used as a tie breaker when necessary <br>
+
+  <h1>Sizing Units</h1>
+  <ol>
+    <li>PX</li>
+    <li>viewport</li>
+    <li>em</li>
+    <li>rem</li>
+    <li>vmin | vmax</li>
+  </ol>
+  <dl>
+    <dt>
+      Default font-size </dt>
+    <dd>is 16 pixels <br>
+    </dd>
+    <dt>
+      <code>em</code>
+    </dt>
+    <dd>
+      is the <em>times</em> of the current font size . <br>
+      for example <code>1.5em</code> give 1.5 times of the current font size .<br>
+    </dd>
+
+    <dt>
+      <code>rem</code>
+    </dt>
+    <dd>
+      is the <em>times</em> of the font size of the <b>root</b> <code>html</code> element. <br>
+      for example <code>1.5rem</code> gives 1.5 times of the font size of <b>root</b> <code>html</code> element .<br>
+    </dd>
+    <dt><code>
+        vmin
+      </code></dt>
+      <dd>The minimum of height and width in the viewport</dd>
+    <dt><code>
+        vmax
+      </code></dt>
+      <dd>The maximum of height and width in the viewport</dd>
+  </dl>
+  <br><br>
+  <h4>Note</h4>
+  <ol>
+    <li>Min|Max Height|Width . To Specify limits </li>
+    <li>the <code>%</code> is going to relate with the parent of where it is specified.</li>
+  </ol>
+  <br><br><br>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units" alt="sauce for css units">Nice sauce</a>
+  <br><hr><hr>
+  <h2>CSS Display property</h2>
+
+  <li>You can use the <code>display</code> property/attribute with <em>inline</em> option to make any kind of element <em>inline</em></li>
+  <li>The <code>inline</code> option doesn't consider the width and top , [ be it padding or margin ] where as the <code>inline-block</code> does consider the top values</li>
+  <li><code>none</code> removes the element from the document , whereas <code>visibility</code> just doesn't display but occupies the space</li>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" alt="sauce of display properties">Sauce</a>
+<br><br>
+<br>
+  <h2>Box Shadow</h2>
+  <dl>
+    <dt><code>flex</code></dt>
+    <dd> is used to move the elements easily using <code>justice-content</code> <br>
+      By default it keeps all the elements in a horizontal plane <br>
+      You can use <code>inline-flex</code> , <code>flex-box</code> etc.</dd>
+    <dt><code>box-shadow</code></dt>
+    <dd> is used to give shadow to the element , in the format <code>h-offset, v-offset blur spead color inset</code></dd>
+      <dt><code>text-shadown</code></dt>
+      <dd>Same as box-shadow for text</dd>
+      <dt><code>outline</code></dt>
+      <dd>same as <em>border</em> but for the external part of the <u>box-model</u> <br>
+        format: <code>width style color</code> <br>
+        you also get the option of <code>outline-offset</code>
+      </dd>
+      <dt><code>border-radius</code></dt>
+      <dd>curves the corners of the border <br>
+        There is no radius for outline , it inherits that property from border <br>
+      </dd>
+  </dl>
+
+  <br><br><br>
+  <h2>Lists</h2>
+  <dl>
+    <dt><code>list-item</code></dt>
+    <dd>The display property of lists is <em>list-item</em></dd>
+    <dt><code>list-style</code></dt>
+    <dd>You can change the style of the markers here <br>
+      can just make it to <code>none</code> , if you don't want to mark it , typical for <code>nav</code> bars
+    </dd>
+    <dt><code>list-style-position</code></dt>
+    <dd>In order to add the list marker inside the list item in the document in order to modify it , you can use this option with <em>inside</em> as its value! <br>
+      you can also add <em>inside</em> in just the <code>list-style</code> attribute
+    </dd>
+    <dt><code>list-style-image</code></dt>
+    <dd>This can be used to add any kind of image [ including URLs ] as a marker [bullets] to the list item</dd>
+    <dt><code>list-style-type</code></dt>
+    <dd>Similar to the previous [image] one , this can also be used to add emojis</dd>
+
+  </dl>
+  <h2>Overflow</h2>
+
+  <dl class="test">
+    <dt>Auto</dt>
+    <dd>you get a scroll bar when the content overflows</dd>
+    <dt>scroll</dt>
+    <dd>you get a scroll bar regardless of the overflow</dd>
+    <dt><h4>White space : nowrap </h4></dt>
+    <dd>a horizontal scroll bar appears and no whitespaces are brought in the next line</dd>
+    <dt>text-overflow</dt>
+    <dd>attributes like ellipses</dd>
+    <dt>overflow-x/y axis</dt>
+    <dd>in shorthand- overflow: hidden auto ; <br>
+      that is overflow : x-axis y-axis; 
+    </dd>
+  </dl>
+
+  <a href="position.html" alt="next page"><u><big>Next</big>
+    </u></a>
+</body>
+
+</html>
