@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>actual-events</title>
+  <link rel=stylesheet href=style.css>
+  <script defer src="./events-actual.js"> </script>
+  <style>
+*{
+  margin: 0;
+  padding: 0;
+}
+.ready-element{
+ width: 500px;
+ height: 500px;
+ background-color: grey;
+ color: red;
+ font-size: 80px;
+ font-weight: bold;
+}
+  </style>
+</head>
+<body>
+  <h1>Actual-events</h1>
+  <ul>
+    
+    <li>try using <code>try-catch</code> and <code>throw</code> for verbose simplification. </li>
+    <li>in <code>try-catch</code>
+      you can use the <code>error</code> in catch to get the <code>error.name</code>, <code>error.message</code> , <code>error.stack</code></li>
+<li>try catch also has <code>finally</code> which 
+  <ol>
+    <li>After try or catch executes the statement inside finally </li>
+    <li>It can also bypass return - meaning if inside a function and you return after try or catch - normally you'd exit the function but using finally you exit AND execute the statements in the <code>finally</code> clause </li>
+  </ol>
+</li>
+
+  </ul>
+  <div class="rand-div">
+    This div only prints random numbers above 5 withing 10:
+  </div>
+    [check console for other wise]
+  <br><br>
+  <h2>OOPS</h2>
+  <ul>
+    <li>And object can inherit the properties of another object by <code>rabbit.__proto__=animal</code>. where the rabbit inherits the protypes from animal. <br>
+      Its a non standard way of setting prototypes. 
+      <br>
+      This is deprecated in favor of <code>Object.getPrototypeOf()</code> and <code>Object.setPrototype.Of()</code> <br>Use extends instead since you cannot use <code>super</code> with __proto__
+      <br>
+      This also slows down the performance and introduces bugs.  <br>
+      Engine optimises class-based code better .
+    </li>
+    <li>A constructor in js is something that is used for initialising an object. <br>
+      It is a function named <code>constructor</code>.
+    </li>
+    <li>We can use the <code>this</code> keyword such as: 
+    <pre>
+    <code>
+class User {
+
+    constructor(name) {
+      // invokes the setter
+      this.name = name;
+    }
+  
+    get name() {
+      return this._name;
+    }
+  
+    set name(value) {
+      if (value.length &lt; 4) {
+        console.log("Name is too short.");
+        return;
+      }
+      this._name = value;
+    }
+  
+  }
+  
+  let user = new User("John");
+  console.log(user.name); // John
+  
+  user.name = "Harry" // Name is too short.
+  console.log(user.name)
+    </code>
+  </pre></li>
+  <li>keywords
+    <dl>
+      <dt>Extends</dt>
+      <dd>This will help to inherit the other class and use super and this keyword on it.</dd>
+      <dt>Overrides</dt>
+      <dd>We use this for overriding a super function [ inherited function ] by our own function.</dd>
+      <dt>super</dt>
+      <dd>Super keyword is used to access the element of a parent class.</dd>
+      <dt>static</dt>
+      <dd>Used to implement function that belong to the class as a whole and not to any particular object.</dd>
+      <dt>getter-setter</dt>
+      <dd>Are used to get and set some of the default attributes of a class so that other users /unauthorised/ are not able to access the class with unforeseen values.</dd>
+      <dt>instanceOf</dt>
+      <dd>This operator returns a boolean on weather a object is a child/inherits the speified class</dd>
+    </dl>
+  </li>
+
+
+  </ul>
+
+</body>
+</html>
+

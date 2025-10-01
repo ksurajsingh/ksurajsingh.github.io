@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Events</title>
+  <link rel=stylesheet href=style.css>
+  <script defer src="./events.js"> </script> 
+  <style>
+.cannon{
+  background-color: black;
+  border-radius: 20px;
+  width: 50px;
+  height: 250px;
+  color: white;
+  place-content: center;
+  margin-left: 100px;
+}
+
+.cannon-hovered{
+  border:10px solid #6ce36c;
+  
+}
+
+.shoot{
+animation: traverse 3s ease-in forwards;
+}
+
+.celebrate{
+  top: 0;
+  left: 50vw;
+  position: absolute;
+  border: 2px solid black;
+  height: 25px;
+  width: 25px;
+  border-radius: 20px;
+  animation: fall-down 10s linear forwards;
+}
+
+.bomb{
+  top: 550px;
+  left: 130px;
+    position: absolute;
+    width:25px;
+    height:25px;
+    border:1px solid red;
+    border-radius:20px;
+    background-color:black;
+}
+.target{
+  background-color: grey;
+  margin: 200px 100px; 
+  width: 50px;
+  height: 50px;
+  border-radius: 20px;
+  place-content: center;
+
+}
+
+  @keyframes fall-down{
+    from{
+      transform: translateY(0);
+    }
+    to{
+      transform: translateY(90vh);
+    }
+  }
+
+@keyframes traverse{
+
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform: translateY(220px);
+  }
+} 
+  </style>
+</head>
+<body>
+
+  <h1>Events</h1>
+  go to <a href="https://developer.mozilla.org/en-US/docs/Web/Events">this website</a> to understand the events 
+  <br>
+  <dl>
+    <dt>addEventListner</dt>
+    <dd>Adds a listens to play around with the response of the event and the event itself</dd>
+    <dt>removeEventListner</dt>
+    <dd>removes the listner</dd>
+    <dt>EventBubbling</dt>
+    <dd>Inner -> Outer propogation
+      <br>
+      Use <code>stopPropogation </code>on the event of the element which initialised the event .<br>
+      The one that initialises the event is also the one that initialises the propogation
+    </dd>
+    <dt>setInterval</dt>
+    <dd>Takes 2 arguemnts - 1. function 2. ms[milliseconds] <br> 
+      Keeps executing the function after the intervals mentioned</dd>
+    <dt>setTimeout</dt>
+    <dd>Same as <code>setInterval</code>but this only executes once</dd>
+    <dt>Callbacks</dt>
+    <dd>setTimeout uses callback [ many other functions can also use callbacks] <br>
+      It just means that a function that is passed as an argument to another function which then invokes the passed function inside itself.....
+      <br>
+      When you repeatedly call the outside function which calls another outside function it is called <code>callback-hell</code> or <code>pyramid-of-doom</code>
+      <br>
+      <br>
+      <pre>
+      <code>
+      function greet(name,callback){
+      console.log("Hello ",name);
+      callback();
+      }
+      function sayBye(){
+      console.log("Bye!");
+      }
+      greet("Dark Alpha",sayBye); // sayBye is the call back function that I am passing as an argument to greet
+      </code>
+      </pre>
+      <br><br>
+      does it happen becuase of hoisting?
+      <br>
+      wait js doesn't hoist functions?
+      <br>
+      True and not true ! 
+      <br>
+      JS hoists function declaraction like 
+      <pre>
+      <code>
+      sayHi();
+      function sayHi(){
+      console.log("Hi!");
+      }
+      </code>
+      </pre>
+      not function <b>expressions</b> like :
+      <pre>
+      <code>
+      sayHi();
+      let sayHi()= ()=&lt;{
+      console.log("Hi!");
+      }
+      </code>
+      </pre>
+      <br>
+      This happens primarily and descretely becuase - 
+      <ol>
+        <li>You can pass functions as an argument</li>
+        <li>You can store them in variables</li>
+        <li>You can return them from another function</li>
+      </ol>
+      All these makes function first-class <em>ciitzens</em> in js.
+      <br>
+      Hoisting helps when you define a callback as a function declaration above the point where it is being used, but it's <b>not</b> the reason callbacks works. <br>
+takeaway: <br>
+<ol>
+  <li>callbacks works due to first-class function behavior</li>
+  <li>Hoisting helps with first class function behavior, not expressions</li>
+  <li>callbacks happen regardless of hoisting</li>
+</ol>
+
+    </dd>
+    <dt>Promise</dt>
+    <dd>kinda like a function [ my perception might change after making a few projects ]  <br>
+      which could say wether it got fullfilled or rejected! 
+      <code>new Promise((resolve,reject)=>{})</code>
+      <br>
+      You can add resolve or reject values so that you will be notified <b>WITH </b>the value the resolve or reject reason </dd>
+      <dt>promise.all([...])</dt>
+      <dd>waits for all promises to resolves <br>
+        fails immediately if any one rejects</dd>
+        <dt>promise.allSettled([..])</dt>
+        <dd>waits for all promises regardless of resolve/reject. <br>
+          Returns status + value/reason for each</dd>
+          <dt>promise.race([....])</dt>
+
+          <dd>resolves or rejects as soon as first promise settles (whichever comes first ) </dd>
+      <dt>promise.any([...])</dt>
+      <dd>resolves with the first fullfilled promise <br>
+        ignores reject untill all rejects , then throws <code>aggregateError</code>
+      </dd>
+      <dt>promise.resolve([....])</dt>
+      <dd>returns a promise already resolved with the given value.</dd>
+      <dt>promise.reject([...])</dt>
+      <dd>returns a promise already rejected  with the given value.</dd>
+      <dt>promise.then(func)</dt>
+      <dd>when a promise is resolved. - Perform this <code>func</code></dd>
+      <dt>Await</dt>
+      <dd>Awaits for a promise - be it resolve or reject <br>
+        AND you cannot use <code>await</code> in a a function unless it's marked async.
+      </dd>
+      <dd>Async</dd>
+      <dd>Async functions returns promises - so the returned value can make use of the <code>.then</code> to get its value from the promise functions. <br>
+        Even if there are no promise functions inside the async function the returned value is treated as a promise fullfilled.<br>
+        You can also use await for other promises. Which waits for the complete execution of those promises.<br>
+        Any throw inside a aync is by default considered as a reject so you'd use <code>.catch</code> to get the returned value and not <code>.then</code>
+      </dd>
+      <dt>event loop</dt>
+      <dd>Ensures smooth handling of js operations without blocks a single thread <br> It does this by checking if a the <code>call stack </code> and empty .<br>
+      </dd>
+      <dt>microtask</dt>
+      <dd>This has a queue for function that has immediate execution <br>Runs immediately after the current call stack is empty and before any macrotask : <code>promise.then</code>,<code>promise.catch()</code>,<code>promise.finally</code>,<code>await</code>,<code>async</code>,<code>mutationObserver</code>,<code>queue.microtask()</code></dd>
+      <dt>macrotask</dt>
+      <dd>Runs after microtasks are drained - used for scheduling defered work. <code>setTimeout</code>,<code>setInterval</code>,<code>
+          setImmediate</code>,<code>requestAnimationFrame()</code>,<code>DOMevents</code>,<code>I/O callbacks</code>,<code>fs.readFile()</code> <br>
+        <ol>
+          <li>They schedule a call back to be executed later, but no immediately</li>
+          <li>The callback is placed into the macrotask queue [ also known as the task queue ]</li>
+          <li>Once the current code and all microtask are done, it picks up the macrotask and executes the callback.</li>
+          <li>This process repeats for <code>setInterval</code> until you clear it.</li>
+        </ol>
+      </dd>
+      <dt>GET [READ-ONLY]</dt>
+      <dd>Retrieves data - read only</dd>
+      <dt>HEAD</dt>
+      <dd>Like <code>get</code> but without the body</dd>
+      <dt>PUT</dt>
+      <dd>Update or replace an entire record in the DB</dd>
+      <dt>POST [CREATE]<dt>
+      <dd>Submit new data <dd>
+      <dt>DELETE</dt>
+      <dd>remove data</dd>
+      <dt>PATCH</dt>
+      <dd>partially updates the data</dd>
+      <dt>fetch API</dt>
+      <dd>this is the api call that you use to get the response from an endpoint in js has a verbose syntax like: <br>
+<pre><code>
+
+async function getData() {
+  const url = "https://example.org/products.json";
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
+    }
+
+    const json = await response.json();
+    console.log(json);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+</code></pre>
+      </dd>
+      <dt>
+        OPTIONS
+      </dt>
+      <dd>Used to ask the server what methods are allowed on a resource <br> 
+        Commonly used in CORS preflight requests
+      </dd>
+        </dl>
+        These are some of the <big><b>async</b></big> part of the javascript - <code>setTimeout</code>,<code>setInterval</code>,<code>promises</code>
+  <div class="cannon">
+   Cannon 
+  </div>
+  <div class="target">
+   Target 
+  </div>
+
+  <a href="./events-actual.html" alt="next page"><big><b>
+        events in console - promise,async,await
+      </b></big></a>
+</body>
+</html>
+

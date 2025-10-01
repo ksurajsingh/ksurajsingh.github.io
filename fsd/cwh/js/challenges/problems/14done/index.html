@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scroll To Top</title>
+  <link rel=stylesheet href=style.css>
+  <style>
+.boxes{
+  height:100px;
+  border:10px solid black;
+  margin:100px;
+}
+
+#scroll{
+  position:fixed;
+  bottom:10px;
+  right:10px;
+}
+
+  </style>
+</head>
+<body>
+  <button id="scroll" type="button">Scroll To top</button>
+  <div class="boxes">
+    boxes 
+  </div>
+
+  <div class="boxes">
+    boxes 
+  </div>
+
+  <div class="boxes">
+    boxes 
+  </div>
+  <div class="boxes">
+    boxes 
+  </div>
+  <div class="boxes">
+    boxes 
+  </div>
+  <div class="boxes">
+    boxes 
+  </div>
+  <div class="boxes">
+    boxes 
+  </div>
+
+
+  <script>
+    function smoothScrollToTop(){
+       window.scrollTo({
+         top:0,
+         behavior:"smooth"
+       })
+    }
+    document.getElementById("scroll").addEventListener("click",smoothScrollToTop)
+  </script>
+</body>
+</html>
+

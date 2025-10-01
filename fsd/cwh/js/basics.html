@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="./basics.js"> </script>
+</head>
+
+<body>
+
+  Javascript is a weakly typed , type inefficient language. <br>
+  It is not necessary to terminate a statement if you are ending a line .
+  <h3>Features</h3>
+  <dl>
+    <dt>High-Level</dt>
+    <dd><ol>
+      <li>Dynamically Typed</li>
+      <li>Automatic Memory Managment [built-in garbage collection]</li>
+      <li>Abstraction</li>
+      <li>Platform Independence</li>
+      <li>Rich Standard Library</li>
+    </ol></dd>
+    <dt>Single-Threaded</dt>
+    <dd>Try implementing a infinite loop in your browser's console <code>while(true){}</code></dd>
+    <dt>Garbage-Collected</dt>
+    <dd>When allocating memory in heap like <code>const counter={value:0}; counter.value++</code> <br>
+       JS automatically removes memory at free that is when it isn't referencing any other object.
+    </dd>
+    <dt>Interepreted [ JIT ]</dt>
+    <dd>  <b><big>Spider Monkey</big></b> is the javascript engine developed by Mozilla. It was the first-ever javascript engine created by Brendan Eich in 1995 for Netscape Navigator <br>
+   Chrome uses V8. Which acutally compiles the whole down to machine code before running it.
+</dd>
+    <dt>Protype based</dt>
+    <dd>  Javascript has <code>prototypal inheritance</code>
+</dd>
+    <dt>Multi-Paragidm</dt>
+    <dd>Combinig style from declarative [what] functional approaches and  <br> imperative [how] Object-oriented approaches </dd>
+    <dt>Dynamic</dt>
+    <dd>The data type is known at the runtime</dd>
+    <dt>Non-Blocking Event Loop Concurrency model</dt>
+    <dd>Its non blocking - cuz it is never waiting for any return value from any function <br>
+      It is only waiting for an event to occur - only to return its call back <br>
+      It has event loop - since it is always listening to event and have a function declared for the event.
+    </dd>
+  </dl>
+  <h3>For Event Loop</h3>
+  <ol>
+    <li>Run sync code</li>
+    <li>Run Promise or microtask callbacks</li>
+    <li>Run async task callbacks</li>
+    <ul>
+      <li>Promises function are stored in the <code>Microtask queue</code> which has a special high priority <b>handler</b></li>
+      <li>While normal tasks are stored in the <code>Task queue</code></li>
+    </ul>
+  </ol>
+
+
+  <h1>Primitives</h1>
+  <ul>
+    <li>Boolean</li>
+    <dl>
+      <dt>Null</dt>
+      <dd>Represents an empty value <br>0
+        Assigned explicitly by the developer.
+      </dd>
+      <dt>Undefined</dt>
+      <dd>The default value of a variable that has no value to it <br>
+        or a function that represents nothing
+      </dd>
+    </dl>
+    <li>Null</li>
+    <li>Undefined</li>
+    <li>Number</li>
+    <li>BigInt</li>
+    <li>Symbol</li>
+    <li>String</li>
+  </ul>
+  These are all immutable . <br>
+  Use <code>typeof</code> operator to check the type of a var at runtime <br>
+  the <code>typeof</code> null and array are <code>object</code> <br>
+  <br>
+  <code>NOTE:</code> arrays are <b>mutables </b>but <b>not strings </b><br>
+  <br>
+  use <code>pop()</code> and <code>push()</code> for arrays <br>
+  <code>shift()</code> is used to remove the first element while pop is used to remove the last element. <br>
+  <code>unshift()</code> is used to add an element in the start of the array. <br>
+  <code>delete()</code> does exactly what <code>pop()</code> does but the memory is not freed. <br>
+
+  <br>
+  <code>NOTE:</code> If it is not primitive it is an object. <br>
+  Empty string and <code>0</code> are false , all others are true.<br>
+
+  <br><br>
+  <code>NOTE2:</code> A single exclamation complements the value and another exclamation to it returns the original
+  values - [ complement of a complement is the original ]
+  <code>NOTE3:</code> <code>==</code> checks the value . <code>===</code> checks the type
+
+  <h3>Try:catch</h3>
+
+  <pre>
+    <code>
+      try{
+      // throw new Error(); is how you explicitly throw an error
+      console.log("Tried / Works 😀")
+      }catch(error){
+      console.log("Failed 💀")
+      }finally{
+      console.log("I know javascript 🌍")
+      }
+    </code>
+  </pre>
+
+  <h3>Variables</h3>
+  follow the following:
+  <pre>
+    <code>
+      x='👹' // makes itself global - even if declared inside a local scoped function
+
+      var x='👹'
+      // var has a global scope from when declared.
+      It cannot have 2 different values in a single codebase. 
+      [ special cases: when used in a function ]
+      // var y; initialise a variable
+      // y='👺'; assign a value to it
+      // y='👹'; reassign the value
+      // if var is used inside a loop then it will leak its scope and become a global variable
+      // if used inside a function - it will maintain local scope
+
+      let x='👹'
+      // has block level scope
+      // maintians its scope even in the loops
+
+      const x='👹'
+      // cannot change the variable later on in the script.
+      // it also follows BLOCK LEVEL scope like "let"
+    </code>
+  </pre>
+
+
+  <h3>Functions</h3>
+  Like any othe programming language - here a function takes an input and gives an output
+  <br>
+  Closures are function that are nested in a function
+  <br>
+
+  <pre>
+    <code>
+      function somefunction (input){
+      const output="input"+"🃏";
+      return function someOtherFunction(){
+          return output
+        }
+      }
+
+      console.log(somefunction("yourname"))
+
+    </code>
+  </pre>
+
+  Now we can also write a shorthand as follows : <br>
+  <pre>
+    <code>
+      const somename= (input)=&gt;output
+    </code>
+  </pre>
+
+  <ul>
+    <li>Functions can be anonymous</li>
+    <li>Functions can be passed as arguments to a function <br>
+      <pre>
+        <code>
+          function cool(fun){
+          fun();
+          }
+          cool(()=&gt; console.log("smooth!")) // I am using an anonymous function over here 
+          to pass valued of parameter to the cool function with output using "=&gt;" console.log(..whatever..)
+        </code>
+      </pre>
+    </li>
+    <li>
+      <dl>
+        <dt>Closure</dt>
+        <dd>A function defined inside another function which <br>
+          references a variable that is defined in the scope of the outer function .
+        </dd>
+      </dl>
+    </li>
+  </ul>
+
+  <code>Good News:</code> javascript allows use of forward reference a.k.a <code>Hoisting</code> <br> 
+  formal: Hoisting is a javascript behavior which variables and function declarations are moved to the top of their containing scope during the compilation phase (script or function ) before execution begins. 
+  <br>
+  usually in JS the variables are hoisted but *not* their VALUES <code>Only exception for this is "VAR"</code>
+  <br>
+ <img src="./media/hoistvsforwardreference.png" alt="hoist vs forward reference"> <br>
+ <img src="./media/hoistvsforwardreference2.png" alt="hoist vs forward reference2"> <br>
+  <code>NOTE:</code> you can use the <code>defer</code> keyword while referring to the / linking to the javascript in
+  your doc's head. So now the script is executed
+  <br>
+  Only after the entire document is loaded.
+
+  <br>
+  <br>
+  <hr>
+  <h3>Objects</h3>
+  Kinda like maps or hash maps <br>
+  two general ways -- <br>
+  <pre>
+    <code>
+      const obj= new Object();
+
+      obj.name='bull';
+      obj.face='🐂';
+    </code>
+  </pre>
+
+  orrrrrrr <br>
+  <pre>
+    <code>
+      const obj={
+      name:'bull',
+      face:'🐂',
+      age:'99',
+      hello:function()=&gt;console.log("hello"+${this.name})// we use this here so that we maintain and not break any
+      scope.
+      }
+
+      // Caveat : you cannot use the keyword "this" as how you normally do to refer the local type when you are using
+      the "arrow function i.e '=&gt;' "
+      // as '=&gt;' bypasses the local custom user-defined scope and sticks to the scope of the window - which is the
+      default TARGET for "this" keyword
+      obj.hello()
+    </code>
+  </pre>
+
+  <b>IT ALSO SUPPORTS OOPS</b>
+  <br>
+
+  <br>
+  <dl>
+  <dt>A property </dt>
+  <dd>is calling a value in the object [ mostly using the dot operator ] </dd>
+  <dt>A prototype </dt>
+  <dd>chain is nesting of these object-calls </dd>
+    <dt>Call back</dt>
+    <dd>call back is a function that is passed as an argument to another function and is called inside that function later</dd>
+    <dt>Aync improvisation</dt>
+    <dd>use <b>promise</b> to act for a function where it was make sure that a value will be resolved even if it isn't resolved currently</dd>
+    <dd>
+    <b>Avoiding Call back Hell</b>
+    </dd>
+    <dd>Promise can use <code>then</code> and <code>catch</code></dd>
+    <dd>use the <code>await</code> function to wait for the promise function to handle the call backs</dd>
+     <dd>we also use 
+      <code>try catch</code>
+      for error handling
+     </dd>
+     <dt>ES modules</dt>
+     <dd>To share code between files</dd>
+     <dt>Componenets</dt>
+     <dd>A component of a framework includes <code>html css js</code> to form a ui element</dd>
+     <dt>Data binding</dt>
+     <dd>Using place-holders</dd>
+     <dt>Bundler</dt>
+     <dd>bundles all the form of file to be used by the browser for ex: <code>vite webpack</code></dd>
+     <dt>bonus:lint</dt>
+     <dd>static analysis - for syntax , style ,bugs</dd>
+  </dl>
+
+  JS can add inline CSS !!
+
+  using code like: <code>document.body.style.backgroundColor="red"</code>
+
+  <br>
+  <a href="var-loops-strings.html" alt="Next page"><u><big>var-loops-strings</big></u></a>
+</body>
+
+</html>

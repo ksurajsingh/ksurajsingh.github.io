@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Advanced JS</title>
+  <link rel=stylesheet href=style.css>
+  <script src="./advacned.js"> </script>
+</head>
+<body>
+  <h1>Advanced js</h1>
+  <dl>
+    <dt>IIFE</dt>
+    <dd>Immediately Invocked Function Expression <br>
+      This is the way of expressing functions so that they get executed ASAP : lol <br>
+      formal: IIFE is defined and executed immediately after its creation. <br>
+      It is typically used to create a new scope and <br>
+      avoid polluting the global namespace.
+      <ol>
+        <li>It is wrapped in parenthesis to cover it into an expression.</li>
+        <li>It is followed by an <code>()</code> to execute it right away.</li>
+        <li>Created a privileged scope - useful for encapsulation.</li>
+      </ol>
+      for ex: <br>
+      <pre>
+      <code>
+      async function sleep(){
+         return new Promise((resolve,reject)=&lt;{
+         setTimeout(()=&lt;{
+           resolve(45)
+         },1000)
+         })
+      }
+
+      (function main(){
+      let a = await sleep();
+      let b = await sleep();
+      })()
+      </code>
+      </pre>
+      <li>Since you are wrapping the function inside the parenthesis make sure to terminate the previous statement with a <code>;</code></li>
+    </dd>
+    <dt>Destructuring</dt>
+    <dd>This is used to destrcture the object : lol <br> 
+      I mean to assign vairables to certain specific components INSIDE the objects for ex: <br>
+      <h4>Wihtout Destructuring</h4>
+      <pre>
+      <code>
+      let x,y=[1,2];
+      console.log(x,y)
+      </code>
+      </pre>
+      <h4>With Destructing</h4>
+      <pre>
+      <code>
+      let [x,y]=[1,2];
+      console.log(x,y);
+      
+      [x,y]=[1,2,3];
+      console.log(x,y);
+
+      [x,y]=[1,2,3,4,5,6];
+      console.log(x,y);
+
+      let [a,b,...c]=[1,2,3,4,5,6]
+      console.log(a,b,c);
+
+      // for objects
+      let obj={
+      a:1,
+      b:2,
+      c:3
+      }
+      let {a,b}=obj;
+      </code>
+      </pre>
+      the <code>...</code> operator we used here is called as the <code>spread</code> which allocated all of the remaing values from the current position to itself [ iteratably ].
+    </dd>
+    <dt>localStorage</dt>
+    <dd><code>localStorage.setItem("name of the object",value of the corresponding object)</code> <br>
+      localStorage.getItem("name of the object you want to get")
+    </dd>
+  </dl>
+
+</body>
+</html>
+
