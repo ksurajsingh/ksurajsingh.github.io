@@ -149,7 +149,7 @@
   </code>
   <b>RULE OF THUMB:</b> <h4>CJS-&gt;MJS: Always imports whole package</h4>
 
-  <h3>MJS-&lt;CJS</h3>
+  <h3>MJS-&gt;CJS</h3>
   <b>if module in MJS</b> in <b>./module.mjs</b>
   <code>
   export const hero="superman"
@@ -163,6 +163,24 @@
   villian=module.villian // or 
   // villian = module.default
   </code>
+  This won't work since import() is a dynamic import in node and will return a promise .
+  Better use <code>await</code> and put this inside a function , 
+  or if you need it in the <b>Top-level</b> <code>main thread</code> - 
+  Use an IIFE
+  <code>
+  (async()=&gt;{
+  const module= await import("./module.mjs")
+  hero=module.hero
+  villian=modele.villian
+  })()
+  })
+  </code>
+  This is necessary in Node since it cannot await in the main thread. 
+  but few like Deno can
+  <img src="./media/nodevdenovbun.png" alt="node v deno v bun">
+
+
+  </pre>
 
 
 
