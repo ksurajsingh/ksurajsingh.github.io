@@ -41,7 +41,7 @@ for file in $as; do
       date=$(echo $file | cut -d"." -f1)
 
       echo -e "<br>
-      <a href=\"#\" onclick=\"loadImgAndRedirect('$file');return false;\">
+      <a href=\"#\" target="_blank" onclick=\"loadImgAndRedirect('$file');return false;\">
       <div class=\"blog-card\"><hr>
       <div class=\"blog-title\">
       <b>$Heading</b>
@@ -58,7 +58,7 @@ for file in $as; do
 done
 
 echo -e "
-<a href="trash/trash.html"><h2>trash<h2> \n 
+<a href="trash/trash.html" target="_blank"><h2>trash<h2> \n 
 <img src="futurediarymedia/sakura.jpeg"></a>
 \n\n<br>\n 
 <img id=\"loading-img\" src=\"futurediarymedia/death-note.gif\" alt=\"loading image\" style=\"display: none; width:100vw;height:100vh;position:fixed;  top:0vh;\"> \n\n 
