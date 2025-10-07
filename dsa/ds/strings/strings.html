@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Strings</title>
-  <link rel=stylesheet href=style.css>
+  <link rel=stylesheet href=../style.css>
 </head>
 <body>
   <h1>String Processing</h1>
@@ -55,18 +55,18 @@
     <li>As soon as the index reaches the <em>null character</em> - the value of the index is the length of the characters</li>
   </ol>
   <pre>
-  <code>
-  # include&lt;stdio.h&gt;
-  main(){
-    char str[40];
-    int i=0;
-    printf("Enter the string: \n");
-    gets(str);
-    while(str[i]!='\0'){
-      i++;
-    }
-    printf("\n the length of the string is: %d",i);
-  }
+  <code class="code-chunk">
+# include&lt;stdio.h&gt;
+main(){
+char str[40];
+int i=0;
+printf("Enter the string: \n");
+gets(str);
+while(str[i]!='\0'){
+i++;
+}
+printf("\n the length of the string is: %d",i);
+}
   </code>
   </pre>
   <br><br><br>
@@ -85,50 +85,50 @@
   While ensuring the first string has enough capacity to store the combination of both strings combined. <br>
   <br><br><br>
   <pre>
-  <code>
-  #include&lt;stdio.h&gt;
-  main(){
-     char first[100],second[50];
-     int i,j;
-     printf("Enter the value of first string: \n");
-     gets(first);
-     printf("Enter the value of second string: \n");
-     gets(second);
-     while(first[i]!='\0'){
-       i++;
-     }
-     while(second[j]!='\0'){
-       first[i]=second[j];
-       i++;
-       j++;
-     }
-     first[i]='\0';
-     printf("Concatenation of two strings is: %s",first);
-  }
+  <code class="code-chunk">
+#include&lt;stdio.h&gt;
+main(){
+char first[100],second[50];
+int i,j;
+printf("Enter the value of first string: \n");
+gets(first);
+printf("Enter the value of second string: \n");
+gets(second);
+while(first[i]!='\0'){
+i++;
+}
+while(second[j]!='\0'){
+first[i]=second[j];
+i++;
+j++;
+}
+first[i]='\0';
+printf("Concatenation of two strings is: %s",first);
+}
   </code>
   </pre>
   <br><br><br>
   <h3>String comparision</h3>
   <pre>
-  <code>
-  #include&lt;stdio.h&gt;
-  main(){
-    char fisrt[50],second[50];
-    int i;
-    printf("Enter first string: \n");
-    gets(first);
-    printf("Enter second string: \n");
-    gets(second);
-    while(first[i]==second[i] &amp;&amp; first[i]!='\0'){
-      i++;
-    }
-    if (first[i]==second[i]){
-      printf("The strings are not equal");
-    }
-    else{
-      printf("the strings are equal");
-    }
-  }
+  <code class="code-chunk">
+#include&lt;stdio.h&gt;
+main(){
+char fisrt[50],second[50];
+int i;
+printf("Enter first string: \n");
+gets(first);
+printf("Enter second string: \n");
+gets(second);
+while(first[i]==second[i] &amp;&amp; first[i]!='\0'){
+i++;
+}
+if (first[i]==second[i]){
+printf("The strings are not equal");
+}
+else{
+printf("the strings are equal");
+}
+}
   </code>
   </pre>
 
@@ -146,30 +146,30 @@
   <code>conio</code> stands for console input output <br>
   
   <pre>
-  <code>
-  #include&lt;stdio.h&gt;
+  <code class="code-chunk">
+#include&lt;stdio.h&gt;
 
-  int main(){
-    char string[50];
-    printf("Enter the string: \n");
-    fgets(string,50,stdin);
-    int s,n;
-    printf("Enter the starting point: \n");
-    scanf("%d",&s);
-    s=s-1;
-    printf("Enter the length of the substring: \n");
-    scanf("%d",&n);
-    
-    char substring[50];
-    int i=0,e=s+n;
-    while(s!=e){
-      substring[i]=string[s];
-      s++;
-      i++;
-    }
-    printf("Substring: %s",substring);
-    return 0;
+int main(){
+  char string[50];
+  printf("Enter the string: \n");
+  fgets(string,50,stdin);
+  int s,n;
+  printf("Enter the starting point: \n");
+  scanf("%d",&s);
+  s=s-1;
+  printf("Enter the length of the substring: \n");
+  scanf("%d",&n);
+  
+  char substring[50];
+  int i=0,e=s+n;
+  while(s!=e){
+    substring[i]=string[s];
+    s++;
+    i++;
   }
+  printf("Substring: %s",substring);
+  return 0;
+}
 
   </code>
   </pre>

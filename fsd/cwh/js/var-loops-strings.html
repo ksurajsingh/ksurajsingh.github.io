@@ -36,7 +36,7 @@
   <h3>Loops</h3>
   <code>for in:</code> iterators in objects  <br>
   <pre>
-  <code>
+  <code class="code-chunk">
   const obj={
     name:"warlord",
     age:"99"
@@ -54,7 +54,7 @@
   <br>
   syntax:
   <pre>
-  <code>
+  <code class="code-chunk">
   object.forEach((value,index,object)=&gt;
   console.log(value,index,object);
   })
@@ -105,7 +105,7 @@
   <br><br>
   <b>Named Parameters</b>
   <pre>
-  <code>
+  <code class="code-chunk">
   function makeLunch(opts){
   const {main,side,drinks}=opts // naming those parameters
   }
@@ -116,11 +116,11 @@
   and while calling the function they are called as <code>Arguments</code> <br>
   <b>Rest Parameters</b> 
   <pre>
-  <code>
-  function makeLunch(...args){
+  <code class="code-chunk">
+function makeLunch(...args){
 
-  }
-  makeLunch('🍇','🍈','🍉','🍊','🍌','🍍')
+}
+makeLunch('🍇','🍈','🍉','🍊','🍌','🍍')
   </code>
   </pre>
   <b>Arrow functions</b>
@@ -140,33 +140,33 @@
 
   <b>Pure Functions</b>
   <pre>
-  <code>
-  let x=2;
-  const impure =() =&gt;{
-   x++;
-   return x**2;
-  }
-  const pure =(x) =&gt;{
-   x++;
-   return x**2;
-  }
+  <code class="code-chunk">
+let x=2;
+const impure =() =&gt;{
+x++;
+return x**2;
+}
+const pure =(x) =&gt;{
+x++;
+return x**2;
+}
   </code>
   </pre>
   <b>First-Class function</b>
   Where a function uses another function as its parameter
   for ex: call-back function.
-  <pre><code>
-  let haveFun=()=&gt;console.log("Having Fun");
-  setTimeout(haveFun,500);
+  <pre><code class="code-chunk">
+let haveFun=()=&gt;console.log("Having Fun");
+setTimeout(haveFun,500);
   </code></pre>
   <br><br><hr><hr>
   <pre>
-  <code>
+  <code class="code-chunk">
 
 function tell(name,time){
-  console.log(`hello ${name}`)
-  console.log(`hope master [${name}] is doing well!`)
-  console.log(`its ${time} right now`)
+console.log(`hello ${name}`)
+console.log(`hope master [${name}] is doing well!`)
+console.log(`its ${time} right now`)
 }
 
 const now=new Date();
@@ -185,92 +185,92 @@ tell("warlord",curtime)
   <hr>
   <h2>Strings</h2>
   <pre>
-  <code>
-  let a="warlord"
-  console.log(a);
-  console.log(a[0]);
-  console.log(a[1]);
-  console.log(a[2]);
-  console.log(a[3]);
-  console.log(a[4]);
-  console.log(a[5]);
-  console.log(a[6]);
+  <code class="code-chunk">
+let a="warlord"
+console.log(a);
+console.log(a[0]);
+console.log(a[1]);
+console.log(a[2]);
+console.log(a[3]);
+console.log(a[4]);
+console.log(a[5]);
+console.log(a[6]);
 
-  console.log(a.length); // 7
-  console.log(a.toUpperCase()); // WARLORD
-  console.log(a.toLowerCase()); // warlord
-  console.log(a.slice(1,5)); // prints from 1 to 5 - arlor
-  console.log(a.slice(3)); // prints from 3 to end - lord
-  console.log(a.replace("war","speed")); // speedlord
-  console.log(a.concat("088")); //warlord088
-  console.log(a.charAt(3)); // l
-  console.log(a.indexOf("war")) // 0
-  console.log(a); // warlord
+console.log(a.length); // 7
+console.log(a.toUpperCase()); // WARLORD
+console.log(a.toLowerCase()); // warlord
+console.log(a.slice(1,5)); // prints from 1 to 5 - arlor
+console.log(a.slice(3)); // prints from 3 to end - lord
+console.log(a.replace("war","speed")); // speedlord
+console.log(a.concat("088")); //warlord088
+console.log(a.charAt(3)); // l
+console.log(a.indexOf("war")) // 0
+console.log(a); // warlord
 
-  // refer 'primitives' under 'basics' to know about `shift` and `unshift` string method - shift - pop from start , unshift - push in the start
-
-
+// refer 'primitives' under 'basics' to know about `shift` and `unshift` string method - shift - pop from start , unshift - push in the start
 
 
-  let number=[1,2,3,4,5]
-  console.log(number.splice(1,3));  // 2,3,4 are REMOVED - now number=[1,5]
-  console.log(number.splice(1,3,222,333)); // 2,3,4 are removed and specified number [222,333] are ADDED
-
-  // SLICE doesn't modify the original array - just works on the shallow copy . 
-  // used for copying without changes
-
-  // SPLICE modified the original array - can remove replace and add elements .
-  // used for editing in place
 
 
-  console.log(number)// [ 1 , 2 , 3 , 4 , 5 ]
-  console.log(number.toString()) // 1,2,3,4,5 -- again prints a shallow copy
-  // if you want to convert back to array in order to perform function like - MAP FILTER REDUCE 
-  // do number =  number.split(",")
-  console.log(Array.from(number))
-  console.log(number.join(" and ")) // 1 and 2 and 3 and 4 and 5
+let number=[1,2,3,4,5]
+console.log(number.splice(1,3));  // 2,3,4 are REMOVED - now number=[1,5]
+console.log(number.splice(1,3,222,333)); // 2,3,4 are removed and specified number [222,333] are ADDED
 
-  let b="flashbang";
-  console.log(a+" uses "+b);
-  //or 
-  console.log(`${a} used ${b}`);
-  // we can also have stuff like double quotes in side the backticks like -- 
+// SLICE doesn't modify the original array - just works on the shallow copy . 
+// used for copying without changes
 
-  console.log(`"${a}" uses "${b}"`);
+// SPLICE modified the original array - can remove replace and add elements .
+// used for editing in place
 
-  console.log("\""+a+"\" uses \""+b+"\"");
+
+console.log(number)// [ 1 , 2 , 3 , 4 , 5 ]
+console.log(number.toString()) // 1,2,3,4,5 -- again prints a shallow copy
+// if you want to convert back to array in order to perform function like - MAP FILTER REDUCE 
+// do number =  number.split(",")
+console.log(Array.from(number))
+console.log(number.join(" and ")) // 1 and 2 and 3 and 4 and 5
+
+let b="flashbang";
+console.log(a+" uses "+b);
+//or 
+console.log(`${a} used ${b}`);
+// we can also have stuff like double quotes in side the backticks like -- 
+
+console.log(`"${a}" uses "${b}"`);
+
+console.log("\""+a+"\" uses \""+b+"\"");
   </code>
   </pre>
 
 
   <h3>Map-Filter-Reduce</h3>
   <h5>Code for Map</h5>
-  <pre><code>
-  let arr=[1,2,3,4,5]
-  let newarr=arr.map((e,value,array)=&gt;{ // value and array are not necessary here 
-  return e**2 
-  })
-  console.log(newarr)
-  // could also be written in short hand like - 
-  let newArr=arr.map(e=&gt;{
-  return e**2;
-  })
+  <pre><code class="code-chunk">
+let arr=[1,2,3,4,5]
+let newarr=arr.map((e,value,array)=&gt;{ // value and array are not necessary here 
+return e**2 
+})
+console.log(newarr)
+// could also be written in short hand like - 
+let newArr=arr.map(e=&gt;{
+return e**2;
+})
   </code></pre>
 
   <h4>Code for Filter</h4>
-  <pre><code>
-  let arr=[1,2,3,4,5]
-  let newarr=arr.map(e=&gt;{
-  return e**2
-  })
-  console.log(newarr)
-  const greaterThanSeven = (e)=&gt;{
-  if(e&gt;7){
-  return true
-  }
-  return false
-  }
-  newarr.filter(greaterThanSeven)
+  <pre><code class="code-chunk">
+let arr=[1,2,3,4,5]
+let newarr=arr.map(e=&gt;{
+return e**2
+})
+console.log(newarr)
+const greaterThanSeven = (e)=&gt;{
+if(e&gt;7){
+return true
+}
+return false
+}
+newarr.filter(greaterThanSeven)
   </code></pre> 
   This is different from map since for map it performs a custom function.
   But for filter - it looks only for a boolean output - on truthy it keeps that particular value , upon falsy it removes that value. <br>
@@ -280,12 +280,12 @@ tell("warlord",curtime)
   Then considers that element and the element after that to perform the same function and stores it as 2nd / 1st element [ I will confirm this ] <br>
   Keeps repeating till the end of the array .
   <pre>
-  <code>
-  let arr=[1,2,3,4,5,6]
-  const red=(a,b)=&gt;{
-  return a*b;
-  }
-  console.log(arr.reduce(red))
+  <code class="code-chunk">
+let arr=[1,2,3,4,5,6]
+const red=(a,b)=&gt;{
+return a*b;
+}
+console.log(arr.reduce(red))
 
   </code>
   </pre>

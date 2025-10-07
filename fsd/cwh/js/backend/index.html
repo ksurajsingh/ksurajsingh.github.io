@@ -47,27 +47,27 @@
  <h3>Default export</h3>
 
  in <b>./module.js</b>
- <code>
+ <code class="code-chunk">
  const name = "warlord"
  module.exports =  name  
  </code>
 
  in <b>./main.js</b>
- <code>const bananas = require("./module.js")
+ <code class="code-chunk">const bananas = require("./module.js")
  console.log(bananas) // "warlord"</code>
 
  <h3>Named export</h3>
 
  in <b>./module.js</b>
- <code>const name="warlord";
+ <code class="code-chunk">const name="warlord";
  module.exports = {name}</code>
 
  in <b>./main.js</b>
- <code>const {name} = require("./module.js")
+ <code class="code-chunk">const {name} = require("./module.js")
  console.log(name)</code>
 
  You cannot do this in <b>./main.js</b> 
- <code>const {bananas} = require("./module.js")
+ <code class="code-chunk">const {bananas} = require("./module.js")
  console.log(bananas) // won't work since there is no property/key called "bananas"</code>
 
  While destructuring <code>[ {...} ]</code> use the exact propert name only
@@ -106,12 +106,12 @@
  
  if you mix both <b>named</b> and <b>default</b> export - 
  in <b>./module.js</b>
- <code>
+ <code class="code-chunk">
  export const hero = "superman"
  export default villian = "clark kent"
  </code>
  in <b>./main.js</b>
- <code>
+ <code class="code-chunk">
  import badguy,{hero} from "./module.js"
  console.log(badguy,hero);
  </code>
@@ -127,24 +127,24 @@
   <h3>CJS-&gt;MJS</h3>
   <h4>Both named and default</h4>
   <pre> if module in CJS in <b>./module.js</b>
-  <code>const hero="superman"
+  <code class="code-chunk">const hero="superman"
   const villian="clark kent" 
   module.exports = { hero } 
   module.exports = villian // since this is a default export this overrides the previous one 
   </code>
   so do <code> module.export = { hero, villian } </code>
   in which case in <b>./main.js</b> or <em>./main.mjs</em>
-  <code> 
+  <code class="code-chunk"> 
   import { hero, villian } from "./module.js" // won't work tho it could work as a named import
   // you don't have the luxury to destructure while importing CJS into MJS
   </code>
   Either
-  <code>
+  <code class="code-chunk">
   import guys from "./module.js"
   console.log(guys.hero,guys.villian); 
   </code>
   or
-  <code>
+  <code class="code-chunk">
   import guys from "./module.js"
   goodguy={guys.hero} badguy={guys.villian}
   </code>
@@ -152,14 +152,14 @@
 
   <h3>MJS-&gt;CJS</h3>
   <b>if module in MJS</b> in <b>./module.mjs</b>
-  <code>
+  <code class="code-chunk">
   export const hero="superman"
   const villian="clark kent" 
   export default villian
   </code> 
   in <b>main.js</b> <em>which is CJS now</em>
   Must use dynamic import i.e <code>import()</code> which is availble in <b>NODE14+</b> 
-  <code> const module=import("./module.mjs") 
+  <code class="code-chunk"> const module=import("./module.mjs") 
   hero=module.hero 
   villian=module.villian // or 
   // villian = module.default
@@ -168,7 +168,7 @@
   Better use <code>await</code> and put this inside a function , 
   or if you need it in the <b>Top-level</b> <code>main thread</code> - 
   Use an IIFE
-  <code>
+  <code class="code-chunk">
   (async()=&gt;{
   const module= await import("./module.mjs")
   hero=module.hero

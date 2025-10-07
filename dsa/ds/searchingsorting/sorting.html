@@ -3,7 +3,7 @@
 
 <head>
   <title>Sorting</title>
-  <link rel=stylesheet href=style.css>
+  <link rel=stylesheet href=../style.css>
 </head>
 
 <body>
@@ -21,45 +21,45 @@
 
   <br><br>
   <pre>
-    <code>
-      #include&lt;stdio.h&gt;
+    <code class="code-chunk">
+#include&lt;stdio.h&gt;
 
-      void printArray(int arr[], int*n){
-      for(int i=0;i&lt;*n;i++){
-      printf("Element at %d : %d \n",i+1,arr[i]);
-      }
-      }
+void printArray(int arr[], int*n){
+for(int i=0;i&lt;*n;i++){
+printf("Element at %d : %d \n",i+1,arr[i]);
+}
+}
 
-      void bubSort(int arr[],int *n){
-      int temp;
-      for(int i=0;i&lt;*n;i++){
-      for(int j=0;j&lt;*n-i;j++){
-      if(arr[j]&gt;arr[j+1]){
-      temp=arr[j];
-      arr[j]=arr[j+1];
-      arr[j+1]=temp;
-      }
-      }
-      }
-      }
+void bubSort(int arr[],int *n){
+int temp;
+for(int i=0;i&lt;*n;i++){
+for(int j=0;j&lt;*n-i;j++){
+if(arr[j]&gt;arr[j+1]){
+temp=arr[j];
+arr[j]=arr[j+1];
+arr[j+1]=temp;
+}
+}
+}
+}
 
-      void main(){
-      int n;
-      printf("Enter the size of the array: \n");
-      scanf("%d",&n);
-      int arr[n];
+void main(){
+int n;
+printf("Enter the size of the array: \n");
+scanf("%d",&n);
+int arr[n];
 
-      for(int i=0;i&lt;n;i++){
-      printf("Enter array elements: \n");
-      scanf("%d",&arr[i]);
-      }
-      printf("Before sorting: \n");
-      printArray(arr,&n);
-      bubSort(arr,&n);
-      printf("after sorting: \n");
-      printArray(arr,&n);
+for(int i=0;i&lt;n;i++){
+printf("Enter array elements: \n");
+scanf("%d",&arr[i]);
+}
+printf("Before sorting: \n");
+printArray(arr,&n);
+bubSort(arr,&n);
+printf("after sorting: \n");
+printArray(arr,&n);
 
-      }
+}
     </code>
   </pre>
 
@@ -146,44 +146,44 @@
   </ol>
 
   <pre>
-    <code>
+    <code class="code-chunk">
 
-      #include&lt;stdio.h&gt;
+#include&lt;stdio.h&gt;
 
-      void insertionSort(int arr[],int n){
-      printf("\t\t********** Implementing Insertion sort******** \n\n ")
-      int k,j;
-      for(int i=1;i&lt;n;i++){
-      k=arr[i];
-      for(j=i-1;j&gt;=0 && arr[j]&gt;k ; j--){
-      arr[j+1]=arr[j];
-      }
-      arr[j+1]=k;
-      }
-      }
+void insertionSort(int arr[],int n){
+printf("\t\t********** Implementing Insertion sort******** \n\n ")
+int k,j;
+for(int i=1;i&lt;n;i++){
+k=arr[i];
+for(j=i-1;j&gt;=0 && arr[j]&gt;k ; j--){
+arr[j+1]=arr[j];
+}
+arr[j+1]=k;
+}
+}
 
-      void printArray(int arr[],int n){
-      for(int i=0;i&lt;n;i++){
-      printf("The element at %d : %d \n",i+1,arr[i]);
-      }
-      }
+void printArray(int arr[],int n){
+for(int i=0;i&lt;n;i++){
+printf("The element at %d : %d \n",i+1,arr[i]);
+}
+}
 
-      void main(){
-      int n;
-      printf("Enter the size of the array: \n");
-      scanf("%d",&n);
-      int arr[n];
-      for(int i=0;i&lt;n;i++){
-      printf("Enter the element at %d: ",i+1);
-      scanf("%d",&arr[i]);
+void main(){
+int n;
+printf("Enter the size of the array: \n");
+scanf("%d",&n);
+int arr[n];
+for(int i=0;i&lt;n;i++){
+printf("Enter the element at %d: ",i+1);
+scanf("%d",&arr[i]);
 
-      }
-      printf("\n\nBefore sorting: \n");
-      printArray(arr,n);
-      insertionSort(arr,n);
-      printf("\n\n After sorting: \n");
-      printArray(arr,n);
-      }
+}
+printf("\n\nBefore sorting: \n");
+printArray(arr,n);
+insertionSort(arr,n);
+printf("\n\n After sorting: \n");
+printArray(arr,n);
+}
     </code>
   </pre>
 

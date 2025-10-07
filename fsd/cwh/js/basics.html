@@ -146,15 +146,15 @@
   <br>
 
   <pre>
-    <code>
-      function somefunction (input){
-      const output="input"+"🃏";
-      return function someOtherFunction(){
-          return output
-        }
-      }
+    <code class="code-chunk">
+function somefunction (input){
+const output="input"+"🃏";
+return function someOtherFunction(){
+return output
+}
+}
 
-      console.log(somefunction("yourname"))
+console.log(somefunction("yourname"))
 
     </code>
   </pre>
@@ -170,12 +170,12 @@
     <li>Functions can be anonymous</li>
     <li>Functions can be passed as arguments to a function <br>
       <pre>
-        <code>
-          function cool(fun){
-          fun();
-          }
-          cool(()=&gt; console.log("smooth!")) // I am using an anonymous function over here 
-          to pass valued of parameter to the cool function with output using "=&gt;" console.log(..whatever..)
+        <code class="code-chunk">
+function cool(fun){
+fun();
+}
+cool(()=&gt; console.log("smooth!")) // I am using an anonymous function over here 
+to pass valued of parameter to the cool function with output using "=&gt;" console.log(..whatever..)
         </code>
       </pre>
     </li>
@@ -218,20 +218,20 @@
 
   orrrrrrr <br>
   <pre>
-    <code>
-      const obj={
-      name:'bull',
-      face:'🐂',
-      age:'99',
-      hello:function()=&gt;console.log("hello"+${this.name})// we use this here so that we maintain and not break any
-      scope.
-      }
+    <code class="code-chunk">
+const obj={
+name:'bull',
+face:'🐂',
+age:'99',
+hello:function()=&gt;console.log("hello"+${this.name})// we use this here so that we maintain and not break any
+scope.
+}
 
-      // Caveat : you cannot use the keyword "this" as how you normally do to refer the local type when you are using
-      the "arrow function i.e '=&gt;' "
-      // as '=&gt;' bypasses the local custom user-defined scope and sticks to the scope of the window - which is the
-      default TARGET for "this" keyword
-      obj.hello()
+// Caveat : you cannot use the keyword "this" as how you normally do to refer the local type when you are using
+the "arrow function i.e '=&gt;' "
+// as '=&gt;' bypasses the local custom user-defined scope and sticks to the scope of the window - which is the
+default TARGET for "this" keyword
+obj.hello()
     </code>
   </pre>
 

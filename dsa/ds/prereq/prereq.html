@@ -123,34 +123,35 @@
 <h1>Scope of Variables</h1>
 <h5>when variables are initialized inside a loop, its only available there not even outside the loop in the same
   function</h5>
-<pre><code>#include&lt;stdio.h&gt;
+<pre><code class="code-chunk">
+#include&lt;stdio.h&gt;
 
-    int main(){
-    int a=10;
-    if(a&gt;0){
-    int b=20;
-    }
+int main(){
+int a=10;
+if(a&gt;0){
+int b=20;
+}
 
-    printf(&quot;%d\n%d&quot;,a,b);
-    }
+printf(&quot;%d\n%d&quot;,a,b);
+}
   </code></pre>
 <p><img src="pics/undeclared.png" alt="undeclaredError"><br></p>
 <p> / document the practise problem that is the patterns ones and etc in some squid game manner like how the pink
   soldiers ask for square or triangle etc....</p>
 <h1>Bitwise operators</h1>
-<pre><code class="language-java">int a=10;
-    int b=2;
+<pre><code class="language-java code-chunk">int a=10;
+int b=2;
 
-    System.out.println(a&amp;b);
-    System.out.println(a|b);
-    System.out.println(a^b);
-    System.out.println(~a);// &quot;~&quot; this is the complement operator
-    System.out.println(a &lt;&lt; 2); // left shift by 2 raised to 2 , as it is converted into binary that is
-    essentailly &quot;a*(2**2)&quot;. &lt;br&gt; For ex - 6 &lt;&lt; 2 is
-    // 6 - 0000110
-    // 2 left shifts makes - 0011000 = 24
-    // which is 6*(2**2), 6*4=24
-    System.out.println(a &gt;&gt; 2); // right shift i.e. -4
+System.out.println(a&amp;b);
+System.out.println(a|b);
+System.out.println(a^b);
+System.out.println(~a);// &quot;~&quot; this is the complement operator
+System.out.println(a &lt;&lt; 2); // left shift by 2 raised to 2 , as it is converted into binary that is
+essentailly &quot;a*(2**2)&quot;. &lt;br&gt; For ex - 6 &lt;&lt; 2 is
+// 6 - 0000110
+// 2 left shifts makes - 0011000 = 24
+// which is 6*(2**2), 6*4=24
+System.out.println(a &gt;&gt; 2); // right shift i.e. -4
   </code></pre>
 <p>Convert the values of variables to binary then perform the specified operations and you will get the result.<br>Make
   use of few properties such as : a^a=0, since all the bits are same<br>a^0=a.</p>
@@ -160,7 +161,7 @@
 <p>i++ , increments later </p>
 <p>mostly usefull in print statements<br>since </p>
 <p>if you do </p>
-<pre><code class="language-c">i=5;
+<pre><code class="language-c code-chunk">i=5;
     i++;
     // [or] ++i;
     printf(&quot;%d&quot;,i);
@@ -189,24 +190,25 @@
   <p>![NOTE] the comparision step in a for loop is done n+1, the last time is for the rejection take the following as an
     example: </p>
 </blockquote>
-<pre><code class="language-java">int i=1;
-    for(;i&lt;n;i++)
-    System.out.println(i);// this prints till 5
-    System.out.println(i); // this prints till 6 , cuz i++ , i got incremented but rejected by the condition step ,
-    though it is still a function variable and not a loop variable , the trace is kept by the function and the
-    incremented value is printed
+<pre><code class="language-java code-chunk"> 
+int i=1;
+for(;i&lt;n;i++)
+System.out.println(i);// this prints till 5
+System.out.println(i); // this prints till 6 , cuz i++ , i got incremented but rejected by the condition step ,
+though it is still a function variable and not a loop variable , the trace is kept by the function and the
+incremented value is printed
   </code></pre>
-<pre><code class="language-java">
-    int a=60,b=80;
+<pre><code class="language-java code-chunk">
+int a=60,b=80;
 
-    if(a++ &gt;60 &amp;&amp; b++ &gt; 80 ){
-    System.out.println(&quot;Inside if&quot;);
-    }
-    else{
-    System.out.println(&quot;Inside else&quot;);
-    }
+if(a++ &gt;60 &amp;&amp; b++ &gt; 80 ){
+System.out.println(&quot;Inside if&quot;);
+}
+else{
+System.out.println(&quot;Inside else&quot;);
+}
 
-    System.out.println(&quot;a: &quot;+a+&quot; &quot;+&quot;b: &quot;+b);
+System.out.println(&quot;a: &quot;+a+&quot; &quot;+&quot;b: &quot;+b);
   </code></pre>
 <pre><code>Inside else
     a: 61 b:80
@@ -220,30 +222,31 @@
 <h2>characters</h2>
 <h2>pyramid</h2>
 <h1>Pass by value</h1>
-<pre><code class="language-java">public static void increment(int n){
-    n++
-    }
+<pre><code class="language-java code-chunk">
+public static void increment(int n){
+n++
+}
 
-    // in main
+// in main
 
-    increment(n);
+increment(n);
 
-    // n won&#39;t increment since n&#39;s value is passes and not n itself and hence n&#39;s value is incremented and
-    not n , to be more precise the local varible of the increment function was incremented
+// n won&#39;t increment since n&#39;s value is passes and not n itself and hence n&#39;s value is incremented and
+not n , to be more precise the local varible of the increment function was incremented
   </code></pre>
 <p>The fix to this is by using pointers in C</p>
 <h1>Function Overloading</h1>
-<pre><code class="language-java">
-    public static int sum(int a, int b){
-    return a+b;
-    }
-    public static double sum(int a, int b){// not possible , same parameters are already defined in another function of
-    the same name
-    return a+b;// though if this was the only function make sure to pass int to it and it will return the double
-    }
-    public static int sum(int a){ // works
-    return a;
-    }
+<pre><code class="language-java code-chunk">
+public static int sum(int a, int b){
+return a+b;
+}
+public static double sum(int a, int b){// not possible , same parameters are already defined in another function of
+the same name
+return a+b;// though if this was the only function make sure to pass int to it and it will return the double
+}
+public static int sum(int a){ // works
+return a;
+}
   </code></pre>
 <h1>chunin level [add genin pic at the start of this page] [for chunin add chunin pics] -- mention chunin , jounin ,
   Anbu , S ranked , KAGE , Sanin , WarHeroes [obito-madara-might guy] , unknown potential [sakumo hatake, shisui,

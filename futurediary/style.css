@@ -1,58 +1,13 @@
-*{
-  margin: 10px auto;
-  max-width: 950px;
-}
-a{
-  color: red;
+code, .code-chunk{
+   background-color: grey;
+   padding: 2px;
 }
 
-#blog,.blog,ul,li,ol{
-  font-size: 20px;
-  font-family: monospace;
-  white-space:normal;
-}
-table,td {
-  border: solid black;
-  text-align: center;
-}
-th{
-  border-left: 20px solid black;
-  border-right: 20px solid black;
-}
-td:first-child{
-  border-right: 5px solid black;
-}
-td:nth-child(2){
-  border-left: 5px solid black;
-}
-
-code{
-  font-family: Consolas, "Courier New", Courier, monospace;
-  background-color: #f5f5f5; /* Light gray background like Markdown */
-  margin : 20px 2px;
-  border-radius: 5px;
-  overflow-x: auto; /* Enable horizontal scroll */
-}
-#tmp{
-  font-size: 20px;
-}
-
-blockquote{
-  background-color: hotpink;
-  color: black;
-  font-size: 22px;
-  font-weight: 551;
-  /*font-family:;*/
-}
-
-img{
-  border-radius: 20px;
-}
-
-video{
-  border-radius: 10px;
-}
-
-.red{
-  color: red;
+.code-chunk{
+  display:block;
+  width: 500px;
+  height: 450px;
+  overflow:scroll;
+  scrollbar-width: none;
+  padding-left: 50px;
 }

@@ -24,13 +24,14 @@
   We can then use the app as 
   <code>app.get("/",(req,res)=%gt;{})</code>
   inside which you could actually use 
-  <code>
+  <code class="code-chunk">
    req.params 
    req.query
-  </code>
+  </code class="code-chunk">
   To get those params and query that are given at the end point.
   for ex:
-  <code>app.get("/futurediary/blogs/:monday?mode=dark",(req,res)=&gt;{
+  <code class="code-chunk">
+  app.get("/futurediary/blogs/:monday?mode=dark",(req,res)=&gt;{
    
    console.log("Requested for",req.params);
    consoel.log("Requested with",req.query)
@@ -43,7 +44,7 @@
 
    You can also club various end points like - 
 
-  <code>app.get("/futurediary/blogs/:monday?mode=dark",(req,res)=&gt;{
+  <code class="code-chunk">app.get("/futurediary/blogs/:monday?mode=dark",(req,res)=&gt;{
    
    console.log("Requested for",req.params);
    consoel.log("Requested with",req.query)

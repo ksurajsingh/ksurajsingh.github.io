@@ -3,7 +3,7 @@
 
 <head>
   <title>Algo Complexity</title>
-  <link rel=stylesheet href=style.css>
+  <link rel=stylesheet href=../style.css>
 </head>
 
 <body>
@@ -110,21 +110,21 @@
   <img src="../media/heirarchy.jpg"><br>
   <h3>Code</h3>
   <pre>
-  <code>
-  void bubble sort(int a[],int n){
+  <code class="code-chunk">
+void bubble sort(int a[],int n){
 
-      int pass,i;
+int pass,i;
 
-      for (pass=0;pass &lt; n-1;pass++){
-      for (i=0;i&lt;n-pass-1;i++){
+for (pass=0;pass &lt; n-1;pass++){
+for (i=0;i&lt;n-pass-1;i++){
 
-      if (a[i]&gt;a[i+1])
-        swap(a[i],a[i+1]);
+if (a[i]&gt;a[i+1])
+swap(a[i],a[i+1]);
 
-        }
-      }
+}
+}
 
-  }
+}
   </code>
   </pre>
   The time complexity for bubble sort is :

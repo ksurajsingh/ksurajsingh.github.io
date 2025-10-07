@@ -3,7 +3,7 @@
 
 <head>
   <title>Mem Alloc</title>
-  <link rel=stylesheet href=style.css>
+  <link rel=stylesheet href=../style.css>
 </head>
 
 <body>
@@ -89,419 +89,420 @@
 
   <h2>Code</h2>
   <pre>
-    <code>
+    <code class="code-chunk">
+<a href="./ll.c">download me</a>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
 
-      #include&lt;stdio.h&gt;
-      #include&lt;stdlib.h&gt;
+typedef struct Node{
+int data;
+struct Node *link;
+} NODE ;
 
-      typedef struct Node{
-      int data;
-      struct Node *link;
-      } NODE ;
+NODE *head=NULL;
 
-      NODE *head=NULL;
+void create(){
+// creates a linked list with sinlge node
+// without knowing its length
+head=(NODE*)malloc(sizeof(NODE));
+char ch;
+NODE *curptr,*newnode;
+curptr=head;
+while(1){
+printf("Enter the node data: ");
+scanf("%d",&curptr-&gt;data);
+printf("\nThe given data is: %d",curptr-&gt;data);
+printf("\nDo you want to add one more node?[y/n]: ");
+scanf(" %c",&ch);
+if(ch=='y'){
+newnode=(NODE*)malloc(sizeof(NODE));
+curptr-&gt;link=newnode;
+curptr=newnode;
+}
+else{
+printf("Linked list has been successfully created! ");
+curptr-&gt;link=NULL;
+break;
+}
+}
+}
+void display(){
+// displays the entire linked list
+printf("\nThe elements in the linked list are: ");
+NODE *curptr=head;
+while(curptr!=NULL){
+printf("%d ",curptr-&gt;data);
+curptr=curptr-&gt;link;
+}
+}
+void length(){
+// prints the length of the current list
+printf("\nThe length of the liked list is: ");
+int count=0;
+NODE *curptr=head;
+while(curptr!=NULL){
+curptr=curptr-&gt;link;
+count++;
+}
+printf("%d",count);
 
-      void create(){
-      // creates a linked list with sinlge node
-      // without knowing its length
-      head=(NODE*)malloc(sizeof(NODE));
-      char ch;
-      NODE *curptr,*newnode;
-      curptr=head;
-      while(1){
-      printf("Enter the node data: ");
-      scanf("%d",&curptr-&gt;data);
-      printf("\nThe given data is: %d",curptr-&gt;data);
-      printf("\nDo you want to add one more node?[y/n]: ");
-      scanf(" %c",&ch);
-      if(ch=='y'){
-      newnode=(NODE*)malloc(sizeof(NODE));
-      curptr-&gt;link=newnode;
-      curptr=newnode;
-      }
-      else{
-      printf("Linked list has been successfully created! ");
-      curptr-&gt;link=NULL;
-      break;
-      }
-      }
-      }
-      void display(){
-      // displays the entire linked list
-      printf("\nThe elements in the linked list are: ");
-      NODE *curptr=head;
-      while(curptr!=NULL){
-      printf("%d ",curptr-&gt;data);
-      curptr=curptr-&gt;link;
-      }
-      }
-      void length(){
-      // prints the length of the current list
-      printf("\nThe length of the liked list is: ");
-      int count=0;
-      NODE *curptr=head;
-      while(curptr!=NULL){
-      curptr=curptr-&gt;link;
-      count++;
-      }
-      printf("%d",count);
+}
+void search(){
+// searches a particular item to return its position
+printf("\nEnter the element to search: ");
+int item;
+scanf("%d",&item);
+int pos=0;
+NODE *curptr=head;
+while(curptr-&gt;data!=item){
+curptr=curptr-&gt;link;
+pos++;
+}
+if(curptr-&gt;data==item){
+printf("\nElement %d found at position %d",item,pos+1);
+return;
+}
+else{
+printf("\n Element not found!");
+}
+}
+void insBegin(){
+// inserts the given item to the begining of the linked list
+NODE *curptr=head;
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+printf("\nEnter the element you want to insert at the begining: ");
+int item;
+scanf("%d",&item);
+newnode-&gt;data=item;
+newnode-&gt;link=curptr;
+head=newnode;
+printf("\n updated list: \n");
+display();
+}
+void insEnd(){
+// inserts the given element at the end of the linked list
+NODE *curptr=head;
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+printf("\nEnter the element you want to insert at the end: ");
+int item;
+scanf("%d",&item);
+newnode-&gt;data=item;
+while(curptr-&gt;link!=NULL){
+curptr=curptr-&gt;link;
+}
+curptr-&gt;link=newnode;
+newnode-&gt;link=NULL;
+printf("\n Updated list: ");
+display();
 
-      }
-      void search(){
-      // searches a particular item to return its position
-      printf("\nEnter the element to search: ");
-      int item;
-      scanf("%d",&item);
-      int pos=0;
-      NODE *curptr=head;
-      while(curptr-&gt;data!=item){
-      curptr=curptr-&gt;link;
-      pos++;
-      }
-      if(curptr-&gt;data==item){
-      printf("\nElement %d found at position %d",item,pos+1);
-      return;
-      }
-      else{
-      printf("\n Element not found!");
-      }
-      }
-      void insBegin(){
-      // inserts the given item to the begining of the linked list
-      NODE *curptr=head;
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      printf("\nEnter the element you want to insert at the begining: ");
-      int item;
-      scanf("%d",&item);
-      newnode-&gt;data=item;
-      newnode-&gt;link=curptr;
-      head=newnode;
-      printf("\n updated list: \n");
-      display();
-      }
-      void insEnd(){
-      // inserts the given element at the end of the linked list
-      NODE *curptr=head;
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      printf("\nEnter the element you want to insert at the end: ");
-      int item;
-      scanf("%d",&item);
-      newnode-&gt;data=item;
-      while(curptr-&gt;link!=NULL){
-      curptr=curptr-&gt;link;
-      }
-      curptr-&gt;link=newnode;
-      newnode-&gt;link=NULL;
-      printf("\n Updated list: ");
-      display();
+}
+void insPos(){
+// inserts the given element at the given position
+printf("\n Enter the position to insert the element at: ");
+int pos;
+scanf("%d",&pos);
+if(pos==1){
+insBegin();
+return;
+}
+NODE *curptr=head;
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+for(int i=0;i&lt;pos-2;i++){
+curptr=curptr-&gt;link;
+}
+printf("\nEnter the element you want to insert at the end: ");
+int item;
+scanf("%d",&item);
+newnode-&gt;data=item;
+newnode-&gt;link=curptr-&gt;link;
+curptr-&gt;link=newnode;
+printf("\nUpdates list is: ");
+display();
+return;
+}
+void insSorted(){
+// check this at the end , once everything else works
+}
+void delBegin(){
+// delete an element from the begining of the linked list
+NODE *curptr;
+curptr=head;// I explicitly did this just to bring it to your notice that a pointer when declared as
+// &lt;Datatype&gt; *ptr=var; is same as
+// &lt;datatype&gt; *ptr;
+// ptr=var;
+// since in both places a address vfalue that id of the type &lt;datatype&gt; * in passed and is stored in the
+// ptr which is of the type &lt;datatype&gt; *
+curptr=curptr-&gt;link;
+head=curptr;
+printf("\nAfter deleting an element from begining \nThe updates list: ");
+display();
 
-      }
-      void insPos(){
-      // inserts the given element at the given position
-      printf("\n Enter the position to insert the element at: ");
-      int pos;
-      scanf("%d",&pos);
-      if(pos==1){
-      insBegin();
-      return;
-      }
-      NODE *curptr=head;
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      for(int i=0;i&lt;pos-2;i++){
-      curptr=curptr-&gt;link;
-      }
-      printf("\nEnter the element you want to insert at the end: ");
-      int item;
-      scanf("%d",&item);
-      newnode-&gt;data=item;
-      newnode-&gt;link=curptr-&gt;link;
-      curptr-&gt;link=newnode;
-      printf("\nUpdates list is: ");
-      display();
-      return;
-      }
-      void insSorted(){
-      // check this at the end , once everything else works
-      }
-      void delBegin(){
-      // delete an element from the begining of the linked list
-      NODE *curptr;
-      curptr=head;// I explicitly did this just to bring it to your notice that a pointer when declared as
-      // &lt;Datatype&gt; *ptr=var; is same as
-      // &lt;datatype&gt; *ptr;
-      // ptr=var;
-      // since in both places a address vfalue that id of the type &lt;datatype&gt; * in passed and is stored in the
-      // ptr which is of the type &lt;datatype&gt; *
-      curptr=curptr-&gt;link;
-      head=curptr;
-      printf("\nAfter deleting an element from begining \nThe updates list: ");
-      display();
+}
+void delEnd(){
+// delete an element from the end of the linked list
+NODE *curptr=head;
+while(curptr-&gt;link-&gt;link!=NULL){
+curptr=curptr-&gt;link;
+}
+curptr-&gt;link=NULL;
+printf("\nAfter deleting an element from end\nThe updates list: ");
+display();
+}
+void delItem(){
+// delete an element from the given position
+printf("\nEnter the element to delete: ");
+int item;
+scanf("%d",&item);
+int pos=0;
+NODE *curptr=head;
+if(curptr-&gt;data==item){
+delBegin();
+return;
+}
+while(curptr-&gt;link-&gt;data!=item){
+curptr=curptr-&gt;link;
+pos++;
+}
+if(curptr-&gt;link-&gt;data==item){
+printf("\nElement %d found at position %d",item,pos+2);
+}
+else{
+printf("\n Element not found!");
+return;
+}
+curptr-&gt;link=curptr-&gt;link-&gt;link;
+printf("\nAfter deleting an element from %d\nThe updates list: ",pos+2);
+display();
 
-      }
-      void delEnd(){
-      // delete an element from the end of the linked list
-      NODE *curptr=head;
-      while(curptr-&gt;link-&gt;link!=NULL){
-      curptr=curptr-&gt;link;
-      }
-      curptr-&gt;link=NULL;
-      printf("\nAfter deleting an element from end\nThe updates list: ");
-      display();
-      }
-      void delItem(){
-      // delete an element from the given position
-      printf("\nEnter the element to delete: ");
-      int item;
-      scanf("%d",&item);
-      int pos=0;
-      NODE *curptr=head;
-      if(curptr-&gt;data==item){
-      delBegin();
-      return;
-      }
-      while(curptr-&gt;link-&gt;data!=item){
-      curptr=curptr-&gt;link;
-      pos++;
-      }
-      if(curptr-&gt;link-&gt;data==item){
-      printf("\nElement %d found at position %d",item,pos+2);
-      }
-      else{
-      printf("\n Element not found!");
-      return;
-      }
-      curptr-&gt;link=curptr-&gt;link-&gt;link;
-      printf("\nAfter deleting an element from %d\nThe updates list: ",pos+2);
-      display();
+}
+void delPos(){
+// delete the given item from linked list
+printf("\nEnter to position to delete the element from: ");
+int pos;
+scanf("%d",&pos);
+NODE *curptr=head;
+if(pos==1){
+delBegin();
+return;
+}
+for(int i=0;i&lt;pos-2;i++){
+curptr=curptr-&gt;link;
+}
+printf("\nElement at pos %d is: %d\nDeleting it! ",pos,curptr-&gt;link-&gt;data);
+curptr=curptr-&gt;link-&gt;link;
 
-      }
-      void delPos(){
-      // delete the given item from linked list
-      printf("\nEnter to position to delete the element from: ");
-      int pos;
-      scanf("%d",&pos);
-      NODE *curptr=head;
-      if(pos==1){
-      delBegin();
-      return;
-      }
-      for(int i=0;i&lt;pos-2;i++){
-      curptr=curptr-&gt;link;
-      }
-      printf("\nElement at pos %d is: %d\nDeleting it! ",pos,curptr-&gt;link-&gt;data);
-      curptr=curptr-&gt;link-&gt;link;
+printf("\nAfter deleting an element from pos %d\nThe updates list: ",pos);
+display();
 
-      printf("\nAfter deleting an element from pos %d\nThe updates list: ",pos);
-      display();
-
-      }
+}
 
 
-      int main(){
-      create();
-      display();
-      length();
-      search();
-      insBegin();
-      insEnd();
-      insPos();
-      // insSorted();
-      delBegin();
-      delEnd();
-      delPos();
-      delItem();
+int main(){
+create();
+display();
+length();
+search();
+insBegin();
+insEnd();
+insPos();
+// insSorted();
+delBegin();
+delEnd();
+delPos();
+delItem();
 
-      return 0;
-      }
+return 0;
+}
     </code>
   </pre>
   <br><br><br>
   <h2>Code for Circular Linked List</h2>
-  <pre><code>
+  <pre><code class="code-chunk">
 
-      #include&lt;stdio.h&gt;
-      #include&lt;stdlib.h&gt;
+<a href="./cll.c">download me</a>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
 
-      typedef struct node{
-      int data;
-      struct node *link;
-      } NODE;
+typedef struct node{
+int data;
+struct node *link;
+} NODE;
 
-      NODE *last=NULL;
-
-
-      void display(){
-      NODE *curptr=last-&gt;link;
-      printf("\nUpdated list: ");
-      while(curptr!=last){
-      printf("%d ",curptr-&gt;data);
-      curptr=curptr-&gt;link;
-      }
-      printf("%d",curptr-&gt;data);
-      return;
-      }
-
-      void create(){
-      char ch;
-      int item;
-      do{
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      printf("\nEnter the data: ");
-      scanf("%d",&newnode-&gt;data);
-      if(last==NULL){
-      last=newnode;
-      last-&gt;link=newnode;
-      }else{
-      newnode-&gt;link=last-&gt;link;
-      last-&gt;link=newnode;
-      last=newnode;
-      }
-      printf("\nDo you want to continue?[y/n]: ");
-      scanf(" %c",&ch);
-      }while(ch=='y');
-      printf("\nCircular list successfully created: ");
-      display();
-      return;
-      }
-
-      int length(){
-      NODE *curptr=last-&gt;link;
-      int len=1;
-      while(curptr!=last){
-      len++;
-      curptr=curptr-&gt;link;
-      }
-      return len;
-      }
-
-      void insert(){
-
-      void ins_beg(){
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      NODE *curptr=last;
-      printf("\nEnter the element to insert in the begining: ");
-      // int item;
-      scanf("%d",&newnode-&gt;data);
-      newnode-&gt;link=curptr-&gt;link;
-      curptr-&gt;link=newnode;
-      display();
-      return;
-      }
+NODE *last=NULL;
 
 
-      void ins_end(){
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      NODE *curptr=last;
-      printf("\nEnter the element to insert in the end: ");
-      // int item;
-      scanf("%d",&newnode-&gt;data);
-      newnode-&gt;link=curptr-&gt;link;
-      curptr-&gt;link=newnode;
-      last=newnode;
-      display();
-      return;
-      }
-      void ins_pos(){
-      printf("\nEnter the position to insert the element at: ");
-      int pos;
-      scanf("%d",&pos);
-      if(pos==1){
-      ins_beg();
-      return;
-      }
-      if(pos==length()+1){
-      ins_end();
-      return;
-      }
-      NODE *curptr=last-&gt;link;
-      for(int i=0;i&lt;pos-2;i++){
-      curptr=curptr-&gt;link;
-      }
-      printf("\nEnter the data to insert at %d: ",pos);
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      scanf("%d",&newnode-&gt;data);
-      newnode-&gt;link=curptr-&gt;link;
-      curptr-&gt;link=newnode;
-      display();
+void display(){
+NODE *curptr=last-&gt;link;
+printf("\nUpdated list: ");
+while(curptr!=last){
+printf("%d ",curptr-&gt;data);
+curptr=curptr-&gt;link;
+}
+printf("%d",curptr-&gt;data);
+return;
+}
 
-      }
-      ins_beg();
-      ins_end();
-      ins_pos();
-      }
+void create(){
+char ch;
+int item;
+do{
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+printf("\nEnter the data: ");
+scanf("%d",&newnode-&gt;data);
+if(last==NULL){
+last=newnode;
+last-&gt;link=newnode;
+}else{
+newnode-&gt;link=last-&gt;link;
+last-&gt;link=newnode;
+last=newnode;
+}
+printf("\nDo you want to continue?[y/n]: ");
+scanf(" %c",&ampch);
+}while(ch=='y');
+printf("\nCircular list successfully created: ");
+display();
+return;
+}
 
-      void delete(){
+int length(){
+NODE *curptr=last-&gt;link;
+int len=1;
+while(curptr!=last){
+len++;
+curptr=curptr-&gt;link;
+}
+return len;
+}
 
-      // NODE *curptr=last-&gt;link;
-      void del_beg(){
-      printf("\nDeleting an element from the begining . . .");
-      last-&gt;link=last-&gt;link-&gt;link;
-      display();
-      }
-      void del_end(){
-      printf("\nDeleting an element from the end . . . ");
-      NODE *curptr=last-&gt;link;
-      while(curptr-&gt;link!=last){
-      curptr=curptr-&gt;link;
-      }
-      curptr-&gt;link=last-&gt;link;
-      last=curptr;
-      display();
-      }
-      void del_pos(){
-      printf("\nEnter the position to delete an element from: ");
-      NODE *curptr=last-&gt;link;
-      int pos;
-      scanf("%d",&pos);
-      if(pos==1){
-      del_beg();
-      return;
-      }
-      if(pos==(length())){
-      del_end();
-      return;
-      }
-      for(int i=0;i&lt;pos-2;i++){
-      curptr=curptr-&gt;link;
-      }
-      curptr-&gt;link=curptr-&gt;link-&gt;link;
-      display();
-      }
-      void del_item(){
-      printf("\nEnter the data to delete: ");
-      int item;
-      scanf("%d",&item);
-      NODE *curptr=last-&gt;link;
-      while(curptr-&gt;link-&gt;data!=item){
-      curptr=curptr-&gt;link;
-      }
-      if(curptr-&gt;link==last){
-      curptr-&gt;link=curptr-&gt;link-&gt;link;
-      last=curptr;
-      }
-      else{
-      curptr-&gt;link=curptr-&gt;link-&gt;link;
-      }
-      display();
-      return;
-      }
-      del_beg();
-      del_end();
-      del_pos();
-      del_item();
-      return;
+void insert(){
 
-      }
+void ins_beg(){
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+NODE *curptr=last;
+printf("\nEnter the element to insert in the begining: ");
+// int item;
+scanf("%d",&newnode-&gt;data);
+newnode-&gt;link=curptr-&gt;link;
+curptr-&gt;link=newnode;
+display();
+return;
+}
 
 
+void ins_end(){
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+NODE *curptr=last;
+printf("\nEnter the element to insert in the end: ");
+// int item;
+scanf("%d",&newnode-&gt;data);
+newnode-&gt;link=curptr-&gt;link;
+curptr-&gt;link=newnode;
+last=newnode;
+display();
+return;
+}
+void ins_pos(){
+printf("\nEnter the position to insert the element at: ");
+int pos;
+scanf("%d",&pos);
+if(pos==1){
+ins_beg();
+return;
+}
+if(pos==length()+1){
+ins_end();
+return;
+}
+NODE *curptr=last-&gt;link;
+for(int i=0;i&lt;pos-2;i++){
+curptr=curptr-&gt;link;
+}
+printf("\nEnter the data to insert at %d: ",pos);
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+scanf("%d",&newnode-&gt;data);
+newnode-&gt;link=curptr-&gt;link;
+curptr-&gt;link=newnode;
+display();
 
-      int main(){
-      create();
-      printf("\nThe length is %d",length());
-      // display();
-      insert();
-      delete();
-      }
+}
+ins_beg();
+ins_end();
+ins_pos();
+}
+
+void delete(){
+
+// NODE *curptr=last-&gt;link;
+void del_beg(){
+printf("\nDeleting an element from the begining . . .");
+last-&gt;link=last-&gt;link-&gt;link;
+display();
+}
+void del_end(){
+printf("\nDeleting an element from the end . . . ");
+NODE *curptr=last-&gt;link;
+while(curptr-&gt;link!=last){
+curptr=curptr-&gt;link;
+}
+curptr-&gt;link=last-&gt;link;
+last=curptr;
+display();
+}
+void del_pos(){
+printf("\nEnter the position to delete an element from: ");
+NODE *curptr=last-&gt;link;
+int pos;
+scanf("%d",&pos);
+if(pos==1){
+del_beg();
+return;
+}
+if(pos==(length())){
+del_end();
+return;
+}
+for(int i=0;i&lt;pos-2;i++){
+curptr=curptr-&gt;link;
+}
+curptr-&gt;link=curptr-&gt;link-&gt;link;
+display();
+}
+void del_item(){
+printf("\nEnter the data to delete: ");
+int item;
+scanf("%d",&item);
+NODE *curptr=last-&gt;link;
+while(curptr-&gt;link-&gt;data!=item){
+curptr=curptr-&gt;link;
+}
+if(curptr-&gt;link==last){
+curptr-&gt;link=curptr-&gt;link-&gt;link;
+last=curptr;
+}
+else{
+curptr-&gt;link=curptr-&gt;link-&gt;link;
+}
+display();
+return;
+}
+del_beg();
+del_end();
+del_pos();
+del_item();
+return;
+
+}
+
+
+
+int main(){
+create();
+printf("\nThe length is %d",length());
+// display();
+insert();
+delete();
+}
     </code></pre>
   <h3>Advantages of Circular Linked list</h3>
   <br>
@@ -530,177 +531,178 @@
 
   <h3>Code for singly Doubly Linked List</h3>
   <pre>
-    <code>
+    <code class="code-chunk">
 
-      #include&lt;stdio.h&gt;
-      #include&lt;stdlib.h&gt;
+<a href="./dll.c">download me</a>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
 
-      typedef struct node{
-      int data;
-      struct node *prev;
-      struct node *next;
-      } NODE;
+typedef struct node{
+int data;
+struct node *prev;
+struct node *next;
+} NODE;
 
-      // linked lists are linear ds, linear ds are the ones that follow a **SEQUENCE** , where as
-      // non linear ds do no need a *SEQUENCE* predefined, they can have their own Sequence defined.
+// linked lists are linear ds, linear ds are the ones that follow a **SEQUENCE** , where as
+// non linear ds do no need a *SEQUENCE* predefined, they can have their own Sequence defined.
 
-      NODE *head=NULL;
+NODE *head=NULL;
 
-      void display(){
-      NODE *curptr=head;
-      printf("\nUpdated list: ");
-      while(curptr!=NULL){
-      printf("%d ",curptr-&gt;data);
-      curptr=curptr-&gt;next;
-      }
-      return;
-      }
+void display(){
+NODE *curptr=head;
+printf("\nUpdated list: ");
+while(curptr!=NULL){
+printf("%d ",curptr-&gt;data);
+curptr=curptr-&gt;next;
+}
+return;
+}
 
-      int length(){
-      NODE *curptr=head;
-      int count=0;
-      while(curptr!=NULL){
-      curptr=curptr-&gt;next;
-      count++;
-      }
-      return count;
-      }
+int length(){
+NODE *curptr=head;
+int count=0;
+while(curptr!=NULL){
+curptr=curptr-&gt;next;
+count++;
+}
+return count;
+}
 
 
 
-      void insert(){
-      void ins_beg(){
-      NODE *curptr=head;
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      printf("\nEnter the element you want to insert at the begining: ");
-      scanf("%d",&newnode-&gt;data);
-      newnode-&gt;prev=NULL;
-      newnode-&gt;next=curptr;
-      curptr-&gt;prev=newnode;
-      curptr=newnode;
-      head=curptr;
-      display();
-      }
-      void ins_end(){
-      NODE *curptr=head;
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      printf("\nEnter the element you want to insert at the end: ");
-      scanf("%d",&newnode-&gt;data);
-      while(curptr-&gt;next!=NULL){
-      curptr=curptr-&gt;next;
-      }
-      curptr-&gt;next=newnode;
-      newnode-&gt;prev=curptr;
-      newnode-&gt;next=NULL;
-      display();
-      }
-      void ins_pos(){
-      NODE *curptr=head;
-      printf("\nEnter the position you want to insert element at: ");
-      int pos;
-      scanf("%d",&pos);
-      if(pos==1){
-      ins_beg();
-      return;
-      }
-      if(pos==length()+1){
-      ins_end();
-      return;
-      }
-      for(int i=0;i&lt;pos-1;i++){
-      curptr=curptr-&gt;next;
-      }
-      printf("\nEnter the element you want to insert: ");
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      scanf("%d",&newnode-&gt;data);
-      newnode-&gt;next=curptr;
-      newnode-&gt;prev=curptr-&gt;prev;
-      curptr-&gt;prev-&gt;next=newnode;
-      curptr-&gt;prev=newnode;
-      display();
-      }
-      ins_beg();
-      ins_end();
-      ins_pos();
-      return ;
-      }
+void insert(){
+void ins_beg(){
+NODE *curptr=head;
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+printf("\nEnter the element you want to insert at the begining: ");
+scanf("%d",&newnode-&gt;data);
+newnode-&gt;prev=NULL;
+newnode-&gt;next=curptr;
+curptr-&gt;prev=newnode;
+curptr=newnode;
+head=curptr;
+display();
+}
+void ins_end(){
+NODE *curptr=head;
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+printf("\nEnter the element you want to insert at the end: ");
+scanf("%d",&newnode-&gt;data);
+while(curptr-&gt;next!=NULL){
+curptr=curptr-&gt;next;
+}
+curptr-&gt;next=newnode;
+newnode-&gt;prev=curptr;
+newnode-&gt;next=NULL;
+display();
+}
+void ins_pos(){
+NODE *curptr=head;
+printf("\nEnter the position you want to insert element at: ");
+int pos;
+scanf("%d",&pos);
+if(pos==1){
+ins_beg();
+return;
+}
+if(pos==length()+1){
+ins_end();
+return;
+}
+for(int i=0;i&lt;pos-1;i++){
+curptr=curptr-&gt;next;
+}
+printf("\nEnter the element you want to insert: ");
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+scanf("%d",&newnode-&gt;data);
+newnode-&gt;next=curptr;
+newnode-&gt;prev=curptr-&gt;prev;
+curptr-&gt;prev-&gt;next=newnode;
+curptr-&gt;prev=newnode;
+display();
+}
+ins_beg();
+ins_end();
+ins_pos();
+return ;
+}
 
-      void delete(){
-      void del_beg(){
-      NODE *curptr=head;
-      printf("\nDeleting an element from the begining . . .");
-      head=curptr-&gt;next;
-      display();
-      return;
-      }
-      void del_end(){
-      NODE *curptr=head;
-      printf("\nDeleting an element from the ending. . .");
-      while(curptr-&gt;next!=NULL){
-      curptr=curptr-&gt;next;
-      }
-      curptr-&gt;prev-&gt;next=NULL;
-      display();
-      return;
-      }
-      void del_pos(){
-      NODE *curptr=head;
-      printf("\nEnter the position to delete the element from : ");
-      int pos;
-      scanf("%d",&pos);
-      if(pos==1){
-      del_beg();
-      return;
-      }
-      if(pos==length()){
-      printf("test");
-      del_end();
-      return;
-      }
-      for(int i=0;i&lt;pos-1;i++){
-      curptr=curptr-&gt;next;
-      }
-      curptr-&gt;prev-&gt;next=curptr-&gt;next;
-      display();
-      }
-      del_beg();
-      del_end();
-      del_pos();
-      return;
-      }
+void delete(){
+void del_beg(){
+NODE *curptr=head;
+printf("\nDeleting an element from the begining . . .");
+head=curptr-&gt;next;
+display();
+return;
+}
+void del_end(){
+NODE *curptr=head;
+printf("\nDeleting an element from the ending. . .");
+while(curptr-&gt;next!=NULL){
+curptr=curptr-&gt;next;
+}
+curptr-&gt;prev-&gt;next=NULL;
+display();
+return;
+}
+void del_pos(){
+NODE *curptr=head;
+printf("\nEnter the position to delete the element from : ");
+int pos;
+scanf("%d",&pos);
+if(pos==1){
+del_beg();
+return;
+}
+if(pos==length()){
+printf("test");
+del_end();
+return;
+}
+for(int i=0;i&lt;pos-1;i++){
+curptr=curptr-&gt;next;
+}
+curptr-&gt;prev-&gt;next=curptr-&gt;next;
+display();
+}
+del_beg();
+del_end();
+del_pos();
+return;
+}
 
-      void create(){
-      NODE *curptr=head;
-      char ch;
+void create(){
+NODE *curptr=head;
+char ch;
 
-      do {
-      NODE *newnode=(NODE*)malloc(sizeof(NODE));
-      printf("\nEnter the data you want to add: ");
-      scanf("%d",&newnode-&gt;data);
-      if(head==NULL){
-      newnode-&gt;prev=NULL;
-      newnode-&gt;next=NULL;
-      curptr=newnode;
-      head=curptr;
-      }
-      else{
-      curptr-&gt;next=newnode;
-      newnode-&gt;prev=curptr;
-      newnode-&gt;next=NULL;
-      curptr=newnode;
-      }
-      printf("\nDo you want to add more?[y/n]: ");
-      scanf(" %c",&ch);
-      } while (ch=='y');
-      printf("\nDoubly linked list successfully created! ");
-      display();
-      }
+do {
+NODE *newnode=(NODE*)malloc(sizeof(NODE));
+printf("\nEnter the data you want to add: ");
+scanf("%d",&newnode-&gt;data);
+if(head==NULL){
+newnode-&gt;prev=NULL;
+newnode-&gt;next=NULL;
+curptr=newnode;
+head=curptr;
+}
+else{
+curptr-&gt;next=newnode;
+newnode-&gt;prev=curptr;
+newnode-&gt;next=NULL;
+curptr=newnode;
+}
+printf("\nDo you want to add more?[y/n]: ");
+scanf(" %c",&ch);
+} while (ch=='y');
+printf("\nDoubly linked list successfully created! ");
+display();
+}
 
-      int main(){
-      create();
-      insert();
-      delete();
-      }
+int main(){
+create();
+insert();
+delete();
+}
     </code>
   </pre>
 
@@ -784,13 +786,13 @@
   </ol>
 
   <pre>
-    <code>
+    <code class="code-chunk">
 
-      struct Node {
-      int data;
-      struct Node *next;
-      struct Node *child; // pointer to another list
-      };
+struct Node {
+int data;
+struct Node *next;
+struct Node *child; // pointer to another list
+};
     </code>
   </pre>
 

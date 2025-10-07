@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Linked-Lists</title>
-  <link rel=stylesheet href=style.css>
+  <link rel=stylesheet href=../style.css>
 </head>
 <body>
   <h1>Introduction</h1>
@@ -53,20 +53,20 @@
 
 
   <h2>Linked List in memory</h2>
-  <ol>
-    <li>Static representation using array
-      <ol>
-        <li>Equal length for both the information and the link fields</li>
-        <li>Stored parallelly in 2 separate arrays</li>
-      </ol>
-    </li>
-    <li>Dynamic representation using free pool of storage
-      <ol>
+  <dl>
+    <dt>Static representation using array</dt>
+        <dd>
+            <li>Equal length for both the information and the link fields</li>
+            <li>Stored parallelly in 2 separate arrays</li>
+        </dd>
+
+    <dt>Dynamic representation using free pool of storage</dt>
+      <dd>
         <li>Memory is allocated randomly , no contiguous memory is allocated</li>
         <li>You don't have to specify the exact space of the list , since it allocates memory in the run time</li>
         <li>code: 
         <pre>
-        <code>
+        <code class="code-chunk">
         struct node 
         {
         int info;
@@ -77,9 +77,9 @@
       Here each element takes up enough space that is described by its data type [ not the same way in union ].
         </li>
         <li>The link variable here is called as a <code>self - referential pointer </code> which stores to location to a data structure of the same type </li>
-      </ol>
-    </li>
-  </ol>
+      </dd>
+
+  </dl>
   <br><br><br>
   <h2>Types of Linked Lists</h2>
   <ol>
