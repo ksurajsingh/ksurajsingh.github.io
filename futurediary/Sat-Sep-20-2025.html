@@ -26,7 +26,7 @@
 
       I came across <code>GIT_COMMITTER_DATE</code>.
       Which represents when the commit was actually made.
-      When you use <code>--date</code> it updates the date which represents originally creation.
+      When you use <code>--date</code> it updates the date which represents originally creation. [Author date]
 
       Now this also helped me understand more on - "how important environment variables are".
       So its is obviously not necessary to use a System which has the files that you are committing right.
@@ -54,6 +54,12 @@
 
       The fact that I was able to make a commit but its <code>COMMIT_DATE</code> preceds its author date, itself is quite counter-intuitive.
       Which is what I see as a hack. A pretty small one, but surely one.
+
+      <p style="color:red; font-weight:bold">NOTE: This doesn't greenish the contribution graph as the contribution graph <br> 
+      considers the <mark>author date</mark> and not the <mark>commit date</mark>. <br>
+      So use <code>--date</code> flag and change the <mark>Author date</mark> to actually touch grass  <br>
+      </p>
+      More info about this <a href="https://youtu.be/wl6RG8SWrPI?si=lZ0cvvu74JnVYP62">here</a>
 
       <div class="blue-text"> [ Now my graph can look greener without having wait even while automation ] </div>
       <!-- <video src="./futurediarymedia/git_committer.mkv" controls> </video> -->
