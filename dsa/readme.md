@@ -34,6 +34,13 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - [ ] Maximum sum increasing subsequence 
 - [ ] check the 2 hard solved 
 - [ ] solve this in O(1) https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i/ [ check constraints - automate by replacing for loops]
+- [ ] understand these 
+  - [ ] https://leetcode.com/problems/sum-of-all-subset-xor-totals/description/
+  - [ ] https://leetcode.com/problems/timeout-cancellation/
+- [ ] solve this 
+  - [ ] https://leetcode.com/problems/timeout-cancellation/
+  - [ ] sort by acceptance in descending order and difficulty easy - solve 2-4 problems
+  - [ ] problem number 2824 in optimal approach
 
 
 
