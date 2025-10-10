@@ -1,5 +1,8 @@
 # TODO 
 
+- [ ] Coding Ninja
+- [ ] Make hardlinks to what field you study with this repo[site-repo] so you can actually work in those dirs and later push code from here onto site.
+- [ ] along with all the field let there be `site` as well since rn it is IN the `fsd` directory.
 - [ ] find the spanning tree in a graph/tree [whatever] and output number of spanning trees. 
 - [ ] given an unsorted array find the minimum number of swaps required to swap so that all the digits have its [value+1] digit to its adjacent side 
 for ex: [8,1,7,2,4,5,6,3]
@@ -41,6 +44,13 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
   - [ ] https://leetcode.com/problems/timeout-cancellation/
   - [ ] sort by acceptance in descending order and difficulty easy - solve 2-4 problems
   - [ ] problem number 2824 in optimal approach
+- [ ] https://github.com/girliemac/a-picture-is-worth-a-1000-words/tree/main/algorithms
+- [ ] Striver 
+- [ ] https://github.com/williamfiset/Algorithms
+- [ ] Neetcode
+- [ ] https://roadmap.sh/datastructures-and-algorithms
+- [ ] Final 450
+- [ ] Coding Ninja book
 
 
 
