@@ -105,6 +105,7 @@ Contains Frequent updates
     - [ ] https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/High_Performance_Computing_%28Severance%29/03%3A_Programming_and_Tuning_Software/3.04%3A_Loop_Optimizations?utm_source=chatgpt.com
 
 ## Socials [merge v0.1.3]
+- [ ] add buymeacoffee link  
 - [ ] social media pfp design + hover effect  
 - [ ] socials - wasap, telegram , instagram , x, github, linkedin , webstie
 - [ ] social media logos on my logo -- as my profile
@@ -165,6 +166,7 @@ Modify the following to the dev phases / stages
 
 ## UX/UI                                    [ v0.1.3 ]
 - [ ] most beautiful and elegant linktree[s]
+- [ ] Stylise `P.S` so that its looks signature type
 - [ ] few features to update the site where you could see my socials
 - [ ] check for icons and stuff that are taken and mention their names in credits [ I think socials did that as well ]
 - [ ] Dark mode [ship this ASAP in study material section]
