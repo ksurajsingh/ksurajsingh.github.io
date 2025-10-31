@@ -34,6 +34,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
   - [ ] max sum  
   - [ ] min sum  
 - [ ] Longest Increasing Subsequence 
+- [ ] manachers algorithm
 - [ ] Maximum sum increasing subsequence 
 - [ ] check the 2 hard solved 
 - [ ] solve this in O(1) https://leetcode.com/problems/final-array-state-after-k-multiplication-operations-i/ [ check constraints - automate by replacing for loops]
@@ -44,6 +45,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
   - [ ] https://leetcode.com/problems/timeout-cancellation/
   - [ ] sort by acceptance in descending order and difficulty easy - solve 2-4 problems
   - [ ] problem number 2824 in optimal approach
+  - [ ] use optimal appraoch algos for https://leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-word/description/
 - [ ] https://github.com/girliemac/a-picture-is-worth-a-1000-words/tree/main/algorithms
 - [ ] Striver 
 - [ ] https://github.com/williamfiset/Algorithms
