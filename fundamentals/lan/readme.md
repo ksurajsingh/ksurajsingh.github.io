@@ -1,7 +1,8 @@
 # TODO 
 
 - [ ] add index in java
-
+- [ ] how are switch cases faster ?
+ 
 ## Java 
 - [ ] All Data types  
 - [ ] All builin methods  
