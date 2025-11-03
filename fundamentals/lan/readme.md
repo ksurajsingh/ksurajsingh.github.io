@@ -10,6 +10,7 @@
 
 # C
 - [ ] zero to hero - lowleveltv 
+- [ ] why is goto even used
 - [ ] pointer 
 - [ ] Checkout 
   - [ ] https://youtu.be/AKJhThyTmQw
