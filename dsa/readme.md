@@ -49,6 +49,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
   - [ ] https://leetcode.com/problems/sum-of-all-subset-xor-totals/description/
   - [ ] https://leetcode.com/problems/timeout-cancellation/
 - [ ] solve this 
+  - [ ] learn knapsack before solving this https://leetcode.com/problems/maximum-profit-from-trading-stocks-with-discounts/
   - [ ] https://leetcode.com/problems/timeout-cancellation/
   - [ ] sort by acceptance in descending order and difficulty easy - solve 2-4 problems
   - [ ] problem number 2824 in optimal approach
