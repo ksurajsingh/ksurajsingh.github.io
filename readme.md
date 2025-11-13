@@ -105,6 +105,7 @@ Contains Frequent updates
     - [ ] https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/High_Performance_Computing_%28Severance%29/03%3A_Programming_and_Tuning_Software/3.04%3A_Loop_Optimizations?utm_source=chatgpt.com
 
 ## Socials [merge v0.1.3]
+- [ ] add site link on insta
 - [ ] add buymeacoffee link  
 - [ ] social media pfp design + hover effect  
 - [ ] socials - wasap, telegram , instagram , x, github, linkedin , webstie
