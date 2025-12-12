@@ -118,6 +118,7 @@ Contains Frequent updates
 - [ ] manga DB blog + EL presentation blog
 - [ ] transport all sauce from bottom to top
 - [ ] unnamed scopes exits in c 
+- [ ] add promotions - promoting those pages / posts ] sathwik lappy compare 
 in js you need single quotes for variables prototyping [ palceholder ] | in bash double quotes - doing other vice will ignore the placeholder and just read it as a string in both languages 
 you cannot have a same name for a function and a variable in common languages.
 - [ ] add image in the cards 
@@ -205,6 +206,9 @@ Modify the following to the dev phases / stages
 
 ## Paste Bin
 - [ ] paste bin
+
+## Gallery 
+- [ ] gallery
 
 # Personal info? 
 - [ ] levelup like a game character add stats (requies extreme mathematical skills)
