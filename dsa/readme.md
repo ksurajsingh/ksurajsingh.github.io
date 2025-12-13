@@ -23,6 +23,7 @@ for ex: [8,1,7,2,4,5,6,3]
 https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - [ ] Check the previous codes and codes from 3-4sems
 - [ ] invert binary tree
+- [ ] study DSU and check 3607
 - [ ] subarray  
   - [ ] all combinations   
   - [ ] sum  
@@ -34,6 +35,12 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
   - [ ] max sum  
   - [ ] min sum  
 - [ ] Longest Increasing Subsequence 
+- [ ] counting sort + sorting
+- [ ] tuf slidign window in O(n) and not O(2n)
+- [ ] learn prefixed then learn 
+        3381. Maximum Subarray Sum With Length Divisible by K
+        2435. Paths in Matrix Whose Sum Is Divisible by K
+        1590. Make Sum Divisible by P
 - [ ] manachers algorithm
 - [ ] Maximum sum increasing subsequence 
 - [ ] check the 2 hard solved 
@@ -52,6 +59,8 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - [ ] Neetcode
 - [ ] https://roadmap.sh/datastructures-and-algorithms
 - [ ] Final 450
+- [ ] neetcode 150 
+- [ ] neetcode blind 75 - https://www.youtube.com/playlist?list=PLot-Xpze53ldVwtstag2TL4HQhAnC8ATf
 - [ ] Coding Ninja book
 
 
