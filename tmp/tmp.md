@@ -37,3 +37,10 @@ graph LR
     style B fill:#aaf,stroke:#333,stroke-width:2px
     style H fill:#aaf,stroke:#333,stroke-width:2px
 ```
+
+These are some beautiful things you k 
+
+
+https://youtube.com/shorts/8vHKWRtpbJU
+https://youtube.com/shorts/5nosjSSf3io
+https://youtu.be/2f7ZH7zW6tk
