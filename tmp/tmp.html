@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Car Part Defect Detection with ResNet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Optional: Mermaid support -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    img {
+      max-width: 100%;
+    }
+    pre {
+      background: #f6f8fa;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    code {
+      font-family: monospace;
+    }
+    a {
+      color: #0969da;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="./pics/meme/toc-analogy.png" alt="machine analogy" />
+
+  <h1>Car Part Defect Detection with ResNet</h1>
+
+  <p>
+    This README explains a workflow for detecting defects in car parts using a ResNet model.
+  </p>
+
+  <h2>Flowchart</h2>
+
+  <p>Here's a flowchart illustrating the process:</p>
+
+  <pre class="mermaid">
+graph LR
+    A[Start] --> B(Data Acquisition)
+    B --> C{Data Preprocessing}
+    C --> D{Data Split (Train/Validation/Test)}
+    D --> E(Load Pretrained ResNet)
+    E --> F(Fine-tune ResNet)
+    F --> G{Model Training}
+    G --> H{Model Evaluation on Validation Set}
+    H -- Satisfactory --> I(Model Testing on Test Set)
+    H -- Not Satisfactory --> F
+    I --> J{Defect Detection (Inference)}
+    J --> K[Output: Defect Location and Type]
+    K --> L[End]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style L fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style F fill:#ccf,stroke:#333,stroke-width:2px
+    style G fill:#ccf,stroke:#333,stroke-width:2px
+    style I fill:#ccf,stroke:#333,stroke-width:2px
+    style J fill:#ccf,stroke:#333,stroke-width:2px
+    style K fill:#ccf,stroke:#333,stroke-width:2px
+    style C fill:#aaf,stroke:#333,stroke-width:2px
+    style D fill:#aaf,stroke:#333,stroke-width:2px
+    style B fill:#aaf,stroke:#333,stroke-width:2px
+    style H fill:#aaf,stroke:#333,stroke-width:2px
+  </pre>
+
+  <p>These are some beautiful things you k</p>
+
+  <p>
+    <a href="https://youtube.com/shorts/8vHKWRtpbJU">https://youtube.com/shorts/8vHKWRtpbJU</a><br />
+    <a href="https://youtube.com/shorts/5nosjSSf3io">https://youtube.com/shorts/5nosjSSf3io</a><br />
+    <a href="https://youtu.be/2f7ZH7zW6tk">https://youtu.be/2f7ZH7zW6tk</a>
+  </p>
+
+</body>
+</html>
