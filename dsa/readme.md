@@ -68,6 +68,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
 ## Check these out 
 
+- [ ] https://youtu.be/x36UmiSiEzc?si=4hvJRV6bvmc0b2rY
 - [ ] https://www.youtube.com/watch?v=1xNbjMdbjug&ab_channel=takeUforward
 - [ ] https://www.youtube.com/watch?v=KEs5UyBJ39g&ab_channel=takeUforward
 - [ ] https://www.youtube.com/watch?v=HGk_ypEuS24&ab_channel=takeUforward 
